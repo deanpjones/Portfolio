@@ -3,8 +3,9 @@
 app.controller('MainController', ['$scope', function($scope) {
     //resume (download file)
     $scope.resume = {
-        path: 'http://50.66.186.244/resume/',
-        path2: 'http://localhost:777/resume/',    
+        path: './resume/',                                  //works (for all!)
+        // path: 'http://50.66.186.244/resume/',            //only works (on external IP address)
+        // path2: 'http://localhost:777/resume/',           //only works (on localhost)
         piping: 'DEAN_JONES_Resume_(piping_designer).pdf',
         software: 'DEAN_JONES_Resume_(software_developer).pdf',
     }
@@ -14,10 +15,11 @@ app.controller('MainController', ['$scope', function($scope) {
     "I am openly looking for an opportunity in either drafting and/or programming that would benefit from my comprehensive skills and experience.";
     $scope.pip_skills_bool = false;
     $scope.soft_skills_bool = false;
-    $scope.skills_toggle = function(id, state1, state2){
+    $scope.skills_toggle = function(id, skills, state1, state2){
         let x = document.getElementById(id);
-        $scope.menu_toggle("pip_skills");
-        //toggle button
+        $scope.menu_toggle(skills);
+        // $scope.menu_toggle("pip_skills");
+        // toggle button
         return {
             toggle: $scope.pip_skills_bool ? x.classList.replace(state1, state2) : x.classList.replace(state2, state1),
             bool: $scope.pip_skills_bool = !$scope.pip_skills_bool,
