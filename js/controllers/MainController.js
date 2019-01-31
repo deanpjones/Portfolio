@@ -3,7 +3,8 @@
 app.controller('MainController', ['$scope', function($scope) {
     //resume (download file)
     $scope.resume = {
-        path: 'http://50.66.186.244/resume/',
+        path: './resume/',
+        // path: 'http://50.66.186.244/resume/',
         path2: 'http://localhost:777/resume/',    
         piping: 'DEAN_JONES_Resume_(piping_designer).pdf',
         software: 'DEAN_JONES_Resume_(software_developer).pdf',
