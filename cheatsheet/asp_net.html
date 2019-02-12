@@ -1,0 +1,3021 @@
+<!-- "E:\000-BACKUP\000-SAIT\000-HELP\20170112 OOSD Notes (ASP.NET).txt" -->
+<link rel="stylesheet" type="text/css" href="./css/format_text_file.css" />
+<textarea style="width:95%;height:95%;border:solid 2px black;">
+	
+JAN.12, 2017
+
+Instructor: JOLANTA WARPECHOWSKA-GRUCA
+ASP.NET	 (WEB PROGRAMMING WITH C#)
+
+-----------------------------------
+
+	RESOURCES
+	TUTORIALS
+		W3SCHOOLS - ASP REFERENCE 			https://www.w3schools.com/asp/asp_ref_response.asp	
+		
+		TUTORIALSPOINT 						https://www.tutorialspoint.com/asp.net/asp.net_event_handling.htm
+		
+		TUTORIALS TEACHER 
+					ASP.NET (MVC) 			http://www.tutorialsteacher.com/mvc/mvc-folder-structure
+					MVC FOLDER STRUCTURE 	http://www.tutorialsteacher.com/mvc/mvc-folder-structure
+		
+		
+	(*** discontinued ***)(use VS CODE)	WEBMATRIX DOWNLOAD (Microsoft ASP.NET tool)(supports PHP and Node.js) 
+										https://www.w3schools.com/asp/asp_install.asp
+	
+
+		
+		www.nuget.org			(third party packages)(JQuery Validation plugin ASPNET.SCRIPTMANAGER.JQUERY)
+		http://www.w3schools.com/aspnet/default.asp
+		http://www.java2s.com/Code/ASP/Asp-Control/CatalogAsp-Control.htm
+		AJAX (w3schools...)
+
+		BOOTSTRAP
+			http://www.w3schools.com/bootstrap/bootstrap_get_started.asp
+				...
+			
+			http://getbootstrap.com/css/
+			http://getbootstrap.com/components/
+			http://themes.getbootstrap.com/			//BOOTSTRAP THEME
+			www.bootswatch.com 						//BOOTSTRAP THEMES
+			
+			http://www.glyphicons.com/				//ICONS
+						
+			WWW.ADOBE.KULER (https://color.adobe.com/create/color-wheel/)
+		
+		MVC (Model, View, Controller)
+			http://www.asp.net/mvc/overview/getting-started/introduction/getting-started
+
+			http://www.codeproject.com/Articles/575397/An-Absolute-Beginners-Tutorial-on-ASP-NET-MVC-for
+
+			http://www.codeproject.com/Articles/866143/Learn-MVC-Project-in-days-Day
+
+		
+	HTML5
+	CSS3
+	BOOTSTRAP
+
+	LINQ
+	AJAX (client side, Asynchronous Javascript and XML)
+		-AJAX is one way communication to server (easier to update dynamic content on webpage)
+		-Web Sockets (newer)(two way communication)(Abel)
+
+	LINQ to SQL
+	LINQ to Entities
+	
+	.NET (VB, C#, C++, F#)
+	
+	RAZOR(*.CSHTML) VS WEBFORM(*.ASPX)
+		-these are very similar 
+		-syntax is different 
+			razor @{ ...code here... } 
+			webform <% ...code here... %>
+	
+??	F# (what is this used for?)
+
+	JQuery
+	
+	HTTP (hypertext transfer protocol)
+		http://			www.modulemedia.com 		/ourwork/files/			index.html
+		PROTOCOL		DOMAIN NAME					PATH					FILE NAME
+	
+??	IIS (Server)
+
+??	VISUAL STUDIO (Cost?)
+
+	.NET Framework 4.6
+	SQL Server (database)
+	IIS Server (web server)
+	FTP Server
+
+??	AZURE (Microsoft cloud)	
+	
+	(Client vs Server...)
+??	POSTBACK
+		if(!IsPostBack)
+		{
+		
+		}
+		
+	ASP INCLUDE (LIKE PHP INCLUDE)(*** INSIDE COMMENT BRACKETS ***)
+		https://www.w3schools.com/asp/asp_incfiles.asp
+		-----------------------------------------
+		<p><!--#include file="wisdom.inc"--></p>
+		----- wisdom.inc
+		"One should never increase, beyond what is necessary,
+		the number of entities required to explain anything."
+		-----
+		-----------------------------------------
+		<p><!--#include file="time.inc"--></p>
+		----- time.inc
+		<% Response.Write(Time) %>
+		-----
+		-----------------------------------------
+		
+		
+	RAZOR SYNTAX		https://www.w3schools.com/asp/webpages_razor.asp
+		-FILES (*.CSHTML) 
+			<!-- Single statement block -->
+			@{ var myMessage = "Hello World"; }
+
+			<!-- Inline expression or variable -->
+			<p>The value of myMessage is: @myMessage</p> 
+
+			<!-- Multi-statement block -->
+			@{
+			var greeting = "Welcome to our site!";
+			var weekDay = DateTime.Now.DayOfWeek;
+			var greetingMessage = greeting + " Today is: " + weekDay;
+			}
+			<p>The greeting is: @greetingMessage</p>
+
+	START (Google Chrome)(RUN APPLICATION OR WEBSITE)(use pulldown to change browser)
+		-need to test different browsers 		
+		
+	LOCALHOST	(localhost:59574)(for my server)
+		http://localhost:59574/Default.aspx
+		
+	DEFAULT.ASPX (HTML code)
+	DEFAULT.ASPX.CS (C# code)
+	
+	WEBFORM (rightclick PROJECT, ADD, NEW, WebForm, rename to Default.aspx)
+	
+	IMAGES (create new folder, rightclick ADD, EXISTING, browse to image...)
+	IMAGES (drag in to DESIGN VIEW, prompt to add ATERNATIVE TEXT)(drag to RESIZE IMAGE)(*** see what container it is in ***)
+	
+	GREYED OUT (field)(*** see if still running, hit STOP BUTTON ***)
+	
+	Start, new project, C#, Web, ASP.NET (CANCEL out of AZURE)
+	
+	TEXTBOX 
+		EnableViewState
+	
+	TABLE (Table menu, insert)(does all HTML automatically through dialog)
+	
+	VALIDATION (using CONTROLS)(see Toolbox)(through PROPERTIES shown in HTML)
+		ControlToValidate
+		Display (dynamic? or None)
+		ErrorMessage
+	---------		
+		RequiredFieldValidator (from Toolbox)
+			ControlToValidate (set to txtHours)
+			Display (dynamic)
+			ErrorMessage (set to display message)
+
+		RangeValidator (drag into same TABLE CELL as RequiredFieldValidator)(datatype?)
+			ControlToValidate (set to txtHours)
+			Display (dynamic)
+			ErrorMessage (set to display message)
+			
+			(*** change type to INTEGER if necessary ***)
+			MaximumValue
+			MinimumValue
+			--
+			Type (may depend on the data type how it responds?)
+			
+		UNOBTRUSIVE VALIDATION (need to install, rightclick project, Nuget manager, browse, search ASPNET.SCRIPTMANAGER.JQUERY, install)			
+			//ADD THIS (or install JQuery packages, or webpage may not load properly)
+			protected void Page_Load(object sender, EventArgs e)
+			{
+	??            	UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;		//if not installed, use this (uses Javascript VALIDATION)
+					//UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;	//once installed (uses JQUERY validation)
+			}
+		
+		Other PROPERTIES
+			ForeColor (change text, or error message to RED){FF,00,00}
+			
+		CausesValidation (FALSE)(if button CLEAR still showing the validation messages)
+	
+	VISUAL STUDIO (DEBUG IN CHROME NOT WORKING)
+		-instead of picking play button on Chrome (open Chrome first, go to Browse with..., pick (Google Chrome)
+	
+??	JQuery VALIDATION 
+	
+	ICONS (USE WITH W3SCHOOLS TEMPLATES)
+		LIST OF ICONS 			https://www.w3schools.com/icons/fontawesome_icons_webapp.asp
+		eg. https://www.w3schools.com/w3css/tryw3css_templates_analytics.htm
+			<i class="fa fa-bookmark w3-text-blue w3-large"></i>		//shows a BOOKMARK ICON
+	
+	CSS FILE (external) (rc, add, new, STYLESHEET) STYLES.CSS
+	
+	COMBOBOX (CAN'T DOUBLECLICK TO CREATE EVENT)(stop application, is running)
+	
+	COMBOBOX (AUTOPOSTBACK)(set to false, or Page_Load will rerun every time)
+	
+	PAGE LOAD (RUNS WHENEVER A CONTROL (combobox) CHANGES)
+		protected void Page_Load(object sender, EventArgs e)
+		
+	-------------------------------------
+	DAY 2 (Jan.13)
+	
+	Default.aspx (will be START PAGE if exists)
+	(SET AS START PAGE)(rightclick...)
+	
+	HTML (LAYOUTS)
+		header, main, footer,
+		header, aside, article, aside, footer
+	BOOTSTRAP?
+	
+??	AUTOPOSTBACK (does this need to be TRUE? for using events?)
+
+??	VIEW STATE
+	COOKIES
+	SESSION STATE
+	APPLICATION STATE 
+	
+	MULIPLE PAGE (website)
+		App_Code FOLDER (C# code)
+		App_Data FOLDER (*.mdf file)
+		Styles FOLDER (css file)
+		Images? (is this ASP folder or general folder?)
+		App_Themes?
+		Bin?
+		
+	--------------------------------------
+	ONE-PAGE TO ANOTHER
+	
+	START PAGE (rightclick from *** Solution Explorer ***)
+	
+		CROSS PAGE POSTING (Page.PreviousPage)(limit to same application)
+			
+			BUTTON (property)
+				PostBackURL (use to go to another webpage?)
+					(...)(~/WebForm2.aspx)(~ means same place?)
+		
+			"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d2ChangePageASP\
+				d2ChangePageASP.sln"
+			------------------------
+				// can access info from the previous page
+				Page previous = Page.PreviousPage;
+				if(previous != null)
+				{
+					TextBox prevPageName = (TextBox)previous.FindControl("txtName");
+
+					lblName.Text = prevPageName.Text;
+				}
+			------------------------
+		
+		SERVER TRANSFER
+			(remove PostBackURL first from above example)
+			Server.Transfer("~/WebForm2.aspx");
+			---------------------
+			    protected void btnGoBack_Click(object sender, EventArgs e)
+				{
+					Server.Transfer("~/WebForm1.aspx");
+				}
+			---------------------
+			URL (LAGS WHEN SWITCHING PAGES)	http://localhost:42342/WebForm1.aspx
+			
+		RESPONSE.REDIRECT("Index.aspx")(*** NEED FULL http://, SHOULD BE UNDERLINED)
+		        protected void btnSAIT_Click(object sender, EventArgs e)
+				{
+					 Response.Redirect("http://www.sait.ca");
+				}
+				
+			Examples...
+				Response.Redirect("http://www.sait.ca");		//a website
+				Response.Redirect("Index.aspx");				//another page
+				Response.Redirect("../../Index.aspx");			//another folder and page
+				
+	--------------------------------------
+	
+	PASSING DATA (between webpages)
+		STATES (are limited to ONE APPLICATION)
+		
+		VIEW STATE - hidden INPUT in the HTML
+			(rightclick VIEW SOURCE on webpage running in browser)
+				<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="A1e0M8hqiT8E9jOArdOwlCRXpRuf+lr4XNUoKBni9RrVLDv0LzA2kDZ+b522YHa1O8bNXexynpT+cUCksnu/wF0vzwefwd3YmtPtlYrNwG5Lu3FKctnDg/oFsZdysJ70" />
+			ENABLEVIEWSTATE (property)(to DISABLE) set to FALSE 
+	
+	ENABLEVIEWSTATE (property)(to DISABLE) set to FALSE
+		-dropdownlist (EnableViewState, set to TRUE) was acting weird (getting data from PREVIOUS pulldown, not current)
+	
+		VIEWSTATE.ADD("Timestamp", DateTime.Now);
+			OR 
+		VIEWSTATE["Timestamp"] = DateTime.Now;
+		
+		//CREATE SEPARATE CLASS (then reference)
+			"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d2ViewStateDemo\
+				d2ViewStateDemo.sln"
+			//Counter CLASS
+			public static int count;
+			--------------
+			//Add to buttons
+			(Counter.count)++;
+			txtClicks.Text = (Counter.count).ToString();
+			--------------
+			
+		(stored in Global.aspx)	
+			APPLICATION_START
+			APPLICATION_END
+			SESSION_START
+			SESSION_END
+		
+		GLOBAL.ASPX (Global Application Class, create, solution explorer (highlight project), add, new, Global Application Class)
+			...creates template
+			-------------------------
+			     protected void Application_Start(object sender, EventArgs e)
+				{
+				}
+
+				protected void Session_Start(object sender, EventArgs e)
+				{
+				}
+				...
+			-------------------------
+			
+		**********************************************************************
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d2ViewStateDemo2\
+			d2ViewStateDemo2.sln"
+		VIEW STATE (only works for *** ONE PAGE ***)
+		SESSION STATE (works between MULTIPLE PAGES, and NEW TAB in browser)(*** ONLY ONE BROWSER ***)
+		APPLICATION STATE (*** works one page, multiple pages or another browser ***)
+		**********************************************************************
+		
+		--------------------------------------------------------------------
+		   public partial class WebForm1 : System.Web.UI.Page
+			{
+				//VIEW STATES (get the clicks tallied from 2 pages)
+				//VIEW STATE ONLY WORKS ON (one page)
+				//SESSIONS STATE (different pages, and tab)(DOESN'T WORK ON NEW BROWSER)
+				//APPLICATION STATE (works one page, multiple pages or another browser)
+
+				//count of clicks
+				int count;
+
+				protected void Page_Load(object sender, EventArgs e)
+				{
+					if (Application["count"] == null)          //if it doesn't have value yet...
+					{
+						Application["count"] = count;         //adds to view state
+					}
+					else
+					{
+						count = (int)Application["count"];   //retrieve from view state
+					}
+
+					//if (Session["count"] == null)          //if it doesn't have value yet...
+					//{
+					//    Session["count"] = count;         //adds to view state
+					//}
+					//else
+					//{
+					//    count = (int)Session["count"];   //retrieve from view state
+					//}
+
+					//if (!IsPostBack)
+					//if(ViewState["count"] == null)          //if it doesn't have value yet...
+					//{
+					//    ViewState["count"] = count;         //adds to view state
+					//}
+					//else
+					//{
+					//    count = (int) ViewState["count"];   //retrieve from view state
+					//}
+
+					txtClicks.Text = count.ToString();
+				}
+
+				protected void btnClick_Click(object sender, EventArgs e)
+				{
+					count++;
+					txtClicks.Text = count.ToString();  //redisplay if clicked
+					Application["count"] = count;
+
+					//count++;
+					//txtClicks.Text = count.ToString();  //redisplay if clicked
+					//Session["count"] = count;
+
+					//count++;
+					//txtClicks.Text = count.ToString();  //redisplay if clicked
+					//ViewState["count"] = count;
+				}
+			}
+		--------------------------------------------------------------------
+			
+??	WEB.CONFIG(FILE) (SESSION STATE) 
+		MODE
+		COOKIELESS
+		TIMEOUT
+		
+??	COOKIES (what if turned off?)	
+	COOKIES (Client side) 
+		SESSION COOKIE (browser session only)
+		PERSISTENT COOKIES (txt file, expires)(cannot used with disabled cookies)
+	
+	nameCookie.Expires = DateTime.Now.AddYears(1);
+	COOKIES (properties)
+		Name  
+		Value (string)
+		Expires (DateTime)
+		Secure (Bool) 
+		
+	HttpRequest 
+	HttpResponse 
+	HttpCookieCollection 
+	
+	COOKIES (methods)
+		Add 
+		Remove 
+		Clear() (includes session cookies)
+	DELETE COOKIE (off of client)
+		...
+		
+	--------------------
+	(Ch08Cart example DAY 2)
+	//LOCKS MAY DELAY IF TOO MANY USERS (loading)
+            if (!IsPostBack)
+            {
+                ddlProducts.DataBind();
+
+                Application.Lock();
+                    int hitCount = Convert.ToInt32(Application["HitCount"]);
+                    hitCount++;
+                    Application["HitCount"] = hitCount.ToString();
+                Application.UnLock();
+
+                lblPageHits.Text = hitCount.ToString();
+            }
+	--------------------
+	
+	ASP CONTROL (EVENT WIRING)(DELETED CODE BEHIND AND NOW ERRORS)
+		-just remove the ONCLICK event from the HTML TAG
+	
+	BUTTON CLICK (EVENT, DELETE, need to cleanup HTML)(REMOVE *** btnGoBack_Click ***)
+		(*** DISPLAYS ERROR PAGE ON BROWSER ***)
+		<%--        <asp:Button ID="btnGoBack" runat="server" OnClick="btnGoBack_Click" PostBackUrl="~/WebForm1.aspx" Text="Go Back" Width="86px" />--%>
+                <asp:Button ID="btnGoBack" runat="server" PostBackUrl="~/WebForm1.aspx" Text="Go Back" Width="86px" />
+		
+??	CACHE OBJECT (is this in TEMP folder?)
+		Add items to application state and cache
+		Application.Add(“Count”, 0);
+		Cache.Add(“states”, states);
+		Retrieve items:
+		int count = 
+		  Convert.ToInt32(Application[“Count”]);
+		List<string> states = (List,string>) Cache[“states”];
+
+??	APPLICATION OBJECT
+??	APPLICATION STATE OBJECT	
+
+??	GLOBAL.ASPX (FILE)
+		Application.Lock();
+	
+	URL (?, extra data)(&, separates elements)
+		~/Order.aspx?cat=costumes
+		~/Order.aspx?cat=props&prod=rat01
+		
+	string categoryId = Request.QueryString["cat"];
+	string productId = Request.QueryString["prod"];
+	
+	(&)AMPERSAND
+		Server.UrlEncode(txtName.Text)
+		txtName.Text.Replace("&", "%26")
+
+	POSTBACKURL (*** if this is here, the code in the BUTTON EVENT CLICK will get skipped ***)
+		-DELETE postbackUrl
+		-use, Response.Redirect("Votes.aspx");
+		
+	DATES
+		(e.Day.Date.Day) give an INT
+		if(e.Day.Date.Day < 22 || e.Day.Date.Day > 24)(spans 3 days)
+		...
+		
+	WEB.CONFIG (stores the CONNECTION string)
+	  <connectionStrings>
+		<add name="MMABooksConnectionString" connectionString="Data Source=ICTVM-DTHBDVOHH\SQLEXPRESS;Initial Catalog=MMABooks;Integrated Security=True"
+		  providerName="System.Data.SqlClient" />
+	  </connectionStrings>
+	
+	------------------------------
+	DAY 3 (Jan.16)
+	DATABASES
+	
+	DATA SOURCE (SqlDataSource)(from Toolbox)
+		-connection string 
+		-specify SELECT (Query)(wizard or text)
+			-Advanced tab (INSERT, UPDATE, DELETE, check optimistic concurrency)
+			
+	DROPDOWNLIST (COMBOBOX) 
+		DataSourceID (identifies which data source)
+		DataTextField (Display)
+		DataValueField (Value)
+		
+	DATA SOURCE (properties)
+		id
+		Runat
+		ConnectionString 	(saved in WEB.CONFIG file)
+		ProviderName
+		SelectCommand
+	
+	DEMO...
+		APP_DATA FOLDER
+			-ADD, (ASP FOLDER), APP_DATA FOLDER
+			-On folder, rc, add, existing, (browse to (*.mdf) file)
+			-highlight (*.MDF), set to (Copy if Newer)
+		WebForm, (Add, New, Webform, give name...)
+		Toolbox, (design view), drag (SqlDataSource)
+			-on object, click (Configure Data Source)
+		BUILD YOUR QUERY.... (using wizard)
+		ADD, DropDownList (configure, ... DISPLAY, VALUE, )
+			-ENABLE AutoPostBack (TO SEE CHANGES ON SERVER)
+			
+		GRIDVIEW (add control)(click on arrow, pulldown <new data source>, SQL, pick ConnectionString, SET up query)
+			...do WHERE clause... (Column, =, Control)
+				-Control (points to DropDownList)			
+			Paging, PagerSettings
+				-Numeric (1,2,3,4...)
+				-FirstNextPreviousLast
+					-change words used
+					-Map to IMAGE Url...
+			Formatting (fix ID or Class in ...)
+				<asp:GridView ID="gvProducts"
+				-update CSS (to override THEME from control AUTOFORMAT)
+
+		*** ERROR WITH (*.MDF)(NEEDS UPDATING, cannot do from DataSource Config) ***
+			-View (Server Explorer)(fix connection here, NOT DATASOURCE wizard, RUN THROUGH CONNECTION, browse file in App_Data folder...)
+				(should ask to UPGRADE FILE should fix connection)(NO red 'X' in Server Explorer)
+		
+		INSERT, UPDATE, DELETE (automatically generates from data source)
+			SqlDataSource1
+			(change in PROPERTIES)(Data, SelectQuery, Query, ...)
+			<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+				DeleteCommand="DELETE FROM [Products] WHERE [ProductID] = @original_ProductID AND [Name] = @original_Name AND [ShortDescription] = @original_ShortDescription AND [LongDescription] = @original_LongDescription AND [CategoryID] = @original_CategoryID AND (([ImageFile] = @original_ImageFile) OR ([ImageFile] IS NULL AND @original_ImageFile IS NULL)) AND [UnitPrice] = @original_UnitPrice AND [OnHand] = @original_OnHand" 
+				InsertCommand="INSERT INTO [Products] ([ProductID], [Name], [ShortDescription], [LongDescription], [CategoryID], [ImageFile], [UnitPrice], [OnHand]) VALUES (@ProductID, @Name, @ShortDescription, @LongDescription, @CategoryID, @ImageFile, @UnitPrice, @OnHand)" OldValuesParameterFormatString="original_{0}" 
+				SelectCommand="SELECT * FROM [Products] WHERE ([CategoryID] = @CategoryID) ORDER BY [ProductID]" UpdateCommand="UPDATE [Products] SET [Name] = @Name, [ShortDescription] = @ShortDescription, [LongDescription] = @LongDescription, [CategoryID] = @CategoryID, [ImageFile] = @ImageFile, [UnitPrice] = @UnitPrice, [OnHand] = @OnHand WHERE [ProductID] = @original_ProductID AND [Name] = @original_Name AND [ShortDescription] = @original_ShortDescription AND [LongDescription] = @original_LongDescription AND [CategoryID] = @original_CategoryID AND (([ImageFile] = @original_ImageFile) OR ([ImageFile] IS NULL AND @original_ImageFile IS NULL)) AND [UnitPrice] = @original_UnitPrice AND [OnHand] = @original_OnHand">
+		
+			
+	CONTROLS
+		FORMVIEW
+			-display single record...
+			-AutoPostBack (TRUE)
+??			-Edit Template
+		DETAILSVIEW
+		LISTVIEW AND DATAPAGER
+		FORMVIEW
+		DATA LIST 
+		
+	GRIDVIEW (FORMATTING)
+		 <%-- STYLES (GRIDVIEW), Dean Jones, Mar.26, 2018 --%>
+                <%--                
+                <HeaderStyle BackColor="LightGray" ForeColor="White" Font-Bold="true" />
+                <RowStyle BackColor="White" ForeColor="Black" />
+                <SelectedRowStyle BackColor="Gray" ForeColor="White" Font-Bold="true" />
+                <FooterStyle BackColor="LightGray" ForeColor="Blue" />
+                <PagerStyle BackColor="LightGray" ForeColor="Blue" HorizontalAlign="Center" />
+                --%>
+
+                <%--using (gridview.css)...--%>
+                <RowStyle CssClass="RowStyle" />
+                <EmptyDataRowStyle CssClass="EmptyRowStyle" />
+                <PagerStyle CssClass="PagerStyle" />              
+                <SelectedRowStyle CssClass="SelectedRowStyle" />
+                <HeaderStyle CssClass="HeaderStyle" />
+                <EditRowStyle CssClass="EditRowStyle" />
+                <AlternatingRowStyle CssClass="AltRowStyle" />
+				------------------
+				/* GRID STYLES     https://weblogs.asp.net/kevinbrammer/glassy-black-gridview-theme */
+
+				.GridViewStyle {
+					font-family: Tahoma, Geneva, sans-serif; /*Consolas, Arial, Sans-Serif;*/
+					font-size: 1em;
+					table-layout: auto;
+					border-collapse: collapse;
+					border: #1d1d1d 3px dotted;
+				}
+				/*Header and Pager styles*/
+				.HeaderStyle, .PagerStyle /*Common Styles*/ {
+					background-image: url(Images/HeaderGlassBlack.jpg);
+					background-position: center;
+					background-repeat: repeat-x;
+					/*background-color: #1d1d1d;*/
+					background-color: #6B3472;
+					/*background-color: #0FB2BC;*/
+					/*background-color: #D0DB27;*/
+				}
+
+					.HeaderStyle th {
+						padding: 0.1em 0.5em 0.1em 0.5em;
+						color: #ffffff;
+					}
+
+					.HeaderStyle a {
+						text-decoration: none;
+						color: #ffffff;
+						display: block;
+						text-align: left;
+						font-weight: normal;
+					}
+
+
+				.PagerStyle {
+					background-color: #8D6A96;
+				}
+					.PagerStyle table {
+						text-align: center;
+						margin: auto;
+					}
+
+						.PagerStyle table td {
+							border: 0px;
+							/*padding: 6px;*/
+						}
+
+					/*page border*/
+					.PagerStyle td {
+						/*border-top: #1d1d1d 3px solid;*/
+					}
+
+					/*page buttons*/
+					.PagerStyle a {
+						color: #ffffff;
+						text-decoration: none;
+						padding: 2px 10px 2px 10px;
+						/*border-top: solid 1px #777777;
+						border-right: solid 1px #333333;
+						border-bottom: solid 1px #333333;
+						border-left: solid 1px #777777;*/
+					}
+
+					.PagerStyle span {
+						font-weight: bold;
+						color: #FFFFFF;
+						text-decoration: none;
+						padding: 2px 10px 2px 10px;
+					}
+				/*RowStyles*/
+				.RowStyle td, .AltRowStyle td, .SelectedRowStyle td, .EditRowStyle td /*Common Styles*/ {
+					padding: 0.1em 0.5em 0.1em 0.5em;
+					border-right: solid 1px #1d1d1d;
+				}
+
+				.RowStyle td {
+					background-color: #c9c9c9;
+				}
+
+				.AltRowStyle td {
+					background-color: #f0f0f0;
+				}
+
+				.SelectedRowStyle td {
+					background-color: #ffff66;
+				}
+				/* end GRID STYLES */
+				------------------
+		
+??	DATA BINDING?
+	EDIT COLUMNS
+		CONVERT TO TEMPLATE (add new control, CALENDAR to template)
+		
+??	STORED PROCEDURES (SQL)
+		
+	OBJECT DATA SOURCES (DataSource from an OBJECT)(use an OBJECT instead of DATABASE or *.MDF FILE)	
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d3ObjectDataSources\
+			d3ObjectDataSources.sln"
+		-WEB.CONFIG
+		  <connectionStrings>
+			<add name="ConnectionString" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MMABooks.mdf;Integrated Security=True"
+			  providerName="System.Data.SqlClient" />
+		  </connectionStrings>
+		 -FOLDERS
+			App_Code (CLASS files)
+			App_Data (*.MDF)
+				
+			MMABooksDB.cs
+		    //PULLS CONNECTION STRING OUT OF (WEB.CONFIG) FILE
+			using System.Configuration;
+			using System.Data.SqlClient;
+            string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+	StateDB.cs
+	CustomerDB.cs
+		using System.ComponentModel;
+		[DataObject(true)]													(add under NAMESPACE)
+			ADD THE APPLICABLE ...
+				[DataObjectMethod(DataObjectMethodType.Select)]				(add under CLASS)
+				[DataObjectMethod(DataObjectMethodType.Insert)]
+				[DataObjectMethod(DataObjectMethodType.Update)]
+				[DataObjectMethod(DataObjectMethodType.Delete)]
+
+	ADD DROPDOWNLIST (States dropdown)
+		-BUILD SOLUTION (save first)
+		-ADD DATA SOURCE (by OBJECT)
+			StatesDB...
+			path to METHOD (GetStates())
+		*** ENABLE AutoPostBack ***
+	ADD GRIDVIEW (Customers...)
+		-repeat (SELECT, UPDATE, INSERT, DELETE)
+		
+	DATASOURCE (properties)
+		OLDPARAMETERVALUESFORMAT		original_{0}			(needs to match in the CustomerDB file)
+		CONFLICTDETECTION		COMPAREALLVALUES (uses Old_Customer)
+	FIX IN HTML ???not sure...?
+		??<asp:Parameter...
+		
+	----------------------------------------------------
+	DAY 4 (Jan.17)
+	MASTER PAGES
+		-provides common elements (template?)
+		-consistency
+	
+	DATABASE CONNECTION (problems)
+		-check PROPER NAMESPACE
+		-remove FOLDER (NAMESPACE.folder) FROM END OF NAMESPACE 
+		-check USING statements
+			
+	DB CLASS (NOT AVAILABLE)(squiggle under (TechSupportDB.GetConnection())
+		*** PROPERTIES (BUILD, set to ***COMPILE***)
+	CLASS (*.CS) (SOLUTION EXPLORER, NOT GETTING THE (arrow) SHOWING IN SOLUTION EXPLORER)
+		*** rightclick on file, PROPERTIES (BUILD, set to ***COMPILE***)
+	WEB.CONFIG (LocalDB)(check the DB file path, *** make sure it is in the LOCAL (App_Data) FOLDER ***)
+		"ConnectionString" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TechSupport.mdf;Integrated Security=True;Connect Timeout=30"
+		
+	STILL GETTING ERRORS ON (CustomerDB file in App_Code folder)
+		-MOVE OUT OF (App_Code) folder to new folder (Code, made myself)
+		-problems fixed themselves
+		-make sure PROPERTIES (BUILD set to COMPILE)
+		
+	https://msdn.microsoft.com/en-us/library/ex526337.aspx
+		APP_DATA (*.MDF, XML)
+		APP_THEME (*.CSS, <images>, *.SKIN)
+		App_WebReferences (*.XSD)
+	
+	APP_CODE FOLDER (fix for CLASSES not being recognized)
+		-add (.App_Code) to the end of NAMESPACE
+			namespace Lab3TechSupportIncidentsASP.App_Code
+		-USING
+			-using djTeam2ProjectASP.App_Code;
+	APP_CODE FOLDER
+		https://msdn.microsoft.com/en-us/library/ex526337.aspx
+		-ASP.NET compiles the code in the App_Code folder on the initial request to your application. 
+		-Items in this folder are then recompiled when any changes are detected.
+			
+	NULL DATETIME
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\Lab3TechSupportIncidentsASP\Lab3TechSupportIncidentsASP.sln"
+		Incident.cs
+			        public DateTime? DateClosed { get; set; }		
+		IncidentDB.cs
+		            //handle NULL DateTime
+                    if(reader.IsDBNull(reader.GetOrdinal("DateClosed")))    //if SQL NULL
+                    {
+                        inc.DateClosed = null;                              //then return ASP.NET null
+                    }
+                    else
+                    {
+                        inc.DateClosed = (DateTime)reader["DateClosed"];    //else return value
+                    }  
+					
+	DATE FORMAT (DATAGRID)
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\Lab3TechSupportIncidentsASP\Lab3TechSupportIncidentsASP.sln"
+		(Edit Columns, pick field (DateOpened), under PROPERTY DataFormatString, enter {0:yyyy/MM/dd})
+		
+	INNER JOIN (when adding new TABLES to query)(*** MAKE SURE TO UPDATE COLUMNS in the right order)(*** Edit Columns ***, up/down arrows)
+	
+	DEBUGGING (DIAGNOSTIC TOOLS)(Debug, Windows, Diagnostic Tools...)
+	
+	-------------------------------
+	DAY 4 
+	MASTER PAGES (LIKE USING GUTS...)
+		Add, NEW item, WEB FORMS, (WEB FORM MASTER PAGE)(*** DON'T confuse with *** Web Form WITH Master Page *** , this is the CONTENT PAGE ***)
+??		-CONTENT PLACEHOLDER
+??		-RUNAT="Server"
+		-Add CONTENT PAGE (references the master page file, PATH in html attributes)
+		
+		REQUEST.ASPX
+			MASTER PAGE FILE LINK, add (MasterPageFile="~/Site.Master")
+				<%@ Page Language="C#" MasterPageFile="~/Site.Master" ...
+				...
+				<asp:ContentPlaceHolder ID="mainPlaceHolder" runat="server">
+					//code goes here...
+				</asp:ContentPlaceHolder>
+				
+				-----------------------------------------
+				SITE.MASTER
+				<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="XEx09Reservation.Site1" %>
+				
+				...
+				<head>
+					...//everything that will stay the same
+					<asp:ContentPlaceHolder ID="head" runat="server">
+				
+							//*************************************
+							// empty (guts will go here from page)
+							//*************************************
+							
+					</asp:ContentPlaceHolder>
+				</head>
+				<body>
+							//*************************************
+							//everything that will stay the same
+							//*************************************
+						
+								<asp:ContentPlaceHolder ID="mainPlaceHolder" runat="server">
+
+									//*************************************
+									// empty (guts will go here from page)
+									//*************************************
+
+								</asp:ContentPlaceHolder>
+						
+							//*************************************
+							//everything that will stay the same
+							//*************************************
+				</body>
+				-----------------------------------------
+				REQUEST.ASPX
+					<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Request.aspx.cs" Inherits="XEx09Reservation.Request" %>
+
+					<asp:Content ContentPlaceHolderID="mainPlaceHolder" ID="mainPlaceHolder" runat="server">
+						//...code goes here (guts)
+					</asp:Content>
+				-----------------------------------------
+				
+		-----------------------------------
+		SITE.MASTER
+			<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="XEx09Reservation.Site1" %>
+
+			<!DOCTYPE html>
+
+			<html xmlns="http://www.w3.org/1999/xhtml">
+			<head runat="server">
+					<title></title>
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<script src="Scripts/jquery-2.2.4.min.js"></script>
+					<script src="Scripts/bootstrap.min.js"></script>
+					<link href="Content/bootstrap.min.css" rel="stylesheet" />
+					<link href="Content/site.css" rel="stylesheet" />
+				<asp:ContentPlaceHolder ID="head" runat="server">
+				
+							//*************************************
+							// empty (guts will go here from page)
+							//*************************************
+							
+				</asp:ContentPlaceHolder>
+			</head>
+			<body>
+				<form class="form-horizontal" id="form1" runat="server">
+				<div class="container">
+					<header class="jumbotron">
+						<img src="Images/logo.png" alt="Royal Inns and Suites" />
+					</header>
+					<main>
+						<asp:ContentPlaceHolder ID="mainPlaceHolder" runat="server">
+
+
+
+							//*************************************
+							// empty (guts will go here from page)
+							//*************************************
+
+
+
+						</asp:ContentPlaceHolder>
+					</main>
+					<footer>
+						<p>&copy; <asp:Label ID="lblYear" runat="server"></asp:Label> 
+							Royal Inns and Suites</p>
+					</footer>
+				</div>
+				</form>
+			</body>
+			</html>
+
+		-----------------------------------
+		REQUEST.ASPX
+			<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Request.aspx.cs" Inherits="XEx09Reservation.Request" %>
+
+			<asp:Content ContentPlaceHolderID="mainPlaceHolder" ID="mainPlaceHolder" runat="server">
+					
+					<h1>Reservation Request</h1>
+					<asp:ValidationSummary ID="ValidationSummary1" runat="server" HeaderText="* means that the field is required" CssClass="text-danger" />
+
+					<h3>Request data</h3>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Arrival Date</label>
+						<div class="col-sm-4">
+							<asp:TextBox ID="txtArrivalDate" runat="server" TextMode="DateTime"
+								 CssClass="form-control"></asp:TextBox>
+						</div>
+						<div class="col-sm-5">
+							<asp:RequiredFieldValidator ID="rfvArrivalDate" runat="server" 
+								ControlToValidate="txtArrivalDate" text="*" CssClass="text-danger" Display="Dynamic">
+							</asp:RequiredFieldValidator>
+							<asp:CompareValidator ID="cvArrivalDate" runat="server" Text="Must be a valid date" CssClass="text-danger"
+								Display="Dynamic" ControlToValidate="txtArrivalDate" Type="Date" Operator="DataTypeCheck">
+							</asp:CompareValidator>
+						</div>
+
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Departure Date</label>
+						<div class="col-sm-4">
+							<asp:TextBox ID="txtDepartureDate" runat="server" TextMode="DateTime"
+								 CssClass="form-control"></asp:TextBox>
+						</div>
+						<div class="col-sm-5">
+							<asp:RequiredFieldValidator ID="rfvDepartureDate" runat="server" 
+								ControlToValidate="txtDepartureDate" text="*" CssClass="text-danger" Display="Dynamic">
+							</asp:RequiredFieldValidator>
+							<asp:CompareValidator ID="cvDepartureDate" runat="server" 
+								ControlToValidate="txtDepartureDate" ControlToCompare="txtArrivalDate" Type="Date" 
+								text="Must be after arrival date" Operator="GreaterThan" 
+								Display="Dynamic"  CssClass="text-danger">
+							</asp:CompareValidator><br />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Number of people</label>
+						<div class="col-sm-4">
+							<asp:DropDownList ID="ddlNoOfPeople" runat="server" CssClass="form-control">
+								<asp:ListItem>1</asp:ListItem>
+								<asp:ListItem>2</asp:ListItem>
+								<asp:ListItem>3</asp:ListItem>
+								<asp:ListItem>4</asp:ListItem>
+							</asp:DropDownList>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Bed type</label>
+						<div class="col-sm-9 bedtype">
+							<asp:RadioButton ID="rdoKing" runat="server" Text="King" GroupName="Bed" />
+							<asp:RadioButton ID="rdoDouble" runat="server" Text="Two Queens" GroupName="Bed" />
+							<asp:RadioButton ID="rdoSingle" runat="server" Text="One Queen" GroupName="Bed" />
+						</div>
+					</div>
+
+					<h3>Special requests</h3>
+					<div class="form-group">
+						<div class="col-sm-7">
+							<asp:TextBox ID="txtSpecialRequests" runat="server" TextMode="Multiline"
+								 Rows="4" CssClass="form-control"></asp:TextBox>
+						</div>
+					</div>
+
+					<h3>Contact information</h3>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">First Name</label>
+						<div class="col-sm-4">
+							<asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
+						</div>
+						<div class="col-sm-5">
+							<asp:RequiredFieldValidator ID="rfvFirstName" runat="server" 
+								ControlToValidate="txtFirstName" text="*" CssClass="text-danger" Display="Dynamic">
+							</asp:RequiredFieldValidator>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Last Name</label>
+						<div class="col-sm-4">
+							<asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
+						</div>
+						<div class="col-sm-5">
+							<asp:RequiredFieldValidator ID="rfvLastName" runat="server" 
+								ControlToValidate="txtLastName" text="*" CssClass="text-danger" Display="Dynamic">
+							</asp:RequiredFieldValidator>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Email address</label>
+						<div class="col-sm-4">
+							<asp:TextBox ID="txtEmail" runat="server" TextMode="Email" 
+								CssClass="form-control"></asp:TextBox>
+						</div>
+						<div class="col-sm-5">
+							<asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
+								ControlToValidate="txtEmail" text="*" CssClass="text-danger" Display="Dynamic">
+							</asp:RequiredFieldValidator>
+							<asp:RegularExpressionValidator ID="revEmail" runat="server" 
+								ControlToValidate="txtEmail" Text="Must be valid email address" 
+								Display="Dynamic" CssClass="text-danger"
+								ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
+							</asp:RegularExpressionValidator>
+						</div>
+
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Telephone number</label>
+						<div class="col-sm-4">
+							<asp:TextBox ID="txtPhone" runat="server" TextMode="Phone" 
+								CssClass="form-control"></asp:TextBox>
+						</div>
+						<div class="col-sm-5">
+							<asp:RequiredFieldValidator ID="rfvPhone" runat="server" 
+								ControlToValidate="txtPhone" text="*" CssClass="text-danger" Display="Dynamic">
+							</asp:RequiredFieldValidator>
+							<asp:RegularExpressionValidator ID="revPhone" runat="server" 
+								ControlToValidate="txtPhone" Text="Use this format: 999-999-9999"
+								Display="Dynamic" CssClass="text-danger" 
+								ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}">
+							</asp:RegularExpressionValidator>    
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label">Preferred method</label>
+						<div class="col-sm-4">
+							<asp:DropDownList ID="ddlPreferredMethod" runat="server" CssClass="form-control">
+								<asp:ListItem>Email</asp:ListItem>
+								<asp:ListItem>Telephone</asp:ListItem>
+							</asp:DropDownList>
+						</div>
+					</div>
+
+					<%-- Submit and Clear buttons --%>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-9">
+							<asp:Button ID="btnSubmit" runat="server" Text="Submit"
+								 CssClass="btn btn-primary" OnClick="btnSubmit_Click"  />
+							<asp:Button ID="btnClear" runat="server" Text="Clear"
+								 CssClass="btn btn-primary" OnClick="btnClear_Click" CausesValidation="false"  />
+						</div>
+					</div> 
+				
+					<%-- message label --%>
+					<div class="form-group">
+						<div class="col-sm-offset-1 col-sm-11">
+							<asp:Label ID="lblMessage" runat="server" CssClass="text-info"></asp:Label>
+						</div>
+					</div>
+
+			</asp:Content>
+
+		-----------------------------------
+		
+	BOOTSTRAP (INSTALL)(rightclick Project, MANAGE NUGET PACKAGES, BROWSE tab, search BOOTSTRAP, install...)
+		...ADD bootstrap code to 
+			<head>
+				  <title>Bootstrap Example</title>
+				  <meta charset="utf-8" />
+				  <meta name="viewport" content="width=device-width, initial-scale=1" />
+				  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+				  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+				  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			</head>
+			
+??	HTML5 SHIV
+??	NORMALIZE.CSS 
+
+??	ASP.NET with Javascript
+
+	WIZARD Control 	(https://msdn.microsoft.com/en-us/library/w7dyf6b5.aspx)
+	
+	-----------------------------------------------------------------
+	DAY 5 
+	WEB SERVICES
+	
+	WEB SERVICE (like going WEB.NAMESPACE.CLASS.METHOD, like going ONE LEVEL FURTHER to access METHOD)
+	
+	DESIGNING UWP APPS (replace WPF in Microsoft)(Windows 10)
+		-meetup.com DESIGNING UWP APPS
+		
+	TEMPLATE
+		-new ASP.NET, ...Web FORMS
+		-creates files already...
+			Login.aspx
+			Register.aspx 
+			Site.Master 
+	
+	WEB SERVICE is a CLASS that resides on SERVER that can be ACCESSED THROUGH THE INTERNET
+		-for developers (not end user)
+		-servers can talk to other servers
+		-SOAP (Simple Object Access Protocol) (XML)
+			-HTTP  HyperText Transfer Protocol
+			-TCP Transmission Control Protocol
+			-MSMQ Microsoft Message Queueing
+		-REST (Representational State Transfer) (url) returns (JSON)
+			-JSON (JavaScript Object Notation)
+			-can be used with AJAX
+	WEB API SERVICE (REST)
+		url(http://www.site.com/api/item/01)
+		-GET 
+		-POST 
+	
+	EXERCISE (WCF SERVICE)(SOAP)(xml)
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d5WcfService1\
+			d5WcfService1.sln" 
+			(using files from other project... )
+				"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d5WEBSERVICES_Ch17CategoryMaintenance"
+		new, project, WCF, WCF Service Application 
+			Solution Explorer 
+??				Service1.svc 
+					Service1.svc.cs
+??				IService1.cs
+			DELETE (Service1.svc, IService1.cs)
+		highlight project, ADD, NEW item, WCF Service (CategoryService)
+			-TWO FILES MADE...
+			CategoryService.svc 
+			ICategoryService.cs
+		-add (*.MDF)
+		-update WEB.CONFIG (connection string)
+			-...paste in...(got from )
+			  <connectionStrings>
+				<add name="HalloweenConnection" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Halloween.mdf;Integrated Security=True;Connect Timeout=30"
+				  providerName="System.Data.SqlClient" />
+			  </connectionStrings>
+		---
+		ICategoryService.cs (INTERFACE)
+			public static List<Category> GetCategories()	(copy from CategoryDB.cs)
+			List<Category> GetCategories()					(paste *** METHOD signature only *** in ICategoryService.cs)
+			---
+			(copy *** CLASS *** from Category.cs)
+			(add [DataContract], and [DataMember] for all properties)
+				[DataContract]
+				public class Category
+				{
+					[DataMember]
+					public string CategoryID { get; set; }
+					[DataMember]
+					public string ShortName { get; set; }
+					[DataMember]
+					public string LongName { get; set; }
+				}
+			--- 
+		DELETE (Category.cs)(needed the code guts...)
+		---
+		Category.Service.svc.cs 
+			...
+		---
+		***********************
+		OBJECT DATASOURCES
+				-try REFRESH link (inside DROPDOWNLIST control)
+				-delete referenced data
+			METHOD (WEBSERVICES) NOT SHOWING UP IN PULLDOWN (DROPDOWNLIST)
+				-if DATAGRID was REFERENCING OLD INFORMATION THAT IS MISSING, (***DELETE***) ALL REFERENCED DATA SOURCES AND START OVER
+		***********************
+		
+		*** SET AS START PAGE (for CategoryService.svc) ***
+???		(TEST SERVICE), RUN (google chrome)()
+			-WCF Test Client (dialog)
+				-doubleclick (GetCategories())
+				-INVOKE
+				...
+			---
+			HELP...
+				Windows Communication Foundation (WCF) Test Client (svcTestClient.exe) 
+					is a GUI tool that allows users to input test parameters, submit that input to the service, 
+					and view the response that the service sends back.
+				WCF Service Host Starts WCF Test Client with a Single Service
+					After you create a new WCF service project and 
+					(press F5 to start the debugger), 
+					the WCF Service Host begins to host the service in your project. 
+					Then, WCF Test Client opens and displays a list of service endpoints defined in the configuration file. 
+					You can test the (parameters) and invoke the service, and repeat this process to continuously test and validate your service. 
+		---
+		SET AS START PAGE (rc, CategoryService.svc)(*** WILL PREVENT LOCALHOST WINDOW, in browser from opening ***)
+		...REPEAT (for InsertCategory() METHOD)
+			...test... (enter VALUES for 3 properties to insert...)
+			RETURN (is null)(??probably because the RETURN TYPE was set to VOID???)
+		---
+		XML (tab in TEST dialog)
+			<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+			  <s:Header />
+			  <s:Body>
+				<GetCategoriesResponse xmlns="http://tempuri.org/">
+				  <GetCategoriesResult xmlns:a="http://schemas.datacontract.org/2004/07/d5WcfService1" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+					<a:Category>
+					  <a:CategoryID>1</a:CategoryID>
+					  <a:LongName>2</a:LongName>
+					  <a:ShortName>3</a:ShortName>
+					</a:Category>
+					<a:Category>
+					  <a:CategoryID>xx</a:CategoryID>
+					  <a:LongName>bb</a:LongName>
+					  <a:ShortName>cc</a:ShortName>
+					</a:Category>
+					...
+					
+	------------------------------------------------------------------------------
+	METHOD FIRING IN WRONG ORDER (DROPDOWNLIST BOUND TO GRIDVIEW, test in DDL_changed)
+		ENABLEVIEWSTATE (TRUE) (ON GRIDVIEW)
+		protected void ddlCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (gvIncidents.Rows.Count == 0)
+			...
+	
+	------------------------------------------------------------------------------
+		(inside same SOLUTION)
+	BROWSER (CLIENT)(SERVER needs to be running for WEB SERVICES to be available)
+		Solution Explorer (create NEW PROJECT WITHIN...)
+			Add, NEW PROJECT, make Client ASP, Empty...
+			Create (Default.aspx) TO TEST (from CLIENT)
+			*** highlight PROJECT, SET AS STARTING PROJECT ***
+			*** rc, ADD, Service Reference ***
+				ADDS (Service References) FOLDER
+				
+			---
+			Default.aspx.cs
+				   CategoryServiceReference.CategoryServiceClient my_proxy =
+						new CategoryServiceReference.CategoryServiceClient();   //service reference
+					CategoryServiceReference.Category cat;                      //category object
+					protected void Page_Load(object sender, EventArgs e)
+					{
+						LoadComboBox();
+					}
+
+					//METHOD load combobox from WEB SERVICE
+					void LoadComboBox()
+					{
+						//GETS METHOD FROM (WEB SERVICE)
+						CategoryServiceReference.Category[] cats = my_proxy.GetCategories();  //create array (Category objects)  
+						ddlCategories.DataSource = cats;
+						ddlCategories.DataTextField = "LongName";       //Display for combobox
+						ddlCategories.DataValueField = "CategoryID";    //Value
+						ddlCategories.DataBind();                       //binds DATA to CONTROL
+					}
+					
+			PROPERTIES (ddlCategories)
+				AutoPostBack 			TRUE 
+				AppendDataBoundItems 	TRUE
+			---
+			CLIENTForm (create new PROJECT again to test on WINDOWS FORM not Web)
+				-add form elements
+				-rc PROJECT, Add, Service Reference, (name CategoryServiceReference)
+				-----------------------------------------
+						using System;
+						using System.Collections.Generic;
+						using System.ComponentModel;
+						using System.Data;
+						using System.Drawing;
+						using System.Linq;
+						using System.Text;
+						using System.Threading.Tasks;
+						using System.Windows.Forms;
+
+						namespace CLIENTForm
+						{
+							public partial class Form1 : Form
+							{
+								//proxy object (web service)
+								CategoryServiceReference.CategoryServiceClient my_proxy =
+									new CategoryServiceReference.CategoryServiceClient();
+								//(Category objects in array)
+								CategoryServiceReference.Category[] cats;
+
+								public Form1()
+								{
+									InitializeComponent();
+								}
+
+								private void Form1_Load(object sender, EventArgs e)
+								{
+									LoadComboBox();            
+								}
+
+								private void LoadComboBox()
+								{
+									//web METHOD to access (Category objects in array)
+									cats = my_proxy.GetCategories();    
+									foreach(CategoryServiceReference.Category cat in cats)
+									{
+										cboCategories.Items.Add(cat.CategoryID);
+									}
+									cboCategories.SelectedIndex = 0;
+								}
+
+								private void cboCategories_SelectedIndexChanged(object sender, EventArgs e)
+								{
+									int index = cboCategories.SelectedIndex;
+									CategoryServiceReference.Category cat = cats[index];
+									txtCategoryID.Text = cat.CategoryID;
+									txtShortName.Text = cat.ShortName;
+									txtLongName.Text = cat.LongName;
+								}
+							}
+						}
+				-----------------------------------------
+			
+??	INTERFACE...?
+		An interface contains only the signatures of methods, properties, events or indexers. 
+		A class or struct that implements the interface must implement the members of the interface that are specified in the interface definition.
+	INTERFACE 
+		*** CLASS has to use ALL THE METHODS that are listed in the INTERFACE ***
+		https://www.tutorialspoint.com/csharp/csharp_interfaces.htm
+		https://dzone.com/articles/c-interfaces-what-are-they-and
+		-defines the (What?)(the requirements)
+		-CLASS that INHERITS the INTERFACE defines the (How?)
+??		-interface is used (to get around MULTIPLE INHERITANCE?)
+??		-plug and play
+	
+	------------------------------------------------------
+	DAY 6 (Jan.19)
+	DISABILITIES 
+		---
+		-visual
+		-hearing
+		-motor
+		-cognitive
+		---
+		-universal symbols
+			(hospital symbol 'H', road signs, surpass language barriers)
+			-is there a standard for symbols (home button, power, help '?')
+				MUSIC controls
+				-stop, square
+				-triangle, play button
+				-double arrow/triangle, forward
+				-double arrow and line, go to start, go to end
+		-text to speech
+		-speech to text
+		-other senses?
+		-easy navigation
+		-optional controls (default, no-audio, no-visual?, etc)
+		-captioning
+		-mouse click (shown in tutorials)
+		-all about communication
+		-controls
+			-mouse sensitivity
+			-alt keys
+			-shortcut keys
+			-tabbing
+			-HOW WILL THE USER KNOW/LEARN what the controls are?
+			
+	TESTING AND DEBUGGING 
+		Browser, VS use REFRESH button 
+		Test different browsers (simultaneously)
+			-google chrome (PULLDOWN), (Browse with), select (CTRL+pick), pick TWO BROWSERS
+			-test for CONCURRENCY in database
+			REFRESH, OR REFRESH ALL (CTRL+ALT+ENTER)
+			
+		EXCEPTION ASSISTANT
+			Runtime error popup
+			TYPE OF EXCEPTION 
+			HIGHLIGHTS the line of code where it happened 
+			
+		CSS (FORMATTING)
+		HTML 
+			DEVELOPER TOOLS (F12), BROWSER 
+			INSPECT  (cursor over element) (rightclick INSPECT)
+			
+		AUTOS WINDOW
+??		LOCALS WINDOW 
+??		WATCH WINDOW
+??		IMMEDIATE WINDOW (Debug menu, Windows, )
+		OUTPUT WINDOW (Console.WriteLine...)
+		
+		DIAGNOSTIC TOOL (for slow programs...)
+		
+??	UNIT TESTING (https://msdn.microsoft.com/en-us/library/hh694602.aspx)
+		-manually
+		-automated 
+		-makes complex code easy to understand
+		-help to understand (other peoples code)
+		-acts as a form of DOCUMENTATION
+		-SAVE TIME 
+		-confidence that not breaking existing code (could be complex or written by others)
+		
+		-UNIT TEST FRAMEWORKS
+			MSTest (in Visual Studio)
+				************************************
+				-Create NEW PROJECT, TEST, UNIT TEST
+				************************************
+					[TestClass]
+					public class CalculatorTest 
+						[TestMethod]
+						public void Test_Divide()
+						{
+							// Arrange 
+							int expected = 5;
+							int numerator = 20;
+							int denominator = 4;
+							
+							// Act 
+							...(Add, Reference, Calculator.Library PROJECT)
+							int actual = Calculator.Library.Calculator.Divide(numerator, denominator)
+							
+							// Assert (does what you expect)(TOOLS BUILT IN...)
+							Assert.AreEqual(expected, actual);
+							
+						}
+				-RUN UNIT TEST 
+					TEST (menu), Windows, TEST EXPLORER
+			Nunit 
+			MbUnit 
+			xUnit.net 
+	************************
+	UNIT TEST, (rc ON METHOD, CREATE UNIT TEST)
+		https://msdn.microsoft.com/en-us/library/hh694602.aspx#BKMK_Quick_starts
+		--------------
+		[TestMethod]  
+		public void Withdraw_ValidAmount_ChangesBalance()  
+		{  
+			// arrange  
+			double currentBalance = 10.0;  
+			double withdrawal = 1.0;  
+			double expected = 9.0;  
+			var account = new CheckingAccount("JohnDoe", currentBalance);  
+			// act  
+			account.Withdraw(withdrawal);  
+			double actual = account.Balance;  
+			// assert  
+			Assert.AreEqual(expected, actual);  
+		}  
+		  
+		[TestMethod]  
+		[ExpectedException(typeof(ArgumentException))]  
+		public void Withdraw_AmountMoreThanBalance_Throws()  
+		{  
+			// arrange  
+			var account = new CheckingAccount("John Doe", 10.0);  
+			// act  
+			account.Withdraw(20.0);  
+			// assert is handled by the ExpectedException  
+		} 
+		--------------
+		
+	************************
+		
+	DEPLOYMENTS (ASP.NET)
+		4 WAYS TO DEPLOY 
+			FILE SYSTEM
+				-files to LOCAL folder
+			FTP 
+				-FTP to files to SERVER folder
+			WEB DEPLOY 
+				-only copies changes 
+			WEB DEPLOY PACKAGE 
+				-creates and deploys as (*.ZIP)
+			
+		ONE CLICK (PUBLISH)(rc SOLUTION EXPLORER (PROJECT), click PUBLISH)
+			-PROFILE
+				-click (CUSTOM)
+			-CONNECTION 
+				-Web DEPLOY
+					-VALIDATE (connection)
+				--
+				-FILE SYSTEM
+					-browse FOLDER
+			-SETTINGS 
+				-RELEASE
+				-(OFF)delete all existing files prior to publish
+				-(ON)PreCompile during publishing (CHECK ON)(hide C# code)(C# is converted to (*.DLL) files in BIN FOLDER)
+				-(OFF)Exclude file from teh APP_DATA folder
+			-PREVIEW
+				-CLICK PUBLISH
+		
+	-----------------------
+	DAY 7 (Jan.20)
+	
+	MVC (Model, View, Controller)
+		-this forces you to separate the different layers (in the normal project, you can put everything in a form still)
+		model, data access 
+		view, gui 
+		controller, middle (get data from model, sends it to view)
+	
+	(@)RAZOR EXPRESSION
+	(@:)RAZOR FOR (plain text)
+	( @*comments*@ )
+	
+	"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d7MVCapplication\d7MVCapplication.sln"
+	File, New Project, (Web, ASP.NET)
+		-MVC (TEMPLATE)(full blown)
+		-empty 		
+			-PICK EMPTY
+				-check ON MVC
+				-check OFF cloud)
+		-rc (Controller folder), Add, Controller, MVC empty controller
+		-rc (ON METHOD, Add View, UNCHECK layout, ...)
+			-add HELLO WORLD to <div>
+			
+			
+		<body>
+			<div> 
+				@*hELLO wORLD (from the view)*@
+				@ViewBag.Greeting wORLD (from the view)
+				...
+	*************************
+	CONDITIONAL EXPRESSION
+	        public ViewResult Index()
+        {
+            int hour = DateTime.Now.Hour;
+
+            //CONDITIONAL EXPRESSION
+            //condition ? if-true : else-false
+            //condition ? if-true : (condition ? if-true : else-false)
+            ViewBag.Greeting = hour < 12 ? "Good Morning" : 
+                 (hour < 18? "Good Afternoon" : "Good Evening");
+
+            //LONG CODE (short code above)
+            //string message;
+            //if(hour < 12)
+            //{
+            //    message = "Good morning";
+            //}
+            //else if(hour < 18)
+            //{
+            //    message = "good aft";
+            //}
+            //else
+            //{
+            //    message = "good evening";
+            //}
+            //ViewBag.Greeting = message;
+
+            return View();
+        }
+	*************************
+??	VIEWRESULT
+??	ViewBag.Greeting (what does this do?)
+			
+		-rc (Models folder), Add, New, CLASS (Guest.cs)
+		
+	PROPERTIES (IN CLASS)
+		-prop (TAB, TAB)(rename accordingly)
+			
+			...
+		        @Html.ActionLink("RSVP pLEASE", "RsvpForm");
+				</div>
+			</body>
+			
+		public ViewResult RsvpForm()
+        {
+            //BUILD SOLUTUION first..
+            //rc in this method, Add View, ...
+            //Template: Empty
+            //Model class: Guest...
+            return View();
+        }
+		
+		    @using (Html.BeginForm())
+			{
+				<p>Name: @Html.TextBoxFor(x=>x.Name)</p>
+			}
+??	TEXTBOXFOR (uses lambda) 		@Html.TextBoxFor(x => x.Email)
+??	bool.TrueString
+??	bool.FalseString
+
+			<body>
+				@using (Html.BeginForm())
+				{
+					<p>Name: @Html.TextBoxFor(x=>x.Name)</p>
+					<p>Email: @Html.TextBoxFor(x => x.Email)</p>
+					<p>Phone: @Html.TextBoxFor(x => x.Phone)</p>
+					<p>Will you attend?
+						@Html.DropDownListFor(x => x.WillAttend, new[] {
+							new SelectListItem() { Text = "Yes, I'll be there",
+													Value = bool.TrueString },
+							new SelectListItem() { Text = "No, you suck",
+													Value = bool.FalseString }
+						}, "Choose your answer")
+					</p>
+					<input type="submit" value="Submit RSVP" />
+				}
+			</body>
+			
+			
+	
+        [HttpGet]
+        public ViewResult RsvpForm()
+        {
+            //BUILD SOLUTUION first..
+            //rc in this method, Add View, ...
+            //Template: Empty
+            //Model class: Guest...
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult RsvpForm(Guest guestResponse)
+        {
+            //creates a VIEW named Thanks
+            return View("Thanks", guestResponse);
+        }
+		
+		    <div> 
+				<h1>Thank you for responding, @Model.Name!! </h1>
+				@if(Model.WillAttend == true)
+				{
+					@: It's great you are coming!
+				}
+				else
+				{
+					@: Sorry to hear that you cannot come.
+				}
+
+				</div>
+				
+				
+				
+		VALIDATION
+			using System.ComponentModel.DataAnnotations;
+			    public class Guest
+				{
+
+					[Required(ErrorMessage="Please enter you name")]
+					public string Name { get; set; }
+					[Required(ErrorMessage = "Please enter you email")]
+					[RegularExpression(".+\\@.+\\..+", ErrorMessage = "Please enter a valid email address")]
+					public string Email { get; set; }
+					[Required(ErrorMessage = "Please enter you phone")]
+					public string Phone { get; set; }
+					[Required(ErrorMessage = "Please choose whether you will attend")]
+					public bool? WillAttend { get; set; }       //nullable bool
+
+				}
+				
+			        [HttpPost]
+					public ViewResult RsvpForm(Guest guestResponse)
+					{
+						if (ModelState.IsValid)
+						{
+							//creates a VIEW named Thanks
+							return View("Thanks", guestResponse);
+						}
+						else
+						{
+							return View();
+						}
+
+					}
+					
+				<body>
+				@using (Html.BeginForm())
+				{
+					@Html.ValidationSummary()
+					
+		-Add, new FOLDER, (Content)
+		-Add, Styles.css 
+		-ADD LINK (<link href="~/Contents/Styles.css" rel="stylesheet" />)
+		
+			.field-validation-error{
+				color: red;
+			}
+			/*.field-validation-valid{
+				display: none;
+			}*/
+
+			.input-validation-error{
+				border: 1px, solid red;
+				background-color: #fee;
+			}
+
+			.validation-summary-error{
+				font-weight: bold;
+				color: red;
+			}
+			/*.validation-summary-valid{
+				display: none;
+			}*/
+			
+	SYNTAX 	https://stackoverflow.com/questions/957284/whats-the-deal
+		<% %> - is for inline code (especially logic flow)
+		<%$ %> - is for evaluating expressions (like resource variables)
+		<%@ %> - is for Page directives, registering assemblies, importing namespaces, etc.
+		<%= %> - is short-hand for Response.Write (discussed here)
+		<%# %> - is used for data binding expressions.
+		<%: %> - is short-hand for Response.Write(Server.HTMLEncode()) ASP.net 4.0+
+		<%#: %> - is used for data binding expressions and is automatically HTMLEncoded.
+		<%-- --%> - is for server-side comments
+		
+	DATA SOURCE (Matt's program...)(things to know that I had to figure out and spend some time doing...)
+		-needed to add References... 
+			//REFERENCES 
+			//  ClashReportingData
+			//    Camansol.Camansys.CMSGlobal.ClashReports.DataModel;
+			//  ClashResultBase
+			//    "C:\Users\Pythagoras\Documents\000_work\00_Matt(ClashViewer)\cmswClashReportViewer\cmswClashReportViewer\Demo.DataModel\bin\Debug\cmsgClashLibrary.dll"
+			//    "C:\Users\Pythagoras\Documents\000_work\00_Matt(ClashViewer)\cmswClashReportViewer\cmswClashReportViewer\Demo.DataModel\bin\Debug\cmsgClashManagement.dll"
+			//    "C:\Users\Pythagoras\Documents\000_work\00_Matt(ClashViewer)\cmswClashReportViewer\cmswClashReportViewer\Demo.DataModel\bin\Debug\cmsgContextHelp.dll"
+		-needed to CHANGE VERSION (MULTIPLE PROJECTS IN SOLUTION *.sln)
+			****************************************************************
+			-*** MAKE SURE THE VERSION (4.6) is the same on all projects ***
+			****************************************************************
+			-REFERENCES (check to see if there is a YELLOW TRIANGLE in SOLUTION EXPLORER, probably means the VERSION IS INCORRECT?)
+			-make sure PROPERTIES the REFERENCE AND NEW PROJECT are the same VERSION
+				-rightclick on PROJECT, PROPERTIES, tab Application, pick Target Framework (.NET Framework 4.6)
+		-setting up DATASOURCE (hardcoded the Piping.xml PATH in the (PARAMETER DEFAULT VALUE)(check the syntax, don't add QUOTES, will be added when running)
+		-check the GRIDVIEW and DATASOURCE (PROPERTIES)(check the NAME of these objects to make sure they are SET UP CORRECTLY...)
+		-BROWSE FOLDER ERROR 
+			HTTP Error 403.14 - Forbidden - The Web server is configured to not list the contents of this directory
+			https://stackoverflow.com/questions/18981118/http-error-403-14-forbidden-the-web-server-is-configured-to-not-list-the-con
+			-OPEN (Web.config) FILE 
+				-MAKE SURE YOU TYPE THIS (*** DON'T COPY AND PASTE, this will make sure the XML BRACKETS ARE IN THE CORRECTLY NESTING ***)
+				-type in between ...(...add new text here... </configurations>)
+				------------------------- WEB.CONFIG
+					  <system.webServer>
+						<defaultDocument>
+						  <files>
+							<add value="clash.aspx"/>
+						  </files>
+						</defaultDocument>
+					  </system.webServer>
+					</configuration>
+				-------------------------
+				
+	SETTINGS (ASP.NET)
+		-rc PROPERTIES (on project), 
+			-SETTINGS tab (CLICK TO ADD FILE)
+				-this creates a SETTINGS.SETTING file?
+				-add KEY/VALUE here...
+				-SAVES TO WHAT FILES?
+					SETTINGS.Designer.cs (C# code, autogenerated DO NOT CHANGE)
+					WEB.CONFIG (update in PROPERTIES or THIS FILE...)
+						<applicationSettings>
+							<webpageClash.Properties.Settings>
+							  <setting name="DefaultFilePath" serializeAs="String">
+								<value>_filepath</value>
+							  </setting>
+							  <setting name="DefaultFileName" serializeAs="String">
+								<value>_filename</value>
+							  </setting>
+							</webpageClash.Properties.Settings>
+						  </applicationSettings>
+						  
+	SETTINGS (DON'T USE WEB.CONFIG SETTINGS)(FOR USERS)
+		-REASON: there are multiple users in web application, it would be impossible to maintain from one file 
+		-need another method to handle (cookies, session state, or application state)
+		-can still upload file...
+	
+	**** MOTHER F****ER *******
+		-ASP (have multiple users, probably why can't change the SETTINGS from (APPLICATION TO USER) in PROPERTIES???
+		-I don't believe you can (IN ASP.NET) make a PROPERTIES (WRITABLE) ????????????????wtf
+		-Settings.Designer.cs (*** DON'T WASTE TIME HERE, changed this manually, IT GETS OVERWRITTEN CONSTANTLY ***)
+			-CHANGED TO (User Scope)
+			-ADDED (SET METHOD)
+			        //[global::System.Configuration.ApplicationScopedSettingAttribute()]
+					[global::System.Configuration.UserScopedSetting()]
+					...
+					set
+					{
+						this["DefaultFilePath"] = value;
+					}
+		djFileManager.cs 
+			props.Settings.Default.DefaultFilePath = "azzzzzzzzzzzzzPath"; 		//this does work now (but still no point with multiple users)
+		
+	SESSION STATE (ONE BROWSER ONLY)
+	APPLICATION STATE (CROSS BROWSER)
+		-two ways 
+			-Global.aspx (use this globally)
+			-or directly in a WEBFORM 
+		Global.aspx 
+			protected void Application_Start(object sender, EventArgs e)
+			{
+				Application.Add("filePath", "Dean's file path _START");
+				Application.Add("fileName", "Dean's file name _START");
+			}
+			protected void Application_End(object sender, EventArgs e)
+			{
+				Application.Add("filePath", "Dean's file path _END");
+				Application.Add("fileName", "Dean's file name APPLICATION_END");
+			}
+		WEBFORM.ASPX 
+			<%--SESSION--%>
+			<%
+				//Session("username") = "Donald Duck";
+				//Session("age") = 50;
+				Application.Add("TEST", "test123");
+				lblTesting.Text = (String)Application["filePath"];
+			%>
+	
+	APPLICATION (ADD)(like session) STATE (ADD VARIABLE)(to save during session)
+		Application.Add("filePath", "Dean's file path _START");
+		
+	APPLICATION (GET)(like session) STATE (reference variable)
+		Application["filePath"]				//references variable to get value
+		(String)Application["filePath"];	//may need to CAST TYPE
+	
+	APPLICATION (SET)(like session) STATE (reference variable)
+		Application["filePath"] = "new value of filePath...";		//assign new value
+		
+	SESSION (TIMEOUT)(in WEB.CONFIG)
+		<configuration>
+		  <system.web>
+			 <sessionState timeout="20"></sessionState>
+		  </system.web>
+		</configuration>
+		
+	GLOBAL.ASPX (APPLICATION STATE or SESSION STATE)
+		namespace webpageClash
+		{
+			public class Global : System.Web.HttpApplication
+			{
+				//APPLICATION STATE
+				protected void Application_Start(object sender, EventArgs e)
+				{
+					//Application.Add("userFilePath", "_userFilePath");
+					//Application.Add("userFileName", "_userFileName");
+					
+				}
+				protected void Application_End(object sender, EventArgs e)
+				{
+				 
+				}
+
+				//SESSION STATE
+				protected void Session_Start(object sender, EventArgs e)
+				{
+					Session.Add("userFilePath", "_userFilePath");
+					Session.Add("userFileName", "_userFileName");
+				}
+				protected void Session_End(object sender, EventArgs e)
+				{
+
+				}
+			}
+		}
+		
+	ERRORS (WEB.CONFIG)
+		Could not find schema information for the attribute 'serializeAs'
+		https://stackoverflow.com/questions/5303476/how-to-fix-error-could-not-find-schema-information-for-the-attribute-element
+		FIX (MISSING SCHEMA FILE)
+			-WEB.CONFIG, menu XML, (CREATE SCHEMA), SAVE (file)
+			
+	CLASS EXAMPLE (PROPERTIES, GETTER/SETTER, CONSTRUCTOR)
+    public class UserInfo
+    {
+        //PROPERTIES (with getter/setter)
+        public string filePath { get; set; }
+        public string fileName { get; set; }
+
+        //CONSTRUCTOR
+        public UserInfo()
+        {
+            this.fileName = "...FILENAME...";
+            this.filePath = "...FILEPATH...";
+        }
+        
+    }
+	
+	SESSION STATE OR (APPLICATION STATE) 
+	GLOBAL.ASAX.CS 
+			public class Global : System.Web.HttpApplication
+			{
+				//SESSION STATE
+				protected void Session_Start(object sender, EventArgs e)
+				{
+					//create UserInfo OBJECT
+					UserInfo user = new UserInfo();                    
+
+					//add to object to session
+					Session.Add("userInfo", user);                      
+
+				}
+				protected void Session_End(object sender, EventArgs e)
+				{
+
+				}
+
+				//APPLICATION STATE
+				protected void Application_Start(object sender, EventArgs e)
+				{
+			   
+				}
+				protected void Application_End(object sender, EventArgs e)
+				{
+
+				}
+			}
+			
+	SESSION (WEBFORM) EXAMPLE 
+	CLASH2.ASPX
+		<%--SESSION--%>
+		<%
+			//create UserInfo OBJECT from SESSION
+			webpageClash.Models.UserInfo user = (webpageClash.Models.UserInfo)Session["userInfo"];
+			//update label
+			lblTesting.Text = user.filePath;
+		%>
+		
+	SESSION STATE (WEB.CONFIG SETTINGS)
+		WEB.CONFIG
+			<configuration>
+			   <system.web>
+				  <sessionState mode="InProc" cookieless="true" timeout="2" />
+			   </system.web>
+			</configuration>		
+		https://msdn.microsoft.com/en-us/library/h6bb9cz9(VS.71).aspx
+		SYNTAX
+			<sessionState mode="Off|InProc|StateServer|SQLServer"
+				  cookieless="true|false"
+				  timeout="number of minutes"
+				  stateConnectionString="tcpip=server:port"
+				  sqlConnectionString="sql connection string"
+				  stateNetworkTimeout="number of seconds"/>
+				  
+	COMBOBOX (DROPDOWNLIST)(GET SELECTED...)
+		---
+		protected void Page_Load(object sender, EventArgs e)
+        {
+            //do once only
+            if (!IsPostBack)
+            {
+                //load combobox (dropdownlist)
+                FileManager.LoadComboBox(DropDownList1);
+
+                //default settings for page
+                FileManager.SettingsInit(txtFilePath1, txtFileName1);
+            }         
+ 
+        }
+		---
+		protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //add code here that will read the file to table...
+ 
+            int index = DropDownList1.SelectedIndex;
+            lblSelectedXML.Text = DropDownList1.SelectedItem.Text;
+        }
+		
+	COMBOBOX (DROPDOWNLIST)(BIND DATA TO LIST)
+		//create (Files) object
+		static Files f = new Files();
+		---
+		//METHOD SET DATA
+        public static void SetFileData()
+        {
+            //create (Files) object
+            //Files f = new Files();
+            f.folderPath = @"~/App_Data/";              //folder path
+            f.fileNames.Add("_Piping.xml");             //test dropdown...
+            f.fileNames.Add("_Struct.xml");
+            f.fileNames.Add("_Elect.xml");
+        }
+		---
+		public static void LoadComboBox(DropDownList ddl)
+        {
+            //set file data
+            SetFileData();
+
+            //sort list
+            f.fileNames.Sort();
+
+            //bind LIST to DROPDOWNLIST
+            ddl.DataSource = f.fileNames;
+            ddl.DataBind();
+		}
+		
+	POSTBACK (RUN CODE ONCE ONLY)		
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			//ONCE ONLY (CODE FOR THIS PAGE)
+			if (!Page.IsPostBack)
+			{
+				//wrap your code inside this block
+			}
+		} 
+	
+	LIST (IN CLASS)(NEEDS TO BE INSTANTIATED)(USE CONSTRUCTOR TO INSTANTIATE...)
+	public class Files
+    {public string folderPath { get; set; }
+        //PROPERTIES (with getter/setter)
+        public string currentSession { get; set; }
+        public string folderPath { get; set; }
+        public List<string> fileNames { get; set; }
+
+
+        //CONSTRUCTOR
+        public Files()
+        {
+            this.currentSession = "...session expired...";
+            this.folderPath = "...set path here...";
+
+            this.fileNames = new List<string>();            //need instance of (List)
+            this.fileNames.Add("  select XML file  ");
+        }
+
+    }
+	
+	STRING (DIFFERENT WAYS TO CONCAT CONCATENATION STRINGS TOGETHER)
+		https://dotnetcodr.com/2016/10/24/6-ways-to-concatenate-strings-with-c-net/
+		PLUS SYMBOL (slowest, used for basic stuff)
+			string concatenatedOne = "This " + "is " + "a " + "concatenated " + "string.";
+		STRING BUILDER (faster performance?)
+			StringBuilder sb = new StringBuilder();
+			sb.Append("This ").Append("is ").Append("a ").Append("concatenated ").Append("string.");
+			string concatenatedFour = sb.ToString();
+		FORMAT 
+			string concatenatedFive = string.Format("{0} {1} {2} {3} {4}", "This", "is", "a", "concatenated", "string.");
+		JOIN (fastest?) 
+			string concatenatedThree = string.Join(" ", "This", "is", "a", "concatenated", "string.");
+		LIST OF STRINGS 
+			IEnumerable<string> strings = new List<string>() {"This ",  "is ", "a ", "concatenated ", "string." };
+			string concatenatedTwo = string.Concat(strings);
+		$(NEW FORMAT C#6)(see link for more info?)
+			string formatExampleTwo = $"The band is called {metallica.Name}, they have the fancy name of {metallica.GetFancyName()}, they have {metallica.NumberOfMembers} members and require {metallica.ConcertFee:c} for a concert.";
+			
+
+        //GET APP_DATA FOLDER (this project)
+			//VARIABLE
+			private string rootPath = GetAppDataFolder();
+			//METHOD
+			private static string GetAppDataFolder()
+			{
+				//get project directory
+				string appPath = AppDomain.CurrentDomain.BaseDirectory;
+				//add folder for sessions
+				string projAppData = "App_Data\\";
+				//full path
+				string fullPath = string.Format("{0}{1}", appPath, projAppData);
+
+				return fullPath;
+			}			
+			
+	INPUT (TYPE = FILE) FILE UPLOAD
+		<input type="file">
+	INPUT (ACCEPT = "xml")
+		<input ... accept=".xml">		//one type
+		<input ... accept=".jpg,.png">	//multiple files
+		<input ... accept="image/*">	//image files
+		<input ... accept="audio/*">	//audio files
+		<input ... accept="video/*">	//video files
+		
+			
+	FILTER FILE TYPE 
+		-just manually add attribute
+			<asp:FileUpload accept=".xml" ...>
+			<asp:FileUpload accept=".xls, .xlsx" ...>
+			<asp:FileUpload id="FileUpload1" runat="server" AllowMultiple="true" accept=".xml"></asp:FileUpload>
+			
+	FILE UPLOAD (in DOM)
+		-the button has a NESTED BUTTON in it...
+		-how to format this using CSS?
+			
+		var f = document.getElementById('FileUpload1')
+		<input type="file" multiple="multiple" name="FileUpload1" id="FileUpload1" class="btn btn-default" accept=".xml, .jpg" style="width:50%;">	
+			<input type="button" value="Choose Files" pseudo="-webkit-file-upload-button">
+			
+			
+	FILE UPLOAD
+		-----------------------
+		clash.aspx 
+		<!-- FILE UPLOAD -->
+        <div id="_UploadFile">
+           <h4>Select file(s) to upload:</h4>
+
+           <asp:FileUpload id="FileUpload1" runat="server" AllowMultiple="true" accept=".xml"></asp:FileUpload>
+
+           <br /><br />
+
+           <asp:Button id="UploadButton" 
+               Text="Upload file(s)"
+               OnClick="UploadButton_Click"
+               runat="server">
+           </asp:Button>    
+
+           <hr />
+
+           <asp:Label id="UploadStatusLabel"
+               runat="server">
+           </asp:Label>        
+        </div>
+		-----------------------
+		clash2.aspx.cs 
+		protected void UploadButton_Click(object sender, EventArgs e)
+        {
+            //upload files here
+            //FileManager.UploadFiles(FileUpload1, NotificationLabel);
+            FileManager.UploadFiles(FileUpload1, NotificationLabel);
+        }
+		-----------------------
+		FileManager.cs
+        //UI: UPLOAD FILES
+        public static Valid UploadFiles(FileUpload _fileUpLoadControl, Label lblFileUpload)
+        {
+            string path = ProjectFolder.GetCurrentProjectFolder();      //get project folder (current)
+            //string fullPath, fileName;
+            string tempFile, tempPath, tempExtension;
+            int fileCount = 0;
+            bool validExtension;
+
+            if (_fileUpLoadControl.HasFile)                             //make sure there is a file selected
+            {
+                //fileName = _fileUpLoadControl.FileName;                 //get filename (Piping.xml)
+                //fullPath = path + fileName;                             //get full path
+                _isValid.Message = "The user has picked a file";
+
+                //save file to path
+                //TODO: validate (*.XML) file
+                //_fileUpLoadControl.SaveAs(fullPath);              //works for (one file only)
+                foreach (var file in _fileUpLoadControl.PostedFiles)
+                {
+                    //gets file name (and patches it with the project folder path)(*** not the path from the upload folder ***)
+                    tempFile = Path.GetFileName(file.FileName);
+                    tempPath = path + tempFile;
+                    tempExtension = Path.GetExtension(tempFile);
+
+                    validExtension = tempExtension.ToLower() == ".xml";
+
+                    //*****************************************************
+                    //file upload
+                    if (!File.Exists(tempPath) && validExtension)  //if the file doesn't already exist (and *.xml file)
+                    {
+                        _fileUpLoadControl.SaveAs(tempPath);       //save each file here...
+                        //_fileUpLoadControl.SaveAs(file.FileName);       //save each file here...
+                        //TODO: what if user wants to OVERWRITE FILE?
+
+                        //tick up file count;
+                        fileCount++;  
+                    }
+                    //*****************************************************
+
+                }
+
+                //message handler(picked files vs uploaded)
+                if (fileCount == _fileUpLoadControl.PostedFiles.Count)                       //all files (uploaded)
+                {
+                    _isValid.Bool = true;
+                    _isValid.ErrorName = "ALL FILES UPLOADED";
+                    _isValid.Message = "The file(s) uploaded successfully";
+                }
+                else if (fileCount > 0 && fileCount < _fileUpLoadControl.PostedFiles.Count)  //some files (uploaded only)
+                {
+                    _isValid.Bool = true;
+                    _isValid.ErrorName = "SOME FILES UPLOADED";
+                    _isValid.Message = "Only some of the file(s) uploaded successfully";    //...possibly to not overwrite an existing file (or differenct extension)
+                }
+                else if (fileCount == 0)                                                     //zero files (uploaded)
+                {
+                    _isValid.Bool = false;
+                    _isValid.ErrorName = "NO FILES UPLOADED";
+                    _isValid.Message = "No files uploaded, please try again";
+                }
+                else
+                {
+                    _isValid.Bool = false;
+                    _isValid.ErrorName = "ERROR: File Upload";
+                    _isValid.Message = "Something went wrong with the file upload?";
+                }
+
+            }
+            else
+            {
+                _isValid.Message = "The user has NOT picked a file";
+            }
+
+            lblFileUpload.Text = _isValid.Message;      //update label
+            return _isValid;
+        }		
+		-----------------------
+		
+	PROJECT FOLDER 
+		//get project directory
+            string appPath = AppDomain.CurrentDomain.BaseDirectory;
+			
+	FILE PATH (DIRECTORY)(PATH CLASS)
+		System.IO.Path;
+		string fileName = Path.GetFileName(path);					//file name only ("Piping.xml")
+        string fileExtension = Path.GetExtension(path);				//extension only (".xml")
+		string filePath = Path.GetFullPath(path);					//gets absolute path ("C:\Users\Pythagoras\Documents\...\cmswClashReportViewer\cmswClashReportViewer\webpageClash\App_Data\Piping.xml")
+		//for directory (use GetFileName still works)
+		string dirName = Path.GetFileName(folder);					//??GetDirectoryName (use GetFileName instead)
+		
+	DIRECTORY METHODS (DIRECTORY CLASS)
+		System.IO.Directory;
+		List<string> folderNames = Directory.GetDirectories(GetRootFolder()).ToList();		//gets all directories as list (or array)
+		bool dirExist = Directory.Exists(path))												//tests if directory exists
+        Directory.CreateDirectory(path);													//creates a directory (*** MAKE SURE PATH IS CORRECT, or it'll error ***)
+		
+	FILE METHODS (FILE CLASS)
+		System.IO.File;
+		bool test = File.Exists(tempPath);							//checks if file exists (for overwrite)
+	
+	GET DICTIONARY (ELEMENT)(BY INDEX)
+		currentProject = folderNames.ElementAt(index).Key;                  //get dictionary (by index)
+		
+	DROPDOWNLIST 
+		    var x = DropDownList2.SelectedIndex;        //1 (returns index)
+            var x2 = DropDownList2.SelectedItem;        //test1 (returns KEY)
+            var x3 = DropDownList2.SelectedValue;       //...\App_Data\XML\test1 (returns VALUE)
+			
+	//CRUD (CREATE, READ, UPDATE, DELETE)
+	//   CREATE (Add)
+	//   READ (Get)
+	//   UPDATE (Edit)
+	//   DELETE 
+	//	 ...also
+	//   SET 
+	//   COPY (what about FOLDERS (can't have two objects of the SAME NAME)(LIST, same name OK, or UNIQUE only?)
+			
+	//CRUD (CREATE(Add, New), READ(Get, Existing), UPDATE(Edit, Overwrite, Existing/Replace), DELETE(Delete))
+		MODEL:
+		-this is a good model for FILE HANDLING also
+			-Add (file to folder)(new)
+			-Get (read file in folder)(existing)
+			-Overwrite (overwrite a file)(same file name)(existing)
+			-Delete (delete file)(existing)
+		VIEW:
+		-how to implement this to view (UI, user interface)
+			-add files to folder (upload new files)
+			-overwrite files (or not?, is this user's choice?)(automatic or user?)
+				3 CHOICES (TERNARY CHOICE)
+				-leave both files (could rename one file)
+				-overwrite a file?
+				-don't overwrite any file?
+				
+	BOOL (BOOLEAN) VS TERNARY 
+		BOOL (true or false)(1 or 0)
+		TERNARY (true, false, null)(less, equal, greater)(overwrite, doNotOverwrite, LeaveBothFiles(which do you rename?, 2 more choices?)
+
+	ROUGH PROJECT SETUP (HOW ORGANIZE PROJECT?)
+		//PROJECT FOLDER (CLASS)
+		//aspFolder
+		//  "C:\Users\Pythagoras\Documents\000_work\00_Matt(ClashViewer)\cmswClashReportViewer\cmswClashReportViewer\webpageClash\"
+		//AppDataFolder
+		//  "...\App_Data\..."
+		//clashProjectsFolder
+		//  "...\XML\..."
+		//clashProjectFolder
+		//  "...\defaultProject\"
+
+		//FILES (CLASS)
+		//files
+		//  "Piping.xml"
+		//  "Struct.xml"
+		//  "Elect.xml"
+
+		//TODO: HOW RE-ORGANIZE TO HANDLE (Dictionary for dropdownlists) properly?
+		//HOW IS MODEL-CONTROLLER-VIEW (organized)?
+		//MODEL 
+		//  CRUD 
+		//  Add data (folders, files)
+		//  Get data (folders, files)(this also can be Matt's (read XML))
+		//  Edit data (folders(manual), files)  
+		//  Delete data (folders(manual), files)
+		//  Web.config(ASP)(.config)(DESKTOP APP)(file permissions, sql config, session timeout, project properties)
+		//  Global.asax (session state, application state, etc)
+		//CONTROLLER 
+		//  how tie in UI?
+		//  clash2.aspx.cs (CODE BEHIND)
+		//  JavaScript (used to help view)?
+		//VIEW
+		//  layout html files (master file, etc)
+		//  html
+		//  css
+		
+	FILE UPLOAD (CONTROL)(HIDE, THEN CREATE BOOTSTRAP BUTTONS AND DISPLAY)
+	---------------------------
+	<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="test2.aspx.cs" Inherits="webpageClash.test2" %>
+	<!DOCTYPE html>
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head runat="server">	
+		<!-- BOOTSTRAP -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<!-- JQUERY -->
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<style>
+			/* file upload */
+			#lblUploadXml {
+				cursor: pointer;
+			}
+			#FileUpload1 {
+				opacity: 0;            /* hide the input control (uses the label instead) */             
+				position: absolute;
+				z-index: -1;
+			}
+			/* file upload (end) */
+		</style>	
+	</head>
+	<body>
+		<form id="form1" runat="server">
+			<div class="page">
+				<!-- UPLOAD -->
+				<h3>Upload</h3>
+				<div id="upload">
+				   <%--accept=".xml, .jpg"--%><%--btn btn-file--%> 
+				   <%--<asp:Label ID="lblUploadXml2" for="FileUpload1" Text="Browse..." CssClass="btn btn-default" runat="server"></asp:Label>--%>
+				   <!-- FileUpload (is hidden), the <label for="..."> redirects it to the same browse files control -->
+				   <label id="lblUploadXml" for="FileUpload1" class="btn btn-default">Browse... (*.xml) file(s)</label>
+					<br />
+						<label id="file-name">No files selected.</label>
+				   <asp:FileUpload id="FileUpload1" AllowMultiple="true" accept=".xml, .jpg" CssClass="btn btn-default" style="width:50%;" runat="server">             
+				   </asp:FileUpload>
+				   <br />
+				   <asp:Button id="UploadButton" CssClass="btn btn-default"
+					   Text="Upload"
+					   OnClick="UploadButton_Click"
+					   runat="server">
+				   </asp:Button>    
+				</div>
+				<!-- UPLOAD (end) -->
+			</div>
+		</form>
+		<script>
+			//file upload (label event)
+			//update (file-names) label
+			$("#FileUpload1").change(function () {
+				var str = "<span style='font-weight:normal;'>";
+				for (var i = 0; i < this.files.length; i++) {
+					str += this.files[i].name + "<br />";           //create string of files              
+				}
+				//$("#file-name").text(str);                        //doesn't work on html
+				str += "</span>Click upload to add files to this project.";
+				$("#file-name").html(str);
+				//$("#file-name").text(this.files[0].name);         //works on one file only
+			});
+		</script>
+	</body>
+	</html>
+	-------------------
+	
+	POSTBACK (THIS FIRES WHENEVER A CONTROL (WITH POSTBACK TRUE) FIRES
+		if (!IsPostBack)
+		{
+			//POSTBACK (THIS FIRES WHENEVER A CONTROL (WITH POSTBACK TRUE) FIRES
+		}
+	
+ASP.NET (PAGINATOR PAGER)(BOOTSTRAP FORMATTING)
+	-Copy (and modify from <li> to <td>) from BOOTSTRAP CSS (Copy Rule in IE)
+	HTML
+		<%-- PAGINATION --%>
+		<PagerStyle CssClass="pager" />
+	STYLES (CSS)
+	/* Pager */
+        .pager td > a:hover {
+            z-index: 2;
+            color: #fff;
+            font-weight: bold;
+            background-color: #337ab7;
+            border-color: #ddd;
+        }
+        .pager td:last-child > a {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+        /*other pages*/
+        .pager td > a {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.4285;
+            color: #337ab7;
+            text-decoration: none;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        /*.pager td > span {
+            width: 6px;
+            background-color: rgba(51, 122, 183, 1);
+            padding: 6px;
+            color: white;
+        }*/
+        /*active page*/
+        .pager td > span {
+            position: relative;
+            float: left;
+            padding: 6px 12px;
+            margin-left: -1px;
+            line-height: 1.4285;
+            font-weight: bold;
+            color: #000000;
+            text-decoration: none;
+            background-color: #b9b0b0;
+            border: 1px solid #ddd;
+        }
+        /*.pager > td > span:hover {
+            z-index: 3;
+            color: #fff;
+            cursor: default;
+            background-color: #337ab7;
+            border-color: #337ab7;       
+        }*/
+		
+	RAZOR (INCLUDE)
+		<body>
+			@RenderPage("header.cshtml")
+			<h1>Hello Web Pages</h1> 
+			<p>This is a paragraph</p>
+			@RenderPage("footer.cshtml")
+		</body>
+		
+	RESPONSE WRITE 
+		<td><b><% Response.Write(webpageClash.Models.ProjectFolder.GetCurrentProject()); %></b></td>
+		
+	CUSTOM (XML VALIDATION)(CHECKES TO SEE IF ELEMENTS EXIST OR NOT)(SIMPLE)
+	public static class XmlValidator
+    {
+        //test for valid (xml file) for (dropdownlists)
+        public static bool IsXmlValid(string pathToFile)
+        {
+            bool result = false;        //default to (false)
+
+            try
+            {
+                //string pathToFile = @"C:\Users\Pythagoras\Documents\000_work\00_Matt(ClashViewer)\cmswClashReportViewer\cmswClashReportViewer\webpageClash\App_Data\Piping.xml";
+                XDocument mydoc = XDocument.Load(pathToFile);
+                var clashes = mydoc.Descendants("clashresults");
+                var clashList = mydoc.Descendants("clashresult");
+
+                //LINQ (test to see if any elements exist)
+                bool clashesExist = clashes.Any();
+                bool clashListExist = clashList.Any();
+
+                //LINQ (count elements)
+                //var clashesCount = clashes.Count();
+                //var clashListCount = clashList.Count();
+
+                //TEST (return true if good only)
+                if (clashesExist && clashListExist)
+                {
+                    result = true;
+                }
+            }
+            catch (System.Xml.XmlException ex1)
+            {
+                ErrorMessageToConsole(ex1);
+                //throw ex1;
+            }
+            catch (Exception ex)
+            {
+                ErrorMessageToConsole(ex);
+                //throw ex;
+            }
+            
+            return result;
+        }
+    }  
+		
+	PRINT TO CONSOLE (VISUAL STUDIO)(DEBUG)
+		System.Diagnostics.Debug.WriteLine("mystring");
+		---
+		//error message (to OUTPUT (Debug) window in Visual Studio)
+        private static void ErrorMessageToConsole(Exception ex)
+        {
+            string info = String.Format("**************************************" +
+            "\n(XmlValidator.cs)" +
+            "\nXML ERROR: " +
+            "\nMessage: {0}" +
+            "\nStack: {1}" +
+            "\n**************************************",
+            ex.Message, ex.StackTrace);
+
+            System.Diagnostics.Debug.WriteLine(info);
+        }
+		
+	ASP (IMAGES)
+		*** APP_DATA folder, IMAGES WILL NOT BE SHOWN if here ***
+		-move to IMAGES folder 
+		
+	GRIDVIEW (IMAGEFIELD)(SHOW AN IMAGE in grid)
+		<asp:ImageField 
+			DataImageUrlField="Image"								//this maps to DATASOURCE (KEY)
+			DataImageUrlFormatString="/images/defaultProject/{0}"	//the {0} is just like String.Format (this will take the 'Image' field and APPEND HERE
+			ControlStyle-Width="160"
+			ControlStyle-Height="100"
+
+			AlternateText="Clash Image" 
+			HeaderText="IMAGE" 
+			NullDisplayText="No image"                            
+		/>
+		
+	ASP (JAVASCRIPT) (LABEL)(change with JAVASCRIPT)
+		<asp:Label id="NotificationLabel" runat="server" Text="..."></asp:Label> 
+		---
+		//update notification 
+		var notify = document.getElementById('NotificationLabel');
+		notify.textContent = "textContent is needed to affect an ASP.NET label, not text, html, innerHtml (see console.dir(x) for info)";
+		
+	C# (IF-ELSE)(METHOD)(SHORTER VERSION USING SHORT SYNTAX)(?:)	
+		//validation (0 or 1 only)
+        private bool IsOneOrZero(int test)
+        {
+            return (test == 0) || (test == 1) ? true : false;
+
+            //if(test == 0)
+            //{
+            //    return true;
+            //}
+            //else if(test == 1)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+        }
+        //validation (is positive)
+        private bool IsPositive(int test)
+        {
+            return (test > 0) ? true : false;
+        }
+        //validation (minimum greater than two)
+        private bool IsMinTwo(int test)
+        {
+            return (test >= 2) ? true : false;
+            
+            //if(test >= 2)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+        }
+		
+	BUTTON (IN GRIDVIEW)(NOT SHOWING UP)(for dynamic gridview)
+		https://forums.asp.net/t/1169927.aspx?asp+TemplateField+button+on+gridview+not+showing+up+
+		-use(<ItemTemplate>) NOT (<asp:ItemTemplate>)(*** REMOVE THE 'asp:' ***)
+	<asp:TemplateField HeaderText="test">
+		<ItemTemplate>                  
+			<asp:Button ID="BtnImageClick" Text="Enlarge" OnClick="BtnImageClick_Click" CssClass="btn btn-default" runat="server" />
+		</ItemTemplate>
+	</asp:TemplateField>
+	
+	ASP (CALL JAVASCRIPT FROM SERVER SIDE CODE)
+		https://stackoverflow.com/questions/19176086/calling-javascript-function-from-server-side
+		CLASH3.ASPX.CS (CODE BEHIND)
+        protected void btnNewProjFolder_Click(object sender, EventArgs e)
+        {
+			//... other code here
+
+            //call javascript (for view function)
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "settingsView", "view.settings();", true);
+        }
+		---
+		CLASH3.ASPX (HTML)
+		var view = (function () {  
+			//... other code
+            var settings = function () {
+                //helper(false, true, false);
+                helper(false, true, true, true);
+
+                //update notification 
+                var notify = document.getElementById('NotificationLabel');
+                notify.textContent = "You can upload (*.xml) files to current project, or create a new project below.";
+
+                //blank textbox
+                var txtProjFolder = document.getElementById('txtNewProjFolder');
+                txtProjFolder.innerText = '';
+            };
+
+            return {            
+                home: home,
+                settings: settings,
+ 
+            };
+        })();
+		
+	LIST (CONVERT TO DATATABLE)
+		-used this on Matt's to get (AutoSort="True") to be compatible AUTOMATICALLY (now I don't need to create a bunch of sort functions)
+		--- CLASH.ASPX (HTML)
+			<asp:GridView ID="gvClashResult" ... AllowSorting="True">	//add (AllowSorting)(*** ONLY WORKS WITH DATATABLE, NOT List or IEnumerable ***)
+			<asp:ObjectDataSource SelectMethod="GetClashReports2" ...>	//changed (GetClashReports => GetClashReports2)
+		---
+		//LIST TO DATATABLE (CONVERT) (Dean Jones, May 15, 2018)
+        //https://stackoverflow.com/questions/18100783/how-to-convert-a-list-into-data-table
+        public static DataTable ToDataTable<T>(List<T> items)
+        {
+            DataTable dataTable = new DataTable(typeof(T).Name);
+
+            //Get all the properties
+            PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (PropertyInfo prop in Props)
+            {
+                //Defining type of data column gives proper data table 
+                var type = (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) ? Nullable.GetUnderlyingType(prop.PropertyType) : prop.PropertyType);
+                //Setting column names as Property names
+                dataTable.Columns.Add(prop.Name, type);
+            }
+            foreach (T item in items)
+            {
+                var values = new object[Props.Length];
+                for (int i = 0; i < Props.Length; i++)
+                {
+                    //inserting property values to datatable rows
+                    values[i] = Props[i].GetValue(item, null);
+                }
+                dataTable.Rows.Add(values);
+            }
+            //put a breakpoint here and check datatable
+            return dataTable;
+        }
+		------
+		----------------------------------------------
+			//????????????????????? (may need this another time? not tested)
+			...OTHER OPTION (did not use this...)
+			<asp:GridView OnSorting="ClashReport_Sorting" ...>			//add (OnSorting)(this references an EVENT)
+			CODE BEHIND
+			protected void ClashReport_Sorting(object sender, GridViewSortEventArgs e)
+			{
+				switch (e.SortExpression)
+				{			
+					case "ResultStatus":            
+						if (e.SortDirection == SortDirection.Ascending)
+						{
+							if (dt != null)
+							{
+								//... ascending query
+							}
+						}
+						else
+						{
+							//... descending query
+						}
+						break;
+
+					//case "Melder":
+					//    if (e.SortDirection == SortDirection.Ascending)
+					//    {
+					//        gvOutlookMeldingen.DataSource = // Asc query for Melder field;
+					//        gvOutlookMeldingen.DataBind();
+					//    }
+					//    else
+					//    {
+					//        gvOutlookMeldingen.DataSource = // Desc query for Melder field ;
+					//        gvOutlookMeldingen.DataBind();
+					//    }
+					//    break;
+					//    // case statements for your other fields.
+				}
+			}
+			
+	DATATABLE (CREATE ONE)
+		//CREATE DUMMY TABLE (DEFAULT IF FILE IS NULL)
+        public static DataTable DummyTable()
+        {
+            //create a table
+            DataTable table = new DataTable();
+
+            //create columns 
+            table.Columns.Add("#", typeof(int));
+            table.Columns.Add("ClashReport", typeof(string));
+            table.Columns.Add("ResultStatus", typeof(string));
+            table.Columns.Add("Comments", typeof(string));
+
+            //add rows 
+            table.Rows.Add(1, "clash1", "default", "This is a default table");
+            table.Rows.Add(2, "clash2", "default", "This is a default table");
+            table.Rows.Add(3, "clash3", "default", "This is a default table");
+
+            return table;
+        }
+		
+	UPDATE NOTIFICATION LABEL 
+		-was having lots of problems (doing it in JQUERY, it seemed ASP would OVERWRITE THE VALUE AFTERWARDS)
+		// UPDATE (Notification Label)
+        protected void UpdateNotification(string toNotify)
+        {
+            this.NotificationLabel.Text = toNotify;
+        }
+
+        //(EVENT) SORTED (GridView)
+        protected void gvClashResult_Sorted(object sender, EventArgs e)
+        {
+            //<asp:GridView ID = "gvClashResult" OnSorted = "gvClashResult_Sorted" ...
+            UpdateNotification("The column you selected was just sorted.");
+        }
+		
+	FILEUPLOAD CONTROL (MULTIPLE FILES)(WAS COPYING THE FIRST FILE MULTIPLE TIMES, like renaming it?)
+		-fix, was using ...
+			//!!!WARNING, (use SAVEAS from FILE, not UPLOAD CONTROL)(if you do it from the CONTROL it will rename the FIRST file multiple times)
+			//_fileUpLoadControl.SaveAs(tempPath);       	//INCORRECT (fileUploadControl.SaveAs(path))
+			file.SaveAs(tempPath);							//CORRECT (file.SaveAs(path))
+			-----------
+			//**************************************************************************
+			//UI: UPLOAD FILES (XML OR IMAGES)
+			public static Valid UploadFiles(FileUpload _fileUpLoadControl, Label lblFileUpload, string pathPutFiles)
+			{
+				//see (string pathPutFiles) argument
+				//string path = ProjectFolder.GetCurrentProjectFolder() + "\\";      //get project folder (current)
+
+				//string fullPath, fileName;
+				string tempFile, tempPath, tempExtension;
+				int fileCount = 0;
+				bool validExtension;
+
+				if (_fileUpLoadControl.HasFile)                             //make sure there is a file selected
+				{
+					//fileName = _fileUpLoadControl.FileName;                   //get filename (Piping.xml)
+					//fullPath = path + fileName;                               //get full path
+					_isValid.Message = "The user has picked a file";
+
+					//save file to path
+					//TODO: validate (*.XML) file
+					//_fileUpLoadControl.SaveAs(fullPath);                      //works for (one file only)
+					foreach (HttpPostedFile file in _fileUpLoadControl.PostedFiles)
+					{
+						//gets file name (and patches it with the project folder path)(*** not the path from the upload folder ***)
+						tempFile = Path.GetFileName(file.FileName);
+						   
+						tempPath = pathPutFiles + tempFile;
+						tempExtension = Path.GetExtension(tempFile);
+
+						//valid (*.xml) file
+						//validExtension = tempExtension.ToLower() == ".xml";
+						if (tempExtension == ".xml")
+						{
+							validExtension = Validator.IsXmlFile(tempPath).Bool;            //using validation file
+						}
+						else if (tempExtension == ".jpg")
+						{
+							validExtension = Validator.IsImageFile(tempPath).Bool;          //using validation file
+						}
+						else
+						{
+							validExtension = false;                                         //something went wrong
+						}
+						
+
+						//*****************************************************
+						//file upload
+						if (!File.Exists(tempPath) && validExtension)  //if the file doesn't already exist (and *.xml file)
+						{
+							file.SaveAs(tempPath);
+							//!!!WARNING, (use SAVEAS from FILE, not UPLOAD CONTROL)(if you do it from the CONTROL it will rename the FIRST file multiple times)
+							//_fileUpLoadControl.SaveAs(tempPath);       //save each file here...
+
+							//_fileUpLoadControl.SaveAs(file.FileName);       //save each file here...
+							//TODO: what if user wants to OVERWRITE FILE?
+
+							//tick up file count;
+							fileCount++;  
+						}
+						//if (FileUploadMaps.HasFiles)
+						//{
+						//    foreach (HttpPostedFile uploadedfile in FileUploadMaps.PostedFiles)
+						//    {
+						//        var fileName = Path.GetFileName(uploadedfile.FileName);
+						//        uploadedfile.SaveAs(Server.MapPath("~/SiteImages/") + fileName);
+						//        mngUploadedMaterialMaps.InsertUploadedMaterialMaps(fileName, "", PropertyDetailsID);
+						//    }
+						//}
+
+						//*****************************************************
+
+					}
+
+					//message handler(picked files vs uploaded)
+					if (fileCount == _fileUpLoadControl.PostedFiles.Count)                       //all files (uploaded)
+					{
+						_isValid.Bool = true;
+						_isValid.ErrorName = "ALL FILES UPLOADED";
+						_isValid.Message = "The file(s) uploaded successfully";
+					}
+					else if (fileCount > 0 && fileCount < _fileUpLoadControl.PostedFiles.Count)  //some files (uploaded only)
+					{
+						_isValid.Bool = true;
+						_isValid.ErrorName = "SOME FILES UPLOADED";
+						_isValid.Message = "Only some of the file(s) uploaded successfully";     //...possibly to not overwrite an existing file (or differenct extension)
+					}
+					else if (fileCount == 0)                                                     //zero files (uploaded)
+					{
+						_isValid.Bool = false;
+						_isValid.ErrorName = "NO FILES UPLOADED";
+						_isValid.Message = "No files uploaded, please try again";
+					}
+					else
+					{
+						_isValid.Bool = false;
+						_isValid.ErrorName = "ERROR: File Upload";
+						_isValid.Message = "Something went wrong with the file upload?";
+					}
+
+				}
+				else
+				{
+					_isValid.Message = "NO FILES have been selected, please click on the <b>browse</b> button.";
+				}
+
+				lblFileUpload.Text = _isValid.Message;      //update label
+				return _isValid;
+			}
+			//**************************************************************************
+					
+	FILEUPLOAD (ERROR HTTPEXCEPTION)(CONTROL)(was trying to SAVE a bunch of IMAGES)
+		HttpException (0x80004005): Maximum request length exceeded.
+		https://stackoverflow.com/questions/3853767/maximum-request-length-exceeded
+		<configuration>
+			<system.web>
+				<httpRuntime targetFramework="4.5.2" maxRequestLength="16777216"/>		//needed to increase to OVER 8MB (this is 2^24 is 16MB = 16777216 bytes)
+			</system.web>
+		</configuration>
+		//(maxRequestLength) is measured in kilobytes
+		//(maxAllowedContentLength) is measured in bytes
+		
+MVC (FOLDER STRUCTURE)
+	https://www.tutorialsteacher.com/mvc/mvc-folder-structure
+	App_Data			(*.mdf, LocalDB, *.xml)		(data files)
+	App_Start 			(*.cs)						(files that EXECUTE when applications STARTS)	
+	Content 			(*.css, IMAGES, *.ico)		(includes BOOTSTRAP by default)
+	Scripts 			(*.js) 						(JavaScript, or JQuery files reference)
+	fonts 				(*.ttf, *.woff, *.woff2)	(custom font files)
+	--------------------------------------
+	Controllers 		
+						-the NAME (*** has to end with 'Contoller' ***)
+						-name is (HomeController.cs)(refers to (Home folder IN VIEWS)
+	Models 
+						(*.cs) 						(contains *.CS files that CONNECT TO DATA (SQL database, *.mdf)
+	Views				
+						-just like HTML FILES (for VIEWS)
+						(*.cshtml)(similar BUT NOT SAME as *.aspx FILES)
+						-->Home (folder)
+	--------------------------------------
+	Global.asax 					(Sessions, Applications code) 
+										(Application_BeginRequest, application_start, application_error, session_start, session_end, etc.)
+	Packages.config 				(???NuGet packages that are installed?)
+	Web.config 			(*.xml)		(file for some SETUP)(put SQL password, connection data here)
+	
+MVC (VIEWS STRUCTURE)
+	Views --> Home (folder) (these are all just THE GUTS of the HTML)
+		About.cshtml 					http://localhost:24400/Home/About
+		Contact.cshtml 					http://localhost:24400/Home/Contact
+		Index.cshtml					http://localhost:24400/
+	Views --> Shared (folder)
+		_Layout.cshtml 		(this is the MAIN HTML BODY that the (About.cshtml, Contact.cshtml, and Index.cshtml) are INSERTED INTO 
+	
+MVC (VIEW BAG)
+	-used to send data from CONTROLLER --> VIEW
+	-when you want to send (A SMALL AMOUNT) of data (from SERVER to CLIENT browser VIEW)
+		*** DATA IS ONE DIRECTION --> ViewBag only transfers data from controller to view, not visa-versa. ***
+	https://www.tutorialsteacher.com/mvc/viewbag-in-asp.net-mvc
+		Controllers --> (HomeController.cs)
+			ViewBag.Message = "Your application description page.";
+		Views --> Home --> (About.cshtml)
+			// RAZOR SYNTAX (it is ASSIGNING the VIEWBAG.TITLE right in the top of the HTML file)
+			@{
+				ViewBag.Title = "About";
+			}
+			<h2>@ViewBag.Title.</h2>
+			<h3>@ViewBag.Message</h3>
+	
+MVC (_LAYOUT.CSHTML)(LAYOUT VIEW)(this is the PARENT HTML)
+	https://www.tutorialsteacher.com/mvc/layout-view-in-asp.net-mvc
+		ASP.NET (RAZOR) (this appears to be the same as...)
+			-loading CSS 
+			-loading FONT AWESOME, BOOTSTRAP, JQUERY, etc.
+		RAZOR LOADING
+			@Styles.Render("~/Content/css")
+			@Scripts.Render("~/bundles/modernizr")
+		???
+			@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+		???
+			<li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+		***************************
+		RENDER BODY (this acts as a PLACEHOLDER for the smaller VIEWS (About.cshtml, Contact.cshtml, etc)
+			@RenderBody()
+		***************************
+		FOOTER (GET DATETIME.NOW)
+			<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+	
+MVC (_VIEWSTART.CSHTML)
+	https://www.tutorialsteacher.com/mvc/layout-view-in-asp.net-mvc
+	-DEFAULT (BODY OF HTML) this basically LINKS the (_LAYOUT.CSHTML) to be used with the other (VIEWS, About.cshtml, Contact.cshtml, etc)
+	-_ViewStart.cshtml can also be included in SUB FOLDER OF VIEW FOLDER to set the default layout page for all the views included in that particular subfolder only.
+	---------
+	_ViewStart.cshtml
+		@{
+			Layout = "~/Views/Shared/_Layout.cshtml";
+		}
+	
+MVC (RAZOR SYNTAX)
+	@ViewBag.Name			gets VARIABLE name (from server-side)
+		eg. 				<p>The value of myMessage is: @myMessage</p> 
+		
+	@{ ...code... }			C# code (in HTML) 
+	@* *@					RAZOR COMMENTS 
+	@RenderBody()			call a METHOD
+	
+MVC (ROUTING)
+	-default ROUTING FILE 
+		/AppStart/RouteConfig.cs 
+	-every (URL) must match a corresponding file (*.ASPX) 
+	-is ROUTING like (with a URL normally just OPENS the FILE (with the same name))
+		eg. 
+			www.example.com/index.html 			--> 	opens (index.html) file
+		-ROUTING would be like (having WHATEVER NAME file, BUT then using the ROUTING to tell the SERVER what to use?)
+			eg. 	https://docs.microsoft.com/en-us/previous-versions/cc668201(v=vs.140)
+					ROUTE DEFINITION 						URL (ending)
+					{controller}/{action}/{id}				/Products/show/beverages
+					{reporttype}/{year}/{month}/{day}		/sales/2008/1/5
+					{table}/Details.aspx					/Products/Details.aspx
+					
+MVC (ROUTECONFIG.CA)(DEFAULT FILE)
+	https://www.tutorialsteacher.com/mvc/routing-in-mvc
+	/AppStart/RouteConfig.cs 
+	public class RouteConfig
+    {
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            //ADDED NEW ROUTE (STUDENTS)
+            routes.MapRoute(
+                name: "Student",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Student", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+        }
+    }
+	EXPLAINED... 
+		defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+			controller = "Home"				/Controllers/HomeController.cs  
+			action = "Index"				/Controllers/HomeController.cs 			Index METHOD 
+																						public ActionResult Index()
+MVC (ROUTING)(GLOBAL.ASAX)
+	https://www.tutorialsteacher.com/mvc/routing-in-mvc
+	-the ROUTECONFIG must be called here in order to work
+	protected void Application_Start()
+    {
+        RouteConfig.RegisterRoutes(RouteTable.Routes);
+    }
+	
+MVC (CONTROLLERS)(Adding a New Controller)
+	-*** MAKE SURE (DEBUG MODE IS OFF) (that you aren't running a BROWSER) ***
+	-highlight CONTROLLERS (folder)
+	-rightclick (ADD --> CONTROLLER...)
+		pick...
+			(MVC 5 CONTROLLER - EMPTY)
+		click (ADD)
+	RENAME (controller)(*** MAKE SURE TO LEAVE THE (CONTROLLER) word at the end ***)
+		-eg. 	DefaultController 
+			rename...
+				StudentController
+	THIS WILL CREATE THE FILE 
+		/Controllers/StudentController.cs 
+	-------------------------
+	-make sure ROUTE (is set up first)
+	    // GET: Student
+        // http://localhost:24400/student/
+        // http://localhost:24400/student/index
+        public string Index()
+        {
+            return "this is a StudentController";
+        }
+	-------------------------
+	
+MVC (ACTION METHOD)(returns ActionResult OBJECT) 
+	-this is the METHOD (in the CONTROLLER CLASS)
+	https://www.tutorialsteacher.com/mvc/action-method-in-mvc
+		------------
+	    public ActionResult Index()
+        {
+            return View();
+        }
+		------------
+	-View() METHOD (is defined in the CONTROLLER (base class)) that is INHERITED
+	-this RETURNS an (ActionResult OBJECT)
+	-every (ROUTE) needs a DEFAULT (ACTION)
+		-in this case its (INDEX) 
+		-*** YOU CAN CHANGE THE NAME ***
+			-change it in the ROUTER 
+				(RouteConfig.cs)
+				defaults: new { controller = "Home", 
+						action = "Index", 								//<-- *** CHANGE NAME HERE ***
+						id = UrlParameter.Optional
+				});
+			-then MAKE SURE (the METHOD in the CONTROLLER matches)
+				------------
+				(RouteConfig.cs)
+				defaults: new { controller = "Home", 
+						action = "DPJ_Default", 								//<-- *** CHANGE NAME HERE ***
+						id = UrlParameter.Optional
+				});
+				------------
+				(StudentController.cs)
+				public ActionResult DPJ_Default()
+				{
+					return View();
+				}
+				------------
+	
+MVC (ActionResult)(DIFFERNT OPTIONS object to RETURN)
+	https://www.tutorialsteacher.com/mvc/action-method-in-mvc
+		public ActionResult DPJ_Default()
+		{
+			return View();
+		}
+	-MVC framework includes various result classes, which can be return from an action methods. There result classes represent different types of responses such as html, file, string, json, javascript etc. The following table lists all the result classes available in ASP.NET MVC.
+	------------------------
+	RESULT CLASS			DESCRIPTION	BASE 										METHOD (base Controller CLASS)
+	ViewResult				Represents HTML and markup.								View()
+	EmptyResult				Represents No response.	
+	ContentResult			Represents string literal.								Content()
+	FileContentResult,
+	FilePathResult,
+	FileStreamResult		Represents the content of a file						File()
+	JavaScriptResult		Represent a JavaScript script.							JavaScript()
+	JsonResult				Represent JSON that can be used in AJAX					Json()
+	RedirectResult			Represents a redirection to a new URL					Redirect()
+	RedirectToRouteResult	Represent another action of same or other controller	RedirectToRoute()
+	PartialViewResult		Returns HTML											PartialView()
+	HttpUnauthorizedResult	Returns HTTP 403 status	
+	------------------------
+	CLASS
+		RESULT CLASS				DESCRIPTION
+		ViewResult					Represents HTML and markup.
+		EmptyResult					Represents No response.
+		ContentResult				Represents string literal.
+		FileContentResult			Represents the content of a file
+		FilePathResult				Represents the content of a file
+		FileStreamResult			Represents the content of a file
+		JavaScriptResult			Represent a JavaScript script.
+		JsonResult					Represent JSON that can be used in AJAX
+		RedirectResult				Represents a redirection to a new URL
+		RedirectToRouteResult		Represent another action of same or other controller
+		PartialViewResult			Returns HTML from Partial view
+		HttpUnauthorizedResult		Returns HTTP 403 status
+		
+		
+	
+	
+</textarea>

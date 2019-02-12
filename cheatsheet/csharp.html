@@ -1,0 +1,3591 @@
+<!-- "E:\000-BACKUP\000-SAIT\000-HELP\20161121-29 OOSD Notes (C-Sharp).txt" -->
+<link rel="stylesheet" type="text/css" href="./css/format_text_file.css" />
+<textarea style="width:95%;height:95%;border:solid 2px black;">
+	
+NOV.21, 2016
+
+Instructor: JOLANTA WARPECHOWSKA-GRUCA
+C# (C-SHARP)
+
+C# REPL ??? (COMMANDLINE TESTING)(WITHOUT COMPILING)
+	https://www.mono-project.com/download/stable/#download-lin
+	POWERSHELL (BASH PROMPT)
+		...> 	bash
+		...$	sudo apt install mono-devel
+	C# REPL 
+		https://www.mono-project.com/docs/tools+libraries/tools/repl/
+		...> 		bash 
+		...$		csharp  	(goes to CSHARP C# console)
+		..csharp>	quit;		(exits C# console)
+		...$		exit 		(to go from BASH back to POWERSHELL)
+	USING REPL (C#)
+		csharp> Console.WriteLine("hellow");
+		hellow
+		
+		help 
+		
+		csharp> var a = 23;
+		csharp> var b = 24;
+		csharp> ShowVars ();
+		int a = 23
+		int b = 24
+		
+		
+
+COMPILER 
+	"C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe"
+	https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program
+	TO COMPILE (*.cs FILE)
+		csc MyFile.cs 		(do this in powershell)(go to folder first)
+		---
+		C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe hello.cs
+	CREATES (HELLO.EXE)
+		"C:\Users\Pythagoras\Downloads\hello.exe"
+		"C:\Users\Pythagoras\Downloads\hello.cs"
+			----------------------------------------------
+			// A Hello World! program in C#.
+			using System;
+			namespace HelloWorld
+			{
+				class Hello 
+				{
+					static void Main() 
+					{
+						Console.WriteLine("Hello World!");
+
+						// Keep the console window open in debug mode.
+						Console.WriteLine("Press any key to exit.");
+						Console.ReadKey();
+					}
+				}
+			}
+			----------------------------------------------
+
+INSTALL 
+	VISUAL STUDIO
+		INSTALLER, new project, SCROLL DOWN (click on VISUAL STUDIO INSTALL link)
+			APACHE CORDOVE (MOBILE with JAVASCRIPT)
+				https://msdn.microsoft.com/en-us/library/dn771552.aspx
+				https://docs.microsoft.com/en-us/visualstudio/cross-platform/tools-for-cordova/first-steps/installation?view=toolsforcordova-2017
+				open INSTALLER...
+					*** CLICK ON THIS *** (MOBILE DEVELOPMENT WITH JAVASCRIPT) 
+			OPEN APACHE CORDOVA PROJECT 
+				-new project 
+				-JavaScript, MOBILE, Blank App (APACHE CORDOVA)
+			APACHE CORDOVA
+				https://cordova.apache.org/docs/en/3.0.0/guide/overview/index.html
+			DOCUMENTATION 
+				https://cordova.apache.org/docs/en/latest/
+			BUILD 
+				DEBUG (Android), Device (to Samsung tablet?)
+				DEBUG (iOS), Local Device (to iPhone)
+					RUN ON iOS
+			iOS INFO...
+				https://docs.microsoft.com/en-us/visualstudio/cross-platform/tools-for-cordova/run-your-app/run-app-ios?view=toolsforcordova-2017#iOSDevice	
+			iOS 
+				TOOLS, OPTIONS, (TOOLS FOR APACHE CORDOVA), iOS CONFIGURATION
+				https://docs.microsoft.com/en-us/visualstudio/cross-platform/tools-for-cordova/first-steps/ios-guide?view=toolsforcordova-2017#visual-studio-configuration
+			iPhone (IP ADDRESS)
+				WIFI, SHAW..., i(info button), (IP ADDRESS)
+					192.168.0.187
+			iTUNES INSTALL 
+				https://www.apple.com/ca/itunes/download/thank-you/
+					"C:\Users\Pythagoras\Downloads\iTunes64Setup.exe"
+			XCODE (DOWNLOAD)
+					???(didn't work) 	https://developer.apple.com/xcode/
+				
+INSTALL (EXTENSIONS)
+		(updates ad extensions) menu, TOOLS, EXTENSIONS AND UPDATES 
+
+
+------------------
+
+	RESOURCES
+		http://www.dofactory.com/reference/csharp-coding-standards			CODING STANDARDS
+		https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code 		*** VISUAL STUDIO CODE ***
+	
+		https://www.youtube.com/watch?v=_KX-e6sijGE							CREATE OWN FONT (INKSCAPE)
+			https://onlinefontconverter.com/								FONT CONVERTER (SVG to TTF)
+			
+		http://rbwhitaker.wikidot.com/c-sharp-generics						C# TUTORIAL
+	
+***		http://www.dofactory.com/sql/tutorial								SQL TUTORIAL
+		http://www.dofactory.com/reference/html-color-codes					HTML COLOR CODES (HEX)
+		http://www.dofactory.com/reference/connection-strings				SQL (CONNECTION STRING EXAMPLES)
+		http://www.dofactory.com/reference/visual-studio-shortcuts			VISUAL STUDIO (SHORTCUTS)
+		http://www.dofactory.com/reference/csharp-coding-standards			NAMING STANDARDS (camelCase)
+		http://www.dofactory.com/net/adapter-design-pattern					DESIGN PATTERNS
+		
+		https://docs.microsoft.com/en-us/dotnet/framework/winforms/advanced/pens-lines-and-rectangles-in-gdi		GRAPHICS
+	
+***		https://dotnetfiddle.net/3O6vVH										.NET FIDDLE (fiddle with code?)(ONLINE C# CODER)
+		http://www.tryfsharp.org/Learn/getting-started#bindings-values		(F# learning)(online tutorial and CODING)(*** use IE, Internet Explorer ***)
+		https://www.javatpoint.com/c-sharp-structs
+		http://rosettacode.org/wiki/Fibonacci_sequence						(ROSETTACODE.ORG)
+		
+??		RESHARPER (tools to make getters setters, refactor, etc.?)
+
+		DOTPEEK (DECOMPILER by JetBrains)
+			https://www.wikihow.com/Open-DLL-Files
+			jetbrains.com/decompiler/
+				"C:\Users\Pythagoras\Downloads\JetBrains.dotPeek.2017.3.2.web.exe"
+		DOTPEEK HELP (DECOMPILER)
+
+ASCII CHARACTER MAP 
+	http://www.theasciicode.com.ar/extended-ascii-code/plus-minus-sign-ascii-code-241.html
+		-website, click on SYMBOL, look at top for HTML CODE or ASCII CODE
+						HTML 
+	±		ALT+241		&plusmn;	(PLUS MINUS)
+	×		ALT+158					(MULTIPLY MATH)
+	÷		ALT+246					(DIVIDE MATH)
+	C°F°	ALT+248					(DEGREES CELSIUS FARENHEIT)
+	nbsp	ALT+255					(NON-BREAKING SPACE)(use this when you need a space, and HTML deletes them)
+	m²		ALT+253		&sup2;		(SQUARED MATH)(superscript 2)
+	m³		ALT+252		&sup3;		(CUBED MATH)(superscript 3)
+	Ø		ALT+157					(DIAMETER)
+	ƒ		ALT+159					(FUNCTION SYMBOL)
+	½		ALT+171					(1/2 FRACTION)
+	¼		ALT+172					(1/4 FRACTION)
+	¾		ALT+243					(3/4 FRACTION)
+	
+	??SUBSCRIPT TWO(2)(WATER H20)	http://www.fileformat.info/info/unicode/char/2082/index.htm
+	
+	(ALT+ 32...70 below)
+	ALT+32 (SPACE)
+	 !"#$%&'()*+,-./0123456789:;<=>?@ABCDEF
+	
+	(ALT+00 to 31)(these are CONTROL CODES...)
+	ALT+00	(NULL)
+		◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼
+	ASCII control characters non printable :
+	ASCII code 00 = NULL ( Null character )
+	ASCII code 01 = SOH ( Start of Header )
+	ASCII code 02 = STX ( Start of Text )
+	ASCII code 03 = ETX ( End of Text, hearts card suit )
+	ASCII code 04 = EOT ( End of Transmission, diamonds card suit )
+	ASCII code 05 = ENQ ( Enquiry, clubs card suit )
+	ASCII code 06 = ACK ( Acknowledgement, spade card suit )
+	ASCII code 07 = BEL ( Bell )
+	ASCII code 08 = BS ( Backspace )
+	ASCII code 09 = HT ( Horizontal Tab )
+	ASCII code 10 = LF ( Line feed )
+	ASCII code 11 = VT ( Vertical Tab, male symbol, symbol for Mars )
+	ASCII code 12 = FF ( Form feed, female symbol, symbol for Venus )
+	ASCII code 13 = CR ( Carriage return )
+	ASCII code 14 = SO ( Shift Out )
+	ASCII code 15 = SI ( Shift In )
+	ASCII code 16 = DLE ( Data link escape )
+	ASCII code 17 = DC1 ( Device control 1 )
+	ASCII code 18 = DC2 ( Device control 2 )
+	ASCII code 19 = DC3 ( Device control 3 )
+	ASCII code 20 = DC4 ( Device control 4 )
+	ASCII code 21 = NAK ( NAK Negative-acknowledge )
+	ASCII code 22 = SYN ( Synchronous idle )
+	ASCII code 23 = ETB ( End of trans. block )
+	ASCII code 24 = CAN ( Cancel )
+	ASCII code 25 = EM ( End of medium )
+	ASCII code 26 = SUB ( Substitute )
+	ASCII code 27 = ESC ( Escape )
+	ASCII code 28 = FS ( File separator )
+	ASCII code 29 = GS ( Group separator )
+	ASCII code 30 = RS ( Record separator )
+	ASCII code 31 = US ( Unit separator )
+	ASCII code 127 = DEL ( Delete )
+		
+DATA TYPES AND SIZES 	https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/integral-types-table
+	Type	Range														Size
+	sbyte	-128 to 127													Signed 8-bit integer
+	byte	0 to 255													Unsigned 8-bit integer
+	char	U+0000 to U+ffff											Unicode 16-bit character
+	short	±-32,768 to 32,767											Signed 16-bit integer
+	ushort	0 to 65,535													Unsigned 16-bit integer
+	int		-2,147,483,648 to 2,147,483,647								Signed 32-bit integer
+	uint	0 to 4,294,967,295	Unsigned 32-bit 						integer
+	long	-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807		Signed 64-bit integer
+	ulong	0 to 18,446,744,073,709,551,615								Unsigned 64-bit integer
+		
+FLAG ATTRIBUTE 	https://msdn.microsoft.com/en-us/library/system.flagsattribute(v=vs.110).aspx
+	// Define an Enum with FlagsAttribute.
+   [FlagsAttribute] 
+   enum MultiHue : short
+   {
+      None = 0,
+      Black = 1,
+      Red = 2,
+      Green = 4,
+      Blue = 8
+   };
+   ------------
+   for(int val = 0; val <= 16; val++)
+		Console.WriteLine( "{0,3} - {1:G}", val, (MultiHue)val);
+   } 
+   //WILL RETURN (ALL COMBINATIONS)(based on doubling switch)
+				0 - None
+	//         1 - Black
+	//         2 - Red
+	//         3 - Black, Red
+	//         4 - Green
+	//         5 - Black, Green
+	//         6 - Red, Green
+	//         7 - Black, Red, Green
+		
+ENUM FLAGS (DOUBLING)	https://stackoverflow.com/questions/8447/what-does-the-flags-enum-attribute-mean-in-c
+	enum Suits { Spades = 1, Clubs = 2, Diamonds = 4, Hearts = 8 }
+	[Flags] enum SuitsFlags { Spades = 1, Clubs = 2, Diamonds = 4, Hearts = 8 }
+
+	var str1 = (Suits.Spades | Suits.Diamonds).ToString();
+			   // "5"
+	var str2 = (SuitsFlags.Spades | SuitsFlags.Diamonds).ToString();
+			   // "Spades, Diamonds"
+
+VISUAL STUDIO 2015 (ENTERPRISE)
+
+FUNCTIONAL VS OBJECT
+	-LAMBDA EXPRESSIONS (SEARCH "CORE C-SHARP")
+	
+WORK CLIENT (keep source files, only give your ASSEMBLY CODE, make sure this is in your contract)
+	-can template past work
+	
+WINDOWS FORM CHECKLIST / CHEATSHEET
+	FONT (Verdana 10pt)	
+		ENTER key (keyboard press)		AcceptButton (*** form property ***)
+		ESC key (keyboard press)		CancelButton (*** form property ***)
+	TAB ORDER (TabIndex, TabStop, View Tab Order)
+	(&)KEY SHORTCUT (put before the letter you wish to use)
+	FOCUS (focus on certain textbox)(txtSupName.Focus();)
+		    txtSupID.Select();          //need to select textbox first sometimes (when inside a group box?)
+            txtSupID.Focus();           //focus on textbox
+	FORM TITLE
+	FORM ICON (*.ico) FILE
+	LOAD FORM TO CENTER OF SCREEN (StartPosition, CenterScreen)
+	BUTTONS (TextAlign, MiddleCenter)
+	DISABLE TEXTBOX (Enabled, false, greys out button property))
+	BACKGROUND COLOR (BackColor)	
+	("../")(MEANS GO UP A FOLDER) 		picAnswer.Image = Image.FromFile("../../images/chicken.jpg");
+	VISIBILITY (Visible, true or false)
+	TAG (use Tag property for MessageBox...)
+	RADIO BUTTON (checked)(radSortName.Checked = true;)(put in GROUP BOX and only one can be checked on at a time)
+	
+	VIEW CODE 	(F7)
+	PEEK 		(F12)
+	
+	EXPAND CODE		(CTRL+M+X)
+	COLLAPSE CODE	(CTRL+M+O)
+	COLLAPSE ALL	(CTRL+M+L)
+	
+	GETTERS AND SETTERS (SHORTCUT)
+		prop (TAB, TAB)
+			public int MyProperty { get; set; }
+		propfull (TAB, TAB)
+			public int MyProperty
+			{
+				get { return myVar; }
+				set { myVar = value; }
+			}
+		----
+		public int MyNumber { get => myNumber; set => myNumber = value; }
+	
+FORMS (NAMING CONTROLS)(STANDARD)
+	(Name)(Properties)
+	_ _ _ (TYPE OF CONTROL, lowercase) 		_ _ _ _ _ (CAPITALIZE, the rest for meaning)
+
+	form		(frm)
+	label		(lbl)
+	textbox		(txt)
+	button		(btn)
+	listbox		(lst)
+	listview	(lv)	??
+	combobox	(cbo)
+	radiobutton	(rad)
+	picturebox	(pic)
+	tab control	(tab)
+	datagridview(dgd)(or dgv?)
+	date picker	(dtp)
+	checkbox 	(chk)
+	
+	gridview	(gv)(ASP.NET)
+	dropdownlist(ddl)(ASP.NET)
+
+	
+	
+		https://msdn.microsoft.com/en-us/library/aa263493(v=vs.60).aspx
+		Grid	grd
+		RichTextBox	rtf
+		Command button	cmd
+		Menu	mnu
+		Timer	tmr
+	
+	TAB CONTROL, TAB PAGES
+		(click on TABPAGES, Collection, to edit individual PROPERTIES)
+		(default PROPERTIES is the TAB CONTROL properties)
+	
+	TEXT (PROPERTY)(&)(add to underline letter, for user to activate button by letter)
+		eg. (button TEXT property) &Greet Me
+		
+	COMMENT SHORTCUT 
+		CTRL+K, C (to comment)
+		CTRL+K, U (to uncomment)
+		
+	DYNAMICALLY DUMP ALL PROPERTIES (OF OBJECT)
+		https://stackoverflow.com/questions/852181/c-printing-all-properties-of-an-object
+			using System.ComponentModel;
+			foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(clash))
+			{
+				string propKey = descriptor.Name;
+				object propValue = descriptor.GetValue(clash);
+				Console.WriteLine("{0}:\t\t{1}", propKey, propValue);
+			}
+		
+	**********************************************************	
+	TROUBLESHOOTING (DELETE BLANK METHOD)(CREATES BUILD ERRORS)
+		-select YES to still run, 
+		-doubleclick (RED 'X' on ERRORS WINDOW, and COMMENT OUT EVENT HANDLER LINE)
+	TROUBLESHOOTING (RENAMED A 'NAME' of button)
+		-FIX IS SAME AS ABOVE
+		-doubleclick (RED 'X' on ERRORS WINDOW, and...)
+		-RENAME, the (frmMain.Designer.cs) to match here, (the names don't match that's why errors)
+	**********************************************************	
+	
+	KEY PRESSES (click on form, then select button below... with pulldown)
+		-ENTER key		AcceptButton
+		-ESC key		CancelButton
+		
+		Enabled 		(false, greys out button property)
+		
+	("../")(MEANS GO UP A FOLDER) 		picAnswer.Image = Image.FromFile("../../images/chicken.jpg");
+		
+	CONSTANTS (put at top of code, top of CLASS)		eg. const int FULL_MARKS = 100;
+	CONSTATNS (should be capitalized)
+	
+	(\)(ESCAPE CHARACTER)
+	(\")(adds a quote in a string)
+	(\n)	newline
+	(\t)	tab
+	
+	STATIC METHOD (do not need to create instance)	eg.	double x = Convert.ToDouble(...)
+	
+	TEXTBOX (Enabled = false)(use to display instead of LABEL)
+	
+	TEXTBOX (DISPLAY AS CURRENCY)		txtPay.Text = pay.ToString("c");    // display as currency
+	
+	FORM (DISPLAY CENTER OF SCREEN)
+		FORM, Start Position, CenterScreen
+	
+	DATA TYPES (decimal)(add 'm' suffix to end of decimal)
+		eg.	decimal pay = 120.5m;
+		
+	CONSOLE (ALIGNMENT)(use STRING FORMATTING)
+		(eg. {0, -6})	(the zero(0) means the first element, the (-6) means LEFT ALIGNED and 6-CHARS LONG between the other elements
+		{x, -6}		(-)LEFT ALIGNED, otherwise RIGHT ALIGNED
+		{x, 8}		RIGHT ALIGNED, spaced out by 8-CHARS
+			Console.Write("{0, -6}", ba1[i]); 
+	CONSOLE (OTHER ALIGNMENT)
+		Console.Write("{0} ", ba1[i]);		//add a space
+		Console.Write("{0}  ", ba1[i]);		//add two spaces ("{0}  ") between elements
+		
+	BOOKMARKS (NAVIGATING BACK AND FORTH)
+		(CTRL+K) SETS A BOOKMARK (to the line #)
+		View --> Bookmark Window (open window, doubleclick to move back and forth)
+		
+	OUTPUT WINDOW(PRINT TO)				System.Diagnostics.Debug.Write( object );
+	
+	TYPE CASTING (only with numbers)
+		float num;
+        num = (float)1.0 / 3;
+		
+	CONVERT
+		string numStr = "12345";
+		int num = Convert.ToInt32(numStr);
+		Console.WriteLine(num);
+		Console.WriteLine(num.GetTypeCode());       //GETS TYPE
+	
+??	PASS FUNCTION AS A PARAMETER?
+		Func<> (??need to figure out how this works?)
+			?private static void mySQLConnect(string sql, Func<string s> myfunc)
+			?myfunc("myteststring");
+	
+	FOR LOOP (i IS VISIBLE EITHER INSIDE LOOP ONLY, or OUTSIDE depending)
+		int i;
+		for (i = 0; i < length; i++)
+		---
+		for (int i = 0; i < length; i++)
+	
+	Console.WriteLine("X IS {0}, Y IS {1}", x, y);
+	
+	LOGICAL (OR)
+		(LOGICAL)(||)(LEFT TO RIGHT) 		if(condition1 || condition2)
+		(LOGICAL)(|)(TESTS BOTH SIDES)		if(condition1 | condition2)
+	
+	LOGICAL (AND)
+		(LOGICAL)(&&)(LEFT TO RIGHT) 		if(condition1 && condition2)
+		(LOGICAL)(&)(TESTS BOTH SIDES)		if(condition1 & condition2)
+	
+	NULL VALUES (null means NO REFERENCE)
+		//STRING IS A REFERENCE TYPE
+		string name;		//this is NULL
+		string name = "";	//this is EMPTY STRING (NOT NULL)
+		
+		//INT IS A VALUE TYPE
+		int x;				//x is ZERO(0)(NOT NULL)
+		
+	NEGATIONS (NOT)	!(>=) to (<)
+				!(<=) to (>)
+		!(count++ >= years)		same as		(count++ < years)
+		
+	SWITCH
+	 switch(gender)
+	 {
+	  case "M":
+	  case "m":
+		lblGender.Text = "Male";
+		break;
+	  case "F":
+	  case "f":
+		lblGender.Text = "Female";
+		break;
+	  default:
+		lblGender.Text = "Unkown";
+	 }
+		
+	BREAK (jumps out of nearest brackets)({})
+		BREAK-OUT...
+??	CONTINUE (skips an iteration?)
+		CONTINUE-ALONG... (skips)
+
+??	RETURN (more than one value?)(array?)(different types?)
+
+	TAB ORDER (View Tab Order)(use this to fix the TAB order)
+		Properties (TABINDEX, TABSTOP)
+		
+	VARIABLES (should be DECLARED as close to the METHOD as possible)
+	
+	GLOBAL VARIABLES 
+		-put at top of class
+		-when TWO METHODS need access to variable (eg. array, add, remove methods)
+??	Can you create an THIRD METHOD, to give access to variable to two methods?
+	
+	COMMENTS
+		-main (desc, name, date)
+		-methods
+		-variables
+		-group of statements...
+		
+	RETURN VALUE (CAN ONLY RETURN ON VALUE)(can pass an array?)
+	
+??	OUT (by reference)(out only)
+??	REF (in and out)
+	
+??	BY REFERENCE
+??	BY VALUE
+??	BY NAME
+
+	OVERLOADING (METHODS)
+		-SAME NAME
+		-DIFFERENT (SIGNATURES)(the different PARAMETERS)
+	
+	VAR TYPE (works as ANY TYPE OF DATA)
+		-When to use VAR rather than OVERLOADING?
+		-eg. ...
+		
+??	MULTITHREADING
+??	See STACK and HEAP?
+	STACK (LIFO, last-in first-out)
+	QUEUE (FIFO, first-in first-out)
+	HEAP (is a tree structure)
+
+	STACK TRACE (VIEW)
+		-while debugging (setup BREAKPOINT, menu, Debug, Window, CALL STACK)
+
+	OPTIONAL PARAMETERS
+		-private type methodname (param1, param2, optparam1=12, optparam2=60)
+		-needs to be LAST
+		
+	REFACTORING (CTRL+'.')(creates a METHOD, extracts, and calls it WHERE YOU HIGHLIGHTED)
+
+	STATIC METHOD (
+		-does not need to CREATE AN INSTANCE, before calling it?)
+		-doesn't need more than ONE OBJECT
+		
+	VALIDATION 
+		(put in separate CLASS FILE for reusability)
+			-highlight PROJCS file, 
+			-rightclick ADD, NEW ITEM, class file (Validate.cs)
+	
+		Payroll.sln example
+		HOURS(per week)
+		-is present?
+		-is decimal?
+		-is in reasonable range?
+			0..80
+		PAY(per hour)
+		-is present?
+		-is decimal?
+		-is reasonalbe range?
+			MIN_WAGE..MAX_WAGE
+			
+		TAG(add Tag value in properties for TEXTBOX, to use in VALIDATION MESSAGES)
+			
+	(IMPORTS MISSING)(CTRL+'.' when TYPE is highlighted in method argument)
+			(highlight Textbox)
+			(requires)	using System.Windows.Forms; (add to top)
+		public static bool IsPresent(TextBox tb)
+			
+	try-catch-finally
+		finally (always runs regardless of errors or not, like (close file))
+			
+??	EXCEPTION HANDLING vs VALIDATION?
+		(Day 3, Nov.23)(eg. in class, FUTUREVALUE.sln)(added EXCEPTION HANDLING)
+
+??	PLACEHOLDER for textbox?
+
+	ARRAY 
+		(length is fixed)		//use LIST otherwise
+		(only use one DATA TYPE)
+		
+	METHODS (DO NOT NEST within other methods)(should be at CLASS LEVEL)
+	
+??	NAMESPACE
+
+	ICON (CONVERT IMAGE TO ICON)
+		http://www.iconarchive.com/tag/lightning-bolt
+		https://converticon.com/
+		
+	ENUMERATION (ENUM)
+		enum Seasons { Spring, Summer, Fall, Winter}; //not quoted, like variable name
+		-Declare it at top of class with constants or global variables
+		-Capitalize
+	
+	COLORS	
+	
+??	ARRAYS (2D)
+??	How to calculate teh TOTAL for each row, find the highest
+	int[,] sales = {{245,564,1221,555}
+					{245,564,1221,555}
+					{245,564,1221,555}
+					{245,564,1221,555}				
+					}
+	string[] sizes = {"S", "M", "L", "XL"}
+	string[] colors = {"red", "green", "blue"}
+	
+??	LIST
+??	SORTEDLIST
+
+	ARRAYS (TROUBLESHOOT)
+		-USE ArrayCopy (do not do (myarr = myarr2)(*** if you do this it will just point to the first arrary ***)
+		-ARRAYS (are BY REFERENCE)
+??	What TYPES are BYVALUE, what TYPES are BYREFERENCE?
+	
+??	NULLREFERENCEEXCEPTION (?) (Day3 slide)
+		NULL CONDITIONAL OPERATORS
+		-prevent crash, if querying an ARRAY and say LENGTH property doesn't exist yet
+		-REFERENCE TYPES
+??		-where to put the (?)
+
+	STRING HANDLING FUNCTIONS
+		IndexOf (returns FIRST index# of string searched)(returns -1 if it doesn't find anything)
+		LastIndexOf
+		StartsWith (returns TRUE if finds string search)
+		EndsWith
+		
+		PadLeft (pads '.' a fixed length minus the string length)
+		PadRight
+		Trim (Removes all leading and trailing white-space from a string)
+		
+		Insert (adds a string after index specified)
+			"chris".Insert(2, " ");	//ch ris
+			
+		Remove (startIndex, count)
+			-removes CHARS from given string (use IndexOf to find " ")
+			string str = "Bob Dean Smith";
+			string newstr = str.Remove(3, 5);	//"Bob Smith, removes the MIDDLE NAME
+			
+		Replace (like FIND AND REPLACE)
+		
+		Substring (returns PART of a string)(reverse of Remove)
+		ToUpper (uppercase)
+		ToLower (lowercase)
+		
+	TEXTBOX INVISIBLE (check the font, don't use *** CAMBRIA MATH ***)	
+		
+	DATES (TIMER)
+
+	-----------------------
+	-----------------------
+	CONTROLS
+??	TREEVIEW
+??	NOTIFY ICON
+??	COMBOBOX		if(combo.SelectedItem.ToString() == "Commercial")
+??	WEB BROWSER (shows website on form)(need SCRIPTSUPRESS or may get error message)
+??	ERROR PROVIDER (shows an '!' icon that something went wrong)
+		errorProvider1.SetError(txtBox, "error");
+??	TAB CONTROL	
+??	TOOLTIP
+		tooltip.SetToolTip( picTheRock, "message");
+	RICHTEXTBOX
+	POINTER
+	PROGRESS BAR
+	NUMERIC UP/DOWN (can set min, max, or change increment to 5)
+??	SPLIT CONTAINER (divider... resize on screen)
+??	LIST VIEW (good for databases?)
+	?		lvData.Columns.Add("team", 150)
+	?		lvData.SelectedItems[0].SubItems[0].Text
+
+??	PANELS ()
+??	DIRECTORY SEARCHER (server side control, dumps list of files from folder)
+	?	string[] dirs = Directory.GetFiles(@"c:\", "*");
+??	TRACKBAR (drag bar)(max, min, for how many increments)
+??	SAVEFILE DIALOG (dialog to save files, filters for type)
+		Write, WriteLine (make a STREAM)(*.txt)
+??	FOLDER BROWSER (opens tool to browse to save file, set a PATH)
+	-----------------------
+	-----------------------
+	
+	FILES (TEXT)
+	FILES (BINARY)
+??	Sequential files vs Random Access files
+
+	SYSTEM.IO Classes (for DRIVES and DIRECTORIES)
+		Directory 
+		File 
+		Path (directory + file)
+		
+			using System.IO;
+		METHODS (DIRECTORIES)
+			Exists(path)
+			CreatDirectory(path)
+			Delete(path)
+		?	Delete(path, recursive)
+	
+	(@)(asterisk)(ignores all the special chars following)
+		eg. @"c:\c# 2015\files\"
+		
+	FILESTREAM CLASS
+		new FileStream(path, mode[, access[, share]])
+			Append
+			Create 			(will overwrite if already exists)
+			CreateNew		(gives a warning before overwriting)
+			Open			(file needs to exist)
+			OpenOrCreate	(opens if exists or will create)
+			Truncate		(open files that already exists, but clears contents?)
+			
+			None
+			Read 
+			ReadWrite 
+			Write 
+			
+			Close()			(*** make sure that if it's open, needs to be closed ***)
+			
+??		Multiple USERS (how does file access get locked?)
+??			dbconcurrencyException
+			
+	Open file to?	(Read, Write, Append)
+??	ReadLine
+??	WriteLine
+
+??		FILESTREAM 	--->	STREAM READER
+					--->	STREAM WRITER
+					
+	Absolute PATH	"c:\\temp\\products.txt"
+	Relative PATH	"products.txt"
+??		Move up a folder "..\"
+	
+	If not on system
+		openFileDialog.ShowDialog()
+		saveFileDialog.ShowDialog()
+		
+	CSV (COMMA SEPARATED VALUES)
+	
+??	CLASS (GET SET)
+??		VALUE (keyword)
+	
+	STATIC METHOD
+		-is a METHOD that has only ONE INSTANCE (that is SHARED by all objects)
+	STATIC PROPERTY
+		-use this as a COUNTER, to count all the OBJECTS
+			public static int NumCircles = 0; 		//add (NumCircles++;) to each method that creates a circle to count them
+			
+			public Circle()	//constructor
+			{
+				raduis = 0;
+				NumCircles++;
+			}
+	CONST (constant)(use a CONSTANT rather than a STATIC PROPERTY when the value NEVER CHANGES)
+	STATIC CLASS (all METHODS must also be STATIC then)
+	
+	ENUMERATIONS
+		enum Season { Spring, Summer, Fall, Winter}
+		enum Season { Spring, Summer, Fall, Autumn = Fall, Winter}		//use Fall or Autumn
+??	HOW TO USE AN ENUMERATION?
+
+	*** COPY (A FORM) FROM ONE SOLUTION TO ANOTHER *** (DON'T COPY FOLDER MANUALLY, USE VISUAL STUDIO)
+		-Create New Solution with applicable names
+		-Highlight the PROJCS, rightclick ADD (existing item)
+			-browse to folder you want to copy (Copy the FORM1.CS file only *** not the Form1.Designer.cs, this will give you a blank form ***)
+			-*** DONE *** (test your form, open in CODE WINDOW, open in DESIGNER to make sure it works, rename if necessary)
+	
+	INTELLISENSE DESCRIPTION(to add tooltip description)(add to CLASS ...)
+	    /// <summary>
+        /// Customer's charge amount (use calculator to get total $)
+        /// </summary>
+		
+??	(=>) LAMBDA EXPRESSION
+		-used in LINQ?
+		-how to use these?
+			
+	DEFAULT CONSTRUCTOR
+		-if it is NOT PROVIDED the COMPILER will create one (only if there is NO CONSTRUCTOR with parameters)
+		
+	TWO CONSTRUCTORS
+		(one with no parameters)
+		(one taking parameters for values)
+		OR
+	ONE CONSTRUCTOR 
+		(has parameters with DEFAULT VALUES set to "0", 0, null, or blank);
+		
+	STATIC 
+		-is created ONCE for the class (rather than many objects)
+		
+??	CREATE A DECK OF CARDS
+		-enum?
+		
+	STATIC CLASS 
+		-no INSTANTIATION necessary 
+		-there is only ONE (why no objects need to be created or instantiated)
+		
+	ENCAPSULATION 
+		-ability to group PROPERTIES and METHODS in ONE OBJECT 
+		-it's a container 
+		
+	INHERITANCE
+			public class Circle : Shape2d		//CIRCLE class INHERITS from SHAPE2D class (CIRCLE is a SHAPE)
+			-Circle IS-A Shape 
+			-Dog IS-A Animal 
+			
+	ABSTRACTION 
+		-private KEYWORD
+		-takes away the complexity from the user 
+		-some VARIABLES or METHODS (can be PRIVATE)
+		-this allows the USER to only see what they need (and not get bogged down with the COMPLEXITY)
+			
+	POLYMORPHISM
+		-VIRTUAL (public virtual double CalculatePerimeter())(Shape2d.cs CLASS)
+			-Parent CLASS 
+			-allows Override to be used in (Child CLASS)
+		-OVERRIDE (public override double CalculateArea())(Circle.cs CLASS)
+			-Child CLASS 
+			-allows a METHOD to be changed that was inherited from (Parent CLASS)
+			
+	ABSTRACT CLASS (used for inheritance)
+		-cannot create an OBJECT from this class
+		-this is used if you DO NOT want someone to (create objects) from this class 
+			-it is mainly used for inheritance (to eliminate redundancy)
+			
+	SEALED CLASS (cannot be inherited)
+		
+	??	STRUTS
+		-(used for holding PROPERTIES)
+		-limitations to methods/classes?
+		
+	STRUCTURE (struct KEYWORD)
+		https://www.tutorialspoint.com/csharp/csharp_struct.htm
+		-is a VALUE TYPE 
+		-a class is a REFERENCE TYPE (but a structure is like a class but a VALUE TYPE data structure) 
+		-CANNOT include default CONSTRUCTOR
+		
+	OVERRIDE (is like redefining a method (like redefine a block))
+		-public override string ToString() {}
+		-has to have the SAME PARAMETER LIST (to the method it will redefine)
+	
+	OVERLOADING
+		-creates two methods (or more) that have the SAME NAME (but different parameters)
+			-the SIGNATURE must be different (have UNIQUE PARAMETERS)
+			-parameter type can be different (not the return type) 
+			
+	OVERLOADING (an OPERATOR)(like +)
+		//OVERLOADING OPERATOR (+)
+		public static ProductList operator + (ProductList p1, Product p) => p1.Add(p);
+		//DEFINE METHOD
+		public ProductList Add (Product p)
+		{
+			products.Add(p);
+			return this;
+		}
+		
+	INTERFACE (defines a STRUCTURE to be used)
+		-think of the ARGUMENTS in a FUNCTION (the SIGNATURE wil define the structure)(function NAME and ARGUMENTS)
+		-an interface DEFINES the (METHOD name and SIGNATURE)
+		-NAMING (always use 'I' in from of name (MEANS INTERFACE)
+			ITransactions ('I' + 'Transactions')
+		https://www.tutorialspoint.com/csharp/csharp_interfaces.htm
+		----------------------------------
+			//define the INTERFACE 
+			public interface ITransactions {
+			  // interface members
+			  void showTransaction();
+			  double getAmount();
+		   }
+		-----------
+			//class that USES INTERFACE
+			public class Transaction : ITransactions {
+				//... OTHER CODE
+			  public double getAmount() {
+				 return amount;
+			  }
+			  public void showTransaction() {
+				 Console.WriteLine("Transaction: {0}", tCode);
+				 Console.WriteLine("Date: {0}", date);
+				 Console.WriteLine("Amount: {0}", getAmount());
+			  }
+		   }
+		
+	VIEW FORM ITEMS (VIEW --> OTHER WINDOWS --> DOCUMENT OUTLINE)
+		-shows a list of all the controls on a form
+
+	WATCH FOR (DROP HACK)(the below code added will DELETE TABLE)
+		eg.	'); DROP TABLE Customers;--'
+		
+	SQL CONNECTION AND TRANSACTIONS(and ROLLBACK) (see TeamProject2.sln, djSupplierDatabase.cs)
+		https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqltransaction(v=vs.110).aspx
+		
+		**************************************
+		//ADD SUPPLIER (to database)(sql INSERT INTO)
+        public static void addSupplier(int mySupplierId, string mySupplierName)
+        {
+            //build the SQL QUERY from parameters (*** IMPORTANT to add the SINGLE QUOTES (')    
+            string sql = "INSERT INTO Suppliers (SupplierId, SupName) VALUES(" + mySupplierId + ", '" + mySupplierName + "');";       
+
+            using (conn = new SqlConnection(connstr))
+            {
+                conn.Open();
+
+                SqlCommand cmd = conn.CreateCommand();
+                SqlTransaction transaction;
+
+                //start a local transaction
+                transaction = conn.BeginTransaction("AddSupplier");
+
+                //assign both CONNECTION and TRANSACTION to cmd object for a local transaction?
+                cmd.Connection = conn;
+                cmd.Transaction = transaction;
+
+                try
+                {
+                    //run query
+                    cmd.CommandText = sql;                  //SQL query
+                    cmd.ExecuteNonQuery();                  //Execute query
+
+                    //attempt to COMMIT the transaction
+                    transaction.Commit();           
+                    MessageBox.Show("The supplier was ADDED SUCCESSFULLY to the database!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("There was trouble adding a supplier to the database...\n\n" + ex.GetType() + ": " + ex.Message, "ADD SUPPLIER EXCEPTION");
+
+                    //attempt ROLLBACK
+                    try
+                    {
+                        transaction.Rollback();
+                    }
+                    catch (Exception ex2)
+                    {
+                        MessageBox.Show("There was trouble ROLLBACKing the database...\n\n" + ex2.GetType() + ": " + ex2.Message, "ROLLBACK DATABASE EXCEPTION");
+                    }
+                }
+            }
+        }
+		**************************************
+		
+	**************************************
+	CONFIRMATION DIALOG (before deleting supplier)(eg. OK, OKCancel, YesNo, YesNoCancel, RetryCancel, AbortRetryIgnore)
+            DialogResult confirmDialog = MessageBox.Show("abc", "def", MessageBoxButtons.OKCancel);
+            if (confirmDialog == DialogResult.OK)
+            {
+
+            }
+            else if (confirmDialog == DialogResult.Cancel)
+            {
+
+            }
+	**************************************
+	
+	OVERRIDING
+		PROTECTED (add to VARIABLES to allow them to be seen in SUB-CLASS)(rather than using GETTERS AND SETTERS are public)
+		    protected string name;
+			protected double hours;
+			protected double rate;
+		OVERRIDE (allow ToString to have new definition, polymorphism)
+			public override string ToString()
+		VIRTUAL (to allow overriding of METHOD in SUB-CLASS)
+			public virtual double CalculatePay()
+		ABSTRACT class (no object instantiation)
+		BASE (KEYWORD) (references the original BASE CLASS method)
+			base.ToString()		//Uses the DEFAULT string from BASE CLASS
+				//SUB-CLASS
+				p_emp = base.ToString() + "\nRRSP:\t" + rrsppercent.ToString() + "%";	//Will use previous plus...
+	
+	INHERITANCE (:)(IS-A)	Book IS-A Product, Dog IS-A Animal, Cat IS-A Animal, Car IS-A Vehicle, Circle IS-A Shape, etc.
+		-need PARAMETERS (on derived class) for both BASE class and SUB-CLASS
+		-PROTECTED keyword 
+			Use 'IS-A' to help remember what inheritance is.
+			---
+			public class Book : Product
+			---
+			//-----------------------------------------------------------------
+			//-----------------------------------------------------------------
+				ConsoleInheritancePractise.sln
+			//-----------------------------------------------------------------
+			//BASE CLASS (Employee)
+								class Employee
+								{
+									//CONSTANTS
+									protected const double FULL_WEEK = 37.5;
+									protected const double OT_RATE = 1.5;
+
+									//VARIABLES
+									protected string name;
+									protected double hours;
+									protected double rate;
+
+									//CONSTRUCTOR
+									public Employee(string e_name, double e_hours, double e_rate)
+									{
+										this.name = e_name;
+										this.hours = e_hours;
+										this.rate = e_rate;
+									}
+
+									//METHOD CALCULATE PAY
+									public virtual double CalculatePay()
+									{
+										double overall_pay = 0;
+
+										//calc regular pay
+										if (hours <= FULL_WEEK)
+										{
+											overall_pay = hours * rate;
+										}
+										else
+										{
+											overall_pay = FULL_WEEK * rate + ((hours - FULL_WEEK) * rate * OT_RATE);
+										}
+
+										return overall_pay;
+									}
+
+									//TOSTRING OVERRIDE
+									public override string ToString()
+									{
+										string emp;
+										double overall_pay = CalculatePay();
+
+										emp = "Name:\t" + name + "\nHours:\t" + hours.ToString() + "\nRate\t" + rate.ToString("c") + "\nPay\t" + CalculatePay().ToString("c");
+										return emp;
+									}
+								}
+			//---------------------------
+			//SUB CLASS	(PermanentEmployee)
+				//CONSTRUCTOR (BASE refers to BASE CLASS)
+				//SYNTAX (public ClassName(parameterlist) : base(parameterlist)
+					//*** need to repeat the same parameters exactly, BASE just shows the names not the TYPE ***
+								class PermanentEmployee : Employee
+								{
+									//VARIABLES
+									private double rrsppercent;
+									
+									//CONSTRUCTOR
+									public PermanentEmployee (string e_name, double e_hours, double e_rate, double pe_rrsp) : base (e_name, e_hours, e_rate)
+									{
+										//Inherited from BASE CLASS
+										//this.name = e_name;
+										//this.hours = e_hours;
+										//this.rate = e_rate;
+
+										this.rrsppercent = pe_rrsp;
+									}
+
+									//METHOD CALCULATE RRSP
+									public double CalculateRRSP()
+									{
+										return base.CalculatePay() * (rrsppercent / 100);   //uses BASE CLASS CalculatePay()
+									}
+
+									//METHOD CALCULATE PAY (OVERRIDE)
+									public override double CalculatePay()
+									{
+										//double base_pay = 0;
+										//double deduction = 0;
+										//double overall_pay = 0;
+
+										//base_pay = base.CalculatePay()                     //uses BASE CLASS CalculatePay()
+										//deduction = CalculateRRSP();
+										//overall_pay = base_pay - deduction;
+
+										return base.CalculatePay() - CalculateRRSP();       //Shorter version
+									}
+
+									//TOSTRING OVERRIDE
+									public override string ToString()
+									{
+										string p_emp;
+
+										//base.ToString(), gets string from BASE CLASS.
+										p_emp = base.ToString() + "\nRRSP:\t" + rrsppercent.ToString() + "%";
+
+										return p_emp;
+									}
+								}
+			//-----------------------------------------------------------------	
+			//-----------------------------------------------------------------
+	
+	ABSTRACT CLASS is a class that cannot be INSTANTIATED (no objects created)
+		Why? In the case with INHERITANCE (as below) you may only want the user to create OBJECTS (instances) of the sub-classes.
+			---
+			public abstract class Product
+			---
+			PRODUCT CLASS (base class)
+			|				|_________________
+			|									|
+		Book Class (sub-class)				Software Class (sub-class)
+		
+	SEALED CLASS is a class that cannot be INHERITED (no sub-classes)
+		Why? (better performance, because compiler doesn't need to worry about inheritance or polymorphism)
+			(seal a PROPERY OR METHOD to prevent them from being OVERRIDDEN)
+			---
+			public sealed class Book : Product
+			---
+			
+??	INDEXER (Day 6.ppt)
+??	DELEGATES
+??	LAMBDA (=>)(input => expression)
+??	ANONYMOUS FUNCTION
+
+	OPERATOR (+) OVERLOADING (Day 6.ppt)
+		public ProductList Add (Product p)
+		{
+			products.Add(p);
+			return this;
+		}
+		
+		//OVERLOADING OPERATOR (+)
+		public static ProductList operator + (ProductList p1, Product p) => p1.Add(p);
+
+	-------------------
+	DATABASES
+	DATA SOURCES 
+		(View, Other Windows, Data Sources)
+			(Open palette 'Data Sources', Add New Data Source)
+				-Add existing database (Demo)(server name: ICTVM-DTHBDVOHH\SQLEXPRESS)(rightclick PROPERTIES in SQL Server)
+				-Data Source (Microsoft SQL Server)
+				-Pick TABLE
+				-Drag table to form (automatically creates TOOLBAR for Add, Remove, Save, Easy to Edit...)
+				---
+				-Add from EXISTING FILE (*.mdf)
+				-Data Source (Microsoft SQL Server Database File)
+				-Browse to (*.mdf) file
+	-------------------
+	
+	STRING SYNTAX 
+		return $"{Name} \n Hours Worked: {Hours} \n Pay Per Hour: {Rate} \n Pay Amount: {totalPay}";
+	------------------
+	
+	-------------------------------------------------------------------
+	DAY 7 (Jan.4) C# (DATABASES)
+	
+	DISCONNECTED (minimal code)
+		*** GOOD FOR PROTOTYPING because it is quick ***
+		DATASET (copy of database in memory)
+	
+		CONCURRENT ACCESS (two users accessing, both SAVE over each others work)
+		OPTIMISTIC STRATEGY (default)(will get a DBCONCURRENCY EXCEPTION if another user is accessing the table?)
+		LAST IN WINS (the last person to SAVE overwrites the first person)(LOGIC ERRORS?)
+		
+?		-refresh copy/image of database?		
+	
+	CONNECTED (lots of code)
+		ADO.NET (ActiveX Data Objects)
+	
+	DATA SOURCES (if getting errors, REDO from scratch)
+	
+	DATA SOURCES		
+			Database...
+			Connection STRING (from wizard)
+				(Data Source=ICTVM-DTHBDVOHH\SQLEXPRESS;Initial Catalog=MMABooks;Integrated Security=True)
+		... TEST CONNECTION
+			File...
+		... UPGRADE FILE (yes)(*.mdf)
+			Connection STRING (from wizard)
+				(Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MMABooks.mdf;Integrated Security=True;Connect Timeout=30)
+			SAVES IN (APP.CONFIG) file (doubleclick in Solution Explorer)
+				 connectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MMABooks.mdf;Integrated Security=True;Connect Timeout=30"
+			FILE IN PROJECT FOLDER
+				"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d7DatabaseDemo2\d7DatabaseDemo2\MMABooks.mdf"
+			...COPY FILE TO PROJECT (yes)(*** should have a file in project folder ***)
+			
+		SAVE FIX *** (for MDF file only) 
+			Solution Explorer, MMABooks.mdf, properties...
+				Copy to Output Directory, (Copy if newer)
+		OTHER FILES
+			MMABooksDataSet.xsd
+			MMABooksDesigner.cs
+		FORM1.CS
+		    this.Validate();
+            this.productsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.mMABooksDataSet);
+			
+			this.productsTableAdapter.Fill(this.mMABooksDataSet.Products);
+			
+		PEEK DEFINITION (eg. rightclick over UPDATEALL)(shows in MMABooksDesigner.cs file)
+		---
+	ADO.NET (objects created using code)
+		//CONNECTION
+			...
+			string connString  = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MMABooks.mdf;Integrated Security=True;Connect Timeout=30";
+			SqlConnection conn = new SqlConnection(connString);
+		//SQLCOMMAND
+			...
+			string sqlString = "SELECT * FROM Products";
+			SqlCommand sql = new SqlCommand(sqlString, conn);
+		//SQLADAPTER
+			...
+			SqlDataAdapter productsDataAdapter = new SqlDataAdapter (sql);
+		//DATASET
+			...
+			Dataset productsDataSet = new DataSet();
+	
+	EXCEPTIONS
+		SQLEXCEPTION created in (System.Data.SQLClient)
+		
+		DBCONCURRENCYEXCEPTIN
+		DATAEXCEPTION
+		CONSTRAINTEXCEPTION
+		NONULLALLOWEDEXCEPTION
+		
+		Message 
+		GetType
+		
+		try
+		catch() //most detailed EXCEPTION
+		...
+		catch()	//most generic EXCEPTION
+		
+		GRIDVIEW
+			DataError
+			DataGridViewErrorEventArgs
+				Exception 
+				RowIndex 
+				ColumnIndex 
+				
+		GRIDVIEW (PROPERTIES, COLUMNS, Collections, click on ...)
+			HEADER TEXT, dataGridViewTextBoxColumn1.HeaderText
+			
+	SHOW DATA(click on table in DATA SOURCES) (DATA GRID VIEW)(shows the typical spreadsheet style) 
+	SHOW DATA(click on table in DATA SOURCES) (*** DETAILS VIEW ***)(show INDIVIDUAL view of data)
+	
+	BINDING A COMBOBOX (d7DatabaseDemo3)
+		click COMBOBOX (States) (triangle click)
+			check ON (Use Data Bound Items)
+				Data Source (where to get pulldown data)				statesBindingSource
+				Display Member (what to display in pulldown)			stateName
+				Value Member (what value to save)						stateCode
+				Selected Value (where is the pulldown data pathed to)	customerBindingSource
+				--
+				PROPERTIES (click on combobox)
+					DropDownStyle,	(DropDownList)
+					DataBindings, Text, (None)
+	PARAMETERIZED QUERY
+		click (CustomerID) TEXTBOX, (Add Query)
+			... add (WHERE (CustomerID = @CustomerID))
+			...WHERE (CustomerID = @CustomerID)(see MMABooksDesigner.cs file)
+	
+	BINDING TO (DATAGRID VIEW)
+		orderDetailsBindingSource (below code, rightclick PROPERTIES, pick productBindingSource)
+		DRAG FROM (*** within PRODUCTS TABLE *** AUTOMATICALLY BINDS IT)
+	
+	DATA GRID VIEW (Read-only)(rightclick on DATAGRIDVIEW, click triangle, CHECK OFF (3)(Enable Editing, Adding, Deleting))
+	
+	-------------------------------------------------------------------------------
+	DAY 8 (Jan.5)(ADO.NET, writing code for DATABASE)
+		-benefit over DATA SOURCES
+		-THREE(3) LAYER approach
+			-presentation (user interface)
+			-business (all classes, ONE CLASS for each object (possibly a table))
+			-data access (DB classes that connect to database)
+		-Fully CONNECTED
+		-If data or objects change, code is more reliable
+		
+	SHORTCUTS (F12, highlight METHOD, click F12, goes to METHOD DEFINITION)
+		F12 (GO TO DEFINITION)(DEBUG MODE)(highlight method, F12 goes directly to file)
+		F10 (STEP THROUGH)(stays on same 
+		F11 (STEP INTO)(goes deeper into all methods)
+	
+		-------------------------------------
+		//copy file...
+		//"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d8CustomerMaintenance START\CustomerMaintenance\MMABooks.mdf"
+		
+	    //CREATE CONNECTION TO DATABASE (MMABooksDB.cs)
+        public static SqlConnection GetConnection()
+        {
+            string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MMABooks.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection conn = new SqlConnection(connString);
+            return conn;
+        }
+		-------------------------------------
+	
+	SQL STRING ERROR 
+	        //define select query
+            string selectQuery = "SELECT CustomerID, Name, Address, City, State, ZipCode" +		//***WRONG***
+			string selectQuery = "SELECT CustomerID, Name, Address, City, State, ZipCode " +	//***CORRECT***
+                "FROM Customers;";
+	
+	SqlDataReader	(for reading database)
+	SqlDataAdapter	(for changing database)
+	
+	using System.Data.SqlClient;
+	using System.Data;
+		CommandBehavior
+		
+	PREVENT SQL INJECTION (eg. ; DROP TABLE Customers...)
+		USE PARAMETERS (@CustomerID) to prevent injection
+		"WHERE CustomerID = @CustomerID;";  //Parameter "@CustomerID"
+		
+	ERROR (THROW vs MESSAGEBOX)(use THROW on DATA LAYER to let the FORM handle the taylored message for the user)
+	        catch(Exception ex)
+            {
+                throw ex; //let the form handle it
+            }
+	
+	C# (?:)(IF-ELSE SHORTHAND)
+		https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator
+		test ? B : C 		same as... (if(test){ do B; } else { do C; }
+	
+	C# (can allow to DYNAMICALLY create properties (use in loop to go through object)
+		using System.Reflection;
+		ERROR: System.Reflection.TargetInvocationException  (created an error?)(probably due to IMAGES not being there?)
+		//??? I think (Matt Klassen) uses this to get all PROPERTIES from OBJECT (DYNAMICALLY)
+		//Get all the Properties from the ClashResult class
+            System.Reflection.PropertyInfo[] _piClashResults = typeof(ClashResult).GetProperties();
+		HOW TO GET AROUND (ONE PROPERTY) when dynamically generated?
+	
+	-----------------------------
+	(CustomerDB.cs)("C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d8CustomerMaintenance START\d8CustomerMaintenance.sln")
+	//GET CUSTOMER METHOD 
+        public static Customer GetCustomer(int customerID)
+        {
+            Customer cust = null;   //current customer object (in database)
+
+            //define connection
+            SqlConnection connection = MMABooksDB.GetConnection();  //get connection object that we created
+
+            //define select query
+            string selectQuery = "SELECT CustomerID, Name, Address, City, State, ZipCode " +
+                "FROM Customers " +
+                "WHERE CustomerID = @CustomerID;";  //Parameter "@CustomerID"
+            SqlCommand selectCommand = new SqlCommand(selectQuery, connection);
+            selectCommand.Parameters.AddWithValue("@CustomerID", customerID);
+            try
+            {
+                //open connection
+                connection.Open();
+
+                //execute the query
+                SqlDataReader reader = selectCommand.ExecuteReader(System.Data.CommandBehavior.SingleRow);
+
+                //process result (0 or 1 customer)
+                if (reader.Read())  //if there is a customer
+                {
+                    cust = new Customer();
+                    cust.CustomerID = (int) reader["CustomerID"];
+                    cust.Name = reader["Name"].ToString();
+                    cust.Address = reader["Address"].ToString();
+                    cust.City = reader["City"].ToString();
+                    cust.State = reader["State"].ToString();
+                    cust.ZipCode = reader["ZipCode"].ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex; //let the form handle it
+            }
+            finally
+            {
+                //close connection
+                connection.Close();
+            }
+
+            return cust;
+        }
+	-----------------------------
+	
+	        //create connection
+            //create command
+            //open connection
+            //run command and process results
+            //close connection
+			
+			--------------------
+			try
+            {
+                //open connection
+                connection.Open();
+
+                //run command and process results
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;       //throw to form to handle it
+            }
+            finally
+            {
+                //close connection
+                connection.Close();
+            }
+			--------------------
+	----------------------------------------------------------------
+	(StateDB.cs)("C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d8CustomerMaintenance START\d8CustomerMaintenance.sln")
+	    // METHOD TO RETURN LIST OF STATES (for combobox)
+        public static List<State> GetStates()
+        {
+            List<State> states = new List<State>(); //make an empty list
+            State st;   //reference new state object;
+
+            //create connection
+            SqlConnection connection = MMABooksDB.GetConnection();
+
+            //create command
+            string selectString = "SELECT StateCode, StateName FROM States " +
+                "ORDER BY StateName;";
+            SqlCommand selectCommand = new SqlCommand(selectString, connection);
+
+            try
+            {
+                //open connection
+                connection.Open();
+
+                //run command and process results
+                SqlDataReader reader = selectCommand.ExecuteReader();
+                while (reader.Read())   //process next row
+                {
+                    st = new State();                               // create new State object
+                    st.StateCode = reader["StateCode"].ToString();  // get info (current row) from state code
+                    st.StateName = reader["StateName"].ToString();  // get info from state name
+                    states.Add(st);                                 // ADD to State object in LIST
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;       //throw to form to handle it
+            }
+            finally
+            {
+                //close connection
+                connection.Close();
+            }
+
+
+
+            return states;
+        }
+	----------------------------------------------------------------
+	
+	SQLCOMMAND
+		ExecuteReader		(used to read only)
+		ExecuteNonQuery		(used for insert, etc.)
+		
+	AGGREGATE FUNCTION
+		(returns one value)(get SUM of columns)
+		(eg. SELECT Sum(InvoiceTotal) FROM Invoices)
+		...
+		
+	---------------------------------------------------------------------------------------
+	(CustomerDB.cs)("C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d8CustomerMaintenance START\d8CustomerMaintenance.sln")
+	//METHOD ADD CUSTOMER
+        public static int AddCustomer(Customer cust)    //returns CustomerID (int)
+        {
+            int custID = 0;
+            //prepare connection
+            SqlConnection connection = MMABooksDB.GetConnection();
+
+            //prepare statement
+            string insertString = "INSERT INTO Customers " +
+                "(Name, Address, City, State, ZipCode) " +
+                "VALUES(@Name, @Address, @City, @State, @ZipCode);";        //Parameters (must have SAME NAME as columns)
+            SqlCommand insertCommand = new SqlCommand(insertString, connection);
+            insertCommand.Parameters.AddWithValue("@Name", cust.Name);
+            insertCommand.Parameters.AddWithValue("@Address", cust.Address);
+            insertCommand.Parameters.AddWithValue("@City", cust.City);
+            insertCommand.Parameters.AddWithValue("@State", cust.State);
+            insertCommand.Parameters.AddWithValue("@ZipCode", cust.ZipCode);
+
+            try
+            {
+                //open connection
+                connection.Open();
+
+                //execute statement
+                int i = insertCommand.ExecuteNonQuery();
+                if(i == 1)      //one record inserted
+                {
+                    //retrieve customer id from the added record
+                    string selectString = "SELECT ident_current('Customers') " +    //AGGREGATE FUNCTION
+                        "FROM Customers;";
+                    SqlCommand selectCommand = new SqlCommand(selectString, connection);
+                    //custID = (int) selectCommand.ExecuteScalar(); BUG (int) cast doesn't work!!
+                    custID = Convert.ToInt32(selectCommand.ExecuteScalar());
+                }
+
+            }
+            catch(Exception ex)
+            {
+                throw ex;       //pass to forms
+            }
+            finally
+            {
+                //close connection
+                connection.Close();
+            }
+            return custID;
+        }
+	---------------------------------------------------------------------------------------
+	
+	--------------------------------------------------------------
+		(CustomerDB.cs)("C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d8CustomerMaintenance START\d8CustomerMaintenance.sln")
+	    //METHOD UPDATE CUSTOMER (returns bool IF SUCCESSFUL)
+        public static bool UpdateCustomer(Customer oldCustomer, Customer newCustomer)
+        {
+            bool successful = false;
+
+            //two copies of customer object
+            //new customer (for updates)
+            //old customer (to make sure SOMEONE ELSE hasn't changed record)(concurrency)
+
+            //prepare connection
+            SqlConnection connection = MMABooksDB.GetConnection();
+            string updateString = "UPDATE Customers SET " +
+                "Name = @NewName, " +
+                "Address = @NewAddress, " +
+                "City = @NewCity, " +
+                "State = @NewState, " +
+                "ZipCode = @NewZipCode " +
+                "WHERE " +                      //UPDATE succeeds only if record hasn't changed
+                "Name = @OldName AND " +
+                "Address = @OldAddress AND " +
+                "City = @OldCity AND " +
+                "State = @OldState AND " +
+                "ZipCode = @OldZipCode;";
+
+            SqlCommand updateCommand = new SqlCommand(updateString, connection);
+            //sets each parameter (old customer)
+            updateCommand.Parameters.AddWithValue("@OldName", oldCustomer.Name);
+            updateCommand.Parameters.AddWithValue("@OldAddress", oldCustomer.Address);
+            updateCommand.Parameters.AddWithValue("@OldCity", oldCustomer.City);
+            updateCommand.Parameters.AddWithValue("@OldState", oldCustomer.State);
+            updateCommand.Parameters.AddWithValue("@OldZipCode", oldCustomer.ZipCode);
+            //sets each parameter (new customer)
+            updateCommand.Parameters.AddWithValue("@NewName", newCustomer.Name);
+            updateCommand.Parameters.AddWithValue("@NewAddress", newCustomer.Address);
+            updateCommand.Parameters.AddWithValue("@NewCity", newCustomer.City);
+            updateCommand.Parameters.AddWithValue("@NewState", newCustomer.State);
+            updateCommand.Parameters.AddWithValue("@NewZipCode", newCustomer.ZipCode);
+
+            try
+            {
+                //open connection
+                connection.Open();
+                int count = updateCommand.ExecuteNonQuery();
+                if(count == 1)
+                {
+                    successful = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                //close connection
+                connection.Close();
+            }
+
+            return successful;
+        }
+	--------------------------------------------------------------
+	
+	----------------------------------------------------------------------------------------
+		(CustomerDB.cs)("C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d8CustomerMaintenance START\d8CustomerMaintenance.sln")
+	    //METHOD DELETE CUSTOMER (return bool IF SUCCESSFUL)
+        public static bool DeleteCustomer(Customer customer)
+        {
+            bool successful = false;
+
+            //prepare connection
+            SqlConnection connection = MMABooksDB.GetConnection();
+
+            //prepare query
+            string deleteString = "DELETE FROM Customers " +
+                "WHERE " +          //check for optimistic concurrency
+                "Name = @Name AND " +
+                "Address = @Address AND " +
+                "City = @City AND " +
+                "State = @State AND " +
+                "ZipCode = @ZipCode;";
+
+            //command object
+            SqlCommand deleteCommand = new SqlCommand(deleteString, connection);
+            //parameters...
+            deleteCommand.Parameters.AddWithValue("@Name", customer.Name);
+            deleteCommand.Parameters.AddWithValue("@Address", customer.Address);
+            deleteCommand.Parameters.AddWithValue("@City", customer.City);
+            deleteCommand.Parameters.AddWithValue("@State", customer.State);
+            deleteCommand.Parameters.AddWithValue("@ZipCode", customer.ZipCode);
+
+            try
+            {
+                //open connection
+                connection.Open();
+
+                int count = deleteCommand.ExecuteNonQuery();
+                if (count == 1)
+                {
+                    successful = true;
+                }        
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                //close connection
+                connection.Close();
+            }
+
+            return successful;
+        }
+	----------------------------------------------------------------------------------------
+	DAY.9 FRI (Jan.6)
+	
+??	INTERFACES
+
+
+	NULL VALUES (p.128-129 of Murach book)
+	----------
+	NULLABLE (NULL VALUE with database)
+		SUPPOSE PHONE COLUMN in Customer table is NULLABLE
+		
+		if(customer.Phone != null)			//or use... (customer.Phone == "")
+		{
+			insertCommand.Parameters.AddWithValue("@Phone", customer.Phone);		//IF VALUE IS NULL DOESN'T WORK
+		}
+		else
+		{
+			insertCommand.Parameters.AddWithValue("@Phone", DBNull.Value);			//NEED TO PASS 'NULL' to database 
+		}
+	
+		"UPDATE Customers SET " +
+			"Phone = @NewPhone " + 
+			"WHERE " +
+			"Phone = @OldPhone " +							//WORKS IF NewPhone and OldPhone are NOT NULL			
+			"OR Phone IS NULL AND @OldPhone IS NULL);"		//Need LOGIC... to handle NULLS
+	
+	NULL (DBNull.Value)(with database)
+		NULL value in database is represented in C# as (DBNull.Value)
+	
+	SQL	(NULL operators)
+		IS NULL
+		IS NOT NULL
+	
+	DATA TYPES (can be NULL)
+??		Nullalbe<T>	(use ?)
+			int? quantity;
+			quantity = null;	//may need NULL for integer (not filled out, better than zero sometimes)
+			quantity = 0;
+			quantity = 20;
+			
+		decimal? salesTotal = null;
+		bool? isValid = null;
+		string? message = null; //NOT NECESSARY OR ALLOWED
+	
+	NULL (check if it's null)
+		HasValue
+		Value
+		
+??		bool hasValue = quantity.HasValue;
+		
+		(GET THE VALUE OF NULLABLE TYPE)
+		int qty = quantity.Value;
+		(USING NULL COALESCING OPERATOR (?) to assign default value)
+??		int qty = quantity ?? -1;
+
+	NULL (in calculation)(if any value is NULL the result is NULL)
+		decimal? sales1 = 3265.4m;
+		decimal? sales2 = null;
+		decimal SalesTotal = sales1 + sales2;		//result = NULL
+	
+	ADD NULL TO VALUE TYPE (YES, NO, or NULL(I don't know yet?))
+	
+	FRAMEWORK (REFERENCE ERROR)(OTHER PROJECT IN A HIGHER FRAMEWORK)
+		https://msdn.microsoft.com/en-us/library/bb398202.aspx
+		-just rightclick (on PROJECT, PROPERTIES) under (tab APPLICATION, TARGET FRAMEWORK), see what framework each project is using...
+		-eg. .NET FRAMEWORK 4.6 
+	
+	DBNull, represents a non-existent value.
+	HasValue, tests if it has a valid value for the type (sales1.HasValue)
+	-----------------------------------
+	(d9ConsoleNULL.sln)
+	 static void Main(string[] args)
+        {
+            decimal? sales1, sales2;
+            sales1 = 12345m;
+            sales2 = null;
+
+            decimal test;
+            //test = null;  //doesn't work, illegal
+
+            string message = null;  //string is REFERENCE TYPE can be nullable
+
+            //test = sales1;  //cannot convert
+            test = sales1.Value;    //works!
+            test = (decimal)sales1; //works!
+            Console.WriteLine("test (sales1) = " + test);
+
+            //test = (decimal)sales2; //doesn't work        //InvalidOperationException (because sales2 IS NULL)
+            //test = sales2.Value; //doesn't work either    //InvalidOperationException (because sales2 IS NULL)
+            test = sales2 ?? 0; //works!
+            Console.WriteLine("test (sales2) = " + test);    //InvalidOperationException when run
+            test = sales1 ?? 1;
+            Console.WriteLine("test (sales1) = " + test);
+
+            //SYNTAX(?? operator) variable ?? defaultValue
+
+            int test2;
+            test2 = (int)(sales2 ?? 0);             //need brackets to type-cast
+            Console.WriteLine("test2 = " + test2);
+
+            //bool flag;  //unassigned
+            //bool flag = true; //works
+            bool? flag = false;         //? allows for NULLS
+            flag = null;                //shows blank
+            Console.WriteLine("flag is " + flag);
+
+			//HasValue, test for good value.
+            Console.WriteLine(sales1.HasValue); //returns True
+            Console.WriteLine(sales2.HasValue); //returns False (because null)
+
+            //Value, gets the value.
+            Console.WriteLine(sales1.Value);    //returns 12345
+            //Console.WriteLine(sales2.Value);    //ERROR (because null)  InvalidOperationException
+			
+            Console.WriteLine("\n\npress any key to finish");
+            Console.ReadKey();
+        }
+
+	-----------------------------------
+	LIST EXAMPLES
+		List<string> list = new List<string> { "value1", "value2", ... };
+		List<int> expected = new List<int> { 1, 2, 0, 0 };
+	
+	COLLECTIONS
+		<T> any type
+	
+		List<T>
+		SortedList<K, V>	//Key, Value
+		Stack<T>
+		Queue<T>
+		
+		ArrayList (old UNTYPED collection, could mix INT and STRING)
+		
+		Index based
+			Array 
+			List 
+		Key-Value based (organized for quick search)
+			SortedList
+			Dictionary
+		Prioritized
+			Stack 
+			Queue
+		...
+		
+		SortedList<K, V>
+			Keys		key
+			Values  	value
+			Capacity 	length of list (doubles if it's exceeded)
+			Count 		number of elements
+			
+			Methods 
+			Add(key, value)
+			Clear()				removes all elements
+			ContainsKey(key)	test... if contains a key
+			...
+			
+	-----------------------------------
+	(d9ConsoleCOLLECTIONS)
+	static void Main(string[] args)
+        {
+            //LIST
+            List<double> numbers = new List<double>();  //empty list
+            //add to list
+            numbers.Add(5);
+            numbers.Add(3);
+            numbers.Add(7);
+            numbers.Add(3.14);
+            numbers.Add(2.414);
+
+            //insert into list
+            numbers.Insert(2, 1.23);        //replaces 7
+            numbers.Insert(0, -1);          //replaces first element
+            //index an element 
+            double pos2element = numbers[2];
+            Console.WriteLine("Element at index 2 is: " + pos2element);
+            //remove an element from list
+            numbers.RemoveAt(2);              //removes 3 from list
+            //numbers.RemoveAt(10);           //ERROR, ArgumentOutOfRangeException
+            //count elements and capacity
+            Console.WriteLine("\nCount is: " + numbers.Count());
+            Console.WriteLine("\nCapacity is: " + numbers.Capacity + "\n\n");
+
+            //display list
+            Console.WriteLine("List of numbers...\n");
+            foreach(double elem in numbers)
+            {
+                Console.Write(elem + "\t");
+            }
+
+            Console.WriteLine("\n");
+
+            Console.WriteLine("\n\npress any key");
+            Console.ReadKey();
+        }
+	-----------------------------------	
+
+	--------------------------------------------------------
+	(d9ConsoleSORTEDLIST2)
+	static void Main(string[] args)
+        {
+            //create product objects from class
+            Product p1 = new Product("g123", "gizmo", 8.99m);
+            Product p2 = new Product("w567", "widget", 1.25m);
+            //display (defaults with ToString in class)
+            Console.WriteLine(p1);
+            Console.WriteLine(p2);
+
+            Console.WriteLine("\nCreating SORTED LIST with codes as keys...");
+            SortedList<string, Product> inventory = new SortedList<string, Product>(); //empty list
+            inventory.Add(p1.Code, p1);
+            inventory.Add("w567", p2);
+            inventory.Add("b123", new Product("b123", "box", 5.99m));
+            inventory.Add("x678", new Product("x678", "xbox", 99.99m));
+            //duplicate KEY
+            //inventory.Add("x678", new Product("x678", "xbox", 99.99m));     //ERROR: ArgumentException
+            //KEYS must be UNIQUE
+            inventory.Add("a123", p2);
+            inventory.Add("z999", null);
+
+            //display list elements: both key and values
+            foreach (KeyValuePair<string, Product> pair in inventory)
+            {
+                Console.WriteLine(pair);  //displays KEY with entire row
+            }
+
+            //display only values
+            Console.WriteLine("\nProduct values...");
+            foreach (Product p in inventory.Values)
+            {
+                Console.WriteLine(p);  
+            }
+
+            //display only keys
+            Console.WriteLine("\nProduct keys...");
+            foreach (string k in inventory.Keys)
+            {
+                Console.WriteLine(k);  
+            }
+
+            //sorted list are SORTED BY KEYS
+            Console.WriteLine("\nWhat product has code b123?");
+            Console.WriteLine(inventory.IndexOfKey("b123"));    //returns 0
+            Console.WriteLine(inventory["b123"]);               //returns b123: box, $5.99m
+            Console.WriteLine("\nWhat product has index 1?");
+            Console.WriteLine(inventory.Values[1]);             //returns g123...
+            Console.WriteLine("\nWhat index is p2?");
+            Console.WriteLine(inventory.IndexOfValue(p2));      //returns 2
+
+            //null values
+            Console.WriteLine("\nAny NULL values?");
+            for (int i = 0; i < inventory.Count; i++)
+            {
+                if(inventory.Values[i] == null)
+                {
+                    Console.WriteLine(inventory.Keys[i] + "... is null.");  //z999 is null
+                }
+            }
+            
+                
+            //Stops the window from closing
+            Console.WriteLine("\n\nPress any key to finish");
+            Console.ReadKey();
+        }
+	--------------------------------------------------------
+	
+	QUEUE and STACK
+	
+	QUEUE (FIFO)(first in first out)(like a line-up at concession)
+		Enqueue		adds to queue
+		Dequeue		removes FIRST element in
+		Clear
+		PEEK
+		
+	STACK (LIFO)(last in first out)(like stack of books, or plates, need to take from top)
+		Push		adds to stack
+		Pop			removes LAST element in
+		Clear
+		Peek
+		
+	------------------------------------------
+	(d9ConsoleQueueStack)
+	static void Main(string[] args)
+        {
+
+            //QUEUE
+            Console.WriteLine("==============");
+            Console.WriteLine("QUEUE test...");
+            Queue<int> numbersQ = new Queue<int>(); //empty queue
+            numbersQ.Enqueue(2);
+            numbersQ.Enqueue(3);
+            numbersQ.Enqueue(5);
+            numbersQ.Enqueue(7);
+            numbersQ.Enqueue(11);
+            int count = numbersQ.Count;
+            Console.WriteLine("Count for queue is :" + count + " before.");
+
+            //display elements of queue, removing them
+            for (int i = 0; i < count; i++)
+            {
+                //Console.WriteLine(numbersQ.Peek()); //first element
+                //numbersQ.Dequeue();     //removes first element
+                Console.WriteLine(numbersQ.Dequeue());  //does same as above, shorter
+            }
+
+            Console.WriteLine("Count for queue is :" + numbersQ.Count + " after.\n\n");
+
+            //===============
+            //STACK
+            Console.WriteLine("==============");
+            Console.WriteLine("STACK test...");
+            Stack<int> numS = new Stack<int>();
+            numS.Push(2);
+            numS.Push(3);
+            numS.Push(5);
+            numS.Push(7);
+            numS.Push(11);
+            int count2 = numS.Count;
+            Console.WriteLine("Count for stack is " + count2 + " before.");
+
+            //display stack
+            for (int i = 0; i < count2; i++)
+            {
+                Console.WriteLine(numS.Pop());  //removes element and returns it
+            }
+            Console.WriteLine("Count for stack is " + numS.Count + " after.");
+
+
+            //Stops the window from closing
+            Console.WriteLine("\n\nPress any key to finish");
+            Console.ReadKey();
+        }
+	------------------------------------------
+	
+	INTERFACES (defines the STRUCTURE to be used if implemented)
+		Abstract class (cannot create/instantiate an object)
+		
+		ABSTRACT CLASS 		vs 								INTERFACE (can INHERIT many INTERFACES)
+		-has at least one method with NO CODE				-no object data
+		-can have methods with code							-no methods with code
+		-can have object data
+		
+		-a CLASS can extend only							-CLASS can IMPLEMENT one or multiple INTERFACES
+		  only ONE BASE CLASS 
+		  (even if abstract)
+		  
+		-cannot create an object of an abstract class		-cannot create an object of an interface					
+	
+		*** multiple inheritance (NOT ALLOWED IN C#)
+			
+			vehicle		boat
+				|_			|
+				  |         |
+				  amphibious vehicle
+	
+	
+	x.CompareTo(y)
+		<0	when x is LESS THAN y
+		0	when x is EQUAL TO y 
+		>0  when x is GREATHER THAN y
+	
+	-----------------------------------------
+	(Product.cs)(d9ConsoleINTERFACES.sln)
+	public class Product : IComparable
+    {
+        //properties
+        public string Code { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+
+        //constructor
+        public Product() { }
+
+        public Product(string c, string d, decimal p)
+        {
+            Code = c;
+            Description = d;
+            Price = p;
+        }
+
+        //ToString OVERRIDE
+        public override string ToString()
+        {
+            return Code + ": " + Description + ", " + Price.ToString("c");
+        }
+
+        //CTRL.'.' implement interface EXPLICITY to get this code
+        //int IComparable.CompareTo(object obj)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public int CompareTo(object obj)
+        {
+            Product p = (Product)obj;
+            if (this.Price < p.Price)
+                return -1;
+            else if (this.Price == p.Price)
+                return 0;
+            else return 1;
+        }
+
+        //public bool EqualTo(Product p)
+        //{
+        //    //return Code == p.Code 
+        //}
+    }
+	---------------------
+	(Program.cs)(d9ConsoleINTERFACES.sln)
+	static void Main(string[] args)
+        {
+            Product p1 = new Product("x123", "big box", 15.99m);
+            Product p2 = new Product("x123", "big box", 15.99m); //returns DIFFERENT OBJECT reference
+            //Product p2 = p1;    //returns SAME OBJECT REFERENCE below
+
+            Console.WriteLine(p1);
+            Console.WriteLine(p2);
+
+            //check if they are IDENTICAL
+            //if (p1 == p2)                     //displays DIFFERENT?, compares REFERENCES not VALUES
+            if (p1.ToString() == p2.ToString())  //displays SAME no matter...
+            {
+                Console.WriteLine("Same product");
+            }
+            else
+            {
+                Console.WriteLine("Different products");
+            }
+
+            Console.WriteLine("\n------------------");
+
+            if (p1.CompareTo(p2) < 0)  //displays SAME no matter...
+            {
+                Console.WriteLine("p1 price is LESS THAN p2");
+            }
+            else if (p1.CompareTo(p2) == 0)
+            {
+                Console.WriteLine("p1 price is EQUAL TO p2");
+            }
+            else
+            {
+                Console.WriteLine("p1 price is GREATER THAN p2");
+            }
+
+            //Stops the window from closing
+            Console.WriteLine("\n\nPress any key to finish");
+            Console.ReadKey();
+        }
+	-----------------------------------------
+	
+	*********************************
+	ADD DATA FILE (*.MDF)
+		(SOLUTION EXPLORER, highlight Project, ADD, EXISTING ITEM, change to ALL FILES, browse to NORTHWIND.MDF file)
+	*********************************
+	
+	DATES (DATE ONLY)(.Date)
+		//Order.cs CLASS
+			public DateTime OrderDate { get; set; }			
+		//frmMain.cs CLASS
+			dtpOrderDate.Text = my_order.OrderDate.Date.ToString();             //date only (my_order.OrderDate.Date)
+			
+	DBNull (is SQL database version of null)(not the same as NULL in .NET)
+??	DatePicker (how to handle null?)
+	
+	---------------------------
+	DAY 10 (Jan.9)
+	
+	ENHANCED GUI (toolbox controls)
+	
+	MULTIPLE FORMS (Day9.ppt)
+	TAB CONTROL (not TabIndex)
+		TabPages property
+		TabPage Collection (...)(*** make sure on main tab control to see this property ***)
+		
+		tab1.SelectedIndex
+		SelectedIndexChanged
+		
+	MENUS
+		MenuStrip control (Toolbox, Menus and Toolbars, MenuStrip)
+		File 
+			&New 
+			&Open 
+		Shortcutkeys property (click on New)(click ALT)(pulldown to N)(adds text for shortcut automatically)
+			(can HOLD ALT+N to create New file)
+			(*** slightly different than using '&', the ampersand can be clicked individually ***)
+		menuStrip1.Items.RemoveAt(1);	//removes menu at index (1) (Edit menu)
+	
+	FORMS (MULTIPLE)
+        private void btnOpenForm_Click(object sender, EventArgs e)
+        {
+            Form2 secondForm = new Form2(); //
+            //secondForm.Show();  //can open many copies
+            secondForm.ShowDialog();    //only opens the one form (have to deal with this)
+        }
+??		-pass data between forms (parent, child)
+	
+	(MDI)(Multiple Document Interface)
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\FinancialCalculationsMDI\
+			FinancialCalculations.sln"
+		-parent form contains child forms
+		
+		Application.Exit();	//shutsdown all windows
+		this.Close();		//closes current form
+		
+		PARENT FORM Properties
+			IsMdiContainer
+			ActiveMdiChild
+			LayoutMdi
+		CHILD FORM Properties 
+			MdiParent
+			
+		newForm.MdiParent = this;
+		
+	TOOLTIPS
+		Toolbox, tootip control (drag one for each object)
+		toolTip1.SetToolTip(this.button1, "my button tooltip");		//form load
+		
+		
+		
+	BINARY FILES (WRITING)(Day10.ppt)(DAY10 Example)
+	"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-Pickup\CPRG200 C#\Day 10\ProductMaintenanceBinary"
+		BinaryWriter
+		FilesStream
+			FileMode
+			FileAccess
+			
+		BinaryReader
+			PeekChar()
+			Read()
+			ReadBoolean()
+			ReadByte()
+			ReadChar()
+			ReadDecimal()
+			ReadString()
+			Close()
+			
+			"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-Pickup\CPRG200 C#\Day 10\ProductMaintenanceXML"
+
+	
+	SERIALIZATION (DAY10 Example)		https://msdn.microsoft.com/en-us/library/mt656716.aspx
+	"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-Pickup\CPRG200 C#\Day 10\Serialization"
+		using System;
+			[Serializable]
+			
+		FileMode.OpenOfCreate (*** will crash NO FILE to start, as this will create a blank file of the WRONG FORMAT ***)
+			FileMode.Open (use this instead)
+			...
+			if(fs.Length != 0)	//use this to work around the problem (filestream is created, not realizing it needs a certain type file format)
+	DESERIALIZATION
+	
+	XML (WRITING MANUALLY)
+	"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-Pickup\CPRG200 C#\Day 10\ProductMaintenanceXML"
+		XmlWriter
+			Create(path)
+			Create(path, settings)
+			WriteStartDocument()							//<?xml ...>
+			WriteComment(comment)
+			WriteStartElement(elementName)					//<tag> start tag
+			WriteAttributeString(attributeName, value)
+			WriteEndElement()								//</tag> end tag 
+			WriteElementString(elementName, content)
+			Close()
+			---
+			Indent
+			IndentChars
+		XmlReader
+			ReadToDescendant			//?reads up a level?
+			ReadToNextSibling			//?reads same level, next
+		
+	XML FILES (can be viewed/edited in Visual Studio)
+	
+??	XSD (validation)(in Visual Studio)
+	
+	MDF FILES (*.MDF)
+		Location in SQL Server
+			C:\Program Files\Microsoft SQL Server\MSSQL12.SQLEXPRESS\MSSQL\DATA
+		COPY TO PROJECT (*.mdf, and/or *.ldf)(to make it a local database)
+			"MMABooks.mdf"
+			"MMABooks_log.ldf"
+			
+	IMPORT CLASS (copy Validator.cs from another project)
+		-Solution Explorer, rightclick Project, Add Existing, (browse to file and add)
+		(*** need to update the NAMESPACE in Validator.cs to match the NEW PROJECT NAMESPACE ***)
+		
+	*** PRESENTATION (CREATE A DUMP OF ALL PROPERTIES) ***
+	*** SAVE PRESENTATION (as code for re-use setting up) ***
+	
+	XML (SAVE TO XML)(EASY, AUTOMATICALLY)... (write XML)
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d10DatabaseToXML\d10DatabaseToXML.sln"
+		-create data source
+		-CREATE BUTTON EVENT...(run and click button, check file in DEBUG folder)
+		    //Write to XML
+				mMABooksDataSet.WriteXml("Products.xml", XmlWriteMode.IgnoreSchema);
+			//file to...
+				"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d10DatabaseToXML\d10DatabaseToXML\bin\Debug\
+					Products.xml"
+				------------------
+					<?xml version="1.0" standalone="yes"?>
+					<MMABooksDataSet xmlns="http://tempuri.org/MMABooksDataSet.xsd">
+					  <Products>
+						<ProductCode>2JST      </ProductCode>
+						<Description>Murach's JavaScript (2nd Edition)</Description>
+						<UnitPrice>54.5000</UnitPrice>
+						<OnHandQuantity>6937</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>2QRY      </ProductCode>
+						<Description>Murach's jQuery (2nd Edition)</Description>
+						<UnitPrice>54.5000</UnitPrice>
+						<OnHandQuantity>677</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>A46C      </ProductCode>
+						<Description>Murach's ASP.NET 4.6 Web Programming with C# 2015</Description>
+						<UnitPrice>57.5000</UnitPrice>
+						<OnHandQuantity>4637</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>A46V      </ProductCode>
+						<Description>Murach's ASP.NET 4.6 Web Programming with VB 2015</Description>
+						<UnitPrice>57.5000</UnitPrice>
+						<OnHandQuantity>3974</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>ADC4      </ProductCode>
+						<Description>Murach's ADO.NET 4 with C# 2010</Description>
+						<UnitPrice>56.5000</UnitPrice>
+						<OnHandQuantity>3756</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>ADV4      </ProductCode>
+						<Description>Murach's ADO.NET 4 with VB 2010</Description>
+						<UnitPrice>56.5000</UnitPrice>
+						<OnHandQuantity>4538</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>CRFC      </ProductCode>
+						<Description>Murach's CICS Desk Reference</Description>
+						<UnitPrice>50.0000</UnitPrice>
+						<OnHandQuantity>1865</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>CS15      </ProductCode>
+						<Description>Murach's C# 2015</Description>
+						<UnitPrice>56.5000</UnitPrice>
+						<OnHandQuantity>5136</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>DB1R      </ProductCode>
+						<Description>DB2 for the COBOL Programmer, Part 1 (2nd Edition)</Description>
+						<UnitPrice>42.0000</UnitPrice>
+						<OnHandQuantity>4825</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>DB2R      </ProductCode>
+						<Description>DB2 for the COBOL Programmer, Part 2 (2nd Edition)</Description>
+						<UnitPrice>45.0000</UnitPrice>
+						<OnHandQuantity>621</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>JAVP      </ProductCode>
+						<Description>Murach's Java Programming</Description>
+						<UnitPrice>56.5000</UnitPrice>
+						<OnHandQuantity>3455</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>JSP2      </ProductCode>
+						<Description>Murach's Java Servlets and JSP (3rd Edition)</Description>
+						<UnitPrice>57.5000</UnitPrice>
+						<OnHandQuantity>4999</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>MCBL      </ProductCode>
+						<Description>Murach's Structured COBOL</Description>
+						<UnitPrice>62.5000</UnitPrice>
+						<OnHandQuantity>2386</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>MCCP      </ProductCode>
+						<Description>Murach's CICS for the COBOL Programmer</Description>
+						<UnitPrice>54.0000</UnitPrice>
+						<OnHandQuantity>2368</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>SQ12      </ProductCode>
+						<Description>Murach's SQL Server 2012</Description>
+						<UnitPrice>57.5000</UnitPrice>
+						<OnHandQuantity>2465</OnHandQuantity>
+					  </Products>
+					  <Products>
+						<ProductCode>VB15      </ProductCode>
+						<Description>Murach's Visual Basic 2015</Description>
+						<UnitPrice>56.5000</UnitPrice>
+						<OnHandQuantity>2193</OnHandQuantity>
+					  </Products>
+					</MMABooksDataSet>
+				------------------
+                mMABooksDataSet.WriteXml("Products.xml", XmlWriteMode.WriteSchema); 
+				
+					?xml version="1.0" standalone="yes"?>
+					<MMABooksDataSet xmlns="http://tempuri.org/MMABooksDataSet.xsd">
+					  <xs:schema id="MMABooksDataSet" targetNamespace="http://tempuri.org/MMABooksDataSet.xsd" xmlns:mstns="http://tempuri.org/MMABooksDataSet.xsd" xmlns="http://tempuri.org/MMABooksDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+						<xs:element name="MMABooksDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+						  <xs:complexType>
+							<xs:choice minOccurs="0" maxOccurs="unbounded">
+							  <xs:element name="Products">
+								<xs:complexType>
+								  <xs:sequence>
+									<xs:element name="ProductCode">
+									  <xs:simpleType>
+										<xs:restriction base="xs:string">
+										  <xs:maxLength value="10" />
+										</xs:restriction>
+									  </xs:simpleType>
+									</xs:element>
+									....
+				------------------
+	XML SCHEMA (XSD)(CREATE AUTOMATICALLY FROM XML FILE)
+		https://lajak.wordpress.com/2011/07/16/generate-xsd-schema-from-xml-using-visual-studio/
+		-open XML 
+		-XML menu, CREATE SCHEMA 
+		-SAVE FILE...
+				
+	XML (READ OR LOAD FROM XML)
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d10LoadFromXML\LoadFromXML.sln"
+			-create button and DATAGRIDVIEW on form (to push XML info to grid)
+				-------------------
+		        private void btnLoadXML_Click(object sender, EventArgs e)
+				{
+					string path = "..\\..\\Products.xml";
+					try
+					{
+						//create (dataSet1) from toolbox first
+						dataSet1.ReadXml(path);
+						dgvProducts.DataSource = dataSet1;
+						dgvProducts.DataMember = "Products";
+					}
+					catch(Exception ex)
+					{
+						MessageBox.Show(ex.GetType().ToString() + ": " + ex.Message);
+					}
+				}
+				-------------------
+				
+	TRANSACTIONS (like transferring a million bucks, all successful or all fails, so doesn't disappear to thin air)
+		(ALL OR NOTHING)
+		SqlTransaction 
+			Commit()	//commits transaction 
+			Rollback() 	//rollback transaction
+			---
+			BeginTransaction()
+			myTransaction.Save("savepoint1");	//create SAVE POINTS (marker for rollback, before commit)
+			
+	SQL SERVER (LOCKING)
+		-SQL manages locking automatically 
+??		-we can set ISOLATION level (one record or more at time) for TRANSACTION 
+	
+??	CONCURRENCY PROBLEMS (4 TYPES)(see DAY10.ppt p.40)
+		-Lost updates, last in wins (2nd user overwrites the first user)
+		-Dirty reads, transactA changes row, transactionB selects that row, transactA rollsback
+		-Non-repeatable reads, A selects row, B updates same row, A selects row again getting different values
+		-Phantom reads
+		
+??	ISOLATION LEVELS
+		ReadUncommited (dangerous)
+		ReadCommited (default)
+		RepeatableRead
+		Snapshot (good)
+		Serializable (good)
+			conn.BeginTransaction(IsolationLevel.Snapshot)
+
+	DAY 11 (Jan.10)
+		OBJECT DATA SOURCES 
+		LINQ
+		DEPLOYING APPLICATIONS
+	
+	************************************************************************************************
+	************************************************************************************************
+	DEPLOYING APPLICATIONS (DAY11.ppt)
+			*** DON'T GIVE SOURCE FILES ***
+		XCOPY (p.36)
+			BENEFITS
+				-installs folder on clients side
+				-user can start application (*.EXE)
+				-create a shortcut 
+				-allow user to remove application (uninstall)
+			********************************************
+			rightclick PROPERTIES (on project)
+			-DEBUG tab, 
+				-uncheck (Enable the visual studio hosting...)
+			-TOOLBAR
+				-pulldown (RELEASE), click START (STOP DEBUGGING)
+			-creates folder (RELEASE FOLDER)
+				"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d10LoadFromXML\LoadFromXML\bin\Release"
+			-copy folder anywhere...
+			-run *.exe file
+			********************************************
+		ClickOnce (PUBLISHING)
+			BENEFITS
+				-user can install (setup.exe file) from (network, web page, FTP site)
+				-uninstall
+				-updates... (VERSION control)
+			---------
+			PUBLISH tab
+				-browse PUBLISHING FOLDER
+					C:\Users\61812\Desktop\testPublish\
+				APPLICATION FILES...
+					-database files...
+				PREREQUISITES...
+					...check to download prerequisite software that's needed.
+				UPDATES... set for when... where... checks for updates automatically (every week)
+				OPTIONS... publish options
+			
+???			DIDN'T WORK
+				menu, Build, PUBLISH <ProjectName>
+				click PUBLISH NOW (PUBLISH tab)
+					ERROR: Signtool.exe (not found)
+				click PUBLISH WIZARD... (PUBLISH tab)
+					
+		SETUP Program (INSTALL SHIELD project assistant)(third party)(Install Shield Ltd.)
+	************************************************************************************************	
+	************************************************************************************************
+	
+	DATA SOURCE (PATH NOT AVAILABLE IN DROPDOWN LIST)(IN WIZARD)
+		-REFERENCES (check to see if there is a YELLOW TRIANGLE in SOLUTION EXPLORER, probably means the VERSION IS INCORRECT?)
+		-make sure REFERENCE to OBJECT is there... 
+		-make sure PROPERTIES the REFERENCE AND NEW PROJECT are the same VERSION
+			-rightclick on PROJECT, PROPERTIES, tab Application, pick Target Framework (.NET Framework 4.6)
+		-this resolved the reference...
+	
+	DATA SOURCES (by OBJECT)
+		"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d11ObjectDataSources\
+			d11ObjectDataSources.sln"
+		-create ANOTHER PROJECT(right SOLUTIONS, Add project, class) (InvoiceDate, CLASS)
+		-rightclick PROJECT (BUILD)(should be no errors)(invoice data project)
+		DATASOURCES, (by OBJECT)(select PROJECT), DataSources tab (on left)(add new data source)(next, BY OBJECT, browse to PROJECT, pick Invoice...?)
+			-------------------------
+			using InvoicesData;
+			
+			        private void Form1_Load(object sender, EventArgs e)
+					{
+						try
+						{
+							List<Invoice> invoiceList = InvoiceDB.GetAllInvoices(); //get all invoices from list
+							invoiceDataGridView.DataSource = invoiceList;
+						}
+						catch(Exception ex)
+						{
+							MessageBox.Show(ex.GetType().ToString() + ": " + ex.Message);
+						}
+
+					}
+			-------------------------
+	LINQ (Language INtegrated Query)
+		LINQ to (XML, SQL, DataSets, Entities, Objects, etc.)
+		
+		3 steps
+			-GET data
+			-DEFINE query
+			-EXECUTE query (deferred execution)
+			
+		EXAMPLE..."C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d11SimpleLINQ\d11SimpleLINQ.sln"
+		-------------------------------------------------------------------
+		            //array
+					double[] numbers = { 2.5, 3.7, 5.9, 1.3, 0, -2.5 }; //data source for LINQ query
+
+					//define query
+					//get the numbers in DESCENDING order
+					//ONLY non-negative
+					//
+					// (FROM ... SELECT)(backwards SQL)
+					var sampleNumbers = from n in numbers       //like FOREACH loop          
+										where n >= 0            //conditional (FILTER)
+										orderby n descending    //order is descending
+										select n;               //*** select is last *** (OUTPUT?, trying to think like PYTHON 'LIST COMPREHENSION')
+	
+					//execute query
+					foreach(double num in sampleNumbers)        //using QUERY results (deferred query here...)
+					{
+						Console.WriteLine(num.ToString());
+					}
+		-------------------------------------------------------------------
+		
+	LINQ 
+		BASIC
+			from
+			where 
+			orderby 		
+			select 
+		ADVANCED
+			join 
+			let 
+			group 
+			
+	LINQ (JOINS TWO *.TXT FILES)
+		(Form1.cs)("C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d12CustomerInvoicesGenericLists")
+		            var invoices = from invoice in invoiceList
+                           join customer in customerList
+                           on invoice.CustomerID equals customer.CustomerID
+                           orderby customer.Name, invoice.InvoiceTotal descending
+                           select new { customer.Name,
+                                        invoice.InvoiceID,
+                                        invoice.InvoiceDate,
+                                        invoice.InvoiceTotal };
+			
+??	LAMBDA FUNCTIONS (=>)
+		SYNTAX		( parameters => expression )
+		
+	
+	
+	SQLDATAREADER
+		MULTIPLE ROWS		SqlDataReader readDB = selectOrderIDListSQLCommand.ExecuteReader();
+		SINGLE ROW 			SqlDataReader readDB = selectOrderIDListSQLCommand.ExecuteReader(System.Data.CommandBehavior.SingleRow);
+		SINGLE VALUE		SSqlDataReader readDB = selectOrderIDListSQLCommand.ExecuteReader(CommandBehavior.SingleResult);
+		
+	-----------------
+	SQLCOMMAND (2 ways to do this...)
+		string sqlUpdate = "UPDATE Suppliers SET SupName='" + myUpdate + "' WHERE SupplierId=" + id + ";";	//DOESN'T HANDLE (DROP TABLE) INJECTION
+			SqlCommand cmd = conn.CreateCommand(); 
+			cmd.CommandText = sqlUpdate;            	
+		OR
+		    //define connection
+            SqlConnection connection = NorthwindDB.ConnectToDB();
+
+            //define query
+            //UPDATE Orders SET ShippedDate='1996-07-17 00:00:00.000' WHERE OrderID = 10248;
+            string updateQuery = "UPDATE Orders " +
+                "SET ShippedDate = @NewShippedDate " +
+                "WHERE (OrderID = " + id + ") " +                           //update only selected record (OrderID=10248)
+                "AND (ShippedDate = @OldShippedDate " +                     //update only if record hasn't changed
+                "OR ShippedDate IS NULL AND @OldShippedDate IS NULL);";
+
+            //updateSQLCommand
+            SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
+	        //set parameter (old shipped date)
+            var x = updateCommand.Parameters.AddWithValue("@OldShippedDate", oldOrder.ShippedDate ?? (object)DBNull.Value );
+            //set parameter (new shipped date)
+            var y = updateCommand.Parameters.AddWithValue("@NewShippedDate", newOrder.ShippedDate ?? (object)DBNull.Value );
+	-----------------
+	
+??	MULTITHREADING
+		-each THREAD gets its own STACK of memory
+		-but they share the same HEAP
+		??-TIMEOUT ()
+		
+		PARALLEL Programming
+			
+		Thread issues
+			-Deadlock
+			-Starvation
+			-Nonderministic
+			
+		Thread object
+			Start 
+			Join 	//does one thread first then the other
+			Sleep 
+	
+??	ASYNC (method)
+		private async void btnXXX_Click(object sender, EventArgs e)
+	
+	PASSING A METHOD AS AN ARGUMENT (if the method has parameters?)
+		Thread t = new Thread(WriteString);
+		 static void WriteString(object s)			//USE OBJECT (instead of STRING as parameter)
+	------------------
+	"C:\Users\61812\OneDrive\000-SAIT (cloud)\001-C-SHARP\00-Practise\d12MultiThreading1"
+	    //A THREAD OF ITS OWN
+        static void Main(string[] args)
+        {
+            //syntax, Thread t = new Thread(method_name)
+            Thread t = new Thread(WriteY);  //create THREAD object, uses DELEGATE as argument
+            //run second thread
+            t.Start();      //flips back and forth to two threads
+
+            //does Y then does X
+            t.Join();       //waits for thread (t) to finish...
+
+            for (int i = 0; i < 1000; i++)
+            {
+                Console.Write("x");
+            }
+
+            //flips back n forth
+            //t.Join();       //waits for thread (t) to finish...
+
+            Console.WriteLine("\n\nPress any key");
+            Console.ReadKey();
+        }
+
+        static void WriteY()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                Console.Write("y");
+            }
+            Console.WriteLine();
+        }
+	------------------
+	
+	LAMBDA EXPRESSION (using DELEGATES)
+	---------------------------------
+	class Program
+    {
+        //DELEGATE
+        delegate int del(int i);
+
+        static void Main(string[] args)
+        {
+
+            int[] list = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            del myDelegate = x => x * x;
+            int j = myDelegate(5); //j = 25  
+            Console.WriteLine(j);
+
+            foreach (int n in list)
+            {
+                Console.WriteLine(myDelegate(n).ToString());                
+            }
+
+            Console.WriteLine("\n---------------");
+
+            del myDelegate2 = x => x + x;
+            foreach (int n in list)
+            {
+                Console.WriteLine(myDelegate2(n).ToString());
+            }
+
+
+            Console.WriteLine("\n\nPress any key...");
+            Console.ReadKey();
+        }
+    }
+	---------------------------------
+	
+	MORE LAMBDAS...
+	-----------------------------------------
+	    class Program
+    {
+        //define DELEGATE (a type that can store reference to a function)
+        delegate void TestDelegate(int[] array);
+
+        //LAMBDA EXPRESSIONS (=>) WITH FUNCTION
+        static void Main(string[] args)
+        {
+
+            int[] myOdds = { 1, 3, 5, 7, 9};
+
+            //VARIABLE (of delegate type)
+            //define the function using statement lambda expression
+            TestDelegate BumpUp = (arr) =>
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    arr[i]++;
+                }
+            };
+
+            BumpUp(myOdds); //becomes EVEN 
+            PrintArray(myOdds);
+            Console.WriteLine("\n\n---------------");
+            //----------
+
+            int[] myNums = { 1, 2, 3, 14, 5, 6, 17, 8, 19 };
+
+            Console.WriteLine("Unsorted numbers: \n");
+            PrintArray(myNums);
+
+            Console.WriteLine("Sorted numbers: \n");
+            SortNumbers(myNums);    //sorts array
+            PrintArray(myNums);     //reprint
+
+            //Stops the window from closing
+            Console.WriteLine("Press any key to finish");
+            Console.ReadKey();
+        }
+
+        static void SortNumbers(int[] array) => Array.Sort(array);  //LAMBDA EXPRESSION
+
+        static void PrintArray(int[] array)
+        {
+            foreach(int n in array)
+            {
+                Console.Write(n.ToString() + "\t");
+            }
+            Console.WriteLine("\n\n---------------");
+        }
+    }
+	-----------------------------------------
+	******************************************************************************************
+	MULTIPLE PROJECTS (HOW TO COMBINE)
+		Create a NEW PROJECT/SOLUTION (to combine existing projects)
+		-on Solution Explorer, rightclick ADD, Existing, browse to (*.SLN) file (this will add all the files under another project)
+		-to REFERENCE THE FORMS...
+		SOLUTION EXPLORER(in COMBINED PROJECT)
+			-rightclick REFERECED, ADD...
+			-Check off the TWO NEW PROJECTS in the list (watch out for circular reference)(*** may have ADDED REFERENCE to wrong project ***)
+			-The NAMESPACES should be accessible below now...
+		(*** NAMESPACE vs PROJECT NAME ***) CHECK may appear differently if used NUMBER at front, 
+			(eg. _00_TeamProject2.frmSupplier...)
+			PROJECT (Solution Explorer) 		00-TeamProject2
+			NAMESPACE							_00_TeamProject2
+			
+		-ADD BUTTON to new form in COMBINED_PROJECT
+			-access the form by 
+				SYNTAX(namespace.formRealName <nameNewForm> = new namespace.formRealName();)
+			----------------------------------------------------
+			private void button2_Click(object sender, EventArgs e)
+			{
+				_00_TeamProject2.frmSupplier mySupplierFORM = new _00_TeamProject2.frmSupplier();
+				mySupplierFORM.Show();
+			}
+			----------------------------------------------------
+	******************************************************************************************
+	
+	FORM (GRADIENT, add splash to it)(http://www.daveoncsharp.com/2009/09/how-to-paint-a-gradient-background-for-your-forms/)
+		*** works on a basic form, but not so well on tab control, or groupbox, or label? ***
+	------------------------------------------
+		using System.Drawing.Drawing2D;
+	
+		//PAINT GRADIENT ON FORM BACKGROUND
+	    protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, 
+                Color.Gray, Color.Black, 90F))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
+        }
+		
+        //CLEANUP FORM GRADIENT (on resize)(*** make sure to initialize this by DOUBLECLICK the event, to get the wiring)
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            this.Invalidate();
+        }
+	------------------------------------------
+	
+	GETORDINAL (returns index #)
+		if(reader.IsDBNull((reader.GetOrdinal("OrderDate")))
+		
+	-----------------------
+	LIST FUNCTIONS
+		(COPY A LIST)
+			List<int> newList = new List<int>(oldList);
+		(NO DUPLICATES)
+			List<int> exceptionListUnique = exceptionList.Distinct().ToList();
+		(SORT NUMERICALLY)
+			exceptionListUnique.Sort();  
+		(REMOVE ELEMENT FROM LIST)
+			finalPrimes.Remove(x);
+	-----------------------		
+	C# MAPPING TWO OBJECTS TO EACH OTHER 
+		PROJECT: 	"C:\Users\Pythagoras\Desktop\Practicum Docs\701 - VIN65\Csharp\TestObjectMapper\TestObjectMapper.sln"
+			-do this similar for BOTH OBJECTS (class file)
+			-one takes (the other object as a PARAMETER)(in the CONSTRUCTOR)
+			-the other is just a (METHOD that does the opposite, passes THIS(itself) to the OTHER OBJECT)
+		------
+		//CONSTRUCTOR (taking (InventoryEpicor) object to convert)
+        //MAPPING (EPICOR to VIN65)
+        //MAPPING (InventoryEpicor to InventoryVIN65)
+        public InventoryVIN65(InventoryEpicor inventoryEpicor)
+        {
+            this.sku = inventoryEpicor.Sku;
+            this.title = inventoryEpicor.Description;
+            this.price = inventoryEpicor.Retail;
+
+            //these properties (cannot be mapped)(leave blank)
+            //this.salePrice = null;
+            //this.ProductId = null;
+            //this.websiteId = null;
+            //this.brand = null;
+            //this.dateModified = null;
+            //this.type = null;
+            //this.vintage = null;
+            //this.isActive = null;
+
+            this.currentInventory = inventoryEpicor.Qoh;
+        }
+
+        //METHOD (taking (this) object to convert)
+        //MAPPING (VIN65 to EPICOR)
+        //MAPPING (InventoryVIN65 to InventoryEpicor)
+        public InventoryEpicor InventoryVIN65ToEpicor()
+        {
+            InventoryEpicor ie = new InventoryEpicor(this);
+            return ie;
+        }
+		------
+		
+	LIST VS ARRAY 
+		MyClass[] array;
+		List<MyClass> list;
+		
+	C# DICTIONARY, SORTEDLIST (*** IF NEED AN INDEX[0] NUMBERS, DON'T USE THIS, USE AN ARRAY ***)
+		-Dictionary or SortedList (order will change and can only use KEY value for these)
+		-if the ORDER IS FIXED, and you need an INDEX
+		-create an OBJECT, then use an ARRAY TO CREATE IT
+		-Windows Form project (with 9 labels...)
+			--------------------
+			class MyInfo
+			{
+				public Label MyLabel { get; set; }
+				public int MyValue { get; set; }
+			}
+			---
+            //create array of objects
+            MyInfo[] grid = new MyInfo[9];
+
+            //instantiate objects (do this otherwise they'll all be NULL)
+            for (int i = 0; i < grid.Length; i++)
+            {
+                grid[i] = new MyInfo();
+            }
+
+            //  0   1   2
+            //  3   4   5
+            //  6   7   8
+
+            //set KEYS
+            grid[0].MyLabel = label00;
+            grid[1].MyLabel = label01;
+            grid[2].MyLabel = label02;
+
+            grid[3].MyLabel = label10;
+            grid[4].MyLabel = label11;
+            grid[5].MyLabel = label12;
+
+            grid[6].MyLabel = label20;
+            grid[7].MyLabel = label21;
+            grid[8].MyLabel = label22;
+
+            //set default VALUES
+            for (int i = 0; i < grid.Length; i++)
+            {
+                grid[i].MyValue = -1;
+            }
+
+            //reset the labels
+            int[] col_1 = new int[9] 
+            {
+                0, 0, 0,
+                2, 2, 2,
+                0, 0, 0
+            };
+            //loop to reset labels (from default)
+            for (int i = 0; i < grid.Length; i++)
+            {
+                grid[i].MyValue = col_1[i];
+            }
+
+            //set the labels
+            for (int i = 0; i < grid.Length; i++)
+            {
+                grid[i].MyLabel.Text = grid[i].MyValue.ToString();
+            }
+			--------------------
+	C# FUNC<Tinput, Tinput, Tresult>
+				Func<int, int> plus2 = (x) => x + 2;
+                Func<int, int> plus3 = (x) => x + 3;
+				Func<int, int, int> TwoParams = (x, y) => x + y;
+			
+	C# CREATE DICTIONARY OF FUNCTIONS		https://stackoverflow.com/questions/2550218/how-to-store-a-function-pointer-in-c-sharp
+		        Dictionary<string, Func<string, string, string>> functionList = new Dictionary<string, Func<string, string, string>>();
+                functionList.Add("strPrefix", (str, prefix) => { return prefix + str; });
+                functionList.Add("strSuffix", (str, suffix) => { return str + suffix; });
+                string s1 = functionList["strPrefix"].Invoke("mystring", "PREFIX");
+                string s2 = functionList["strSuffix"].Invoke("mystring", ".DWG");
+                Console.WriteLine(s1);
+                Console.WriteLine(s2);
+				
+	C# FACTORIAL (RECURSION)
+		-calls itself inside of method
+			---
+		    double Factorial(int number)
+            {
+                if (number == 0)
+                    return 1;
+                return number * Factorial(number - 1);//Recursive call    
+
+            }
+			---
+			
+	C# INFINITE LOOP (CALL FUNCTION)
+		//---------------------------
+        //---------------------------
+        static int a = -1;
+        static int b = -1;
+        static int c = -1;
+
+        static int repeatA = 1;
+        static int repeatB = 1;
+        static int repeatC = 0;     //set to ZERO(0) to turn off(not display funcC)
+
+        //CREATE A LOOP OF FUNCTIONS (calling next one, to form a CYCLE)
+        //this creates an INFINITE LOOP (error StackOverflow)
+        public static void ChainRun()
+        {
+            for (int loop = 0; loop < 3; loop++)
+            {
+                //for loop only runs this (3)thrice
+                for (int i = 0; i < 1; i++)
+                {
+                    a++;
+                    b++;
+                    c++;
+                    ChainFuncA();   //one function to run all three
+                }
+                Console.WriteLine("---");
+            }
+                   
+        }
+        public static void ChainFuncA()
+        {
+            //Console.WriteLine("ChainFuncA calling B");
+            for (int i = 0; i < repeatA; i++)
+            {
+                Console.WriteLine("ChainFuncA:    a:" + a);
+            }
+            
+            ChainFuncB();
+        }
+        public static void ChainFuncB()
+        {
+            //Console.WriteLine("ChainFuncB calling C");
+            for (int i = 0; i < repeatB; i++)
+            {
+                Console.WriteLine("ChainFuncB:    b:" + b);
+            }           
+            ChainFuncC();
+        }
+        public static void ChainFuncC()
+        {
+            //Console.WriteLine("ChainFuncC calling A, repeat the cycle");
+            for (int i = 0; i < repeatC; i++)
+            {
+                Console.WriteLine("ChainFuncC:    c:" + c);
+            }    
+            //ChainFuncA();     //repeats A, B & C
+            //ChainFuncB();       //repeats B & C
+            //ChainFuncC();       //repeats C only
+        }
+        //---------------------------
+        //---------------------------
+			
+	C# DYNAMIC NUMBER OF LISTS 		https://stackoverflow.com/questions/15772388/dynamic-number-of-lists
+		List<List<ISpoolerObject>> writer = new List<List<ISpoolerObject>>(numPartitions);
+		for(int z = 0; z < numPartitions; z++)
+		{
+			writer.Add(new List<ISpoolerObject>());
+		}
+		
+	C# PERMUTATION
+		-------------------
+		public static void Permutation(int elements1, int elements2)
+        {
+            List<MyNode> list1 = new List<MyNode>();
+            for (int i = 0; i < elements1; i++)
+            {
+                list1.Add(new MyNode());
+            }
+
+            List<MyNode> list2 = new List<MyNode>();
+            for (int i = 0; i < elements2; i++)
+            {
+                list2.Add(new MyNode());
+            }
+
+            int len1 = list1.Count;
+            int len2 = list2.Count;
+            //MyNode[] result = new MyNode[]();
+
+            for (int i = 0; i < len1; i++)
+            {
+                for (int j = 0; j < len2; j++)
+                {
+                    var x = list1[i].Child = i;
+                    //var y = list2[j].Parent = i;
+                    var y = list2[j].Child = j;
+
+                    Console.WriteLine("({0}, {1})", x, y);
+                }
+            }
+        }
+		---
+		//CLASS NODE
+		class MyNode
+		{
+			public int Parent { get; set; }
+			public int Child { get; set; }
+		}
+		-------------------
+		
+	LAMBDA (SORT)
+	    int[] list = { 1, 2, 3, 4, 5, 6, 7 };
+        int[] list2 = { 11, 22, 33 };
+		var y2 = list2.Union(list).ToList().OrderBy(i => i);                //sort ascending
+		var y2 = list2.Union(list).ToList().OrderByDescending(i => i);      //sort descending
+			OR 
+		var y2 = list2.Union(list).ToList().OrderBy(i => i).Reverse(); 		//sort descending
+		
+	EXTENSION METHOD (FOREACH)
+		public static void MyForEach<T>(this IEnumerable<T> source, Action<T> action)
+        {
+            foreach (T element in source)
+                action(element);
+        }
+		---
+		y2.MyForEach(x => Console.WriteLine(x));
+		y2.MyForEach(x => x.ToString().MyPrint());
+		
+	IF-THEN SHORTHAND 
+		condition ? first_expression : second_expression;  
+		condition ? ifTrue : elseIfFalse;
+		Console.Write(bit ? 1 : 0);
+		
+	BIT ARRAY (use for BINARY NUMBERS)
+		------------------------------------------
+		public static BitArray NthDigit(){
+            // https://www.dotnetperls.com/bitarray
+            // 
+            BitArray bin1 = new BitArray(4);        //create array, (set # of digits/bits),     eg. 0000
+            bin1.Set(0, true);                      //set each bit (1st column),                eg. 0001
+            bin1.Set(3, true);                      //set each bit (4th column),                eg. 1001
+
+            var x = CreateArray(new bool[]{true, false, true, true});
+            return x;
+        }
+        //CREATE BIT ARRAY (from number (base-10))
+        public static BitArray CreateArray(int num){
+        public static BitArray CreateArray(int num){           
+            string binary = Convert.ToString(num, 2);                   //converts (int 5) to (string 101)
+            BitArray bitArray = new BitArray(binary.Length);            //create list (proper length)
+            char[] arr = binary.ToCharArray();                          //convert string to (Char array)
+            //loop to set array values
+            for(int i = 0; i < arr.Length; i++){
+                bitArray.Set(i, ((int)arr[i] == '1') ? true : false);
+            }
+            return bitArr
+        }
+        //CREATE BIT ARRAY (from bool array)
+        public static BitArray CreateArray(bool[] list){
+            //bool[] list = { true, false, true, false };
+            BitArray bitArray = new BitArray(list.Length);  //create list (proper length)
+            for(int i = 0; i < list.Length; i++){
+                bitArray.Set(i, list[i]);
+            }
+            return bitArray;
+        }
+
+        //PRINT BIT ARRAY
+        public static void DisplayBitArray(BitArray bitArray)
+        {
+            for (int i = 0; i < bitArray.Length; i++)
+            {
+                bool bit = bitArray.Get(i);
+                Console.Write(bit ? 1 : 0);
+            }
+            Console.WriteLine();
+        }
+		------------------------------------------
+		
+	BASE-10 TO BASE-2 (TRICK)
+		string binary = Convert.ToString(5, 2);     //converts (int 5) to (string 101)
+		// *** ONLY WORKS WITH... bases: 2, 8, 10, or 16 ***
+		Console.WriteLine("base10-2: " + binary);
+		
+	C# DLL (dynamic link library)
+		-this is a central file (*.DLL) that can give access to multiple projects by referencing it
+		-to make a DLL file
+			-NEW, PROJECT, CENTRAL LIBRARY, create your CLASS info, etc.
+			-BUILD PROJECT, (this may default to DEBUG, change to RELEASE before building)
+				-the DLL file will be sitting in 
+			-HOW TO REFERENCE THIS IN ANOTHER PROJECT 
+				-ADD REFERENCE, browse to DLL FILE 
+				-USING (add declaration to USE this file...)
+					using ClassLibrary1;
+				-HOW TO IMPLEMENT CLASS (test in CONSOLE project)
+					        static void Main(string[] args)
+							{
+								ClassLibrary1.Class1 c1 = new Class1(2, 3);
+
+								Console.WriteLine("A:{0}, B:{1}", c1.A, c1.B);
+
+								Console.Read();
+							}
+							
+	C# USING DECLARATION (HOW TO MAKE UNIQUE)(say if there are TWO classes with the SAME NAME, there will be a conflict)
+		using lib1 = ClassLibrary1;
+		using nums = LibraryDJ.Extensions.NumberExtension;
+		using strs = LibraryDJ.Extensions.StringExtension;
+		
+		-then to use these you can reference them with the VARIABLE NAME 
+			//ClassLibrary1.Class1 c1 = new lib1.Class1(2, 3);          //clean up, this can be shown more efficiently
+            lib1.Class1 c1 = new lib1.Class1(2, 3);
+            Console.WriteLine("A:{0}, B:{1}", c1.A, c1.B);
+			
+			int x = 123;
+            int n1 = nums.DigitSum(x);
+            Console.WriteLine("sum of {0} is {1}", x, n1);
+			
+	C# USING (DOES NOT HAVE A REFERENCE)
+		-go to PROJECT, REFERENCES, ADD REFERENCE, Assembly TAB, scroll down and add (System.Windows.Forms)
+			-this will give access to TEXTBOX, MESSAGEBOX objects, etc.
+		using System.Windows.Forms;             //needed to add assembly reference
+		
+	C# (XML TO EXCEL)		https://code.msdn.microsoft.com/office/Convert-Excel-to-XML-and-8995eb98/sourcecode?fileId=121996&pathId=912880959
+		----------------
+		using System; 
+		using System.Collections.Generic; 
+		using System.Linq; 
+		using System.Text; 
+		using Spire.Xls; 
+		using System.Windows.Forms; 
+		using System.IO; 
+		 
+		namespace XmlAndExcel 
+		{ 
+			class Program 
+			{ 
+				static void Main(string[] args) 
+				{ 
+					// A: Xml to Excel 
+					Workbook workbook = new Workbook(); 
+		 
+					//initailize worksheet 
+					using (FileStream fileStream = File.OpenRead(@"..\..\ReadXMLSample.Xml")) 
+					{ 
+						workbook.LoadFromXml(fileStream); 
+					} 
+		 
+					//save the document 
+					workbook.SaveToFile(@"..\..\Sample.xls"); 
+					System.Diagnostics.Process.Start(@"..\..\Sample.xls"); 
+		 
+					// B: Excel to Xml 
+					Workbook workbook2 = new Workbook(); 
+		 
+					//add context to Excel file 
+					Worksheet sheet2 = workbook2.Worksheets[0]; 
+					sheet2.Range["C9"].Text = "Demo Text"; 
+					sheet2.Range["C10"].Style.KnownColor = ExcelColors.Gray25Percent; 
+					sheet2.Range["C11"].Style.KnownColor = ExcelColors.Blue; 
+					sheet2.Range["C12"].Text = "demo text"; 
+		 
+					//save to Xml 
+					workbook2.SaveAsXml(@"..\..\result.xml"); 
+					System.Diagnostics.Process.Start(Path.Combine(Application.StartupPath, @"..\..\result.xml")); 
+				} 
+			} 
+		} 
+		----------------
+		
+	VALIDATION 
+		-you generally only need to VALIDATE when there is USER INPUT 
+			-eg. TEXTBOX (is it string, int?)
+			-eg. FILE (is it the correct file?)(file path?)(file FORMAT?)
+			
+		
+	XSD SCHEMA UTILITY (XSD.EXE)	
+		-COPY (XSD.EXE) from C:FOLDER ("C:\Program Files\Unity\Editor\Data\Mono\lib\mono\2.0\xsd.exe") (UNDER Visual Studio or UNITY Program Files)
+		-to use CREATE A TEMP FOLDER 
+		-COPY (XSD.EXE) into folder 
+		-OPEN COMMAND PROMPT (and go to this folder)
+		-PUT COPY OF XML HERE (Piping.xml)
+		***********************************
+		-RUN (COMMANDLINE)
+			TYPE (CREATES AN XSD FILE)
+				xsd Piping.xml 
+			TYPE
+				xsd Piping.xsd /classes
+		***********************************	
+		----
+		-create CLASS file from XML
+			https://stackoverflow.com/questions/4203540/generate-c-sharp-class-from-xml
+			D:\temp>xsd test.xml
+				Microsoft (R) Xml Schemas/DataTypes support utility
+				[Microsoft (R) .NET Framework, Version 4.0.30319.1]
+				Copyright (C) Microsoft Corporation. All rights reserved.
+				Writing file 'D:\temp\test.xsd'.
+
+			D:\temp>xsd test.xsd /classes
+				Microsoft (R) Xml Schemas/DataTypes support utility
+				[Microsoft (R) .NET Framework, Version 4.0.30319.1]
+				Copyright (C) Microsoft Corporation. All rights reserved.
+				Writing file 'D:\temp\test.cs'.
+			https://docs.microsoft.com/en-us/dotnet/standard/serialization/xml-schema-definition-tool-xsd-exe
+			
+	AUG.10, 2018 C# TEST (TUTORIALS TEACHER)(13/20)
+		*** CORRECT ANSWERS BELOW... ***
+		1.class can inherit multiple ________
+			INTERFACES
+		2.Which of the followings are value types in C#?
+			Int32
+			Double
+			Decimal	
+		3.Which of the following is a reference type in C#?
+			STRING
+		4.What is Nullable type?
+			CAN ASSIGN (NULL) TO A VALUE TYPE
+		5.Struct is a _____.
+			VALUE TYPE
+		6.10 > 9 ? "10 is greater than 9” : "9 is greater than 10” is an example of _______
+			TERNARY OPERATOR
+		7.Which of the following datatype can be used with enum?
+			INT 
+		8.What is indexer?
+			ALLOWS AN (OBJECT) TO BE (INDEXED) LIKE AN ARRAY
+		9.String data type is ______.
+			IMMUTABLE
+		10.An array in C# starts with _____ index.
+			ZERO 
+		11.Which of the following is right way of declaring an array?
+			int[] intArray = new int[5];
+		12.Which of the following is true for ReadOnly variables?
+			(VALUE) IS ASSIGNED AT (RUNTIME)
+		13.Which of the following statement is true?
+			try block must be followed by catch and finally block.
+			try block must be followed by catch or finally block or both.
+			try block can include another try block.
+		14.Which of the following statement is true?
+			A return or break statement cannot exit a finally block.
+		15.Func and Action are the types of ______.
+			DELEGATE
+		16.Return type of Predicate <T>() is always a ______.
+			BOOLEAN
+		17.A partial class allows ________
+			Implementation of single class in multiple .cs files.
+		18.LINQ stands for ________.
+			Language INtegrated Query 
+		19.Data type of a variable declared using var will be assigned at _______.
+			COMPILE TIME
+		20.Which of the following is true for dynamic type in C#?
+			It escapes compile time type checking
+			
+	AUG.10 PROGRAMMER (PERSONALITY TEST)
+		What type of programmer am I?
+		http://www.doolwind.com/blog/programmer-personality
+		----------
+		Your programmer personality type is:
+
+		   DLSB
+		   D - Doer 
+		   L - Low Level 
+		   S - Solo 
+		   B - Liberal programmer
+
+		You're a DOER.
+			-You are very quick at getting tasks done. 
+			-You believe the outcome is the most important part of a task and the faster you can reach that outcome the better. 
+			-After all, time is money.
+
+		You like coding at a LOW LEVEL.
+			-You're from the old school of programming and believe that you should have an intimate relationship with the computer. 
+			-You don't mind juggling registers around and spending hours getting a 5% performance increase in an algorithm.
+
+		You work best in a SOLO SITUATION.
+			-The best way to program is by yourself. 
+			-There's no communication problems, you know every part of the code allowing you to write the best programs possible.
+
+		You are a LIBERAL PROGRAMMER.
+			-Programming is a complex task and you should use white space and comments as freely as possible to help simplify the task. 
+			-We're not writing on paper anymore so we can take up as much room as we need.
+		----------
+		http://www.doolwind.com/blog/programmer-personality-test-key/
+		
+	CHEATSHEET (C#)
+	-----------------------------------------------------------------------
+	FORMS (PROPERTIES)
+		-rightclick PROPERTIES (on BUTTON)
+		---
+			(Name) 		button1
+			Text 		button1
+			BackColor 	(button color)
+			ForeColor 	(text color)
+			Font 		(look at the options)
+			Tag 		(add Tag value in properties for TEXTBOX, to use in VALIDATION MESSAGES)
+			Visible 	True
+	FORMS (CODE BEHIND)
+		-to open CODE BEHIND 
+		-doubleclick BUTTON (brings up FILE and CODE BEHIND for BUTTON)
+	ADD (Class, Project, Folder)
+		-rightclick PROJECT, (ADD), (Class) 
+		-rightclick SOLUTION, (ADD), (Project) 
+		-rightclick PROJECT, (ADD), (New Folder)
+	KEYWORDS (if you can't remember) 
+		-just like typing a SNIPPET below 
+		-you can FILTER for ALL THE KEYWORDS 
+		-it is the SECOND LAST FILTER (at bottom)
+		-type (A), (AUTOCOMPLETE brings up OPTIONS)
+			-click on KEYWORD FILTER (scroll to find)
+	SNIPPETS 
+		-type a letter, (click on SNIPPETS filter at bottom)
+		-click on (prop)(type TAB, TAB)(*** THIS WILL PASTE THE SNIPPET ***)
+			eg. 	cw (TAB, TAB) 			(Console.WriteLine())
+					prop (TAB, TAB) 		(getter/setter property)
+					propfull (TAB, TAB)		(full getter/setter property) 
+					class (TAB, TAB)		(class template)
+					namespace (TAB, TAB)	(namespace template)
+					ctor (TAB, TAB) 		(constructor)
+					if (TAB, TAB) 			(if statement) 
+					else (TAB, TAB) 		(else statement)
+					do (TAB, TAB) 			(do-while statement)
+					for (TAB, TAB)			(for statement)
+					foreach (TAB, TAB)		(foreach statement)
+					enum (TAB, TAB)			(enum)
+					mbox (TAB, TAB)			(MessageBox.Show template)
+					try (TAB, TAB) 			(try-catch statement)
+					tryf (TAB, TAB) 		(try-finally statement)
+					while (TAB, TAB) 		(while statement)
+	IF-ELSE IF-ELSE 
+		    if (True) {}
+            else if (True) {}
+			else {}
+	TRY-CATCH (EXAMPLE)
+		try
+		{
+			// ...CODE TO TRY HERE...
+		}
+		catch(Exception ex)
+		{
+			// throw ex;	(use this if you aren't HANDLING THE (MESSAGEBOX) here)
+			MessageBox.Show(ex.GetType().ToString() + ": " + ex.Message);		//windows FORMS 
+			//WPF?
+			//ASP.NET (alert?)
+		}
+	RESOURCES 	
+		C# EXAMPLES 		https://www.dotnetperls.com/list
+	SET PROJECT (AS CURRENT)
+		-with multiple projects (in ONE *.sln)
+		-rightclick PROJECT, (SET AS CURRENT PROJECT)
+		-so when you RUN (it runs this project)
+	ADD REFERENCES (FROM TWO DIFFERENT PROJECTS)
+		-want to USE some CLASS from other PROJECT 
+		-rightclick REFERENCES, (ADD REFERENCE) 
+			-PROJECTS, pick OTHER PROJECT (CHECK ON)
+		---------
+		IMPORTS (WHAT PATH FROM OTHER PROJECT?)
+			using ...?
+			-WRITE THE CODE from the original project 
+			eg. 	StudentInfo stud1 = new StudentInfo(22, "Nadine", "Jones");
+			-this will UNDERLINE (TO FIX)
+				-pick LIGHTBULB (TO ADD (USING) IMPORT REFERENCE)
+	CONSOLE APP 
+			static void Main(string[] args)
+			{
+				Console.WriteLine("CONSOLE TEST APP");
+
+				StudentInfo stud1 = new StudentInfo(22, "Nadine", "Jones");
+				Console.WriteLine(stud1.ToString());	
+				
+				Console.ReadKey();  //pause console (so it doesn't close)
+			}
+	COMMENTS 
+			// single line comment
+			/*
+			*  This is line 1 of a comment block
+			*  This is line 2 of the comment block
+			*/
+			/// documentation 
+		CTRL+K, C 	(to comment)
+		CTRL+K, U 	(to uncomment)
+	DOCUMENTATION (SUMMARY)
+		https://www.codeproject.com/Articles/11082/C-and-XML-Source-Code-Documentation
+		-type /// (above the METHOD, CLASS, etc)
+		/// <summary>
+        /// ...add description here...
+        /// </summary>
+		<summary>Your summary</summary>
+		<param name='name'>Description.</param>
+		<returns>Description.</returns>
+	DOCUMENTATION (TO XML FILE)
+		-select PROJECT, rightclick PROPERTIES 
+		-BUILD tab, OUTPUT (XML documentation file)(CHECK ON)
+			bin\MyMVCapp1.xml
+			"E:\000-BACKUP\0000-CODE ACADEMY\600-C#\MyMVCapp1\MyMVCapp1\bin\
+				MyMVCapp1.xml"
+				--------------
+				<?xml version="1.0"?>
+				<doc>
+					<assembly>
+						<name>MyMVCapp1</name>
+					</assembly>
+					<members>
+						<member name="T:MyMVCapp1.Controllers.StudentInfo">
+							<summary>
+							this is the StudentInfo CLASS
+							</summary>
+						</member>
+					</members>
+				</doc>
+				
+	DOCUMENTATION (EXAMPLE)
+		/// <summary>
+        /// PRINT (RETURNS A STRING)(of object properties)
+        /// </summary>
+        /// <returns>STRING</returns>
+        public string Print()
+        {
+            return String.Format("VIDEO GAME\nname: {0}\ncost: {1}", this.Name, this.Cost.ToString("c"));
+        }
+	DOCUMENTATION (GENERATE HELP FROM *.XML FILE)
+		NDOCS (looks like OLD Windows Forms)
+		https://visualstudiomagazine.com/articles/2017/02/21/vs-dotnet-code-documentation-tools-roundup.aspx
+		???
+				--------------
+		
+	STRINGS (use DOUBLE-QUOTES)
+		Console.WriteLine("this is a string");
+		String.Format("{0} {1}", student1.FirstName, student1.LastName);
+	STRING (LITERAL)(@"...")(ignores ESCAPE CHARACTERS)
+		@"c:\_temp\sample.xml"
+	STRING (CONCATENATION)
+		"I" + " " + "am" + " " + "awesome."
+	STRING (BUILDER)(for long text)
+		StringBuilder sb = new StringBuilder();
+		sb.Append("I");
+		sb.Append(" ");
+		sb.Append("am");
+		sb.Append(" ");
+		sb.Append("Dean.");
+		sb.ToString();			//"I am Dean."
+	STRING (CURRENCY FORMAT)
+		"20".ToString("c")		//"$20.00"
+		
+	CLASS (EXAMPLE)
+	public class StudentInfo
+    {
+        // PROPERTIES 
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DateEnrolled { get; set; }
+
+
+        // CONSTRUCTOR (GENERATE CONSTRUCTOR)(highlight PROPERTIES, rightclick QUICK ACTIONS (CTRL+.))
+        public StudentInfo (int id, string fname, string lname)
+        {
+            this.Id = id;
+            this.FirstName = fname;
+            this.LastName = lname;
+            this.DateEnrolled = DateTime.Now;
+        }
+
+        //TOSTRING OVERRIDE
+        public override string ToString()
+        {
+            return "this is StudentInfo STRING OVERRIDE.";
+        }
+    }
+	
+	CLASS (GETTERS AND SETTERS)
+		-use the LIGHTBULD (rightclick) for AUTOCOMPLETE 
+		SHORTEST version (PROPERTY with GETTER AND SETTER)
+			public int MyProperty { get; set; }
+		OTHER (GETTER SETTERS)(for when you need to modify it)
+			---------------------
+			public int MyProperty
+			{
+				get { return myVar; }
+				set { myVar = value; }
+			}
+		---------------------
+		OTHER (GETTER SETTERS)
+			-SELECT PROPERTY, rightclick LIGHTBULB 
+		        public int MyProperty { get => myProperty; set => myProperty = value; }
+				private int myProperty;
+				
+	CLASS (CREATE OBJECT)
+		var student1 = new StudentInfo(33, "Dean", "Jones");
+		StudentInfo student1 = new StudentInfo(33, "Dean", "Jones");
+		
+	USING (loaded the NAMESPACE)(that is needed)
+		PROGRAM.CS 
+			using ConsoleTestApp.Model;	
+		./Model/VideoGames.cs
+			namespace ConsoleTestApp.Model
+	CLASS (EXAMPLE)
+		//TEST (OBJECT)
+		using ConsoleTestApp.Model;			// ./Model/VideoGames.cs
+		
+		VideoGames game1 = new VideoGames("Mario Kart", 50);
+		Console.WriteLine(game1.Print());
+		game1.PrintToConsole();
+		-----------------------
+		class VideoGames
+		{
+			public string Name { get; set; }
+			public int Cost { get; set; }
+
+			//CONTRUCTOR
+			public VideoGames(string name, int cost)
+			{
+				this.Name = name;
+				this.Cost = cost;
+			}
+
+			//METHOD (PRINT)(RETURN STRING)
+			public string Print()
+			{
+				return String.Format("VIDEO GAME\nname: {0}\ncost: {1}", this.Name, this.Cost.ToString("c"));
+			}
+
+			//METHOD (PRINT TO CONSOLE)
+			public void PrintToConsole()
+			{
+				Console.WriteLine("*****************");
+				Console.WriteLine(this.Print());
+				Console.WriteLine("*****************");
+			}
+		}
+		
+	CLASS (CALLING STATIC METHOD)
+		-call from the CLASS
+		StudentInfo.MySchoolStaticMethod
+	CLASS (CALLING REGULAR METHOD) 
+		-call from the OBJECT (name)
+		student1.MyRegularMethod()
+	
+	DEBUG MODE 
+			-add a BREAK POINT (RED DOT)(click on LEFT of LINE NUMBERS)
+			-RUN (opens INTERNET EXPLORER ASP.NET)
+			-will STOP (if it encounters the CODE with the BREAK POINT)
+		HOVER TO SEE (OBJECT INFO)
+		F10 (STEP DOWN)(or STEP OVER)
+		F11 (STEP INTO)(if you want to GO INTO A FUNCTIONS CODE)
+		
+	DEBUG (ERRORS)
+		ERRORS tab
+			-look at ERROR MESSAGE 
+			-DOUBLE CLICK to go to ERROR (line)
+			-look at LIGHTBULB for (potential fixes)
+	LIST 
+		-can be ANY (DATA TYPE)
+		List<string> myList = new List<string>();
+		myList.Add("aaa");
+		myList.Add("bbb");
+		myList.Add("ccc");
+	LIST (INDEX)(CONVERT TO ARRAY FIRST)
+		myList.ToArray(); 
+		myList.ToArray()[1];	//"bbb"
+	LIST (LOOP)
+		foreach (var x in myList)
+		{
+			Console.WriteLine(x);
+		}
+	
+	LIST (CONTAINS) [10, 20, 30]
+		myArray.ToList().Contains(20));
+		
+	ARRAY[]
+		-ADD [] after the DATA TYPE 
+		-can only be ONE (DATA TYPE)
+            int[] myArray = new int[3];
+            myArray[0] = 10;
+            myArray[1] = 20;
+            myArray[2] = 30;
+	ARRAY (SHORT)
+		double[] balance = { 2340.0, 4523.69, 3421.0 };
+		int[] marks = new int[]  { 99,  98, 92, 97, 95};
+		
+	LOOP (FOREACH LAMBDA)
+		-must be a LIST 
+		myArray.ToList().ForEach(i => Console.WriteLine(i));
+		
+	LOOP (FOR)
+		for ( int i = 0; i < 10; i++ ) {
+            n[i] = i + 100;
+         }
+	LOOP (FOREACH)
+		foreach (int j in n ) {
+            int i = j-100;
+            Console.WriteLine("Element[{0}] = {1}", i, j);
+         }
+		
+	FUNC<int> (CREATE A SHORT FUNCTION)
+		 Func<int, int> plus2 = (x) => x + 2;
+		 plus2(10);		//returns 12
+		 
+	NULL (?)
+		-ADD (?) after DATA TYPE (to allow for NULL VALUES)
+		decimal? sales1 = 3265.4m;	
+	CASTING (CONVERT DATA TYPE)
+		(float)1.0 / 3;
+	GET TYPE 
+		GETTYPE()
+			string str = "string...";
+			str.GetType();						//System.String
+		TYPEOF
+			typeof(<object>) 
+			typeof(string) 						//System.String 
+		COMPARE (IF A STRING)
+			str.GetType() == typeof(string) 	//True 
+		IS (KEYWORD)
+			str is string 						//True 
+			int x = 33; 
+			x is string 						//False		
+	
+	DATA TYPES 
+		https://www.tutorialspoint.com/csharp/csharp_data_types.htm
+		string  (is famous)			string s = "Dean";
+		int 						int x = 33;
+		bool 						bool isSkyUp = true;
+		double 						double d = 57.75d;
+		decimal 					decimal sales1 = 3265.4m;
+		char 	(one letter in string)
+				
+		bool	Boolean value	True or False	False
+		byte	8-bit unsigned integer	0 to 255	0
+		char	16-bit Unicode character	U +0000 to U +ffff	'\0'
+		decimal	128-bit precise decimal values with 28-29 significant digits	(-7.9 x 1028 to 7.9 x 1028) / 100 to 28	0.0M
+		double	64-bit double-precision floating point type	(+/-)5.0 x 10-324 to (+/-)1.7 x 10308	0.0D
+		float	32-bit single-precision floating point type	-3.4 x 1038 to + 3.4 x 1038	0.0F
+		int		32-bit signed integer type	-2,147,483,648 to 2,147,483,647	0
+		long	64-bit signed integer type	-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807	0L
+		sbyte	8-bit signed integer type	-128 to 127	0
+		short	16-bit signed integer type	-32,768 to 32,767	0
+		uint	32-bit unsigned integer type	0 to 4,294,967,295	0
+		ulong	64-bit unsigned integer type	0 to 18,446,744,073,709,551,615	0
+		ushort	16-bit unsigned integer type	0 to 65,535	0
+	LOGIC OPERATORS 
+		https://www.tutorialspoint.com/csharp/csharp_logical_operators.htm
+		&& 		AND 
+		|| 		OR 
+		! 		NOT 
+	-----------------------------------------------------------------------
+		
+</textarea>

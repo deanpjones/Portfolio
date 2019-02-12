@@ -1,0 +1,1443 @@
+<!-- "E:\000-BACKUP\000-SAIT\000-HELP\111-AngularJS.txt" -->
+<link rel="stylesheet" type="text/css" href="./css/format_text_file.css" />
+<textarea style="width:95%;height:95%;border:solid 2px black;">
+
+AngularJS 
+
+ANGULARJS (CONFIRM LINKS)
+	https://cdnjs.com/libraries/angular.js/1.4.8
+		<!-- AngularJS (main) library (https://cdnjs.com/libraries/angular.js/1.4.8) -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+
+		<!-- AngularJS ROUTING library -->
+		<!-- <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js"></script>
+
+ABOUT 
+	-AngularJS extends HTML with new attributes.
+	-AngularJS is perfect for Single Page Applications (SPAs).
+
+TERMINAL (FOR JAVASCRIPT)(CONSOLE, COMMANDLINE)			http://blog.gvm-it.eu/post/20404719601/getting-started-with-nodejs-on-windows
+	-go to POWERSHELL or COMMANDLINE 
+	-type (node) (this activates the NODE.JS TERMINAL)
+		PS E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\01-MyFirstApp> node
+		> 
+	-TO QUIT 
+		CTRL+C, CTRL+C 
+TO RUN (A SCRIPT) 
+	PS E:\000-BACKUP\...> node helloworld.js 
+NODE-JS (WEB SERVER) 
+	var http = require('http') 
+	http 				#this returns the HTTP OBJECT (wow!)
+	
+NODE TERMINAL (in powershell)
+	PS E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\800-PLAY> 
+		node --version
+		v8.6.0
+	PS E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\800-PLAY> 
+		npm --version
+		6.4.1
+	
+	╭─────────────────────────────────────╮
+   │                                     │
+   │   Update available 5.3.0 → 6.4.1    │
+   │     Run npm i -g npm to update      │
+   │                                     │
+   ╰─────────────────────────────────────╯
+
+CHROME CONSOLE (INSPECT ANGULARJS)
+	https://stackoverflow.com/questions/13743058/how-do-i-access-the-scope-variable-in-browsers-console-using-angularjs
+	-run an ANGULARJS project (then open the CONSOLE in developer tools in CHROME)
+		angular
+		angular.element($('img')).scope()			#GETS SCOPE
+		$0
+			<img ng-src="img/phones/samsung-gem.0.jpg" alt="Samsung Gem™" src="img/phones/samsung-gem.0.jpg">
+		angular.element($0).scope()
+			ChildScope {$$childTail: null, $$childHead: null, $$nextSibling: ChildScope, $$watchers: Array(6), $$listeners: {…}, …}
+		angular.element($0).scope().phone
+			Resource {age: 4, carrier: "Cellular South", id: "samsung-gem", imageUrl: "img/phones/samsung-gem.0.jpg", name: "Samsung Gem™", …}
+			$$hashKey: "object:21"
+			age: 4carrier: "Cellular South"
+			id: "samsung-gem"
+			imageUrl: "img/phones/samsung-gem.0.jpg"
+			name: "Samsung Gem™"
+			snippet: "The Samsung Gem™ brings you ev... price."
+			
+RESOURCES**
+	COLOR PICKER 									http://kaihenzler.github.io/angular-minicolors/
+	
+	FREE CODE CAMP (CERTIFICATIONS) 				https://github.com/freeCodeCamp/freeCodeCamp
+	
+	TUTORIAL (WITH EXAMPLES)						https://codesjava.com/angularjs-pdf-beginners-programs-code-download
+
+	SERVICE vs FACTORY 								https://stackoverflow.com/questions/23074875/angularjs-factory-and-service
+
+	ANGULARJS DOCS (TUTORIAL) 						https://docs.angularjs.org/tutorial
+
+	ROUTING 										https://www.ng-newsletter.com/posts/beginner2expert-config.html
+	***************************************************************************************************
+	ANGULARJS (**OFFICIAL DOCUMENTATION**)			https://docs.angularjs.org/api/ng/directive/ngClick	
+	
+	ANGULAR-JS (Angular 1.0, JavaScript) vs ANGULAR (Angular 2.0, TypeScript)
+													
+	ANGULAR 2.0 (TypeScript)						https://angular.io/
+	***************************************************************************************************
+	
+	CODECADEMY 	https://www.codecademy.com/courses/learn-angularjs/lessons/your-first-app/exercises/your-first-app-hello-angularjs-i?action=resume_content_item
+	
+	http://www.tutorialsteacher.com/angularjs/what-is-angularjs		TUTORIALS TEACHER
+	https://www.w3schools.com/angular/default.asp					W3SCHOOLS TUTORIALS
+
+	https://docs.angularjs.org/api/ng/input/input%5Btext%5D				*** ANGULAR DOCUMENTATION ***
+
+	https://www.w3schools.com/angular/default.asp
+	https://www.w3schools.com/angular/angular_ref_directives.asp		REFERENCE
+	https://www.w3schools.com/angular/angular_examples.asp				EXAMPLES
+	
+	https://code.angularjs.org/0.10.0/
+	https://code.angularjs.org/0.10.0/docs-0.10.0/#!/api				API REFERENCE (live examples)
+	
+	http://jsfiddle.net/api/post/library/pure/							LIVE EDITOR
+	
+TROUBLESHOOTING 
+	-not rendering properly?
+		-DID YOU COPY (QUOTES) from a webpage? Try RE-TYPE QUOTES 
+		-DO YOU HAVE (COMMENTS) in your CONTROLLER (this may be affecting something?)
+	
+DECLARE SCRIPT 
+	<!-- AngularJS (main) library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<!-- AngularJS ROUTING library -->
+    <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+	
+HISTORY 
+	AngularJS version 1.0 was released in 2012.
+	Miško Hevery, a Google employee, started to work with AngularJS in 2009.
+
+WHAT IS IT?	
+	AngularJS is a JavaScript framework. It can be added to an HTML page with a <script> tag.
+	AngularJS extends HTML attributes with Directives, and binds data to HTML with Expressions.
+	
+NG (MEANING)
+		 ngRepeat (camelCase)
+		 ng-repeat (HTML)
+
+	ng-...
+		ng-app			defines an AngularJS APPLICATION.							https://docs.angularjs.org/api/ng/directive/ngApp
+		-this DECLARATION is needed for EXPRESSIONS to work 						https://www.w3schools.com/angular/tryit.asp?filename=try_ng_expression_2				
+			var app = angular.module('MyApp', []);
+			var app = angular.module('MyApp_Dependencies', ['dependency1', 'dep2', etc]);
+				-second ARGUMENT (are module dependencies)
+			<html ng-app="myApp">
+			<body ng-app="myApp">		#most common
+			
+		EXPRESSION (double curly braces)
+			{{ my_variable_from_controller_scope }}
+		ANGULARJS EXPRESSIONS VS JAVASCRIPT
+			-BOTH can contain variables, arrays and objects
+			-BOTH can use OPERATORS 
+			-ANGULARJS (can write EXPRESSIONS inside HTML)(JS cannot)
+			-ANGULARJS (DOES NOT support conditionals, loops or exceptions)(JS does)
+				-ng-repeat (is a loop?)
+			-ANGULARJS EXPRESSIONS (support FILTERS)(JS has no filters?)
+			
+		ng-src 			image source 												https://docs.angularjs.org/api/ng/directive/ngSrc
+			<img ng-src="{{ product.cover }}">	
+			*** MAKE SURE NOT TO JUST USE... (this will cause a ERROR in NETWORK file GET...
+				<img src="{{ our_team.dean_jones.photo }}"
+				ERROR 404:	http://localhost/%7B%7B%20our_team.dean_jones.photo%20%7D%7D
+				%20%7D%7D  	same as		}}
+				%20	 					SPACE 
+				%7D 					}
+			
+		ng-repeat 
+			<!DOCTYPE html>
+			<html>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<body>
+
+			<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+			  <p>Looping with ng-repeat:</p>
+			  <ul>
+				<li ng-repeat="x in names">
+				  {{ x }}
+				</li>
+			  </ul>
+			</div>
+
+			</body>
+			</html>
+		ng-repeat 		loop for CONTROLLER scope elements 							https://docs.angularjs.org/api/ng/directive/ngRepeat
+			<tr ng-repeat="x in row">
+				<td>{{ x.Name }}</td>
+				<td>{{ x.City }}</td>
+				<td>{{ x.Country }}</td>
+			</tr>
+		
+		ng-click 		HTML element (click event) runs a FUNCTION					https://docs.angularjs.org/api/ng/directive/ngClick
+			<span ng-click="my_function($index)">
+			
+		(HTML TAG --> ng-model) --> ng-bind(to access 'ng-model' VALUE)	
+			
+		ng-model		GETS the VALUE from (input, select, textarea) 
+			https://www.w3schools.com/angular/default.asp
+			-ng-model, binds the VALUE (from the INPUT BOX) and the KEY is called from the EXPRESSION using double-curly braces {{name}}
+			-HTML controls (input, select, textarea)
+			---
+			<!DOCTYPE html>
+			<html>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<body>
+
+			<div ng-app="">
+			 
+			<p>Input something in the input box:</p>
+			<p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
+			<h1>Hello {{name}}</h1>
+
+			</div>
+
+			</body>
+			</html>
+		ng-bind 
+			-USE THIS TO (BIND) from directly from a HTML CONTROL (select, input box, textbox)
+			-DON'T USE THIS with (ng-init), use an EXPRESSION rather
+		ng-bind (numbers)			https://www.w3schools.com/angular/tryit.asp?filename=try_ng_bind_numbers
+			<!DOCTYPE html>
+			<html>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<body>
+
+			<div ng-app="" ng-init="quantity=1;cost=5">
+			<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+			</div>
+
+			</body>
+			</html>
+		ng-bind			SENDS VALUE to this... (binds the VALUE from (ng-model) to innerHTML of this TAG)
+			<h3 ng-bind="name3" />
+		ng-bind VS EXPRESSION	
+			<p>The name is <span>{{person.firstName}}</span></p>							//EXPRESSION
+			<p>The name is <span ng-bind="person.lastName"></span></p>						//NG-BIND 
+		EXPRESSION (double-curly braces)
+			{{ variable_name }}
+			---
+			//WITHOUT VARIABLES 
+			<p>My first expression: {{ 5 + 5 }}</p>											//EXPRESSION
+			<p>My first expression: {{ "John" + " " + "Doe" }}</p>							//EXPRESSION
+			
+			//NUMBERS 
+			<div ng-app="" ng-init="quantity=1;cost=5">
+			<p>Total in dollar: {{ quantity * cost }}</p>									//EXPRESSION
+			<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>					//NG-BIND 
+			---
+			//STRINGS 
+			<div ng-app="" ng-init="firstName='John';lastName='Doe'">
+			<p>The full name is: {{ firstName + " " + lastName }}</p>						//EXPRESSION
+			<p>The full name is: <span ng-bind="firstName + ' ' + lastName"></span></p>		//NG-BIND 	
+			---
+			//OBJECTS 
+			<div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+			<p>The name is {{ person.lastName }}</p>										//EXPRESSION
+			<p>The name is <span ng-bind="person.lastName"></span></p>						//NG-BIND 
+			---
+			//ARRAY 
+			<div ng-app="" ng-init="points=[1,15,19,2,40]">
+			<p>The third result is {{ points[2] }}</p>										//EXPRESSION
+			<p>The third result is <span ng-bind="points[2]"></span></p>					//NG-BIND 
+			---
+			
+			
+			
+		EXPRESS (with OBJECTS) 
+			<!DOCTYPE html>
+			<html>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<body>
+
+			<div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+
+			<p>The name is {{ person.lastName }}</p>
+
+			</div>
+
+			</body>
+			</html>
+		
+		ng-init 		VARIABLE (declare value)
+							<div ng-app="" ng-init="firstName='John'">
+		ng-init 		(MULTIPLE VARIABLES)
+							<div ng:init="greeting='Hello'; person='World'; hat='top';">
+		ng-init 	
+			<!DOCTYPE html>
+			<html>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<body>
+
+			<div ng-app="" ng-init="quantity=3;cost=5">
+			<p>Total in dollar: {{ quantity * cost }}</p>
+			</div>
+
+			</body>
+			</html>
+		
+		DATA-NG-... vs NG-...
+			https://www.w3schools.com/angular/angular_intro.asp
+			You can use data-ng-, instead of ng-, if you want to make your page HTML valid.
+	------------------------------------------------------------------------------------------------------------------------------------------
+	------------------------------------------------------------------------------------------------------------------------------------------
+	APP (ANGULAR APPLICATION
+		HTML (ng-app)(index.html)										JS (angular.module)(/js/app.js)
+			<body ng-app='MyApp'>											var app = angular.module('myApp', []);
+		HTML (script loading)
+			<script src="js/app.js"></script>
+	------------------------------------------------------------------------------------------------------------------------------------------		
+	CONTROLLER
+		HTML (ng-controller)(index.html)								JS (app.controller)(/js/controllers/MainController.js)
+			<div ng-controller="MainController">							app.controller('MainController', ['$scope', function($scope) { 
+		HTML (script loading)												  $scope.program = { 
+			<script src="js/controllers/MainController.js"></script>			series: "Sherlock", 
+																				series_img: "img/sherlock.jpg", 
+																				genre: "Crime drama", 
+																				season: 3, 
+																				episode: "The Empty Hearse", 
+																				description: "Two years after his reported Reichenbach Fall demise, Sherlock, who has been cleared of all fraud charges against him, returns with Mycroft's help to a London under threat of terrorist attack. John has moved on and has a girlfriend, Mary Morstan. Sherlock enlists Molly to assist him, but when John is kidnapped by unknown assailants and is rescued by Sherlock and Mary, John returns to help find the terrorists and an underground plot to blow up the Houses of Parliament during an all night sitting on Guy Fawkes Night.", 
+																				datetime: new Date(2014, 11, 31, 21, 00, 00, 00) 
+																			  }
+																			}]); 
+	------------------------------------------------------------------------------------------------------------------------------------------
+	DIRECTIVE										
+		HTML (creates CUSTOM HTML tag)(index.html)						JS (app.directive)(/js/directives/programListing.js)
+			<program-listing></program-listing>								app.directive('programListing', function(){
+		HTML (script loading)													return {
+			<script src="js/directives/programListing.js"></script>					restrict: 'E', 
+																					scope: {
+																					  listing: '='
+																					},
+																					templateUrl: 'js/directives/programListing.html'
+																				  }
+																				});
+																		HTML (SNIPPET)
+																			(/js/directives/programListing.html)
+																				<div>
+																					// HTML CONTENT HERE...
+																				</div>	
+	------------------------------------------------------------------------------------------------------------------------------------------
+	SERVICE (service --> controller --> HTML)
+		HTML (ng-controller)(index.html)								JS (app.factory)(/js/services/forecast.js)
+			<script src="js/controllers/MainController.js"></script>		app.factory('forecast', ['$http', function($http){
+			<script src="js/services/forecast.js"></script>					  return $http.get('https://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json')
+																			  .success(function(data) {
+																				return data;
+																			  })
+																			  .error(function(err){
+																				return err;
+																			  });
+																			}]);
+																		JS (app.controller)(/js/controllers/MainController.js)
+																			app.controller('MainController', ['$scope', 'forecast', function($scope, forecast) {
+																			  // get data (from service)(forecast.js)
+																			  forecast.success(function(data){
+																				$scope.fiveDay = data;
+																			  });
+
+																			}]);
+	------------------------------------------------------------------------------------------------------------------------------------------			
+	ANGULAR 
+		angular.module 
+			controller ($scope)
+			directive (html snippet)
+			factory (service)(REST API JSON data)
+		---
+		angular.module		defines APPLICATIONS
+		app.controller		controls APPLICATIONS (connects MODEL data to VIEW html)
+			-$scope (data) or variables or objects
+			-connects to a (service)
+		app.directive		
+			-HTML snippet 
+			-or built-in (angular directives)(ng-... is a custom angular HTML tag)
+		app.factory 
+			-used to create a (service)
+			-SERVICE, is a ($http GET) method to get JSON from a REST API 
+	------------------------------------------------------------------------------------------------------------------------------------------
+	------------------------------------------------------------------------------------------------------------------------------------------
+	DIRECTIVES (REFERENCE)
+		https://www.w3schools.com/angular/angular_ref_directives.asp
+		
+			
+			
+CSS PROPERTIES 
+	https://www.w3schools.com/angular/tryit.asp?filename=try_ng_expression_3
+		<input style="background-color:{{myCol}}" ng-model="myCol">
+		
+EXAMPLE 
+	--------------
+	<!DOCTYPE html>
+	<html>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<body>
+
+	<div ng-app="">
+		<p>Input something in the input box:</p>
+		<p>Name: <input type="text" ng-model="name1"></p>
+		<p>Name: <input type="text" ng-model="name2"></p>
+		<p>Name: <input type="text" ng-model="name3"></p>
+		<h1 ng-bind="name1" />
+		<h2 ng-bind="name2" />
+		<h3 ng-bind="name3" />
+	</div>
+
+	</body>
+	</html>
+	--------------
+	
+EXPRESSIONS {{ expression }}
+	-AngularJS expressions are written inside double braces: {{ expression }}.
+	-AngularJS will "output" data exactly where the expression is written
+		<p>My first expression: {{ 5 + 5 }}</p>
+
+		<p>Name: <input type="text" ng-model="name"></p>
+		<p>{{name}}</p>
+		
+	-------------
+	<div ng-app=""> 
+		<p>Input something in the input box:</p>
+		<p>Name: <input type="text" ng-model="name1"></p>
+		<p>Name: <input type="text" ng-model="name2"></p>
+		<p>Name: <input type="text" ng-model="name3"></p>
+		<h1>{{name1}} </h1>
+		<h2>{{name2}} </h2>
+		<h3>{{name3}} </h3>
+	</div>
+	-------------
+	<div ng:init="greeting='Hello'; person='World'; hat='top';">
+	  {{greeting}} {{person}}! Wears a {{hat}} hat.
+	</div>
+	-------------
+	
+CONTROLLER (like a method?)		https://www.w3schools.com/angular/angular_intro.asp
+	-------------
+	<div ng-app="myApp" ng-controller="myCtrl">
+		First Name: <input type="text" ng-model="firstName"><br>
+		Last Name: <input type="text" ng-model="lastName"><br>
+		<br>
+		Full Name: {{firstName + " " + lastName}}
+	</div>
+
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+			$scope.firstName= "John";
+			$scope.lastName= "Doe";
+		});
+	</script>
+	-------------
+
+APPLICATION CONTROLLER?
+	----
+	var app = angular.module('myApp', []);
+	
+	app.controller('myCtrl', function($scope) {
+    $scope.firstName= "John";
+    $scope.lastName= "Doe";
+	});
+	----
+	
+	
+	
+	NEXT...
+	...https://www.w3schools.com/angular/angular_expressions.asp
+	
+JAVASCRIPT (+)(IN FRONT LIKE CAST)	https://medium.com/@nikjohn/cast-to-number-in-javascript-using-the-unary-operator-f4ca67c792ce
+	-converts these to NUMBER type
+		+false  // 0
+		+‘123'  // 123
+		+0xBABE // 47806 (Hexadecimal)
+		+null   // 0
+		+function(val) {return val } // NaN
+		
+		
+NG-APP 
+	-need to WRAP (in DIV)
+	-this tells ANGULAR it is an ANGULAR TAG
+	<div ng-app="">
+		//...code here
+	</div>
+	
+MULTIPLE BINDINGS (add SEMICOLOR between...)
+	https://www.w3schools.com/angular/tryit.asp?filename=try_ng_intro_directives
+	<div ng-app="" ng-init="firstName='John'; lastName='Carter'">	
+		<p>The name is {{firstName}} <span ng-bind="lastName"></span></p>
+	</div>
+	
+OPTIONS (DROPDOWNLIST)
+	https://www.w3schools.com/angular/tryit.asp?filename=try_ng_ng-options
+	<div ng-app="myApp" ng-controller="myCtrl">
+	<select ng-model="selectedName" ng-options="item for item in names">
+	</select>
+	<br />
+	<p>{{selectedName}}</p>
+	</div>
+
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+		$scope.names = ["Apple", "Banana", "Cantalope"];
+	});
+	</script>
+	
+OPTIONS (DROPDOWNLIST)
+	http://jsfiddle.net/bmleite/2qfSB/
+	//JAVASCRIPT
+	var app = angular.module('app', []);
+
+	function Ctrl($scope) {
+	  $scope.products = [{
+		value: 'prod_1',
+		label: 'Product 1'
+	  }, {
+		value: 'prod_2',
+		label: 'Product 2'
+	  }];   
+	}
+	//HTML 
+	<div ng-controller="Ctrl">     
+		Sort by:
+		<select ng-model="productList" ng-options="product as product.label for product in products">           
+		</select>
+		<p>Ordered by: {{productList.label}}</p>
+	<div>
+	
+SQL (RESPONSE FROM *.PHP FILE)(note, looks like a dummy file with JSON)
+	//https://www.w3schools.com/angular/tryit.asp?filename=try_ng_customers_mysql
+	<!DOCTYPE html>
+	<html >
+	<style>
+	table, th , td  {
+	  text-align: left;
+	  border: 1px solid grey;
+	  border-collapse: collapse;
+	  padding: 5px;
+	}
+	table tr:nth-child(odd) {
+	  background-color: #f1f1f1;
+	}
+	table tr:nth-child(even) {
+	  background-color: #ffffff;
+	}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<body>
+	 
+	<div ng-app="myApp" ng-controller="customersCtrl">
+	 
+	<table>
+	<th>Name</th><th>City</th><th>Country</th>
+	  <tr ng-repeat="x in row">
+		
+		<td>{{ x.Name }}</td>
+		<td>{{ x.City }}</td>
+		<td>{{ x.Country }}</td>
+	  </tr>
+	</table>
+	 
+	</div>
+	 
+	<script>
+	var app = angular.module('myApp', []);
+	app.controller('customersCtrl', function($scope, $http) {
+	   $http.get("customers_mysql.php")
+	   .then(function (response) {$scope.row = response.data.records;});
+	});
+	</script>
+	 
+	</body>
+	</html>
+	
+ANGULAR CHART (FROM ARRAY)
+	<!DOCTYPE html>
+	<html>
+	<head>
+	  <!-- FONT AWESOME (external symbols) -->
+	  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<!-- BOOTSTRAP (CSS) -->
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	  <!-- ANGULAR JS -->
+	  <script id="AngularJS" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	  <style>
+		.error {
+		  color: red;
+		}
+		#shoppingList {
+			  /* position: absolute;
+			  left: 10px;
+			  top: 10px; */
+			  margin: 10px;
+			  /* border: 3px solid black; */
+		  padding: 2px;
+		  padding: 0.05em 1em 1em 1em;
+		  /* border-radius: 1em; */
+		  /* width: 75%; */
+		  width: auto;
+		  /* box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19); */
+		}
+		#mytable {
+		  margin: 10px;
+		  padding: 2px;
+		}
+		.wrapper {
+		  display: table-header-group;
+		  margin: 10px;
+		  padding: 2px;
+		  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+		  border-radius: 1em;
+		  width: 30%;
+		}
+		table {
+		border-collapse: collapse;
+		width: auto;
+		}
+		tbody {
+		  width: auto;
+		}
+		th, td {
+			text-align: left;
+			padding: 8px;
+		}
+		tr:nth-child(even) {background-color: #f2f2f2;}
+		tr:hover {background-color:rgba(188, 155, 69, 0.25);}
+		
+		input {
+		  margin-left: 10px;
+		  margin-top: 10px;
+		}
+
+		table {
+		  /* width: auto; */
+		}
+		/* table header */
+		th {
+			/* background-color: #4CAF50; */
+			/* color: white; */
+		}
+		th, td {
+			/* border-bottom: 1px solid #ddd; */
+		}
+		/* row color (alternate) */
+		/* tr:nth-child(even) {background-color: #f2f2f2;} */
+		/* tr:nth-child(odd) {background-color: rgb(255, 249, 172);} */
+		/* table row (hover) */
+		/* tr:hover {background-color: #9c1212;} */
+	  </style>
+	  <script>
+		var app = angular.module("myShoppingList", []);
+		app.controller("myShoppingListCtrl", function($scope) {
+		  //database (ARRAY)
+			$scope.products = ["Apples", "Bananas", "Cantalope"];
+		  //CRUD
+			//create (add)
+			$scope.createItem = function () {
+				$scope.products.push($scope.addInput);  //pushes from input box
+				$scope.addInput = null;                 //clear input box (after button click)
+			}
+			//read (get)
+			//update (edit)
+			//delete (delete)
+			$scope.deleteItem = function (index) {
+				$scope.products.splice(index, 1);
+			}
+		  
+		});
+		</script>
+	</head>
+	<body>
+
+	<div id="shoppingList" ng-app="myShoppingList" ng-controller="myShoppingListCtrl">
+	  <!-- <ul>
+		<li ng-repeat="product in products">{{ product }}<span ng-click="deleteItem($index)"><i class="fas fa-times-circle"></i></span></li>
+	  </ul> -->
+	  <!-- <table id="mytable" class="table table-dark"> -->
+	  <div class="wrapper">
+		<table id="mytable">
+		  <th>Products</th><th></th>
+		  <tr ng-repeat="product in products">
+			  <td>{{ product }}</td>
+			  <td><span ng-click="deleteItem($index)"><i class="fas fa-times-circle"></i></span></td>
+		  </tr>
+		</table>
+	  </div>
+	  <input id="myInput" ng-model="addInput">
+	  <button ng-click="createItem()">Add</button>
+	  <p>Click the little x to remove an item from the shopping list.</p>
+	  <p class="error">ERROR: </p>
+	</div>
+
+	</body>
+	</html>
+	
+	
+ANGULAR CHART (FROM OBJECT)
+	<!DOCTYPE html>
+	<html>
+	<head>
+	  <!-- FONT AWESOME (external symbols) -->
+	  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<!-- BOOTSTRAP (CSS) -->
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	  <!-- ANGULAR JS -->
+	  <script id="AngularJS" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	  <style>
+		.error {
+		  color: red;
+		}
+		#shoppingList {
+			  /* position: absolute;
+			  left: 10px;
+			  top: 10px; */
+			  margin: 10px;
+			  /* border: 3px solid black; */
+		  padding: 2px;
+		  padding: 0.05em 1em 1em 1em;
+		  /* border-radius: 1em; */
+		  /* width: 75%; */
+		  width: auto;
+		  /* box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19); */
+		}
+		#mytable {
+		  margin: 10px;
+		  padding: 2px;
+		}
+		.wrapper {
+		  display: table-header-group;
+		  margin: 10px;
+		  padding: 2px;
+		  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+		  border-radius: 1em;
+		  width: 30%;
+		}
+		table {
+		border-collapse: collapse;
+		width: auto;
+		}
+		tbody {
+		  width: auto;
+		}
+		th, td {
+			text-align: left;
+			padding: 8px;
+		}
+		tr:nth-child(even) {background-color: #f2f2f2;}
+		tr:hover {background-color:rgba(188, 155, 69, 0.25);}
+		
+		input {
+		  margin-left: 10px;
+		  margin-top: 10px;
+		}
+
+		table {
+		  /* width: auto; */
+		}
+		/* table header */
+		th {
+			/* background-color: #4CAF50; */
+			/* color: white; */
+		}
+		th, td {
+			/* border-bottom: 1px solid #ddd; */
+		}
+		/* row color (alternate) */
+		/* tr:nth-child(even) {background-color: #f2f2f2;} */
+		/* tr:nth-child(odd) {background-color: rgb(255, 249, 172);} */
+		/* table row (hover) */
+		/* tr:hover {background-color: #9c1212;} */
+	  </style>
+
+	  <script>
+		var app = angular.module('myApp', []);
+		app.controller('myAppCtrl', function($scope) {
+			//default products
+			$scope.products = [
+			  {
+				name: 'Apple',
+				type: 'Granny',
+				price: 1.99,
+			  }, 
+			  {
+				name: 'Banana',
+				type: 'Yellow',
+				price: 2.99,
+			  }
+			];
+			//CRUD
+			//add 
+			$scope.createItem = function () {
+				//empty object
+				var obj = {};
+				obj.name = $scope.addName;
+				obj.type = $scope.addType;
+				obj.price = $scope.addPrice;
+				//push object (to array)
+				$scope.products.push(obj);  
+				//clear input boxes (after button click)
+				$scope.addName = null;                 
+				$scope.addType = null;  
+				$scope.addPrice = null;  
+			}
+			//delete 
+			$scope.deleteItem = function(index){
+				$scope.products.splice(index, 1);
+			};
+		});
+	  </script>
+	</head>
+	<body>
+	  <div id="app" ng-app="myApp" ng-controller="myAppCtrl">
+		<div class="wrapper">
+		  <table id="mytable">
+			<th>Name</th>
+			<th>Type</th>
+			<th>Price</th>
+			<tr ng-repeat="x in products">
+				<td>{{ x.name }}</td>
+				<td>{{ x.type }}</td>
+				<td>{{ x.price }}</td>
+				<td><span ng-click="deleteItem($index)"><i class="fas fa-times-circle"></i></span></td>
+			</tr>
+		  </table>
+		</div>
+		<div class="wrapper">
+		  <table id="mytable">
+			  <th>Name</th>
+			  <th>Type</th>
+			  <th>Price</th>
+			  <tr>
+				<td><input id="inputName" ng-model="addName"></td>
+				<td><input id="inputType" ng-model="addType"></td>
+				<td><input id="inputPrice" ng-model="addPrice"></td>
+				<td><button ng-click="createItem()">Add</button></td>
+			  </tr>
+		  </table> 
+		</div>
+		<p>Click the little x to remove an item from the shopping list.</p>
+		<p class="error">ERROR: </p>
+	  </div>
+
+	</body>
+	</html>
+
+ANGULARJS VS JQUERY EXAMPLE 
+	---- JQUERY ----
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+	</head>
+	<body>
+		Enter Your Name: <input type="text" id="txtName" /> <br />
+		Hello <label id="lblName"></label>
+
+		<script>
+			$(document).ready( function< () {
+				$('#txtName').keyup(function () {
+					$('#lblName').text($('#txtName').val());
+				});
+			});
+		</script>
+	</body>
+	</html>
+	---- ANGULARJS ----
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<script src="~/Scripts/angular.js"></script>
+	</head>
+	<body ng-app>
+		Enter Your Name: <input type="text" ng-model="name" /> <br />
+		Hello <label ng-bind="name"></label>
+	</body>
+	</html>
+	-------------------
+	
+ASP.NET (getting started and hooking in AngularJS)
+	-WEB, ASP.NET Web Applications, EMPTY 
+	-rightclick SOLUTION (to install ANGULARJS SCRIPTS), MANAGE NUGET PACKAGES FOR SOLUTION 
+		-browse, ANGULAR, install ANGULAR CORE 
+			(this INSTALLS SCRIPT folder, WITH scripts)
+				...Scripts/angular.min.js
+				...Scripts/angular.js
+	-rightclick PROJECT, ADD (HTML page) 
+	-<script src=""> 			(browse to SCRIPTS, angular.js FILE)
+		<head>
+		<script src="Scripts/angular.js"></script>
+		</head>
+		
+DIRECTIVES (attributes)		http://www.tutorialsteacher.com/angularjs/first-angularjs-application
+	-extends the HTML with custom attributes and elements
+	ng-...
+	ng-app: 	-is a starting point 
+				-auto-initializes AngularJS (bootstrap)
+				-typically in the <html ng-app> or <body ng-app> elements (or other elements)
+				-only ELEMENTS (OR CHILDREN) will be processed with ANGULAR (with ng-app)
+				-If AngularJS framework finds ng-app directive anywhere in the HTML document then it bootstraps (initializes) itself and compiles the HTML template.
+				-*** MULTIPLE ng-app directives are NOT allowed in a single HTML document. ***
+	ng-app="MyApp"
+				-name in ng-app (can be referenced in a MODULE)(eg. angular.module('myApp', []);)
+	ng-app (manually... without ng-app attribute)
+				<body>
+					<div>{{2/2}}</div>
+				<script>       
+					 angular.element(document).ready(function () {
+						 angular.bootstrap(document);
+					 });
+				</script>
+				</body>
+	ng-model: 	-binds HTML element to a property 
+				-on the ($scope) object. 
+	$scope (object) 
+				-model data is stored so that controllers, directives and expressions can access it
+EXPRESSION
+	-AngularJS framework evaluates the expression and produces a result.
+	-expression CANNOT contain (if-else, for loop, while loop etc.) or regular expressions 
+	{{ ... }}
+	{{ expression }}
+	{{ num1 * num2 }}
+	
+	
+CODECADEMY (ANGULARJS) OCT.4, 2018
+	"E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\01-MyFirstApp\01-FirstApp"
+	QUIZ#1 FIRST APP (Oct.7)
+		8/10 	80%
+		9/10 	90%
+		10/10	100% 
+	QUIZ#2 DIRECTIVES (Oct.8)
+		7/9 	77%
+		9/9 	100%
+	QUIZ#3 SERVICES (Oct.10) 
+		6/6 	100% 
+		
+	FOLDER STRUCTURE
+		/css
+		/js 
+			/controllers 
+				MainController.js
+			/shared 
+			/test
+			app.js 
+		/test 
+		index.html
+	---------------
+	app.js 
+		var app = angular.module("myApp", []);
+	index.html
+		<body ng-app="myApp">											#create the ANGULARJS app (ng-app DIRECTIVE tells AngularJS that the MyApp MODULE is in the BODY TAG
+		<div class="main" ng-controller='MainController'>				#MainController (A controller manages the app's data)
+		<h1>{{ title }}</h1>											#TITLE PROPERTY (the properties of $scope become available in the <div class="main"> where the CONTROLLER is defined) 
+		<h2>{{ promo }}</h2>		
+		<!-- <p class="title">{{ product.name | uppercase }}</p> -->		# UPPERCASE filter
+		<!-- <p class="price">{{ product.price | currency }}</p> -->		# CURRENCY FILTER ( | currency) (** DON'T CHANGE DATA **)
+		<!-- <p class="date">{{ product.pubdate | date }}</p> -->			# DATE FILTER (with PIPE | symbol)
+		<div ng-repeat="product in products" class="col-md-6">			#LOOP (ng-repeat)
+        <div class="thumbnail">
+          <!-- <img src="img/the-book-of-trees.jpg"> -->
+          <img ng-src="{{ product.cover }}">							# (ng-src) SRC TO IMAGE PATH
+          <p class="title">{{ product.name }}</p>
+          <p class="price">{{ product.price | currency }}</p>
+          <p class="date">{{ product.date | date }}</p>
+		  <div class="rating">
+			<p class="likes" ng-click="plusOne($index)">&#128077; {{ product.likes }} </p>
+			<p class="dislikes" ng-click="minusOne($index)">&#128078; {{ product.dislikes }}</p>
+		  </div>
+        </div>
+      </div>
+	MainController.js
+		# MVC CONTROLLER --> VIEW
+		# controller (manages data)
+		app.controller('MainController', ['$scope', function($scope)
+		{
+			#$scope.title = 'Top Sellers in Books'  
+			$scope.title = "Dean's AngularJS"  
+			$scope.promo = "Save 100% OFF"
+			//$scope.product = {name: 'The Book of Trees', price: 19, pubdate: new Date('2014', '03', '08')}
+			$scope.products = [
+				{ 
+					name: 'The Book of Trees', 
+					price: 19, 
+					pubdate: new Date('2014', '03', '08'), 
+					cover: 'img/the-book-of-trees.jpg',
+					likes: 0,
+				  dislikes: 0
+				}, 
+				{ 
+					name: 'Program or be Programmed', 
+					price: 8, 
+					pubdate: new Date('2013', '08', '01'), 
+					cover: 'img/program-or-be-programmed.jpg',
+					likes: 0,
+				  dislikes: 0 
+				}, 
+				{ 
+					name: 'Harry Potter & The Prisoner of Azkaban', 
+					price: 11.99, 
+					pubdate: new Date('1999', '07', '08'), 
+					cover: 'http://upload.wikimedia.org/wikipedia/en/b/b4/Harry_Potter_and_the_Prisoner_of_Azkaban_(US_cover).jpg',
+					likes: 0,
+				  dislikes: 0 
+				}, 
+				{ 
+					name: 'Ready Player One', 
+					price: 7.99, 
+					pubdate: new Date('2011', '08', '16'), 
+					cover: 'http://upload.wikimedia.org/wikipedia/en/a/a4/Ready_Player_One_cover.jpg',
+					likes: 0,
+				  dislikes: 0 
+				}
+			  ];
+			  //function (dislikes counter)
+			  $scope.minusOne = function(index) {
+				$scope.products[index].dislikes += 1;
+			  }
+			  //function (likes counter)
+			  $scope.plusOne = function(index) { 
+				$scope.products[index].likes += 1; 
+				};
+	
+		}]);
+	
+	STRUCTURE 
+		CREATE A MODULE (ng-app) 
+		CREATE A CONTROLLER (ng-controller) 
+			-ADD DATA to $scope OBJECT  
+		WIRE TO VIEW (*.html)
+			-SCRIPT TAG (for AngularJS library) 
+				<head>
+				 <!-- Include the AngularJS library -->
+				<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+				</head>
+			IN BODY (of html) 
+				-ng-app 	
+				-ng-controller 
+				-insert your values from SCOPE DATA {{ my_values }}
+			-SCRIPT TAG (for MODULE and CONTROLLER) 
+				-AT BOTTOM (of body TAG)
+				<body>
+				
+				...OTHER HTML CODE
+				
+				<!-- Modules -->
+				<script src="js/app.js"></script>
+
+				<!-- Controllers -->
+				<script src="js/controllers/MainController.js"></script>
+				</body>
+				
+	VARIABLES 
+		$scope   		# variables for CONTROLLER 
+		$index 			# index value for LIST OF PRODUCTS
+	FILTERS (STRING)		https://www.w3schools.com/angular/angular_filters.asp
+		-use the PIPE(|) symbol to set filter
+		<p>{{ product.date | date }}</p>
+		| date 
+		| currency 
+		| uppercase 
+		| lowercase
+		----
+		???
+		filter 			#Select a subset of items from an array.
+		json 			#Format an object to a JSON string.
+		limitTo 		#Limits an array/string, into a specified number of elements/characters.
+		number 			#Format a number to a string.
+		orderBy 		#Orders an array by an expression.
+
+	LOOPS 
+		ng-repeat 		#like FOR-LOOP
+	IMAGE PATH 
+		ng-src 
+			#HTML
+				<img ng-src="{{ product.cover }}">
+			#CONTROLLER 
+				$scope.products = [
+					{ 
+						cover: 'img/the-book-of-trees.jpg'
+					}
+	EVENTS 
+		ng-click 		# fire FUNCTION when user clicks something
+		<span ng-click="deleteItem($index)">
+	???
+		ng-disabled
+		ng-view
+		
+	CONTROLLER (in HTML) 	https://www.w3schools.com/angular/tryit.asp?filename=try_ng_filters_uppercase
+		<script>
+		angular.module('myApp', []).controller('personCtrl', function($scope) {
+			$scope.firstName = "John",
+			$scope.lastName = "Doe"
+		});
+		</script>
+	ANGULAR MODULE 			https://docs.angularjs.org/api/ng/function/angular.module#angular.module-arguments
+		-like MODULAR DESIGN in Piping Design (same idea) a way to SPLIT UP CODE (to use in pieces)
+		-a MODULE can be INDEPENDENT (decoupled from the rest of code) 
+		-it is more easily MAINTAINABLE 
+		-MODULES (in JavaScript) are like mimicing CLASSES (in other languages)
+			-this allows things like PRIVATE and PUBLIC (variables and methods or functions) 
+			-a way of ENCAPSULATION (to allow the USER to see what we need him to see)
+			
+	ANGULARJS (CODECADEMY) 
+		PROJECTS FOLDER 
+			"E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\"
+		
+	DATE (CURRENT)
+		$scope.today = new Date();
+		{{ today | date }}
+		
+	NG-DATE 
+		https://docs.angularjs.org/api/ng/filter/date
+		-these below all render the same result
+		{{ program.datetime | date }}					#Dec 31, 2014
+		{{ program.datetime | date:'mediumDate' }}		#Dec 31, 2014
+		{{ program.datetime | date:'MMM dd, yyyy' }}	#Dec 31, 2014
+		---
+		{{ program.datetime | date:'EEEE' }}			#Wednesday
+		---
+		{{ program.datetime | date:'shortTime' }} 		#9:00 PM
+		{{ program.datetime | date:'h:mm a' }} 			#9:00 PM
+		
+	NG-DATE 
+		https://www.ng-newsletter.com/posts/beginner2expert-config.html 
+		-search DATE (on page)
+		{{ today | date:'medium' }} Oct 7, 2018 3:14:30 PM
+		{{ today | date:'short' }} 10/7/18 3:14 PM
+		{{ today | date:'fullDate' }} Sunday, October 7, 2018
+		{{ today | date:'longDate' }} October 7, 2018
+		{{ today | date:'mediumDate' }} Oct 7, 2018
+		{{ today | date:'shortDate' }} 10/7/18
+		{{ today | date:'mediumTime' }} 3:14:30 PM
+		{{ today | date:'shortTime' }} 3:14 PM
+		----------
+		DATE
+		YEAR
+			{{ today | date:'yyyy' }} 2018
+			{{ today | date:'yy' }} 18
+		MONTH
+			{{ today | date:'MMMM' }} October
+			{{ today | date:'MMM' }} Oct
+			{{ today | date:'MM' }} 10			#padded
+			{{ today | date:'M' }} 10
+		DAY OF MONTH
+			{{ today | date:'dd' }} 07			#padded
+			{{ today | date:'d' }} 7
+		DAY IN WEEK
+			{{ today | date:'EEEE' }} Sunday
+			{{ today | date:'EEE' }} Sun
+		-------------
+		TIME
+		HOUR
+			{{ today | date:'HH' }} 15			#padded
+			{{ today | date:'H' }} 15
+		HOUR (AM/PM)
+			{{ today | date:'hh' }} 03			#padded
+			{{ today | date:'h' }} 3
+		AM/PM 
+			{{ today | date:'a' }} PM
+		MINUTE
+			{{ today | date:'mm' }} 14			#padded
+			{{ today | date:'m' }} 14
+		SECOND
+			{{ today | date:'ss' }} 30			#padded
+			{{ today | date:'s' }} 30
+		MILLISECOND
+			{{ today | date:'.sss' }} .572
+		TIMEZONE
+			{{ today | date:'Z' }} -0600
+		-------------
+		
+	DIRECTIVES 
+		PROJECT PATH 
+			E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\02-Directives\01-Directives
+			
+			-acts like a HTML TEMPLATE (to change where info comes from)
+			-RE-USEABLE code 
+			-READABILITY makes the CODES intention (more obvious or known)
+			-like using INCLUDE (in PHP) to add HTML content (modularly)
+		TROUBLESHOOTING 
+			-wouldn't display 
+				-CHECK SPELLING (use CAMEL CASE, *** DO NOT use UPPERCASE to start NAME OF DIRECTIVE ***)
+					app.directive('Game', function(){			*** WRONG, wouldn't display ***
+					app.directive('game', function(){			*** CORRECT ***
+					app.directive('appInfo', function(){
+		
+					appInfo   -->  	<app-info></app-info> 
+					game 	  -->	<game></game>				
+		
+		JS (js/directives/appInfo.js)
+			// DIRECTIVE (connects HTML template to info)
+			//  creates a custom HTML ELEMENT (<app-info>  </app-info>)
+			app.directive('appInfo', function(){
+			  return {
+				restrict: 'E', 
+				scope: {
+				  info: '='
+				},
+				templateUrl: 'js/directives/appInfo.html'
+			  }
+			});
+
+			// -------------------------------------------
+			// CONNECT THE DOTS (how it's all connected?)
+			// HTML (index.html) --> APPINFO.JS --> APPINFO.HTML
+			//    <script src="js/directives/appInfo.js"></script>
+			//    templateUrl: 'js/directives/appInfo.html'
+
+			// restrict: 'E'      # specifies HOW the DIRECTIVE (will be used)(E - make a new HTML element)
+			// scope              # specifies that we pass info to (this directive)(using the INFO ATTRIBUTE (value))
+			//                    # it plugs in the VALUE from the INFO-ATTRIBUTE to use in the HTML TEMPLATE (KEY)
+			// '='                # tells the DIRECTIVE (to look for an ATTRIBUTE)
+			//                          <app-info info='shutterbug'></app-info>
+			// templateUrl        # connects to the HTML TEMPLATE
+			// -------------------------------------------
+
+		HTML TEMPLATE (js/directives/appInfo.html)
+			<!-- HTML template -->
+			<img class="icon" ng-src="{{ info.icon }}">
+			<h2 class="title">{{ info.title }}</h2>
+			<p class="developer">{{ info.developer }}</p>
+			<p class="price">{{ info.price | currency }}</p> 
+
+			<!-- <div class="card"> -->
+			 <!-- <img class="icon" ng-src="{{ move.icon }}"> -->
+			 <!-- <h2 class="title">{{ move.title }}</h2> -->
+			 <!-- <p class="developer">{{ move.developer }}</p> -->
+			 <!-- <p class="price">{{ move.price | currency }}</p> -->
+			<!-- </div> -->
+		HTML (index.html)
+			<APP-INFO> (*** this is a CUSTOM HTML ELEMENT ***)
+			<!-- NG-REPEAT (for all four cards) -->
+			<div class="card" ng-repeat="app in apps">
+				<!-- DIRECTIVE appInfo.js -->
+				<app-info info="app"></app-info>
+				<!-- DIRECTIVE installApp.js -->
+				<install-app></install-app>
+			</div>
+			
+				 <!-- <div class="card"> -->
+				  <!-- <app-info info="move"></app-info> -->
+				  <!-- <img class="icon" ng-src="{{ move.icon }}"> -->
+				  <!-- <h2 class="title">{{ move.title }}</h2> -->
+				  <!-- <p class="developer">{{ move.developer }}</p> -->
+				  <!-- <p class="price">{{ move.price | currency }}</p> -->
+				<!-- </div> -->
+
+				<!-- <div class="card"> -->
+				  <!-- <app-info info="shutterbugg"></app-info> -->
+				  <!-- <img class="icon" ng-src="{{ shutterbugg.icon }}"> -->
+				  <!-- <h2 class="title">{{ shutterbugg.title }}</h2> -->
+				  <!-- <p class="developer">{{ shutterbugg.developer }}</p> -->
+				  <!-- <p class="price">{{ shutterbugg.price | currency }}</p> -->
+				<!-- </div> -->
+
+				<!-- <div class="card"> -->
+				  <!-- <app-info info="gameboard"></app-info> -->
+				  <!-- <img class="icon" ng-src="{{ gameboard.icon }}"> -->
+				  <!-- <h2 class="title">{{ gameboard.title }}</h2> -->
+				  <!-- <p class="developer">{{ gameboard.developer }}</p> -->
+				  <!-- <p class="price">{{ gameboard.price | currency }}</p> -->
+				<!-- </div> -->
+				
+				<!-- NEW CARD  -->
+				<!-- <div class="card"> -->
+					<!-- <app-info info="forecast"></app-info> -->
+				<!-- </div> -->   
+
+		HTML (index.html)
+			-a SCRIPT (to call APPINFO.JS)
+		        <!-- Directives -->
+				<script src="js/directives/appInfo.js"></script>
+				<script src="js/directives/installApp.js"></script>
+			
+		RESTRICT (OPTIONS) 	
+			https://stackoverflow.com/questions/23220976/angularjs-directive-restrict-a-vs-e
+				-restrict is for defining the directive type, and it can be 
+					A (Attribute)
+					C (Class)
+					E (Element)
+					M (coMment)
+				
+			Type : Usage (let's assume that the name of the DIRECTIVE is (Doc)):
+				A =  <div Doc></div>
+				C =  <div class="Doc"></div>
+				E =  <Doc data="book_data"></Doc>
+				M =  <!--directive:Doc -->	
+			http://websystique.com/angularjs/angularjs-custom-directives-restrict-option-guide/
+			A : Specifies that Directive will be used as an attribute, like <div item-widget></div>, as was done in last example. This is also the default behavior if restrict is not declared. Preferred if just modifying the behavior of existing elements.
+			E : Specifies that Directive will be used as an Element. Like <item-widget></item-widget>. Preferred if creating new content.
+			C : Specifies that Directive can be used as class name in existing HTML elements. Like <div class=”item-widget”></div>
+			M : Specifies that Directive can be used as HTML comments. Like <!– Using directive: item-widget–>
+			
+	DIRECTIVE (WITH FUNCTION)
+		"E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\02-Directives\04-Feedster\js\directives\plusOne.js"
+			// DIRECTIVE 
+			//  creates a custom HTML ELEMENT (<plus-one></plus-one>)
+			app.directive('plusOne', function(){
+			  return {
+				restrict: 'E', 
+				scope: {},
+				templateUrl: 'js/directives/plusOne.html',
+				link: function(scope, element, attrs){
+				  scope.like = function(){
+					element.toggleClass('btn-like');
+				  }
+				}
+			  }
+			});
+		"E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\02-Directives\04-Feedster\js\directives\plusOne.html"
+			<button class="btn" ng-click="like()">+1</button>
+			
+	SERVICE 
+		DOCS 	https://docs.angularjs.org/guide/services
+	 -uses HTTP (GET) to request data (JSON) 
+	 -eg. 
+		https://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json
+		-----------------------------
+		"E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\03-Services\01-Services\js\controllers\MainController.js"
+			app.controller('MainController', ['$scope', 'forecast', function($scope, forecast) {
+			  forecast.success(function(data){
+				$scope.fiveDay = data;
+			  });
+
+			}]);
+		"E:\000-BACKUP\0000-CODE ACADEMY\101-AngularJS\03-Services\01-Services\js\services\forecast.js"
+			// website link 
+			// var website = 'https://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json';
+
+			// SERVICE
+			app.factory('forecast', ['$http', function($http){
+			  return $http.get('https://s3.amazonaws.com/codecademy-content/courses/ltp4/forecast-api/forecast.json')
+			  .success(function(data) {
+				return data;
+			  })
+			  .error(function(err){
+				return err;
+			  });
+			}]);
+
+			// forecast.js
+			// app.factory('forecast')      -this creates a new SERVICE 
+			// the service needs to use the (built-in $http) to fetch the JSON object from the server.
+			// HTTP (GET) requests the DATA (if success) otherwise it will return ERR (if an error)
+
+			// MainController.js
+			// used the FORECAST SERVICE (forecast.js) to FETCH DATA (from the server)
+			// first added ('forecast') as a dependency (so it's available to use)
+			// within the controller we use (forecast) to ASYNCRONOUSLY FETCH the weather data 
+			//    the data is stored in the ($scope.fiveDay) variable 
+			// $SCOPE variables (make them available to the view HTML) 
+
+			// index.html 
+			// <h1>{{ fiveDay.city_name }}</h1>
+			// grabs the DATA from the $SCOPE to display
+
+		-----------------------------
+	$HTTP OBJECT 
+		$http 		https://docs.angularjs.org/api/ng/service/$http
+		
+	DOWNLOAD A FILE (RESUME)
+		*** WORKS ON LAPTOP (??? BUT NOT ON iPHONE ???)
+			-DOWNLOAD (attribute ISN'T SUPPORTED ON SAFARI?)
+		https://stackoverflow.com/questions/28872607/download-a-file-with-angularjs
+		(MainController.JS)
+		app.controller('MainController', ['$scope', function($scope) {
+			//resume (download file)
+			$scope.resume = {
+				path: 'http://localhost:777/resume/',
+				path2: 'http://50.66.186.244/resume/',
+				piping: 'DEAN_JONES_Resume_(piping_designer).pdf',
+				software: 'DEAN_JONES_Resume_(software_developer).pdf',
+			}
+		(HTML)
+		  <!-- BUTTON (DOWNLOAD RESUME.PDF) -->
+			ATTRIBUTES 
+				DOWNLOAD (OPTIONAL: alternate FILE NAME)
+				NG-HREF (this is the FULL PATH and FILE NAME)
+				
+			<!-- BUTTON (DOWNLOAD RESUME (Piping.pdf)) -->
+			<a 
+				class='w3-button w3-light-grey w3-padding-large w3-margin-top' 
+				ng-href="{{ resume.path + resume.piping }}" 
+				download="{{ resume.piping }}"
+				title='Click to download resume (pdf file).'
+			>
+				<i class="fa fa-download"></i>
+				Resume PDF (piping)
+			</a>
+			<!-- BUTTON (DOWNLOAD RESUME (Software.pdf)) -->
+			<a 
+				class='w3-button w3-light-grey w3-padding-large w3-margin-top' 
+				ng-href="{{ resume.path + resume.software }}" 
+				download
+				title='Click to download resume (pdf file).'
+			>
+			
+			
+	FOLDER PATHS (CURRENT FOLDER)
+		-DOT(.) BEFORE THE SLASH (will be in the CURRENT DIRECTORY (this should work for LOCAL HOST or WHATEVER)
+		app.controller('MainController', ['$scope', function($scope) {
+			//resume (download file)
+			$scope.resume = {
+				path: './resume/',										//THIS WORKS (for all)
+				// path: 'http://50.66.186.244/resume/',				//ONLY WORKS (for EXTERNAL IP ADDRESS)
+				// path2: 'http://localhost:777/resume/',    			//ONLY WORKS (with localhost)
+				piping: 'DEAN_JONES_Resume_(piping_designer).pdf',
+				software: 'DEAN_JONES_Resume_(software_developer).pdf',
+			}
+			
+			
+	ERRORS (CHECK CHROME CONSOLE)
+		-PHP FILE (cannot use ANGULARJS with a PHP FILE)
+			https://stackoverflow.com/questions/36066310/can-you-use-angularjs-in-a-php-file
+		Uncaught Error: [$injector:modulerr]
+			-may be BAD SCRIPT (make sure to INCLUDE ALL DEPENDENCIES)
+				<!-- ANGULARJS Modules -->
+				<script src="./js/app.js"></script>
+				<!-- ANGULARJS Controllers -->
+				<script src="./js/controllers/MainController.js"></script>
+				<!-- ANGULARJS Directives -->
+				<script src="./js/directives/skills.js"></script>
+
+	ERRORS (MAINCONTROLLER)
+		-works from HTML but NOT EXTERNAL FILE 
+		-file is LOADING (YES)
+			<script src="./js/controllers/MainController.js"></script>
+			-this path works (YES)
+		*** APPEARS the file is being CACHED???? ***
+		-CHROME (dev tools)
+			NETWORK folder, (click on MainController.js FILE)
+				RESPONSE (tab)
+					-*** CHECK THE CODE, see if it's the same as YOUR FILE ***
+					-mine is old (why is the CACHING?)
+		*********************************
+		WARNING (using Apache Server XAMPP)
+			REFRESH BUTTON (CHROME)
+				-the TAB (using REFRESH BUTTON) to test 
+				-appears to be CACHING THE (MainController.js FILE)
+			OPEN NEW TAB 
+				-this seems to (REFRESH and RELOAD the MainController.js FILE)
+		*********************************
+			 
+	ERRORS (HTML)(CODE SHOWING LIKE CODE?)
+		-seeing the CODE not rendering in HTML 
+		-check the MainController FILE (FOR ANY SYTAX ERRORS)
+			-check that you HAVE ALL THE COMMAS where they need to be (or didn't HALF ADD SOMETHING?)
+			
+	ANGULAR (to see OBJECTS at CHROME CONSOLE)
+		window.angular 
+		window.app 						"app.js"
+		window.app.name 				"MKCIWebApp" 
+		window.app._invokeQueue[0][2]
+		window.app._invokeQueue[0][2][1] 
+			(click on FUNCTION LOCATION)	"MainController.js" FUNCTION info
+			
+</textarea>

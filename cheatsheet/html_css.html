@@ -1,0 +1,2960 @@
+<!-- "E:\000-BACKUP\000-SAIT\000-HELP\20161018-20-OOSD Notes (HTML, CSS).txt" -->
+<link rel="stylesheet" type="text/css" href="./css/format_text_file.css" />
+<textarea style="width:95%;height:95%;border:solid 2px black;">
+	
+HTML & CSS 
+Oct.18-20, 2016
+
+??? WINDOWS SEARCH 
+	-this appeared after searching if a folder
+		C:\xampp\
+			-SEARCH (www)
+			-this came up 
+				search-ms:displayname=Search%20Results%20in%20xampp&crumb=location:C%3A%5Cxampp\www
+		C:\xampp\php\www
+	
+APACHE VS TOMCAT (WHAT IS THE DIFFERENCE)
+	-open XAMPP button (on taskbar)
+	-START (Apache, MySQL, TomCat)
+	-TO ACCESS...
+		MySQL (PHPmyAdmin)				http://localhost/phpmyadmin/
+		-----------------------------------------------
+		Apache (HTML,CSS,JS, etc.)			http://localhost:80/				
+			DEFAULT FOLDER		C:\xampp\htdocs
+			CHANGE FOLDER 
+				HTTPD.CONF (file)
+					DocumentRoot setting in XAMPP\apache\conf\httpd.conf.
+						COMMENT OUT (DEFAULT PATHS)
+							#DocumentRoot "C:/xampp/htdocs"
+							#<Directory "C:/xampp/htdocs">
+						ADD NEW PATH (to HTML, CSS, JS, PHP files)
+							DocumentRoot "E:/000-BACKUP/0000-CODE ACADEMY/777-WEB SERVER/Node (web server)/server1"
+							<Directory "E:/000-BACKUP/0000-CODE ACADEMY/777-WEB SERVER/Node (web server)/server1">
+						ADD A TEST FILE 
+							(index.html)
+						RESTART (APACHE)(from XAMPP dialog)
+							-CLICK (stop, start)
+						GO TO BROWSER (and see if it works!) 	
+							http://localhost/
+							http://localhost/test.html		(or if using something besides INDEX.HTML)
+		-----------------------------------------------
+		TomCat (Java, JSP, Servlets)					http://localhost:8080/
+			ADMIN 
+				http://localhost:8080/manager/html
+					-creates ERROR 
+					-read INSTRUCTIONS (how to edit admin)
+			ADD ADMIN
+				"C:\xampp\tomcat\conf\tomcat-users.xml"
+				SAVE FILE
+			RESTART (TOMCAT SERVER)
+			GO TO BROWSER 
+				http://localhost:8080/
+					-click MANAGER APP 
+						un: tomcat 
+						pw: s3cret	(or whatever you added to CONF FILE)
+			MANAGER APP 
+				-after entering your USERNAME and PASSWORD 
+				-this should work...
+					http://localhost:8080/manager/html
+					TAKE YOU TO WHERE TO MANAGE (JSP files, WAR files, Java files, etc)
+				
+				
+	-what are they for?
+		https://stackoverflow.com/questions/30632/difference-between-the-apache-http-server-and-apache-tomcat
+		MySQL (PHPmyAdmin)
+			-this is where you can USER INTERFACE (for the database)
+		Apache
+			-the web server (for the website)
+			-goes in WHAT FOLDER?
+				
+		TomCat 		
+			-is used for serving JAVA files (Java Servlets and JSPs)
+			-WAR file (Web Archive file) 	
+			-it uses the WAR FILES here (where you UPLOAD the *.war files)
+
+XAMPP FOLDER 
+	C:\xampp
+WAMP FOLDER 
+	"C:\wamp\www\" 
+			
+VALIDATE HTML 
+	-with URL or COPY CODE IN 
+		https://validator.w3.org/nu/?doc=http%3A%2F%2F50.66.186.244%2F
+
+CAD$ vs US$ DOLLARS 
+	https://www.canada.ca/en/competition-bureau/news/2017/07/mind_the_is_thatpriceincanadianoramericandollars.html
+	
+
+CLOUD HOSTING vs WEB HOSTING 
+	https://www.hostgator.com/blog/cloud-hosting-vs-web-hosting/
+	WEB HOSTING
+		SHARED 
+			-a server that is SHARED (by partitioning it) shared with other websites 
+			-cheapest 
+		DEDICATED 
+			-more expensive 
+			-a dedicated server for your website (not shared with any other websites)
+		VPS (virtual private network)
+			-a shared server, but has a (VIRTUAL SERVER) on top of that, that you can customize
+		MANAGED 
+			-most expensive 
+			-a team of dedicated IT professionals optimize and run the server for you
+	CLOUD HOSTING 
+		-essentially it's not put up on ONE SERVER, it's across multiple servers
+		-very scalable 
+		-pay for what you use 
+		
+
+STARTING A WEBSITE
+	SERVER-SIDE LANGUAGES 
+		LAMP (Linux, Apache, MySQL, PHP)
+		PHP, ASP, JAVA, NODEJS, PYTHON, RUBY?
+	DATABASE 
+		MySQL, MS-SQL?
+		MongoDB?, etc?
+	CHOOSE A NAME (WEBSITE)
+		MERLIN 
+		MASTER
+		ENERGY
+		PERCEPTION
+		INTEGRITY
+		JOY, LOVE (heart, ki, love)
+		PASSION
+	
+		FANTASY NAME GENERATOR
+			https://www.name-generator.org.uk/fantasy/
+		DICTIONARY PREFIX (meanings)
+			https://www.myenglishteacher.eu/blog/prefixes-suffixes-list/
+			http://teacher.scholastic.com/reading/bestpractices/vocabulary/pdf/prefixes_suffixes.pdf
+			https://www.powerthesaurus.org/leader/synonyms
+			
+			PREFIX 			MEANING 								EXAMPLES
+			em-, en- 		within, in, make 						empathy, enlighten
+			re-				again, back 							review
+			super-			above 									superstar
+			in-				in 			
+			
+			SUFFIX 			MEANING 
+			-ed 			past tense 								walked
+			-en 			made of 								wooden, enlighten
+			-ing 			doing something, state, quality			walking
+			-ly 			how?									safely, lively, 
+			-er, -or 		one who, action, compares 				drummer, actor, formulizer, crystalizer, manifestor, 
+																	programmer, coder, power, super, balancer, visualizer, 
+																	creator, provider, pioneer, explorer, builder, juniper, 
+																	thinker, player, clever,  lover, gamer, ether, doer
+			-ile 			capability 								agile, fragile
+																	
+			-tion, -sion 	quality, action 						sensation, creation, perception	
+			-able, -ible	able to be, can be done					capable, reversible
+			-xion?
+			-less 			without
+			-ity, -ty 		state of 								infinity
+			-ous 			possessing the qualites of...			joyous
+			-y 				characterized by						happy
+			
+		WORDS 
+			http://www.codemagi.ca/
+			http://www.codewizard.ca/
+			codewiz.ca 
+			codewiz.biz 
+						
+			blueskydreams
+			codemagic 
+			codemagician.ca 
+			codewizard.ca
+			
+			primal, basics, foundation, 
+			all that is, universal
+			wisdom, knowledge, knowing, brains 
+			codelife
+			
+			perception 
+			codeperception
+			codebrains 
+			universalwisdom
+			primalcode
+			codefoundation 
+			
+			smilingcodemagi
+			code magi 
+			merlins apprentice (this is a tv show)
+			empath, programmer, joyous, 
+			code wizard 
+			code sage 
+			programmer sage 
+			wiz code 
+			laugh wiz code 
+			smile coder wiz 
+			dragon don ki do 
+			draw code wizard 
+			code magic 
+			code mage 
+			cipher magi
+			crypto magi
+		EXTENSIONS 
+			.pro (professional)
+			.ca (canada)
+			.ab.ca (alberta, canada)
+			.com (commercial)
+			.net (networks)
+			.org (organizations)
+						
+			
+			UNIVERSAL IDENTITY
+				dragon, gemini, merlin, pythagoras, sage, wizard, magician, magi, programmer, drafter, CAD specialist, piping designer, fastball pitcher, 
+				apprentice (life), 
+			UNIVERSAL (SENSE OF HUMOR)
+				witty, funny, playful, laughter, smile
+			UNIVERSAL SPIRIT
+				spirit, love, iChing, sacred geometry, numbers, sensitivity, higher-purpose
+			UNIVERSAL MIND 
+				thought, conciousness, comprehension, 
+			UNIVERSAL ACTION (that I love doing)
+				(moving) pitcher, fastball, hapkido, stretching, walking, being in nature
+			UNIVERSALLY INSPIRED ()
+				intuition, artistic, creative, innovative, epiphany, gut-feeling, smart, intelligent, clever, guided,  
+			UNIVERSE (UNLIMITED)
+				unlimited, abundant, flexible
+			UNIVERSAL (I AM) 
+				I am, nature, self
+			UNIVERSAL BALANCE
+				balance, harmony, resonance, relax, stable
+			UNIVERSAL VITALITY
+				energy, heart, ki, love, spirit, vitality, passion, 
+			UNIVERSAL LEADER 
+				leader, forerunner, pioneer, master, champion, star, guardian, hero, 
+			UNIVERSAL INTEGRITY
+				integrity, quality, poise, dignity, honesty
+			HAPKIDO 
+				HAP 	harmony, unity, coordination, together, concentrated 
+				KI 		energy, life-force, inner power, cosmic force, love 
+				DO 		way of, achieve, execute, to do
+			
+	LEARNCODE.ACADEMY - How to put your website online
+		https://www.youtube.com/watch?v=tq7dqdHCc7U
+	THESITEWIZARD.COM
+		https://www.thesitewizard.com/gettingstarted/startwebsite.shtml
+		https://www.thesitewizard.com/domain/register-with-icann-sans-middlemen.shtml
+	DOMAIN LOOKUP 
+		https://whois.icann.org/en/lookup?name=www.google.com
+			-see if anyone has this site 
+			-or just TYPE IN A WEBSITE (see if it goes anywhere)
+	DOMAIN PRIVACY (WHOIS LOOKUP) 
+		https://cira.ca/blog/ca-domains/domain-registration-tips-cira-whois-privacy
+			-register as a (*.ca) website as a CANADIAN CITIZEN and INDIVIDUAL means that you AUTOMATICALLY 
+				get PRIVACY PROTECTION when you register a domain (website)
+			-if you register a DOMAIN as a (*.com) or BUSINESS, you will need to purchase PRIVACY for (A FEE)
+	CANADIAN WEB HOSTING
+		https://www.canadianwebhosting.com/cloud/
+	BLUEHOST (USD)
+		https://www.bluehost.com/web-hosting/signup
+		-in US DOLLARS 
+		$2.95 (for 36months)
+		$4.95 (for 12months) ~$80 CAD for first year
+	HOSTPAPA (CANADIAN)(ranked #1)
+		SERVER-SIDE 
+			php, perl, bash, html
+		VPS (VIRTUAL PRIVATE SERVER)
+			-then I can install whatever?
+			https://www.hostpapa.com/web-hosting-plan/vps-hosting/
+			$19.99/month (regular $49.99/m)
+			-can INSTALL (NodeJS for example)
+		https://www.hostpapa.ca/domains/
+		https://www.hostpapa.ca/web-hosting-plan/
+			$3.95 /month (2 websites, or unlimited)
+		RENEWAL PRICES 
+			https://www.hostpapa.ca/renewal-pricing/
+			Starter Plan
+				36-month term: $8.99 per month (billed $323.64 for 3 years)
+				24-month term: $9.99 per month (billed $239.76 for 2 years)
+				12-month term: $10.99 per month (billed $131.88 for 12 months)
+			
+	HOSTGATOR (1 YEAR)
+		SERVER-SIDE LANGUAGES 
+			ASP, Java, Javascript, Perl, PHP, Python or Ruby.
+		BABY PLAN (unlimited domains)
+			$107 USD 	--> $140.84 CDN (1 year)
+		HATCHLING (one website only)
+			$71.40 for 1 year hatchling --> $93.46 CDN (1 year)
+			$98.83 for 3 years on hatchling... --> $130.09 CDN (3 years)
+	CIRA (Canadian Internet Registration Authority)
+		-governs (*.ca) websites for Canadians
+		https://cira.ca/register-your-ca/canadian-presence-requirements
+		https://cira.ca/ca-domains/register-your-ca
+		https://cira.ca/optimize-your-ca
+	DOMAIN NAME
+		https://www.thesitewizard.com/archive/registerdomain.shtml
+		-register with a REGISTRAR (www.dean.com) 
+		-COST ~$10/yr (maybe more for .COM the next year) 
+		----
+		EXTENSIONS
+			SIGN-UP FEE 			RENEWAL
+			.BIZ $1.99/yr			$12.99/yr 
+			.CA $15.95/year			$15.95/year
+			.COM $9.99/yr			$11.99 per year
+			.xyz $2.99 per year		$14.99 per year
+			.ME $3.99/yr 			$19.99 per year
+			.one $12.99 per year	$12.99 per year
+			.INFO $2.99/yr			$14.99 per year
+			.blue $3.99 per year	$17.99 per year
+			.guru $3.99 per year	$33.99 per year	1 Year
+			.tech $6.99 per year	$44.99 per year
+			.technology	$3.99/year	$21.99 per year
+			.wtf $3.99 per year		$33.99 per year
+			.codes $6.99 per year	$55.99 per year
+		DOMAIN REGISTRARS 
+			GODADDY 
+				https://ca.godaddy.com/offers/cctld/com-or-ca
+			DOMAIN.COM	
+				https://www.domain.com/domains/
+				***************************************************************************************
+				RENEWAL PRICES LIST
+					https://www.domain.com/domains/extension-popup	(DOMAIN PRICING INFO)(RENEWAL PRICES)
+				***************************************************************************************
+			1&1 IONOS 
+			NAMECHEAP
+		
+	WEB HOST 
+		-monthly fee (~$4-7/month)
+			-ONE WEBSITE only
+		-monthly fee (~$7-10/month)
+			-get MULTIPLE WEBSITES
+		HOSTGATOR.COM		https://www.hostgator.com/promo/specialoffers?
+			ONE WEBSITE $2.64/month
+			MULTIPLE WEBSITES $3.98/month (for how long?)
+			COUPONS (youtube learncode.academy)
+				drop25perc
+				drop10bucks
+	FTP (to upload your files) 
+		CYBERDUCK 
+		FILEZILLA
+	GO TO WEBSITE 
+		-either IP ADDRESS (may need to do this first, while it's getting online)
+		-or using DOMAIN
+
+eCOMMERCE (GETTING PAID) 
+	https://stackshare.io/stackups/gocardless-vs-paypal-vs-stripe
+	STRIPE 
+		https://stackshare.io/stackups/gocardless-vs-paypal-vs-stripe
+		-pay-as-you-go (2.9% + $0.30 per transaction)
+	PAYPAL 	
+		https://www.paypal.com/ca/webapps/mpp/compare-business-products?ds_rl=1249499&ds_rl=1249511&gclid=EAIaIQobChMI1cms-czF3gIVgpV-Ch1IhgFMEAAYASACEgKCePD_BwE&gclsrc=aw.ds
+		STANDARD (free) 
+		PRO ($35/month) 
+			-extra features
+		DEVELOPER INFO 
+			https://developer.paypal.com/docs/integration/web/#availability
+			-HTML link (few transactions, redirect to PayPal)
+			-CUSTOM PAYMENT (guide with PayPal instructions)
+	GOCARDLESS 
+		https://gocardless.com/pricing?ref=stackshare
+
+HTML & CSS WEB APP DEVELOPMENT
+Instructor: HARVEY PETERS
+
+    <!-- STYLESHEET (local) -->
+    <link rel="stylesheet" type="text/css" href="/css/effects.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<!-- FONT AWESOME (CSS)(external symbols) -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- FONT AWESOME (CSS)(version 5) -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<!-- FONT AWESOME (CSS)(download from Nuget, search Font Awesome, see Content and Fonts folders) -->
+    <link id="FontAwesome" rel="stylesheet" href="Content/font-awesome.css" />
+	<!-- BOOTSTRAP (CSS) -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- BOOTSTRAP (CSS)(download from Nuget, search Bootstrap, see Content, Fonts, and Scripts folders) -->
+    <link id="Bootstrap" rel="stylesheet" href="Content/bootstrap.css" />
+	
+ANALOGY (HOW INTERNET WORKS)(Newspaper delivery system)
+	https://www.codecademy.com/articles/http-requests
+	-TOWN 				Internet 
+	-General Public		Client
+		-SEND REQUEST 	Type in URL
+	-BUSINESSES			Server Side
+		-NAME 			Domain Name (www.codeacademy.com)
+		-ADDRESS		IP ADDRESS	(184.73.211.30)
+	-MAIL Service (travels on TRAIN speed of light)(high speed internet)
+	-MAIL Language 		HTTP 
+	-RAIL ROAD TRACK 	Connection
+	-TRAIN CAR 			TCP 
+		-OK 			GET 200 OK (Response) 
+		-Problem		404 Not Found (Response) (if you MISSPELLED something in REQUEST)
+	
+	
+	HTML SYMBOLS 
+		&#128077;		THUMBS UP 
+		&#128078;		THUMBS DOWN 
+	
+	*****************************************************************************************
+	SETUP FOR ONLINE BROWSING
+		WINDOWS FIREWALL & Advanced Security, INBOUND RULES, (name APACHE) (ADD RULE, PORT, TCP, PORT 80)
+			??TRY HOST FIREWALL AS WELL? (VMWARE)
+		IP ADDRESS (IPv4 Address)		10.163.101.84 (Dean), 10.163.101.84(Chris)
+										192.168.0.37 (Dean Home)
+		WAMP (PUT ONLINE)
+		TYPE, 10.163.101.84/index.html INTO BROWSER
+		
+		WINDOWS (COMMAND PROMPT) 
+			ipconfig 	
+				Ethernet adapter VMware Network Adapter VMnet8:
+				   Connection-specific DNS Suffix  . :
+				   Link-local IPv6 Address . . . . . : fe80::1c15:12f1:5f4f:6c22%7
+				   IPv4 Address. . . . . . . . . . . : 192.168.224.1						<-- THIS LINE HERE (ETHERNET CONNECTION) *******************************
+				   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+				   Default Gateway . . . . . . . . . :
+				Wireless LAN adapter Wi-Fi:
+				   Connection-specific DNS Suffix  . : cg.shawcable.net
+				   Link-local IPv6 Address . . . . . : fe80::a83d:3c4d:63cc:4779%18
+				   IPv4 Address. . . . . . . . . . . : 192.168.0.176						<-- THIS LINE HERE (WIFI CONNECTION) *******************************
+				   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+				   Default Gateway . . . . . . . . . : 192.168.0.1
+	*****************************************************************************************
+
+SPA (SINGLE PAGE APPLICATION) 
+	-load ONE HTML page 
+	-then using something like ANGULAR-JS to dynamically change the page 
+		(rather than having a bunch of pages being redirected)
+
+CSS DECLARATION 
+	*****************************************
+	<link rel="stylesheet" href="styles.css">
+	*****************************************
+
+DAILY CODE	"O:\student\Information & Communications Technologies\Data\OOSD\OOSD Shared Folders\Fall Track\Pickup\CPRG210 Web Application Concepts\Daily Code"
+
+RESOURCES 
+	CSS (LINE-HEIGHT, VERTICAL-ALIGN)				https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align
+	CSS LAYOUT TOOL (WEBFLOW)			https://webflow.com/grid
+										https://cssgrid.cc/css-grid-builder.html
+										https://www.layoutit.com/build
+										
+	DREAMWEAVER (ADOBE WEBSITE APP) 	https://helpx.adobe.com/ca/dreamweaver/user-guide.html
+	
+	TESTING ONLINE 			
+		CODEPEN				https://codepen.io/tag/menubar/
+		JSFIDDLE			https://jsfiddle.net/
+		BOOTSNIPP (BOOTSTRAP EXAMPLES)	https://bootsnipp.com/snippets/featured/responsive-navigation-menu
+
+	COOL EFFECTS 
+		TEXT 				https://css-tricks.com/css-techniques-and-effects-for-knockout-text/
+
+	**********************************************************************
+	ICANN (DOMAIN NAME REGISTRATION)	https://www.icann.org/registrants
+	WHOIS 								https://whois.icann.org/en
+	Auth-Code (also called an Authorization Code, AuthInfo code, Auth-Info Code, or transfer code) 
+				is a code created by a registrar to help identify the domain name holder and prevent unauthorized transfers
+	**********************************************************************
+	
+	BRACKETS TEXT EDITOR (WEB) 					http://brackets.io/
+
+	CROSS BROWSER (compatibility?)		https://caniuse.com/#search=svg
+	
+	BROWSER INTERNALS (HOW IT WORKS)	https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
+
+	W3 VALIDATION (HTML, CSS) 			https://jigsaw.w3.org/css-validator/		(CSS VALIDATION)
+										https://jigsaw.w3.org/css-validator/#validate_by_input	(BY DIRECT INPUT)
+										https://validator.w3.org/					(HTML VALIDATION)
+											https://www.w3.org/International/questions/qa-html-language-declarations
+											<html lang="en">
+											<html lang="fr">								//FRENCH add LANGUAGE ... to HTML tag
+											<script type="text/javascript" 					//TYPE is unnecessary in JavaScript
+
+	BOOTSTRAP 				https://www.w3schools.com/bootstrap/bootstrap_get_started.asp			
+							https://getbootstrap.com/docs/4.0/components/buttons/
+
+	SVG (FREE IMAGES)					https://commons.wikimedia.org/wiki/Category:SVG_playing_cards		PLAYING CARDS
+										https://commons.wikimedia.org/wiki/Category:SVG_Color_gradient		COLOR GRADIENT
+										https://commons.wikimedia.org/wiki/Category:SVG_arrow_icons			ARROWS
+										https://commons.wikimedia.org/wiki/Category:Green_SVG_icons			GREEN ICONS
+										https://commons.wikimedia.org/wiki/Category:SVG_emoji_smilies		EMOJI'S
+	
+	HTML TAGS (REFERENCE)				https://www.w3schools.com/tags/default.asp
+
+	EXERCISES 							https://www.w3schools.com/html/exercise.asp?filename=exercise_paragraphs4
+	HTML5 ELEMENTS 						https://www.w3schools.com/html/html5_new_elements.asp
+	CSS ANIMATIONS vs JAVASCRIPT 		https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript
+
+	W3CSS 
+		COLORS 							https://www.w3schools.com/w3css/w3css_colors.asp
+		MENUS NAVIGATION 				https://www.w3schools.com/w3css/w3css_navigation.asp
+		
+		ICONS (FONT AWESOME)			https://www.w3schools.com/icons/fontawesome_icons_webapp.asp
+		FONT AWESOME (SETTINGS)				https://fontawesome.com/icons/cog?style=solid
+		FONT AWESOME (GALLERY)			https://fontawesome.com/icons?d=gallery
+		
+		ICONS (BOOTSTRAP)				https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp
+		ICONS (GOOGLE)					https://www.w3schools.com/icons/google_icons_action.asp
+										https://www.w3schools.com/icons/google_icons_file.asp
+		
+	CSS (RESPONSIVE DESIGN) 
+		W3.ORG RESPONSIVE 				https://www.w3schools.com/w3css/default.asp
+			<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		BOOTSTRAP 						https://www.w3schools.com/bootstrap/bootstrap_get_started.asp
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		PURE IO (RESPONSIVE DESIGN)		https://purecss.io/start/
+										https://purecss.io/grids/
+			<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+			
+		
+
+	(DOCUMENTATION is good on w3schools)
+	COLOR (CMYK, RGB, hexadecimal)		http://www.ginifab.com/feeds/pms/cmyk_to_rgb.php
+	ADOBE COLOR WHEEL 					https://color.adobe.com/create/color-wheel/
+	
+	UTF-8 (SYMBOLS, AND CHARACTER MAP)	https://www.w3schools.com/charsets/ref_html_utf8.asp
+		-connected to BUFFER OBJECT?
+
+	BEM 	https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+	BEM 	https://en.bem.info/methodology/quick-start/
+	BEM (Block, Element, Modifier) Intro 		
+		-how to organize CSS better
+		https://assortment.io/posts/introducing-bem-css-naming-convention
+
+	DOM (HTML)	https://developer.mozilla.org/en-US/docs/Web/API/Document
+	W3.ORG (W3SCHOOLS STYLE TUTORIAL)	https://www.w3schools.com/w3css/w3css_intro.asp
+	
+			https://www.w3schools.com/w3css/w3css_templates.asp			(TEMPLATES CSS)(RESPONSIVE...)
+			http://www.w3schools.com/html/default.asp
+			http://www.w3schools.com/tags/tag_hr.asp
+			???MOZILLA https://developer.mozilla.org/en-US/docs/Web/HTML
+
+W3CSS ICONS (GOOGLE)
+	//HEAD
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	//BODY
+	<i class="material-icons">file_upload</i>
+	<i class="material-icons" style="font-size:36px">file_upload</i>
+	<i class="material-icons" style="font-size:48px;color:red">file_upload</i>
+	
+W3CSS ICONS (FONT AWESOME, fa)
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div id="menubar" class="w3-bar w3-border">
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i> Settings</a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i> Browse</a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-upload"></i> Upload</a>
+        </div>
+	
+W3CSS (SLIDESHOW)
+		https://www.w3schools.com/w3css/w3css_slideshow.asp
+		CODEPEN EXAMPLE (LOOKS GREAT!)
+			https://codepen.io/pamcy/pen/rodgjv?page=1& 
+	
+W3CSS (SHADOW)
+	https://www.w3schools.com/w3css/w3css_cards.asp
+		<ul class="w3-ul w3-border w3-center w3-card-4">
+		w3-card-4
+		w3-card-2
+		w3-card
+	
+BACKGROUND HATCH 
+	/*background hatch*/
+	.hatch_stripe {
+		background: repeating-linear-gradient( -55deg, #222, #222 10px, #333 10px, #333 20px );
+	}
+	/*hatch c/w image */
+	.hatch_stripe2 {
+		background: repeating-linear-gradient( 45deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, rgba(0, 0, 0, 0.3) 10px, rgba(0, 0, 0, 0.3) 20px ), url(http://s3-us-west-2.amazonaws.com/s.cdpn.io/3/old_map_@2X.png);
+	}
+	.hatch_radial {
+    background: repeating-radial-gradient(#96b6d0, #4d6f8c, #fff3e2);
+    /* background: repeating-radial-gradient(#96b6d0, #333, white); */
+	}
+	.hatch_vertical_gradient {
+		background-image: linear-gradient(#96b6d0, #8799a7, #fff3e2);
+	}
+
+INPUT (FILE BROWSE)	
+	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
+	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-multiple
+	<input type="file" multiple="multiple" id="browse_xml" name="browse_xml" accept=".xml" />
+	
+	
+CSS RESET 
+	-basically sounds like CSS that RESET'S to a bunch of DEFAULTS (see Normalize.css)
+		A CSS Reset (or “Reset CSS”) is a short, often compressed (minified) set of CSS rules that resets the styling of all 
+		HTML elements to a consistent baseline. In case you didn't know, every browser has its own default 'user agent' stylesheet, 
+		that it uses to make unstyled websites appear more legible.
+		
+SPAN <span>
+	-use this as an INLINE wrapper, to add formatting...
+DIV <div> 
+	-use this as a BLOCK wrapper, to add formatting...
+	
+HOVER (FLICKERS)
+	-the DIV flickers, (because as it grows, the cursor is on the border, and then keeps starting over...)
+		https://stackoverflow.com/questions/26101314/css-transition-flickering-on-hover
+	-try to put the ELEMENT inside another CONTAINER that DOES NOT RESIZE...?
+		??DIDN'T WORK...?
+	(animation-iteration-count: 1)(*** HOVER WILL RESET ATTRIBUTE CONTINUALLY ***)(USE JAVASCRIPT)
+		https://stackoverflow.com/questions/8482820/run-css3-animation-only-once-at-page-loading	
+			After hours of googling: No, it's not possible without JavaScript. The animation-iteration-count: 1; is internally saved in the animation shothand attribute, which gets resetted and overwritten on :hover. 
+			When we blur the <a> and release the :hover the old class reapplies and therefore again resets the animation attribute.
+			There sadly is no way to save a certain attribute states across element states.
+			You'll have to use JavaScript.
+		??DOESN'T WORK, or show in STYLES?
+		https://stackoverflow.com/questions/35584286/svg-transform-origin-not-working-in-chrome
+			-may not be supported for SVG 1.1 (transform-origin)
+
+GROW (FROM CENTER) EFFECT 
+	https://tympanus.net/codrops/css_reference/transform-origin/
+	transform-origin: [ left | center | right | top | bottom | <percentage> | <length> ]
+		transform-origin: top center;
+		transform-origin: 100% 30px;
+		transform-origin: 30px 60px;
+		transform-origin: center;
+		transform-origin: left;
+		transform-origin: 30% 50% 0px;
+		transform-origin: bottom right;
+
+	
+CHROME BROWSER (INSPECT HELP)
+			https://developers.google.com/web/tools/chrome-devtools/
+		
+CHROME (DISABLE CACHING)
+	-problems with ANGULARJS (MainController.js)(isn't updating with refresh)
+	-TO DISABLE CACHING 
+		-open CHROME, (DevTools), Networks tab, CLICK (ON) (Disable Cache) 
+		-try again (should work)
+		
+DOCUMENTATION (PANIC)
+			https://docs.panic.com/#html
+			https://docs.panic.com/#css
+			https://docs.panic.com/#javascript
+			https://docs.panic.com/#php
+VALIDATOR WEBSITE
+			https://validator.w3.org/
+
+TAGS (ATTRIBUTES)(WHAT TAGS GO WITH WHAT ATTRIBUTES)
+			https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
+			
+PICKUP FOLDER
+C:\Users\61812\OneDrive\000-SAIT (cloud)\Pickup\CPRG210 Web Application Concepts
+
+COLOR (HEXADECIMAL) 	https://css-tricks.com/8-digit-hex-codes/
+	// RGBA 		#0f08;
+	// RRGGBBAA 	#00ff0088;
+	// https://www.viget.com/articles/equating-color-and-transparency/
+	// BLACK 		#000000;		rgb(0,0,0)
+	// WHITE 		#ffffff;		rgb(255,255,255)
+	//
+	
+	.element {
+	  /* This */
+	  background: #0f08;
+
+	  /* Is the same as this */
+	  background: #00ff0088;
+	}
+
+COLOR (CMYK, RGB, HEXIDECIMAL)
+	COLOR PICKER 	
+		http://www.ginifab.com/feeds/pms/cmyk_to_rgb.php
+		https://color.adobe.com/create/color-wheel/
+		http://colorizer.org/
+	CMYK (32bit)	
+		-subtractive color (starts with WHITE(0%) and goes to BLACK(100%))
+		-(32bit, each color is 8bits, 8x4=32)
+		DARKER 
+			-use K-value(black)(0-100%)
+			-make greater than ZERO(0) for DARKER
+		LIGHTER 
+			-use CMY(cyan, magenta, yellow)(0-100%)
+			-make less than 100 for LIGHTER
+	RGB (24bit)
+		-additive color (starts with BLACK(0) and goes to WHITE(255)
+		DARKER (less than 255 makes darker)(eg. 128 is half, zero(0) is black)
+		LIGHTER (make other two values stronger)(eg. 128, 255, 128)
+	HEXIDECIMAL (24bit)
+		DARKER (less than #ff makes darker)(eg. 80 is half, zero(0) is black)
+		LIGHTER (make other two values stronger)(eg. #80ff80)
+		-uses (base 16)(0-9 a-f) to count to 16
+		-16x16=256, so two numbers (#ff = 256)
+		-#RRGGBB (red, red, green, green, blue, blue)
+	OTHER 
+		-HSLA 
+		-RGBA (same as ARGB)
+	-------------------------------
+	CMYK 
+		C 	cyan 		(0-100%)
+		M 	magenta 	(0-100%)
+		Y 	yellow 		(0-100%)
+		K 	black 		(0-100%)
+	-------------------------------
+	RGB 
+		R 	red			(0-255) 
+		G 	green		(0-255)
+		B 	blue 		(0-255)
+	-------------------------------
+	HEXIDECIMAL
+		(RGB)(red, green, blue)	
+		#ff0000 (eg. red)
+			red 	green 	blue 
+			_ _ 	_ _ 	_ _
+		
+		OR 
+		(ARGB)(alpha, red, green, blue)
+		0x
+			alpha	red 	green 	blue 
+			_ _ 	_ _ 	_ _		_ _
+		
+		
+	-----------------------------------------------------------------------
+	BASIC COLORS		RGB(0-255) 			CMYK(0-100%)		HEXADECIMAL 
+		BLACK 			0,0,0				0,0,0,100			#000000
+		GRAY			128,128,128			0,0,0,50			#808080
+		WHITE 			255,255,255			0,0,0,0				#ffffff	
+		---
+		RED(DARK)		128,0,0				0,100,100,50		#800000
+		RED 			255,0,0				0,100,100,0			#ff0000
+		RED(LIGHT)		255,128,128			0,50,50,0			#ff8080
+		---
+		GREEN(DARK)		0,128,0				100,0,100,50		#008000
+		GREEN 			0,255,0				100,0,100,0			#00ff00
+		GREEN(LIGHT)	128,255,128			50,0,50,0			#80ff80
+		---
+		BLUE(DARK)		0,0,128				100,100,0,50		#000080
+		BLUE 			0,0,255				100,100,0,0			#0000ff	
+		BLUE(LIGHT)		128,128,255			50,50,0,0			#8080ff	
+		---
+		CYAN 			0,255,255			100,0,0,0			#00ffff
+		---
+		MAGENTA 		255,0,255			0,100,0,0			#ff00ff
+		---
+		YELLOW			255,255,0			0,0,100,0			#ffff00
+		---------------
+		---------------
+		Orange 			255,128,0			0,50,100,0			#ff8000
+		Pink			255,0,128			0,100,50,0			#ff0080
+		GreenYellow		128,255,0			50,0,100,0 			#80ff00
+		GreenBlue 		0,255,128			100,0,50,0			#00ff80
+		Purple 			128,0,255			50,100,0,0			#8000ff
+		BlueSky(ish)	0,128,255			100,50,0,0			#0080ff
+	-----------------------------------------------------------------------
+		
+
+CSS ALERTS https://www.w3schools.com/w3css/w3css_intro.asp
+	RED (DANGER)
+	YELLOW (WARNING)
+	GREEN (SUCCESS)
+	BLUE (INFO)
+	
+CSS (BOX-SHADOW) 
+	.w3-card-4, .w3-hover-shadow:hover {
+		box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+	}
+
+CSS (MODAL)(HTML ALERT OR DIALOG)
+		https://www.w3schools.com/w3css/w3css_modal.asp
+		w3-modal 
+			see example 	https://www.w3schools.com/w3css/w3css_intro.asp
+	
+HTML (CONTENT)
+CSS (FORMATTING)
+
+
+HTML (SPACE CODE)
+	&nbsp;
+
+TITLES (ADD (NO BREAK SPACE) IF YOU WANT THE WORD WRAP TO KEEP THE WORDS TOGETHER)(U+00A0)
+
+BOX-SHADOW (INSET, means inside box)	CSS (FORMATTING, SOFT EDGES)(USE MOUSE SCROLL, to play with values on screen)
+	box-shadow: -4px -12px 50px -11px #7b6060 inset, 2px -2px 50px 0 #8c0175 inset;
+CSS (ROUNDED CORNERS)	border-radius: 8px;
+
+CLASS (Can an HTML TAG have more than one class? YES)
+		<span class="class1 class2 class3"/>
+
+CSS BORDER (all properties together or separate)
+    border: 6px solid #52FF6D;	
+    /*border-style: solid;*/
+    /*border-color: #52FF6D;*/
+    /*border-width: 6px;*/		
+	
+CSS BORDER RADIUS 
+	border-radius: 25px; 
+	border-radius: 50px 0px; 
+	border-radius: 50px 0px 0px 50px;
+		border-top-left-radius: 50px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 50px;
+	border-radius: 100%;
+	border-radius: 45%;
+	border-radius: 15%;
+	
+CSS SHADOW (BOX-SHADOW)(use tool in Chrome to setup)
+	box-shadow: x-offset y-offset blur spread color  	(spread makes bigger than object)
+	box-shadow: 10px 10px 6px 0px #bdb8b8;				(outset is omitted, means shadow on outside)
+	box-shadow: inset 0px 0px 6px 50px #bdb8b8;			(inset, means colors the inside of DIV)
+	
+CANVAS (TRANSPARENT)	https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#The_painting_order
+	According to www.w3.org/TR/CSS2/zindex.html, the canvas is transparent if contained within another, and given a browser defined color if it is not.
+	
+CSS (BLOCK)(display: ...)	https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#The_painting_order
+	display: block; 	//generates a block box. (VERTICAL)
+	display:inline; 	//generates one or more inline boxes (HORIZONTAL)
+	display:none; 		//no box is generated.
+	
+------
+**** EMERGENCY, AMBULANCE TAKING NADINE TO THE HOSPITAL FOR TACHYCARDIA (FAST HEARTRATE) ****
+I love you Nadine :) I'm glad I could be there for you. I also want to do good in school and make you proud.
+
+Trying to play catchup, emailed Chris about notes?
+GO SOLOLEARN (to the rescue)
+
+HTML: 		Structure
+CSS: 		Presentation (formatting)
+Javascript:	Behavior
+
+PHP or similar:	Backend
+CMS:		Content Management
+
+Questions for tomorrow
+	1. What HTML editor are we using? Notepad++?
+		CONVERT (*.DOC to *.HTML)
+		Use GOOGLE CHROME, View Source (Inspect Element) use this to edit?
+		SAVE FILE (*.HTM OR *.HTML)
+		EDITOR (NOTEPAD...)
+		PROGRAMMERS NOTEPAD (What the CLASS is using)
+	2. What is an HTML TAG?
+		Opening tag	<html> is the opening tag and </html> is the closing tag
+		Images??	<img> 
+		Links??		<a href='http://www.redhat.com' target='main'><img src='but3.gif' alt='click here to get Linux info'></a>
+
+		a.Case sensitive? (doesn't matter case, but good practise to use LOWERCASE)
+			URL's and links to FILES (will be CASE-SENSITIVE)
+		
+	3. View SOURCE CODE (rightclick VIEW SOURCE)
+	4. What are Containers, Empty Tags, Elements, Attributes in HTML?
+		http://docstore.mik.ua/orelly/web2/wdesign/ch08_02.htm
+
+		CONTAINER (like a SANDWICH, a start tag and end tag)
+			<i> ITALICS		The weather is <I>gorgeous</I> today.
+			<p></p>		PARAGRAPHS
+			<h1></h1>	HEADINGS (UP TO <h6>)
+			???<div>	USED FOR SETTING THINGS??? (see example wrapper)
+			
+		*********************************************
+		COMMENT OUT		<!- -    comment content  -->
+		*********************************************
+			
+		TEXT (ALIGN)(center, left, right)
+			<p style="text-align: center">This is a paragraph.</p>
+				*** put STYLE in CSS rather, use this for example only ***
+			<body style="text-align: center">
+				*** FOR MULTIPLE ELEMENTS (put in a WRAPPER ELEMENT) ***
+			
+		TEXT (FONT)
+			<p style="font-family: courier">This is a paragraph.</p>
+		TEXT (COLOR)
+			<p style="color: red">This is a paragraph.</p>
+		TEXT (SIZE)
+			<p style="font-size: 50px">This is a paragraph.</p>
+		BACKGROUND (COLOR)
+			<body style="background: yellow">
+			
+		IMPORTANCE (STRONG, use inline around WORD)(<strong></strong>)
+			<p>... <strong>important word</strong> ...</p>
+		HIGHLIGHT 	
+			<mark>FUN</mark>
+			
+		SUBSCRIPT 
+			<p>Water is H<sub>2</sub>O</p>
+		SUPERSCRIPT 
+			<p>A hectare is 10,000m<sup>2</sup></p>
+			
+		STRIKETHROUGH
+			<strike>strikethrough</strike>			//NOT SUPPORTED IN HTML5
+			<del>strikethrough</del>
+			<s>strikethrough</s>
+		
+		UNDERLINE 
+			<u>underline</u>
+		BOLD
+			<b>bold</b>
+		ITALICS
+			<i>italics</i>
+
+		QUOTES 
+			<q>quote</q>
+			<q>talking here?</q>
+		
+		QUOTING A SOURCE 
+			<blockquote cite="http://www.worldwildlife.org/who/index.html">
+			For 50 years, WWF has been protecting the future of nature.
+			The world's leading conservation organization,
+			WWF works in 100 countries and is supported by
+			1.2 million members in the United States and
+			close to 5 million globally.
+			</blockquote>
+			
+		ACRONYM OR ABBREVIATION (<abbr>)
+			<abbr title="World Health Organization">WHO</abbr>		//looks weird?
+			<a title="World Health Organization">W.H.O.</a>			//I like this better...	
+			
+		REVERSE TEXT 
+			<bdo dir="rtl">reverse text (right to left)</bdo>
+			<bdo dir="ltr">reverse text (left to right)</bdo>
+			
+		EMPTY TAGS (Standalone) (NO CLOSING BRACKET)
+			eg. <area><frame><link><basefont><param><input><col><isindex>
+				<img />	IMAGE
+				<br />	LINE BREAK
+				<hr />	HORIZONTAL RULE
+				<base><meta>	(like comments?) PROVIDE INFO ABOUT DOCUMENT WITHOUT DISPLAYING CONTENT
+				<hr align="center" width="80%" />				<hr width=“300” /> or <hr width=“80%” />
+				<hr size=“4” />
+				<hr align=“left” /> (or center, or right)
+				<hr noshade />
+		ELEMENTS
+				<b> bold text </b>
+				<big> big text </big>
+				<i> italic text </i>
+				<small> small text </small>
+				<strong> strong text </strong>
+				<sub> subscripted text </sub>
+				<sup> superscripted text </sup>
+				<ins> inserted text </ins>
+				<del> deleted text </del>
+				
+		ATTRIBUTES (are put INSIDE the BRACKET of the EMPTY TAG)
+			They MODIFY THE TAGS ACTIONS
+				ALIGNMENT ATTRIBUTE (LEFT CENTER RIGHT)
+				<p align="right"> My sentenc </p>	("left" "center" "right")
+			eg. 	<IMG SRC="graphics/pixie.gif" WIDTH="45" HEIGHT="60">
+				<BODY BGCOLOR="#000000">...</BODY>
+				<FONT FACE="Trebuchet MS, Arial, Helvetica" SIZE="4">...</FONT>
+				LISTS (bullet type)		<ul type=“square”> 		("circle" "square" "disc")
+		SPECIAL TAGS	
+				&copy;		COPYRIGHT SYMBOL	<p>&copy; 2015 RapidTables.com<p>
+				&lt;		LESS THAN
+				&gt;		GREATER THAN (USE WHEN TRYING TO USE <test> AS A STRING)
+				&reg;		REGISTRATION SYMBOL?
+				&eacute;	FUNNY e?
+				&nbsp;		??
+		LISTS (numbered), NESTED LISTS
+			<ol>
+			<li> CONTACT US </li>
+				<ol>
+				<li> INDENTED... </li>
+				<li> INDENTED... </li>
+				</ol>
+			<li> Mailing address: </li>
+			<li> Travel Experts Inc. </li>		
+			</ol>
+		LISTS (bulleted)
+			<ul type="square">		
+			<li>item 1</li>
+			<li>item 2 </li>
+			</ul>
+		
+		PATHS (RELATIVE ONLY)
+			(*** uses main folder as default ***)
+			href="contact.html">
+				<img src="images/pano20161002_221624197_iOS.jpg" WIDTH="150" HEIGHT="150' />
+				</a>
+		
+	5. ANCHOR TAG (hyperlink)
+			ACTION(link)					EVENT		 CLOSE TAG
+			<a href="http://www.w3.org/">	CERN		</a>
+			
+			Link to a file		<a href=“c:\myfile.html”>click here</a>
+								<a href=“myfile.html”>click here</a>
+								<a href=“html/myfile.html”>click here</a>
+								<a href=“../myfile.html”>click here</a>
+			Internal links		<a name=‘xxx ‘ />
+								<a href=‘#xxx’>     </a>
+
+			***** WARNING *****
+			NEVER PUT ABSOLUTE PATH			<a ref=”c:\work\index.html”>
+			...use RELATIVE PATH...			...
+			*******************
+
+		https://www.w3.org/MarkUp/1995-archive/Elements/A.html
+		See <A HREF="C:/Users/61812/OneDrive/000-SAIT (cloud)/20161018 HTML/contact.html">CONTACT</A>'s for more information.
+	6. DEPRECIATED TAGS	(tags no longer used due to CSS)
+		https://www.codehelp.co.uk/html/deprecated.html
+	
+	BORDER(calls many properties at once)		border: 2px solid #ffffff; 
+	
+	INPUT (CHECKED ATTRIBUTE)	(UNCHECKED, no (checked attribute) 					<input type="checkbox" />
+								(UNCHECKED, YES (checked attribute) 				<input type="checkbox" checked="checked" />
+	
+	TABLE (CELLS RE-SIZING)		table-layout:fixed;
+	
+	TROUBLESHOOTING (CSS)(STYLE NOT SHOWING IN 'DEVELOPER TOOLS')
+		/* top: inherit; */		(make sure COMMENT out is SINGLE LINE format, otherwise it doesn't show, and you can't play with settings in INSPECT)
+	
+	GIFS, JPGS
+	
+	IMAGE HYPERLINKED 		<a href='https://www.linkedin.com/in/dean-p-jones/' title='Click, to go to my LinkedIn'>
+								<i class="fab fa-linkedin-in w3-hover-opacity"></i>
+							</a>
+							---
+							<a href="http://www.somewhere.com">
+								<img src="pic.gif" />
+							</a>
+							---
+							
+							
+	IMAGE (ALTERNATIVE)(alt="...")(if not found)
+							<img ... alt="w3schools.com" />
+							<img src="w3schooooools.jpg" alt="w3schools.com" width="135" height="50" />
+							
+	IMAGE FLOAT WITH TEXT 	<p>
+								<img src="smiley.gif" alt="Smiley face"
+								style="width:42px;height:42px;float:left">
+									A paragraph with an image. A paragraph with an image.
+									A paragraph with an image. A paragraph with an image.
+									A paragraph with an image. A paragraph with an image.    
+							</p>
+	
+	FONTS (WEBSAFE)	https://websitesetup.org/web-safe-fonts-html-css/
+		table, th, td {
+			    font-family:  Arial, Consolas, Georgia, Verdana, 
+					'Trebuchet MS', 'Comic Sans MS', Bookman, 
+					Garamond, Palatino, Verdana, 'Courier New', 
+					'Times New Roman', Impact, 'Arial Black';
+	
+	CSS (NOT REFRESHING IN CHROME)
+		-append (?123456789) to end of line or anything will force a refresh
+		<link rel="stylesheet" type="text/css" href="~/css/gridview.css?'refresh_css'" />
+	
+	PADDING SYNTAX 
+		padding: 25px 50px 75px 100px;
+		padding top right bottom left 
+		OR 
+		padding-top: 25px;
+		padding-right: 50px;
+		padding-bottom: 75px;
+		padding-left: 100px;
+	
+	TABLE FORMAT 
+		CSS
+		<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;						//makes lines SINGLE not DOUBLE between cells
+			font-family:  Arial, Consolas, Georgia, Verdana;
+		}
+		th, td {
+			padding: 5px;
+			text-align: left;
+		}
+		</style>
+		-------
+		HTML
+		<table style="width:100%">
+		  <tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Points</th>
+		  </tr>
+		  <tr>
+			<td>Jill</td>
+			<td>Smith</td>
+			<td>50</td>
+		  </tr>
+		  <tr>
+			<td>Eve</td>
+			<td>Jackson</td>
+			<td>94</td>
+		  </tr>
+		</table>
+	
+	LINK (A TAG, HREF ATTRIBUTE)	<a href="https://www.w3schools.com">link to w3schools</a>
+
+	TARGET (ATTRIBUTE)		target="_blank", opens LINK in a new TAB OR BROWSER		http://www.w3schools.com/TAGS/att_a_target.asp
+							<a href="ttp://www.somewhere.com" target="_blank" >
+							<img src="pic.gif" />
+							</a>
+	
+	TOOLTIP (TITLE ATTRIBUTE)		<img src="images/contact.jpg" style="cursor:pointer;" title="some text for tooltip" />
+									<p title="About W3Schools">my paragraph</p>
+	
+	HORIZONTAL RULE    		<hr />
+							<hr align="center" width="80%" />				
+							<hr width=“300” /> or <hr width=“80%” />
+							<hr size="4" />
+							<hr align="left" /> 		//(or center, or right)
+							<hr noshade />
+	
+	IMAGE (SETTINGS)		<img width=‘250’ height=‘200’ src=‘pic.gif’ />
+							<img width=‘30%’ src=‘pic.gif’ />
+
+	IMAGE (TEXT ALTERNATIVES)	<img src=‘pic.gif’ alt=‘this is a picture’ />
+	IMAGE (THUMBNAILS)			<a href=‘bigpic.gif’><img src=‘pic.gif’></a>
+
+	BACKGROUND (IMAGE)			<body background=‘pic.jpg’>
+	BACKGROUND (COLORS)			<body bgcolor=‘#000000’>	-hex value
+								<body bgcolor=‘red’>
+		
+	JAVASCRIPT (ACCESS DOM TO STYLESHEETS)
+		https://www.w3.org/wiki/Dynamic_style_-_manipulating_CSS_with_JavaScript
+			document.styleSheets				//list all stylesheets
+			document.styleSheets[0].href		//get css path
+			document.domain						//get domain
+				"localhost
+			document.head 						//get <head> and <body> objects
+			document.body 
+			document.images 					//list of images on page
+			document.images[1].currentSrc		//get image source (src)
+				"https://www.google.ca/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+			document.forms						//return all FORMS input box objects
+				[form#f, f: form#f]
+	
+	WOFF 
+		*.WOFF 	is a web type font?
+	
+	FONTS 
+		https://fonts.google.com/		GOOGLE FONTS
+			-select FONT 
+			-on right side of page (click SELECT THIS FONT)
+			-open up (FAMILY SELECTED)
+			-here you can COPY THE LINKS 
+				<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+				@import url(//fonts.googleapis.com/css?family=Open+Sans);
+				font-family: 'Muli', sans-serif;
+	
+	HTTP RESPONSES (CRUD comparison)
+		HTTP 		CRUD		Description
+		--------------------------------------------
+		POST 		Create 		create something NEW, unique
+		GET 		Read		read or view something EXISTING
+		PUT 		Update 		edit or update something 
+		DELETE		Delete		delete something
+	
+	WOFF / WOFF2 FILES (*.woff2)
+		https://use.fontawesome.com/releases/v5.6.3/webfonts/fa-solid-900.woff2
+		-DEVELOPER SETTINGS, NETWORK tab, (comb through the stuff here to find what is being SENT TO MY WEBSITE PAGE)
+			*** look at PREVIEW, (headers, preview, response, ...) ***
+	
+	USING FONTS (GOOGLE)
+			https://css-tricks.com/snippets/css/using-font-face/
+				CSS 	@import url(//fonts.googleapis.com/css?family=Open+Sans);
+						body {
+						  font-family: 'Open Sans', sans-serif;
+						}
+	EG. FONTS (GOOGLE)		http://wesbos.com/programming-fonts/
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"> <!-- or import link -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Muli" rel="stylesheet">
+	<style>
+		@import url(//fonts.googleapis.com/css?family=Open+Sans);   /* import inside style */
+		body {
+			font-size: 30px;
+			font-family: sans-serif;
+		}
+		.open_sans {
+			font-family: 'Open Sans';
+		}
+		.muli {
+			font-family: 'Muli';
+		}
+		.indie {
+			font-family: 'Indie Flower', cursive;
+		}
+		.consolas {
+			font-family: 'Consolas';
+		}
+		
+	</style>		
+	<body>
+		<p class="open_sans">
+			this is a Open Sans font from Google.
+		</p>
+		<p class="muli">
+			this is a MULI font from Google.
+		</p>
+		<p class="indie">
+			this is a INDIE font from Google.
+		</p>
+		<p class="consolas">
+			this is a CONSOLAS font (NOT from Google).
+		</p>
+	</body>
+		
+	ICONS		<link rel="shortcut icon" href="/favicon.ico" /> 
+				<link rel="icon" href="/favicon.ico" />
+				
+	FAVICON 
+		-*** WARNING, this is NOT WORKING with PHP (Apache Server)? ***
+		<!-- IE -->
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<!-- other browsers -->
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		
+	FAVICON (WITH IMAGE)
+		https://www.w3.org/2005/10/howto-favicon
+		<link rel="icon" type="image/png" href="favicon.png">
+		//THIS WORKS GREAT!!! (with PHP)
+		<link rel="icon" type="image/png" href="./images/compass.png">
+				
+	FAVICON (with BASE64 CODE)(IMAGE IS IN CODE)(NO FILE)
+		CONVERT IMAGE 
+			https://www.browserling.com/tools/image-to-base64
+			-copy TEXT...
+			https://www.favicon.cc/?action=icon&file_id=73453
+			<link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAlx6FAGtB4wCIhX0A5d32AJN05wCVgukA7O74ANcOdgCsBmUAd0HbAMwJbADw7fsAkQZWAJ8FowB/f38AyMjIAJcHngBUuc4Axgh4AFy/3gBdFOgAuIHbAMs7bQCwCDcAxMTtAG4C2AB0B7kAeh/IAPD0+QBpA1kA+Pj2AOTY9gDBrO8At57EAGRe5wBRBSMA/v7+AOHh9gBPaMQAaDLfAGsGKACC1N0AlgZQAKzc5gBOBCcAoJXoAPr6+gCYz9oAtaSLAFKjxAD6+f0AlYjkAKqg6gD7/P0AcAXaAG4M1wCIHeAAjQO1AMAKTAB1aOUAYDnmAIYFyQCL0OEAdkDiAHpH5wCYBJEAigO+AMIMgQCyqowA49n2AGwE3gAxLSIAiQpHAKoKiACrq6sAVQUuAKIFnwBjDOEAkR2vAPn3/ADh39UA9/r8AJUHswCyB2cArbftAOnp4gCHA78AppbnAGod4wDi4dgAgVXqANXb8gCbBKMAbQZEALiZ1gCxB4kA1d7yANXs9AC4r+sA1/DxAIcEvQBiF9wAiQi6AGQL5QB4BiMApwZ0AHwCzABeJecAbw2EAIcExgB5A9IAgAU/AIcLuwB1Gd8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAH1EvDwAAAAAAAAAAAAAAIBYxA0sAAAAAAAAAAAAARnJdF0hFWgAAAAAAAAAABFlXC2kBIlYAAAAAAAAAM0FrExhJb1sAAAAAAAAAAAVHTTspCDlVAAAAAAAAAGNmOlQkRD48UgAAAAAANlhOZWotSjc9YgAAAAAAJQY4DglMERojXAAAAAAAAF9PQw1eU2hAJgAAAAAAACEcYHArbhU0UAAAAAAAAGECGx5CcWwZAAAAAAAAAGQUJ21nKC4dAAAAAAAAAAA/MhIKNQcAAAAAAAAAAAAAMCosDAAAAAAAAAAAAAAAAP/9AAD/4QAA/8EAAP+AAAD/AAAA/gEAAP4BAAD8AQAA8AMAAOAHAADgDwAAwB8AAIB/AAAA/wAAA/8AAA//AAA=" rel="icon" type="image/x-icon" />
+				
+	TABLES (USE FOR SHOWING DATA)
+			(*** DO NOT USE FOR FORMATTING ***)
+							<table></table>
+		Table row 			<tr></tr>
+		Table heading 		<th></th>
+		Bold & Center
+		Table data 			<td></td>
+							<caption>table title</caption>
+							
+	<meta />	SAME AS KEYWORD
+	<! ... />	COMMENTS
+	
+	TABLE (DATA NOT IN CORRECT ORDER)		MAKE SURE THAT THE OBJECT IS WRAPPED IN (<td> </td>)
+	
+	TABLE ATTRIBUTES(<table></table>???			border 	(HTML5 only allows “” or “1”)
+												REMOVED IN HTML5	
+													width (pixels or percent)
+													cellspacing
+													cellpadding
+
+	TABLE ATTRIBUTES(Table row <tr></tr>???		REMOVED IN HTML5	
+													align=left, center, right 	
+													valign=top, middle, bottom
+	TABLE ATTRIBUTES(Table row <th></th>
+												rowspan
+												colspan
+												REMOVED IN HTML5
+													align=left, center, right
+													valign=top, middle, bottom
+	TABLE ATTRIBUTES(Table row <td></td>
+												rowspan
+												colspan
+												REMOVED IN HTML5
+													align=left, center, right
+													valign=top, middle, bottom
+	TABLE EXAMPLE
+	-------------
+	<table border=“1”>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+	</table>
+	-------------
+
+		
+EXAMPLES
+<title> travel agent see </title>			//Used in TAB, for SEARCH ENGINE RESULTS
+
+
+
+Basic Layout
+--------------------------------------
+<html>
+	<head>	
+		0 Welcome to TRAVEL EXPERTS
+		<title> travel agent see </title>			//Used in TAB, for SEARCH ENGINE RESULTS
+	</head>
+	<h1>
+		1 Welcome to TRAVEL EXPERTS				//BIG TEXT
+	</h1>
+	<h2>
+		2 Welcome to TRAVEL EXPERTS				//MEDIUM TEXT
+	</h2>
+	<h3>
+		3 Welcome to TRAVEL EXPERTS				//SMALL TEXT
+	</h3>
+
+	<body> </body>							//CONTAINS (HEADINGS, PARAGRAPHS, LISTS, QUOTES, IMAGES & LINKS)
+
+</html>
+-------------------------------------------
+	<div id="wrapper">
+	<IMG SRC="C:/Users/61812/OneDrive/000-SAIT (cloud)/20161018 HTML/pano20161002_221624197_iOS.jpg">
+	</div>
+
+#wrapper, img{
+    width:100%;
+    height: 100%;
+}
+-------------------------------------------
+
+
+----------------------------------------------------------------
+----------------------------------------------------------------
+WEDNESDAY, OCT.19
+WEB SERVICES		WAMP (SEARCH) APACHE (GREEN 'W' ON LOWERRIGHT TASKBAR)
+	SERVICES 
+		ORACLE					SET (STOP) AND (MANUAL) ALL ORACLE ENTRIES (USE PROPERTIES)
+								Oracle... (6 entries) (oracle is resource hog)
+								OracleDBConsole
+								...
+		WAMP(Apache, MySQL)		SET (to AUTOMATIC)
+								wampapache64
+								wampmysql64
+		Java (James Gosling UofCalgary)(developed by guy in Calgary)
+
+		REFRESH BROWSER	 (TEST CODE)(CTRL+R)
+		COLOR (HEXADECIMAL VALUE)	http://www.yellowpipe.com/yis/tools/hex-to-rgb/color-converter.php
+									PAINTBRUSH
+									
+		index.html (HOW TO AUTOMATICALLY SERVIE IT)
+			<!DOCTYPE html>
+			<html>
+				<head>	
+					<title> my title </title>
+				</head>
+				<body>
+				</body>
+			</html>
+		
+		ALWAYS GREEN???			<body bgcolor=‘#57CEE3’>	
+		COLOR PICKER			http://www.w3schools.com/colors/colors_picker.asp
+		
+		WAMP 
+		FILES (WWW)		PUT ALL FILES UNDER "C:\wamp\www\" FOLDER
+		LOCALHOST		type (LOCALHOST) at the top of web browser (Chrome) and should start all files automatically that are in the (WAMP FOLDER)
+		RENAME (INDEX.PHP)		TO (OLDINDEX.PHP)	otherwise it won't start properly
+		WAMP FOLDER"C:\wamp\www\index.php"
+		COPY FILES OVER... (works)
+			"C:\wamp\www\images"
+			"C:\wamp\www\contact.html"
+			"C:\wamp\www\index.html"
+			"C:\wamp\www\register.html"
+		----------------
+		DAY2 OVERVIEW
+		HTML
+			Discuss exercises from previous day
+			HTML5
+		Cascading StyleSheets
+			Syntax
+			Property types and their values
+			Type Selectors
+			Class Selectors
+			ID Selectors
+			Practice exercises
+			
+		CSS (w3schools)
+			<style>
+				h2 {
+				position: absolute;
+				left: 100px;
+				top: 150px;
+				}
+			</style>
+			<h2>test test test</h2>
+			
+		*** DON'T USE (ABSOLUTE PATHS) they are dangerous and do not work on ALL DEVICES ***
+		RELATIVE UNITS (em OR rem)UNITS		http://www.w3schools.com/cssref/css_units.asp
+			Tip: The em and rem units are practical in creating perfectly scalable layout!
+			* Viewport = the browser window size. If the viewport is 50cm wide, 1vw = 0.5cm.
+			
+		IMAGE IS BROKEN (check path, RELATIVE PATH only)
+		USE (LAPTOP) AS WEB SERVER
+		HOW DO YOU GET A (WEBSITE ADDRESS) TO PLUG INTO THE (LOCALHOST)?
+			ipconfig (IP ADDRESS) use commandline
+			STATIC IP ADDRESS (from Shaw) What if it changes?
+			
+		FORMS (for USER INPUT)(will need to plug into MySQL DATABASE)
+			http://www.w3schools.com/html/html_forms.asp
+			<input type="text">		TEXTBOX INPUT
+			<input type="radio">	RADIO BUTTON
+			<input type="submit">	BUTTON (to submit)
+			<form>
+			  First name:<br>
+			  <input type="text" name="firstname"><br>
+			  Last name:<br>
+			  <input type="text" name="lastname">
+			</form>
+		
+		TWO WAY INTERACTION
+			mailto
+				<form method='post'
+					action='mailto:hpeters@dlcwest.com'
+					enctype='text/plain' >
+				</form>
+			submitted directly to a script
+				<form method='post' action='scriptname'></form>
+		
+???HOW TO MAKE INFORMATION (SECURE)??
+		
+		http: 	(NOT ENCRYPTED)
+		https:	(IS ENCRYPTED)
+		ENCRYPTION vs DECRYPTION (later in course)
+			
+		BOUNCER.PHP (SCRIPT)			"C:\wamp\www\bouncer.php"		COPY FROM 	"...\Pickup\CPRG210 Web Application Concepts\Resources\bouncer.php"
+																		COPY LATER	"...\Pickup\CPRG210 Web Application Concepts\Resources\travelexperts.sql"
+		DATABASE (TO IMPORT LATER)		"C:\wamp\www\testmysql.php"
+		
+		-------------------------------------------------------
+		-------------------------------------------------------
+		CLIENT				---->request(order at restaurant)		SERVER									----->		INDEX.HTML
+		Browser														Web Server (laptop or server tower)					
+		http://sait.ca 		<----response(bring food)				Apache
+		header
+		body
+																	PHP
+		Form (userID and password inputs)
+			GET (method)	http://sait.ca/register.php?userID=harv&password=abc										register.php
+							(how to make PASSWORD NOT VISIBLE)
+							???http://sait.ca/register.php??? (encryption?)
+			
+																	Response
+																	HEADER
+																	BODY 	<html>
+																			MIME
+																			(content type TEXT/PLAIN)	
+																			(content type TEXT/HTML)
+																			APPICATION/JSON
+							<form method="post" action="register.php"
+							
+			PUT (method)
+			DELETE (method)
+		
+
+??HOW DO CLIENT(USER) AND WEB SERVERS COMMUNICATE BACK AND FORTH??																			
+		-------------------------------------------------------
+		-------------------------------------------------------
+		FORM (USER INPUT)
+			*** KEEP IN MIND, WHICH BROWSERS SUPPORT (HTML5) TYPES??? ***
+				Create a QUERY to see what BROWSER the user is USING? (Chrome, IE, Firefox, etc.)
+			<input>
+				name='fieldname'	type='inputtype'	value='default'
+			
+			http://www.w3schools.com/html/html_form_input_types.asp
+			http://www.w3schools.com/tags/att_input_type.asp
+			TYPES
+				text, hidden(use for control characters), password, checkbox, radio, submit, reset, button, file, image
+			TYPES(HTML5)
+				color, date, datetime, email, month, number, range, search, tel, time, url, week
+			
+			GET (information goes from CLIENT to SERVER)*** is NOT CONFIDENTIAL (default method)
+				<form method="get"></form>
+			
+			GO TO BROWSER TO TEST CODE			
+				(type LOCALHOST/MYFORM.HTML)	http://localhost/myform.html
+				(enter DEAN click SEND)			http://localhost/bouncer.php?firstname=DEAN
+				(enter !@#$%^&*())				http://localhost/bouncer.php?firstname=%21%40%23%24%25%5E%26*%28%29
+												(converts CHARACTERS to %21 etc)
+				*** DON'T DRAG AND DROP (MYFORM.HTML) FILE TO BROWSER ***
+				
+??FIXING OTHER PEOPLES CODE (good first job)??
+
+		REGISTER.HTML(PULLDOWN) (put in TABLE brackets)	HI key is sent, Hawaii is in PULLDOWN
+						<select id="dest" name="dest">
+							<option value="HI">Hawaii</option>
+							<option value="PR">Paris</option>
+							<option value="GR">Greenland</option>
+						</select>
+		HTML5 (SEMANTIC ELEMENTS)
+			http://www.w3schools.com/html/html5_semantic_elements.asp
+			
+		INLINE FORMAT (OVERRIDES *.CSS)
+			<p style="background-color:gray; color="red">My paragraph</p>
+			
+		CSS (CLASS) anything with CLASS in file with change font to 30pt.
+				.navs{
+				font-size:30pt;
+				}
+		HTML
+				<nav class="navs">
+				<a href="contacts.html">Contacts</a> |
+				<a href="register.html">Register</a> |
+				</nav>
+		CSS SELECTORS
+			http://www.w3schools.com/cssref/css_selectors.asp
+			.CLASS (can apply to many things)
+			#ID (can only apply once)
+		CSS (COPY SELECTOR)
+			-CHROME TOOLS, click on TAG, rc COPY, COPY SELECTOR 
+				-gives the CSS SELECTOR...
+					#cross > path
+			
+		COLOR PICKER 		http://www.colorzilla.com/gradient-editor/
+
+		IMAGE (ALT is manditory)		<img src="tree.jpg" alt="" /> 	(ALT) displays TEXT if the image is not found
+		CSS LINK (CSS FORMATS PICKER) (http://www.cssfontstack.com/Arial-Rounded-MT-Bold)
+
+		CSS TEXT (BLACK OUTLINE, WHITE FILL)(WILL SHOW ON ANYTHING)
+			.BlackWhiteText {
+			   color: black;
+			   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+			   -webkit-text-stroke-width: 1px;
+			   -webkit-text-stroke-color: black;
+			}
+		
+THURSDAY, OCT.20
+----------------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html>
+---------------
+	TEMPLATE.HTML (SEE FOR DEFAULT FORMATS)
+
+	LINEAR GRADIENTS (background: linear-gradient(angle, color-stop1, color-stop2);)
+			CSS
+			.myback1{
+				background: linear-gradient(to bottom, #fefcea 47%,#f1da36 100%); 
+		   }
+	OLD (div) WAY OF SHOWING CONTAINERS, VERSUS NEW WAY SOME ARE PREDEFINED
+	<div id="header">		<header>
+	</div>					</header>
+	
+	<div id="main">			<main>
+	</div>					</main>
+	
+	---						 eg <div id="header1" class="classphoto">
+							</div>
+	ID(only use once)		id="main"
+	CLASS(can be reused)	class="classphoto"
+	
+	---
+	PHOTOS (RESIZE SMALLER IN PAINTBRUSH)
+	PHOTOS (USE LARGE AND SMALL SIZE OF SAME IMAGE) When to use this?
+	ORGANIZE (How to organize my code)?
+	
+	BACKGROUND COLOR
+		HTML			<header id="header1" class="classphoto" bgcolor-"red">
+		CSS (in HTML)	<style>
+							header {
+							background-color:red;
+							}
+						</style>
+						---
+		CSS (file)		header {
+						background-color:red;
+						}
+	MEETUP.COM (NETWORKING)
+		PIXELS AND PINTS
+		.NET
+		...
+	IMAGE EDITING SOFTWARE (FREE)
+		PHOTOSHOP CS2 (SHOULD STILL BE FREE)
+		GIMP (freeware)
+	---
+	CSS SELECTORS 	http://www.w3schools.com/cssref/css_selectors.asp
+	.class				.intro					Selects all elements with class="intro"	1
+	#id					#firstname				Selects the element with id="firstname"
+	
+	*					*						Selects all elements
+	
+	element				p						Selects all <p> elements	1
+	element,element		div, p					Selects all <div> elements and all <p> elements	1
+	element element		div p					Selects all <p> elements inside <div> elements	1
+	element>element		div > p					Selects all <p> elements where the parent is a <div> element
+	
+	[attribute]			[target]				Selects all elements with a target attribute	2
+	[attribute=value]	[target=_blank]			Selects all elements with target="_blank"	2
+	[attribute~=value]	[title~=flower]			Selects all elements with a title attribute containing the word "flower"	2
+	[attribute|=value]	[lang|=en]				Selects all elements with a lang attribute value starting with "en"	2
+	[attribute^=value]	a[href^="https"]		Selects every <a> element whose href attribute value begins with "https"	3
+	[attribute$=value]	a[href$=".pdf"]			Selects every <a> element whose href attribute value ends with ".pdf"	3
+	[attribute*=value]	a[href*="w3schools"]	Selects every <a> element whose href attribute value contains the substring "w3schools"
+	
+	href^	(^)means?
+	href$	($)means?
+	href*	(*)means WILDCARD
+	href~	(~)means?
+	
+	
+	PSEUDO-CLASSES
+	:hover				a:hover					Selects links on mouse over
+	----
+	POINT NOTATION??
+		<head>
+		<style type=‘text/css’>
+		h1.italic { font-style: italic }
+		p.red_caps { color: red; font-variant: small-caps}
+		</style>
+		</head>
+		<body>
+		...
+		<h1 class=‘italic’>xxxx</h1>
+		<p class=‘red_caps’>xxxx</p>
+		</body>
+	CSS REFERENCE		http://www.w3schools.com/cssref/default.asp
+	
+	img {
+		opacity: 0.5;
+	}
+	
+	HOVER (CHANGE IMAGES)
+		#img1:hover{
+			content: url(image.jpg);
+		}
+	ANIMATIONS (WITHOUT FLASH)		http://www.w3schools.com/cssref/css3_pr_animation.asp
+	
+	HTML5 LAYOUT TAGS 
+		<header>
+		<footer>
+		<article>
+		<aside>
+		<nav>
+		<section>
+	
+	GIT, GITHUB is tomorrow (will be used in group projects)
+	https://thenewboston.com/videos.php		computer science
+	lynda.com
+	udemy.com
+	---
+	RESPONSIVE DESIGN (Different resolution, scales on different devices)
+		-USE <div> TAGS INSTEAD OF <table> TAGS (TABLES ARE RIGID)
+		http://www.w3schools.com/css/css_responsive_intro.asp
+		http://www.w3schools.com/css/css_rwd_intro.asp
+		??Is there a tool to VIEW or TEST how things will respond on different device? (like using ZOOM on laptop)??
+		
+	ROTATE PARAGRAPH(transform function)
+	
+	BOOTSTRAP (THIRD PARTY)(USE FOR CREATING THINGS LIKE DYNAMIC NAV BAR)
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		</head>
+	
+	BOOTSTRAP
+	---------
+	REFERENCE (BOOTRAP's SERVER)		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"	
+	REFERENCE (DOWNLOAD ONTO OWN SERVER)	Put on WAMP folder instead
+											Paste LINK in browser, then SAVEAS (*.CSS) file
+	
+	BOOTSTRAP (DOCUMENTATION)				http://getbootstrap.com/css/
+	
+	JAVASCRIPT (MONDAY)		http://www.w3schools.com/jquery/jquery_intro.asp
+							JQUERY, used to reference javascript
+							<head>
+								<script src="jquery-1.12.4.min.js"></script>		<!--NEED TO DOWNLOAD FILE AND REFERENCE-->
+							</head>
+							OR REFERENCE IT...
+							<head>
+								<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+							</head>
+							<head>
+								<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+							</head>
+	AUDIO FILES (*.OGG, *.MP3)
+			ADDS CONTROL TO PLAY SOUND
+							<audio controls="controls">
+								<source src=“myfile.ogg" type="audio/ogg" />
+								<source src=“myfile.mp3" type="audio/mp3" />
+									Audio tag not supported.
+							</audio>
+	VIDEO FILES (...)
+							<video width=“400" height=“300“ controls="controls">
+								<source src=“vid.mp4" type="video/mp4" />
+								<source src=“vid.ogg" type="video/ogg" />
+									Video tag not supported.
+							</video>
+	TEST ON MOBILE			get IP ADDRESS (CMD, ipconfig)
+							http://10.163.101.169/header.html (permission no access?)
+							
+	CANVAS (DRAWING SHAPES)(NEEDS JAVASCRIPT)
+							<canvas>
+								Allows drawing of lines, images, text, shapes, in a controlled region
+							<canvas id=“example"></canvas>
+								<script type="text/javascript">
+									var canvas=document.getElementById(‘example');
+									var ctx=canvas.getContext('2d');
+									ctx.fillStyle='#00FF00';
+									ctx.fillRect(50,50,200,300);
+								</script>
+
+
+	GRAPHIC EDITOR (ONLINE)(JANVAS)	http://www.janvas.com/XOSYSTEM/PROJECTS/janvas_apps_suite_3.0_public/janvas_application.php
+	
+	GRID LAYOUT (GRID-TEMPLATE) (from a good demo to get around many layout problems)
+		https://bitsofco.de/holy-grail-layout-css-grid/								HOLY GRAIL LAYOUT
+		https://github.com/ireade/holy-grail-css-grid/blob/gh-pages/index.html		SOURCE CODE
+		https://drafts.csswg.org/css-grid/											CSS DOCS
+		
+	CSS (@media) 
+		https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+			@media screen and (min-width: 600px) {	
+			@media (orientation: portrait) {
+			@media (orientation: landscape) {
+		
+	GRID LAYOUT (EXAMPLE)
+	-------------------------------
+	HTML
+		<div id="grid">
+			<div id="title">Title</div>
+			<div id="score">Score</div>
+			<div id="stats">Stats</div>
+			<div id="board">Board</div>
+			<div id="controls">Controls</div>
+		</div>
+	-------------------------------
+	CSS
+		body * {
+			background-color: gray;
+			margin: 3px;
+			padding: 3px;
+			border: solid;
+		}
+		#grid {
+			background-color: lightgray;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 50px; /* the same as your div height */
+		}
+			#grid * {
+				border: dotted;
+			}
+		@media (orientation: portrait) {
+			/* orientation set for iPhone (portrait) (test in Chrome mobile mode) */
+			#grid {
+				display: grid;
+				/* 
+					1fr - is a FRACTIONAL UNIT 
+					grid-template-areas - visually layout the grid
+					columns and rows - layout using (auto, 1fr, etc for whatever fractions needed)
+				*/
+				grid-template-areas: 
+					"title stats" 
+					"score stats" 
+					"board board"   /* notice how the 'board' spans two columns */
+					"ctrls ctrls";
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr 1fr;
+			}
+		}
+
+		@media (orientation: landscape) {
+			/* orientation set for iPhone (landscape) */
+			#grid {
+				display: grid;
+				/* 
+					1fr - is a FRACTIONAL UNIT 
+					grid-template-areas - visually layout the grid (names refer to below...)
+					columns and rows - layout using (auto, 1fr, etc for whatever fractions needed)
+				*/
+				grid-template-areas: 
+					"title board" 
+					"stats ctrls" 
+					"score ctrls";
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 2fr 4fr;
+			}
+		}
+
+		/* names for reference, see above... */
+		#title {
+			grid-area: title;
+		}
+		#score {
+			grid-area: score;
+		}
+
+		#stats {
+			grid-area: stats;
+		}
+
+		#board {
+			grid-area: board;
+		}
+
+		#controls {
+			grid-area: ctrls;
+		}
+	-------------------------------
+	
+	ALIGN TEXT (VERTICALLY AND HORIZONTALLY)
+		https://stackoverflow.com/questions/5703552/css-center-text-horizontally-and-vertically-inside-a-div-block
+		text-align: center;
+		vertical-align: middle;
+		line-height: 90px;       /* the same as your div height */
+	
+	ALIGN (SVG OR DIV)
+		CSS
+			.centerAll {
+				/* https://stackoverflow.com/questions/356809/best-way-to-center-a-div-on-a-page-vertically-and-horizontally    */
+				/* toggle off (top, bottom, left, right) to adjust ALIGNMENT accordingly */
+				position: absolute;
+				top:0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+
+				margin: auto;
+			}
+		HTML 
+			<div class="centerAll" ...>
+			<svg class="centerAll" ...>
+	
+--------------------
+TIPS FOR WEB DESIGN (SEAN GORESHT)
+	ALT= (make sure to ADD ATTRIBUTE for IMAGES)		<img src="graphics/pixie.gif" alt="pixie.gif" width="45" height="60">
+	<main></main>	ALWAYS MAKE SURE THERE IS A (MAIN) IN THE (BODY)
+	STYLES
+		CSS (reference STYLE with link in HTML)
+			FOR EACH ELEMENT					p {}
+			CLASSES	(use many times)			.myclass {}
+			ID's (use for ONE element only)		#myID {}
+		HTML
+			STYLE IN HEAD						<head><style>	p {}	</style></head>
+			STYLE IN ATTRIBUE (overrides CSS)	<p style="background-color:gray;> MY PARAGRAPH </p>
+			STYLE (REFERENCE CLASS)				<p class="myclass"> MY PARAGRAPH </p>
+			STYLE (REFERENCE ID#)				<p id="myID"> MY PARAGRAPH </p>
+			---
+			STYLE (HTML STYLE)					<p color="red"> MY PARAGRAPH </p>
+			
+	STYLES (COMMENTS)(SETUP IN HTML)			WHEN SWITCHING FROM HTML TO CSS (MAKE SURE TO CONVERT COMMENTS <!--> TO /*..*/)
+	
+	POSITION? https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#The_painting_order
+		-NORMAL?
+		-FLOAT (see below)
+		-ABSOLUTE
+			#wrapper {
+			  position: absolute;
+			  left: 10px;
+			  top: 10px;
+			}
+			#top {
+			  z-index: 1;
+			  background-color: green;
+			  width: 50px;
+			  height: 50px;
+			}
+			#bottom {
+			  z-index: 0;
+			  background-color: red;
+			  width: 200px;
+			  height: 200px;
+			}
+			<div id="wrapper">
+			  <div id="bottom" />
+			  <div id="top" />
+			</div>
+		-RELATIVE?
+		
+	Z-INDEX (WHAT GOES ON TOP?)(THE HIGHER NUMBER 
+		z-index: 1;		//top
+		z-index: 0;		//bottom
+
+	BOX MODEL (ALL PADDINGS...)
+		POSITION(top, left, bottom, right)
+			MARGIN
+				BORDER
+					PADDING
+		example...
+		#wrapper {
+		  position: absolute;
+		  left: 10px;
+		  top: 10px;
+		  margin-top: 10px;
+		  border: 3px solid orange;
+		  padding: 2px;
+		}
+					
+	
+	FLOAT & CLEAR
+		float: right;		FORCES AN OBJECT TO THE RIGHT (OVERRIDES THE POSITION)(??see POSITION, not sure how absolute and relative effect this yet?)
+		clear: both;		MEANS THAT AN (IMAGE FLOATING) will not be able to overlap this object
+		clear: left;		MEANS THAT AN (IMAGE FLOATING) will not be able to overlap (THE LEFT) of this object
+		
+	EMAIL (USE LINK)	Email: info@travelexperts.com		<a href="mailto:info@travelexperts.com">info@travelexperts.com</a>
+						http://www.w3schools.com/tags/tag_address.asp
+	EMAIL (TAGS)		<address> </address>	
+	
+	HTML TAGS					http://www.w3schools.com/tags/tag_comment.asp
+	---------
+	<!-- -->					COMMENT
+	<html>						The <html> TAG tells the BROWSER that this is an HTML document.
+									The <html> TAG is the CONTAINER FOR ALL OTHER HTML ELEMENTS (except the <!DOCTYPE> tag)
+	<head>						The following elements can go inside the <head> element:
+									<title> (this element is required in an HTML document)
+									<style>
+									<base>
+									<link>
+									<meta>
+									<script>
+									<noscript>
+	<body>						The <body> tag defines the document's body.
+									The <body> element contains all the contents of an HTML document, such as...
+										text 
+										hyperlinks 
+										images 
+										tables
+										lists
+	<div>						The <div> tag defines a DIVISION OR A SECTION in an HTML document.
+									The <div> tag is used to GROUP BLOCK-ELEMENTS to format them with CSS.
+	
+	<header>					The <header> element represents a container for introductory content or a set of navigational links.
+									A <header> element typically contains:
+										-logo or icon
+										-slogan
+										-authorship information
+										-one or more heading elements (<h1> - <h6>)
+										
+	<footer>					A <footer> element typically contains:
+									-authorship information
+									-copyright information
+									-contact information
+									-back to top links
+									-sitemap?
+									-related documents
+									
+	<main>						The <main> tag specifies the main content of a document.
+		(example)					<body>
+										<main>
+											  <h1>Title</h1>
+											  <p>Google Chrome, Firefox, and Internet Explorer are the most used browsers today.</p>
+											  <article>
+												<h1>Google Chrome</h1>
+												<p>Google Chrome is a free, open-source web browser developed by Google, released in 2008.</p>
+											  </article>
+
+											  <article>
+												<h1>Internet Explorer</h1>
+												<p>Internet Explorer is a free web browser from Microsoft, released in 1995.</p>
+											  </article>
+
+											  <article>
+												<h1>Mozilla Firefox</h1>
+												<p>Firefox is a free, open-source web browser from Mozilla, released in 2004.</p>
+											  </article>
+										</main>
+											<p><strong>Note:</strong> The main tag is not supported in Internet Explorer 11 and earlier versions.</p>
+									</body>
+									
+	<form> (USER INPUT)			The <form> tag is used to create an HTML form for user input.
+									The <form> element can contain one or more of the following form elements:
+										<input>
+										<textarea>
+										<button>
+										<select>
+										<option>
+										<optgroup>
+										<fieldset>
+										<label>
+	
+	<abbr> (shows flyover)		The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.
+	<acronym> (shows flyover)	Can I get this <acronym title="as soon as possible">ASAP</acronym>?
+	<!DOCTYPE> (show at top)	IS A DECLARATION, THAT MUST BE BEFORE THE <html> TAG TO INDICATE YOU ARE USING (HTML 4.01)(so the content is rendered correctly)
+									(HTML5) DOES NOT REQUIRE THE DECLARATION
+	<address>					<address>
+									Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br> 
+									Visit us at:<br>
+									Example.com<br>
+									Box 564, Disneyland<br>
+									USA
+								</address>
+	<article>					The <article> tag specifies independent, self-contained content.
+	<label> (FOR INPUT)			The <label> tag defines a label for an <input> element.
+	
+	
+	@font-face					For using EXTERNAL FONT (must download it first)
+									@font-face {
+										font-family: myFirstFont;
+										src: url(sansation_light.woff); /*DOWNLOAD A FILE*/
+	
+								}
+	
+	<div> (to divide up areas)
+	<span> (similar to div)		USED TO COLOR PART OF TEXT
+	
+	BACKGROUNDS (IMAGE BEHIND TEXT)		http://www.w3schools.com/css/css3_backgrounds.asp
+	
+???	MOUSEOVER (IMAGES)(if can't find one image uses next)(needs to be small, like 50x50px)					
+										url(image1.gif),url(smiley.jpg), auto			
+										http://www.w3schools.com/cssref/playit.asp?filename=playcss_cursor
+											div {
+												cursor:url(smiley.gif),url(myBall.cur),auto;
+											}
+	
+	CSS (HEIGHT:100%;)(*** USE MIN-HEIGHT ***)	
+	CSS (<body> body {height:100%;})	NOT TAKING UP FULL SCREEN (BACKGROUND LOOKS 100%, BUT BODY APPEARS ONLY ELEMENTS)
+											USE IN-BROWSER (DEVELOPER TOOLS) TO CHECK THE (BODY HEIGHT)
+										https://www.kirupa.com/html5/make_body_take_up_full_browser_height.htm
+												html {
+													height:100%;
+												}
+													body {
+														min-height:100%;		//SET <body> ... (DON'T USE height:100%;, use min-height:100%; INSTEAD)
+													}
+								
+	FREE FONTS					https://fonts.google.com/
+	
+	TROUBLESHOOTING (FORMATS CSS)		-MAKE SURE THE (ORDER) OF LINKS WORK (IF MULTIPLE CSS FILES)
+										-CHECK THE TAG ORDER (BRACKET HELL, WHAT TAG IS IN WHAT?)
+										
+	FONT-SIZE (EM)				SCALE, RELATIVE TO (DEFAULT FONT SIZE)
+								font-size: 1em;
+								
+	POSITION (CSS)				position: static|absolute|fixed|relative|initial|inherit;
+									static			Default value. Elements render in order, as they appear in the document flow	Play it »
+									absolute		The element is positioned relative to its first positioned (not static) ancestor element	Play it »
+									fixed			The element is positioned relative to the browser window	Play it »
+									relative		The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position
+										h2.pos_left {
+											position: relative;
+											left: -20px;
+										}
+	HEIGHT (%)(CSS)(not showing)		NEED TO HAVE PARENT OBJECTS (BEFORE SETTING child objects) <html> and <body> HEIGHT SET TO 100%,
+										THEN SET <header>, <nav>, <main>, <footer> PERCENTAGES
+														html {
+															height:100%;
+														}
+														body {
+															height:100%;
+															width:100%;
+														}
+														header {
+															position:relative;
+															background-color:black;
+															height:20%;
+															width:100%;
+														}
+														nav {
+															background-color:red;
+															height:20%;
+															width:100%;
+														}
+														main {
+															background-color:blue;
+															height:20%;
+															width:100%;
+														}
+														footer {
+															background-color:black;
+															height:20%;
+															width:100%;
+														}
+	IMAGE (OPACITY)		TO MAKE AN IMAGE (LIGHTER), YOU NEED TO WRAP IT IN A (CONTAINER)
+														<div class="my-container">
+															<h1>Scotch Scotch Scotch</h1>
+															<img src="http://placekitten.com/1500/1000">
+														</div>
+														.my-container {
+															position: relative;
+															overflow: hidden;
+														}
+														.my-container h1 {
+															padding: 200px;
+															position: relative;
+															z-index: 2;
+														} 
+														.my-container img {
+															position: absolute;
+															left: 0;
+															top: 0;
+															width: 100%;
+															height: auto;
+															opacity: 0.6;
+														}
+	PLACEHOLDER (grey text in background)			USER INSTEAD OF (value"Enter name")
+													<input type="text" name="firstname" placeholder="Enter firstname" />
+													
+	INPUT TAG	<input checked="checked" >
+	
+	BACKGROUND IMAGE
+		nav {
+			background-image: url("images/texture.jpg");
+			opacity: 0.6;
+		}
+		<nav class="image_background">
+		
+TROUBLESHOOTING (TEXT COLOR)
+	nav {}					(wouldn't change it, because there was a CLASS for each element)
+	.navbar {color: red;}	(NEED TO ADD COLOR TO SMALLEST CHILD)
+	STYLES (CSS AND HTML)(*** DON'T WASTE YOUR TIME, CSS WILL OVERRIDE HTML IF SAME)
+	HIGHLIGHT TAGS (SEE IF HAS A MATCHING PAIR, should highlight)
+	
+TROUBLESHOOTING (CSS)
+	ADD MANY SETTINGS (YOU CAN TURN THEM OFF IN (DEVELOPER TOOLS TO SEE HOW THEY ALL BEHAVE, ADD ALL PROPERTIES TO EXPERIMENT)
+	
+TROUBLESHOOTING (IMAGE RESIZE)(MAKE SURE TO ADD TO THE <img src= ... class="resize" ...>)
+	//IMAGE (CHILD)
+	.resize {
+		height:100%;
+		width:100%;
+	}
+	//DIV (PARENT)
+	#img-array {
+		position: absolute;
+		height: 20%;
+		width: 20%;
+		top: 55%;
+		right: 2%;
+		color: white;
+		background-color: black;
+	}
+			<div id="img-array">
+					img-array 
+					<img class="resize" src="images/101starsky.jpg" alt="101starsky.jpg" />
+			</div>
+			
+	ANIMATIONS (KEYFRAMES) 		https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068
+		animation-name: 				@keyframes name (remember we chose tutsFade).
+		animation-duration: 			the timeframe length, the total duration of the animation from start to the end.
+		animation-timing-function: 		sets the animation speed ( linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier ).
+		animation-delay: 				the delay before our animation will start.
+		animation-iteration-count: 		how many times it will iterate through animation.
+		animation-direction: 			gives you the ability to change the loop direction, from start to end ,or from end to start, or both.
+		animation-fill-mode: 			specifies which styles will be applied to the element when our animation is finished ( none | forwards | backwards | both )
+	
+		-go TO/FROM 
+		@keyframes tutsFade {
+		  0% {
+			opacity: 1;
+		  }
+		  100% {
+			opacity: 0;
+		  }
+		}	
+		---
+		@keyframes tutsFade {
+		  from {
+			opacity: 1;
+		  }
+		  to {
+			opacity: 0;
+		  }
+		}
+		---
+		.element {
+		  animation-name: tutsFade;
+		  animation-duration: 4s;
+		  animation-delay: 1s;
+		  animation-iteration-count: infinite;
+		  animation-timing-function: linear;
+		  animation-direction: alternate;
+		}
+		//or shorthand:
+
+		.element {
+		  animation: tutsFade 4s 1s infinite linear alternate;
+		}
+		
+	VENDOR PREFIXES (BROWSERS)
+		Chrome & Safari: 	-webkit-
+		Firefox: 			-moz-
+		Opera: 				-o-
+		Internet Explorer: 	-ms-
+		
+		.element {
+			-webkit-animation: tutsFade 4s 1s infinite linear alternate;
+			-moz-animation: tutsFade 4s 1s infinite linear alternate;
+			-ms-animation: tutsFade 4s 1s infinite linear alternate;
+			-o-animation: tutsFade 4s 1s infinite linear alternate;
+			animation: tutsFade 4s 1s infinite linear alternate;
+		}
+		
+	*********************************
+	<style type="text/css">
+
+		div {
+		  width: 200px;
+		  height: 200px;
+		  background-color: yellow; 
+		  
+		/*   RUN ANIMATION */
+		  animation: square-to-circle 2s 1s infinite alternate; 
+		}
+
+		/* DEFINE THE ANIMATION */
+		@keyframes square-to-circle {
+		  0%{
+			border-radius:0 0 0 0;
+			background:coral; 
+			transform:rotate(0deg);
+		  }
+		  25%{
+			border-radius:50% 0 0 0;
+			background:darksalmon; 
+			transform:rotate(45deg);
+		  }
+		  50%{
+			border-radius:50% 50% 0 0;
+			background:indianred;
+			transform:rotate(90deg);
+		  }
+		  75%{
+			border-radius:50% 50% 50% 0; 
+			background:lightcoral; 
+			transform:rotate(135deg);
+		  }
+		  100%{
+			border-radius:50%; 
+			background:darksalmon;
+			transform:rotate(180deg);
+		  }
+		}
+
+	</style>
+	*********************************
+	
+	ANIMATION EASE TOOL (https://matthewlein.com/ceaser/)
+	
+	CSS SHAPES (https://css-tricks.com/examples/ShapesOfCSS/)
+	
+	/* CENTER ON SCREEN */
+	div {
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 100px;
+		height: 100px;
+		background-color: blue;
+	}
+	
+	MOVE (TRANSLATE)
+		left: 200px; top: 0px;
+		
+SPRITER PRO (2D ANIMATION TOOL)($65)
+	https://www.youtube.com/watch?time_continue=47&v=6-lDwfIix28
+	-using technique call MODULAR ANIMATION
+	https://brashmonkey.com/spriter-features/ (free version)
+	
+CSS SVG ICON (TRICKS) 	https://css-tricks.com/svg-sprites-use-better-icon-fonts/
+	-how make them very reusable!!!
+	
+ICON MOON (SVG FREE ICONS) https://icomoon.io/app/#/select
+
+CSS (BOX SHADOW)(see the CHROME tool for layout, to see how it looks)(open SHADOW EDITOR)
+	box-shadow: inset 0px 0px 20px 7px #272bc3;		//shades the inside 
+	box-shadow: outset 0px 0px 20px 7px #272bc3;	//shadow outside
+			
+EMAIL VALIDATION 	https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email			
+		
+
+		
+BEM (CSS) 
+	https://assortment.io/posts/introducing-bem-css-naming-convention
+	Block (.block)
+		-is a noun
+		-DO, describes its purpose ("What is it?" — menu or button), 
+		-DON'T, NOT its state ("What does it look like?" — red or big).
+		CSS 
+			.person {}
+		HTML (attribute)
+			class="person"
+	Element (.block__element)(use double underscore __)
+		-is a PART of a BLOCK
+	Modifier (.block__element--modifier, .block--modifier)(use double hyphen --)
+		-describes a STATE of the BLOCK or BLOCK__ELEMENT
+	Example
+		PERSON 
+						.person {}					BLOCK
+			HAND 
+						.person__hand {}			BLOCK__ELEMENT
+				LEFT
+						.person__hand--left {}
+			MALE 
+						.person--male {}			BLOCK--MODIFIER
+			FEMALE
+						.person--female {}			BLOCK--MODIFIER
+	NAMING 
+		-keep the NAMING GENERIC 
+			DON'T (by naming these RED, BLUE, GREEN, if we every need to CHANGE THE COLORS...
+				...then we will have to CHANGE all the CLASS NAMES in CSS too)
+				.btn--red { background: #efb5b5; }
+				.btn--blue { background: #aed7ea; }
+				.btn--green { background: #afdeb5; }
+			DO's (this allows for FLEXIBILITY, especially with things like SASS you can name a VARIABLE for a COLOR and change TEMPLATE in ONE PLACE)
+				.btn--primary {}
+				.btn--secondary {}
+	
+HTML5 CHARACTERS(A) 	https://www.w3schools.com/charsets/ref_html_entities_a.asp
+HTML5 CHARACTERS(B)		https://www.w3schools.com/charsets/ref_html_entities_b.asp
+HTML5 CHARACTERS(C)		https://www.w3schools.com/charsets/ref_html_entities_c.asp
+	
+	
+CHARACTER MAP (UTF-8)		
+	https://www.w3schools.com/charsets/ref_utf_punctuation.asp
+		...			&hellip;			<p>ellipsis &hellip;</p>
+	CURRENCY		https://www.w3schools.com/charsets/ref_utf_currency.asp
+			DEC 	HEX 	HTML 	DESCRIPTION
+		₤	8356	20A4	 		LIRA SIGN
+		₪	8362	20AA	 		NEW SHEQEL SIGN
+		€	8364	20AC	&euro;	EURO SIGN
+	https://www.w3schools.com/charsets/ref_utf_letterlike.asp
+			DEC 	HEX 	HTML 	DESCRIPTION
+		Ω	8486	2126	&ohm;	OHM SIGN
+		K	8490	212A	 		KELVIN SIGN
+		SUM	8512	2140	 		DOUBLE-STRUCK N-ARY SUMMATION
+	ARROWS 			https://www.w3schools.com/charsets/ref_utf_arrows.asp
+			DEC 	HEX 	HTML 	DESCRIPTION
+		↺	8634	21BA	 	ANTICLOCKWISE OPEN CIRCLE ARROW
+		↻	8635	21BB	 	CLOCKWISE OPEN CIRCLE ARROW
+		⇄	8644	21C4	 	RIGHTWARDS ARROW OVER LEFTWARDS ARROW
+		⇆	8646	21C6	 	LEFTWARDS ARROW OVER RIGHTWARDS ARROW
+		⇒	8658	21D2	&rArr;	RIGHTWARDS DOUBLE ARROW
+	MATH (LOGIC, etc) 			https://www.w3schools.com/charsets/ref_utf_math.asp
+			DEC 	HEX 	HTML 	DESCRIPTION
+		∑	8721	2211	&sum;	N-ARY SUMMATION
+		∞	8734	221E	&infin;	INFINITY
+		<	8736	2220	&ang;	ANGLE
+		∧	8743	2227	&and;	LOGICAL ANDTry it
+		∨	8744	2228	&or;	LOGICAL ORTry it
+		∩	8745	2229	&cap;	INTERSECTIONTry it
+		∪	8746	222A	&cup;	UNIONTry it
+		∫	8747	222B	&int;	INTEGRAL
+		⊂	8834	2282	&sub;	SUBSET OFTry it
+		⊃	8835	2283	&sup;	SUPERSET OFTry it
+		⊄	8836	2284	&nsub;	NOT A SUBSET OF
+	https://www.w3schools.com/charsets/ref_utf_block.asp	
+			DEC 	HEX 	 	DESCRIPTION
+		▖	9622	2596	 	QUADRANT LOWER LEFTTry it
+		▗	9623	2597	 	QUADRANT LOWER RIGHTTry it
+		▘	9624	2598	 	QUADRANT UPPER LEFTTry it
+		▙	9625	2599	 	QUADRANT UPPER LEFT AND LOWER LEFT AND LOWER RIGHTTry it
+		▚	9626	259A	 	QUADRANT UPPER LEFT AND LOWER RIGHTTry it
+		▛	9627	259B	 	QUADRANT UPPER LEFT AND UPPER RIGHT AND LOWER LEFTTry it
+		▜	9628	259C	 	QUADRANT UPPER LEFT AND UPPER RIGHT AND LOWER RIGHTTry it
+		▝	9629	259D	 	QUADRANT UPPER RIGHTTry it
+		▞	9630	259E	 	QUADRANT UPPER RIGHT AND LOWER LEFTTry it
+		▟	9631	259F	 	QUADRANT UPPER RIGHT AND LOWER LEFT AND LOWER RIGHT
+	MISC(chess, trigams, etc)		https://www.w3schools.com/charsets/ref_utf_symbols.asp
+			DEC 	HEX 	HTML 	DESCRIPTION
+		♔	9812	2654	 		WHITE CHESS KINGTry it
+		♕	9813	2655	 		WHITE CHESS QUEEN
+		☯	9775	262F	 		YIN YANGTry it
+		☰	9776	2630	 		TRIGRAM FOR HEAVENTry it
+		☱	9777	2631	 		TRIGRAM FOR LAKETry it
+		☲	9778	2632	 		TRIGRAM FOR FIRETry it
+		☳	9779	2633	 		TRIGRAM FOR THUNDERTry it
+		☴	9780	2634	 		TRIGRAM FOR WINDTry it
+		☵	9781	2635	 		TRIGRAM FOR WATERTry it
+		☶	9782	2636	 		TRIGRAM FOR MOUNTAINTry it
+		☷	9783	2637	 		TRIGRAM FOR EARTH
+		⚊	9866	268A	 		MONOGRAM FOR YANGTry it
+		⚋	9867	268B	 		MONOGRAM FOR YINTry it
+		⚌	9868	268C	 		DIGRAM FOR GREATER YANGTry it
+		⚍	9869	268D	 		DIGRAM FOR LESSER YINTry it
+		⚎	9870	268E	 		DIGRAM FOR LESSER YANGTry it
+		⚏	9871	268F	 		DIGRAM FOR GREATER YIN
+		♠	9824	2660	&spades;	BLACK SPADE SUITTry it
+		♣	9827	2663	&clubs;		BLACK CLUB SUITTry it
+		♥	9829	2665	&hearts;	BLACK HEART SUITTry it
+		♦	9830	2666	&diams;		BLACK DIAMOND SUIT
+		⚀	9856	2680	 		DIE FACE-1Try it
+		⚁	9857	2681	 		DIE FACE-2Try it
+		⚂	9858	2682	 		DIE FACE-3Try it
+		⚃	9859	2683	 		DIE FACE-4Try it
+		⚄	9860	2684	 		DIE FACE-5Try it
+		⚅	9861	2685	 		DIE FACE-6
+		
+	INPUT BOX (MIN MAX LENGTH)
+		ATTRIBUTES
+			minlength="3" 
+			maxlength="6"
+		First name: <input type="text" name="fname" value="Donald" minlength="3" maxlength="6"><br>
+		
+	INPUT BOX (NUMBER)(MIN MAX)		https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
+		<input type="number" placeholder="multiple of 10" step="10" min="0" max="100">
+	
+	TOOLTIP (BOOTSTRAP) 		https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a>
+		---
+		//NEED TO INITIALIZE
+			<script>
+			$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip(); 
+			});
+			</script>
+			
+FILTER TABLES (SEARCH FILTER)(DROP DOWN LIST)
+	https://www.w3schools.com/w3css/w3css_filters.asp
+	
+TEMPLATES 
+	https://www.tutorialrepublic.com/html-examples.php
+	
+PRE ELEMENT (PREDEFINED PARAGRAPHS, DOES THE WRAP AUTOMATICALLY)
+	<pre>
+	Text in a pre element
+	is displayed in a fixed-width
+	font, and it preserves
+	botasdfasdf asdfsadf
+	line breaks
+	</pre>
+	
+BOOTSTRAP (COPY CLASSES)
+	-run in IE (Internet Explorer), F12, DOM, select element, (COPY RULE)
+		.btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4285;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .btn-default {
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+        }
+		
+	KEYBOARD SHORTCUTS (<kbd></kbd>)
+	<kbd>CTRL+C</kbd>
+	kbd {
+	  border: 1px solid #666666;
+	  border-radius: 4px;
+	  padding: 3px 5px;
+	  margin: 2px;
+	  color: #444444;
+	  text-decoration: none;
+	}
+	---------
+	<div>
+	<p>Click this to copy.
+	<kbd>CTRL+C</kbd>
+	</p>
+	</div>
+	div {
+	  padding: 12px;
+	  background-color: #007fff;
+	}
+	kbd {
+	  border: 2px solid black;
+	  border-radius: 4px;
+	  padding: 3px 5px;
+	  margin: 2px;
+	  color: black;
+	  font-weight: bold;
+	  text-decoration: none;
+	  background-color: gray;
+	}
+	----------
+	<code class="code_block">
+	<p>Click this to copy.
+	<kbd>CTRL+C</kbd>
+	</p>
+	</code>
+	.code_block {
+		display: block;
+		margin: 20px 0;
+		padding: 20px;
+		overflow: auto;
+		counter-reset: linecounter;
+	}
+	code {
+		font-family: monospace;
+		background: #222;
+		color: #a6e22e;
+		padding: 2px 4px;
+		border-radius: 5px;
+	}
+	kbd {
+	  border: 1px solid #666666;
+	  border-radius: 4px;
+	  padding: 3px 5px;
+	  margin: 2px;
+	  color: #444444;
+	  text-decoration: none;
+	  font-weight: bold;
+	  background-color: white;
+	}
+	
+WRAPPER (BORDER THAT IS SAME COLOR AS BACKGROUND)
+	.wrapper {
+	  border: 10px solid rgba(0,0,0,0.5);				//this will use the same color just darker border
+	  border-radius: 20px;
+	  padding: 3px;
+	  background-color: red;
+	}
+CSS (HIGHLIGHTER)
+	.highlighter {
+		display: inline;
+		padding: 1px 6px;
+		background-color: yellow;
+	}
+	
+CSS BOX MODEL (THREE WAYS TO SHOW 'IMAGES' inside the BORDER)
+	https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model
+	.default     { background-clip: border-box;  }
+	.padding-box { background-clip: padding-box; }
+	.content-box { background-clip: content-box; }
+
+CSS SCROLL BARS (IF CONTENT IS TOO LARGE?)
+	https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model
+	.autoscroll { overflow: auto;    }		//adds scroll bars
+	.clipped    { overflow: hidden;  }		//hides part of it
+	.default    { overflow: visible; }		//goes outside boundary
+	
+CSS (DISPLAY PROPERTY)(NONE, BLOCK, INLINE, INLINE-BLOCK)
+	https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Box_model
+	.none       { display: none;       }		//hides tag (this is how JQUERY (.toggle()) function works
+	.wraps { display: inline;       }			//wraps formatting
+	.block { display: block;        }			//fills the width of screen
+	.newline { display: inline-block; }			//(newline) keeps formating (one-line, but shorter)
+	
+CSS GRID LAYOUT (ALIGN TEXT)(VERTICAL CENTER)
+	https://stackoverflow.com/questions/45536537/centering-in-css-grid/45541686
+	-make sure to use
+	header {
+	  grid-area: header;
+	  background: red;
+	  
+	  display: flex;					/* align text (vertical center) USE THIS IN DISPLAY, *** NOT CONTAINER *** */
+	  justify-content: center;			/* USE THIS IN DISPLAY, *** NOT CONTAINER *** */
+	  align-items: center;				/* USE THIS IN DISPLAY, *** NOT CONTAINER *** */
+	}	
+	.container {
+	  display: grid;
+
+	  grid-template-areas:
+		"nav header side"
+		"content content content"
+		"footer footer footer";
+
+	  grid-template-columns: 1fr 3fr 1fr;
+	  grid-template-rows: 1fr 6fr 1fr;
+	  grid-gap: 3px;
+	  
+	  /* justify-content: space-evenly; */
+	  /* text-align: center; */
+	  /* justify-items: center; */  /* row aligment */
+	  /* align-items: center; */    /* column alignment */
+	  /* align-content: space-between; */
+	  /* justify-content: space-around; */
+	  
+	  height: 100vh; /* viewport height */
+	}
+	
+SIDEBAR ACCORDIAN VS DROPDOWN
+	https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_accordion_sidebar
+	
+CSS EFFECTS 
+	FADE TEXT (TRANSITION)
+		div {
+			height: 100px;
+			width: 500px;
+			position: absolute;
+			font-size: 40px;
+			color: black
+		}
+		.new {
+			transform: scale(1.0);
+		}
+		.wrap:hover .old {
+			transform: scale(1.0);
+			transition: transform 2s ease-in-out;
+		}
+		.wrap:hover .new {
+			transform: scale(0.7);
+			transition: transform 2s ease-in-out;
+		}
+		----------
+		<div class="wrap">
+		<div class="new">Piping Design</div>
+		<div class="old">Software Developer</div>
+		</div>
+
+W3CSS (RESPONSIVE DESIGN)
+	-if the LAYOUT IS (TOO SMALL) ON MOBILE 
+	-make sure you have this in META DATA 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+W3CSS (SHOW/HIDE CONTENT)
+	class='w3-show'
+	class='w3-hide'
+		
+W3CSS (DISPLAY)(ALIGNMENTS)(LEFT, MIDDLE, RIGHT, TOPLEFT, TOPMIDDLE, TOPRIGHT, BOTTOMLEFT, BOTTOMMIDDLE, BOTTOMRIGHT)
+	https://www.w3schools.com/w3css/w3css_display.asp
+		<div class="w3-display-container w3-green" style="height:300px;">
+		  <div class="w3-display-topleft">Top Left</div>
+		  <div class="w3-display-topright">Top Right</div>
+		  <div class="w3-display-bottomleft">Bottom Left</div>
+		  <div class="w3-display-bottomright">Bottom Right</div>
+		  <div class="w3-display-left">Left</div>
+		  <div class="w3-display-right">Right</div>
+		  <div class="w3-display-middle">Middle</div>
+		  <div class="w3-display-topmiddle">Top Mid</div>
+		  <div class="w3-display-bottommiddle">Bottom Mid</div>
+		</div>
+
+HTML (ENCODE SPACE)(%20)
+	(if you see this on a PTH it is just a SPACE)
+		path: 'E:\\000-BACKUP\\0000-CODE ACADEMY\\777-WEB SERVER\\Node (web server)\\server2\\resume\\DEAN%20JONES%20Resume%20(piping%20designer).pdf' }
+		
+W3CSS (CHEATSHEET)
+	https://www.cheatography.com/l3home/cheat-sheets/w3-css/
+		
+W3CSS (LAYOUT)(VERTICAL ALIGNMENT)(TOP, MIDDLE, BOTTOM)
+		w3-cell-top (default)
+		w3-cell-middle
+		w3-cell-bottom
+	https://www.w3schools.com/w3css/w3css_layout.asp
+		<div class="w3-cell-row">
+		  <div class="w3-container w3-red w3-cell w3-cell-top">
+			<p>Hello W3.CSS Layout.</p>
+			<p>Hello W3.CSS Layout.</p>
+			<p>Hello W3.CSS Layout.</p>
+			<p>Hello W3.CSS Layout.</p>
+		  </div>
+		  <div class="w3-container w3-green w3-cell w3-cell-middle">
+			<p>Hello W3.CSS Layout.</p>
+		  </div>
+		  <div class="w3-container w3-blue w3-cell w3-cell-bottom">
+			<p>Hello W3.CSS Layout.</p>
+		  </div>
+		</div>
+		
+W3CSS (LAYOUT)(12 COLUMN GRID)(RESPONSIVE FLUID GRID)
+	https://www.w3schools.com/w3css/w3css_grid.asp
+		<div class="w3-row">
+		  <div class="w3-col s6 w3-green w3-center"><p>s6</p></div>
+		  <div class="w3-col s6 w3-dark-grey w3-center"><p>s6</p></div>
+		</div>
+		--------
+		<div class="w3-row">
+		  <div class="w3-col m4 l3">
+			<p>12 columns on a small screen, 4 on a medium screen, and 3 on a large screen.</p>
+		  </div>
+		  <div class="w3-col m8 l9">
+			<p>12 columns on a small screen, 8 on a medium screen, and 9 on a large screen.</p>
+		  </div>
+		</div>
+
+ALIGN TEXT 
+	https://www.w3schools.com/w3css/w3css_text.asp
+		CENTER 
+			<div class="w3-container w3-center">
+		LEFT
+			<div class="w3-left-align"><p>Left aligned text.</p></div>
+		RIGHT
+			<div class="w3-right-align"><p>Right aligned text.</p></div>
+		
+W3CSS (LAYOUT)(W3-HALF, W3-QUARTER, W3-THIRDS)
+	https://www.w3schools.com/w3css/w3css_responsive.asp
+		<div class="w3-row">
+		  <div class="w3-green w3-container w3-quarter">
+			<h2>w3-quarter</h2> 
+		  </div>
+		  <div class="w3-container w3-quarter">
+			<h2>w3-quarter</h2> 
+		  </div>
+		  <div class="w3-container w3-quarter">
+			<h2>w3-quarter</h2>
+		  </div>
+		  <div class="w3-container w3-quarter">
+			<h2>w3-quarter</h2>
+		  </div>
+		</div>
+		
+W3CSS (BORDERS)
+	https://www.w3schools.com/w3css/w3css_borders.asp
+	EXAMPLES
+	https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_borders_bars
+		
+W3CSS (PANEL)(WITH NICE GREY BORDER)
+	GREY PANEL
+	https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_notes_light-grey
+	<div class="w3-container">
+	  <div class="w3-panel w3-border w3-light-grey w3-round-large">
+		<p>London is the most populous city in the United Kingdom,
+		with a metropolitan area of over 9 million inhabitants.</p>
+	  </div>
+	</div>
+	YELLOW (PALE)
+	<div class="w3-container">
+	  <div class="w3-panel w3-pale-yellow w3-border w3-border-yellow">
+		<p>London is the most populous city in the United Kingdom,
+		with a metropolitan area of over 9 million inhabitants.</p>
+	  </div>
+	</div>
+	
+FAVICON 
+	-favicon.ico (is the ICON for the TAB IN THE BROWSER)
+	-NODEJS (just add FAVICON.ICO in root folder)
+	-PHP (Apache)
+		-add file 
+		add to HTML
+			<!-- FAVICON -->
+			<link rel="shortcut icon" href="./favicon.ico?v=<?php echo time() ?>" />
+	
+HREF LINK (OPEN IN NEW TAB)
+	-ADD THE ATTRIBUTE (target="_blank") in the (HTML <a> TAG) 
+	<a href="https://www.google.com/maps/place/Matt+Klassen+Consulting+Inc./@50.9844169,-114.1161064,12z/data=!4m5!3m4!1s0x0:0x1c36a8296f04f010!8m2!3d50.9141138!4d-114.0743923"
+		target="_blank" 
+		title="CaManSol on Google Maps"
+	>
+		<img src="./images/map.png" alt="map.png" style="width:100%;">
+	</a>
+	
+HTML (INCLUDE) 
+	https://www.w3schools.com/howto/howto_html_include.asp 
+	-creates JAVASCRIPT to load 
+	-make sure to (ADD JAVASCRIPT CODE)(at bottom of BODY)
+		-the FUNCTION
+		-execute the FUNCTION 
+			<script>
+			includeHTML();
+			</script>
+	------------
+	<div w3-include-html="h1.html"></div> 
+	------------
+	
+ANGULAR (INCLUDE)
+	https://www.w3schools.com/angular/angular_includes.asp
+	<div ng-include="'myFile.htm'"></div>
+	
+HTML (INCLUDE)(USING JAVASCRIPT)
+	<!-- uses DOCUMENT.WRITE() -->
+	<script src="./plainHTML.js"></script>
+	--------------------
+	plainHTML.js 
+		document.write('<h1>HEADER DEAN IS AWESOME!</h1>');
+	--------------------
+		
+APACHE SERVER (ERROR LOG)(XAMPP)
+	https://stackoverflow.com/questions/3719549/where-does-phps-error-log-reside-in-xampp
+	-XAMPP (DIALOG)
+		-Apache (LOGS BUTTON) 
+	"C:\xampp\apache\logs\error.log"
+	"C:\xampp\apache\logs\access.log"
+	
+CSS (DIMMING / TINTING)(FILTER WHOLE BODY)
+	<!-- FILTER (looks like NIGHT) for all content -->
+	body {
+		filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
+	}
+
+	#dimScreen
+	{
+		index: 20;		/* to front	 */
+		position:fixed;
+		padding:0;
+		margin:0;
+
+		top:0;
+		left:0;
+
+		width: 100%;
+		height: 100%;
+		background:rgba(255,255,255,1.0);
+	}
+	
+FONT AWESOME (CSS & HTML)
+	https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements
+	.login::before {
+		font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f007";
+	  }
+
+	  .tps::before {
+		font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f1ea";
+	  }
+
+	  .twitter::before {
+		font-family: "Font Awesome 5 Brands"; content: "\f099";
+	  }
+	</style>
+
+	<ul style="margin: 0;">
+	  <li><span class="icon login"></span> Login</li>
+	  <li><span class="icon tps"></span> TPS Reports</li>
+	  <li><span class="icon twitter"></span> Twitter</li>
+	</ul>
+	
+FONT AWESOME (FONT SIZE)
+	https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons
+	fa-xs	.75em	
+	fa-sm	.875em	
+	fa-lg	1.33em	Also applies vertical-align: -25%
+	fa-2x	2em	
+	fa-3x	3em	
+	fa-4x	4em	
+	fa-5x	5em	
+	fa-6x	6em	
+	fa-7x	7em	
+	fa-8x	8em	
+	fa-9x	9em	
+	fa-10x	10em
+	
+FONT AWESOME (CSS)(UNICODE INJECTION)
+	.fa:after {
+		content: "\f05a";  /* UNICODE (Font Awesome) */
+		font-family: 'Font Awesome 5 Free';
+		font-size: 9em !important;			/* don't use font-size: 900 DON'T WORK */
+	}
+	<p class='fa'></p>
+	
+HTML (MAP WITH LINKS)
+	https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_areamap
+	<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+	<map name="planetmap">
+	  <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+	  <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+	  <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+	</map>
+	
+IMAGE SOURCE (RELATIVE PATHS)
+	'./'		DOT 			(ROOT FOLDER or CURRENT FOLDER)
+	'../' 		DOT DOT 		(BACK UP A FOLDER)
+	'./images/photo1.jpg' 		this is from the (ROOT FOLDER)
+	'../images/photo1.jpg'		this is (BACK A FOLDER)(then images)
+		-use this WHEN CODE is already in a FOLDER like ('./js...')
+	
+W3CSS IMAGE (NOT VERY LARGE ON iPHONE)
+	-add (w3-mobile) (this will RE-SIZE automatically)
+	<img class="w3-circle w3-mobile"
+	
+ERRORS (CHECKING)
+	CHROME (DEVTOOLS)
+		NETWORK TAB (sort by STATUS)
+			-look for any FILES LOADING incorrectly 
+				(200 is OK)
+				(404 is NOT FOUND)(file like *.PNG not found)
+	CHROME (DEVTOOLS)
+		CSS 
+			check ELEMENTS tab, STYLES, (Computed, etc.)
+			-play with SETTINGS 
+			-look at ATTRIBUTES that are INHERITED (*** clue to FIX shit ***)
+			-LINE-HEIGHT (was set to 1.5, I just had to change it back to 1.0 FIXED A CONTAINER enlarging)
+			
+IMAGE (<img>)(TEXT ALTERNATIVE with ICON) 
+	/* FONT AWESOME (support for all icons) */
+	.icon::before {
+	  display: inline-block;
+	  font-style: normal;
+	  font-variant: normal;
+	  text-rendering: auto;
+	  -webkit-font-smoothing: antialiased;
+	}
+	/* FONT AWESOME (user icon) */
+	.fa_user:after {
+		font-family: 'Font Awesome 5 Free';
+		font-size: 9em !important;				/* added !important, couldn't use 900, didn't work */
+		content: "\f2bd";  						/* UNICODE (Font Awesome) <i class="far fa-user-circle"></i> */
+		line-height: 1.0;						/* I had to add this because it was INHERITING 1.5 throwing off the spacing */
+	}
+	
+	<img id='test' ng-src="{{ our_team.dean_jones.photo }}" onerror="this.classList.add('icon', 'fa_user');" alt='' style="width:25%;" class="w3-circle w3-hover-opacity">
+	
+	
+CARTOONIZE AN IMAGE (IMAGE TO CARTOON)
+	-use CLIP tool (TO GET PHOTO)
+	-oversize the ORIGINAL IMAGE (to remove WATERMARKS)
+	https://www.befunky.com/create/photo-to-cartoon/
+	www.cartoonize.net
+	
+URL (EXPLAINED)	https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL
+	EXAMPLES 
+		https://developer.mozilla.org
+		https://developer.mozilla.org/en-US/docs/Learn/
+		https://developer.mozilla.org/en-US/search?q=URL
+		
+	SYNTAX 
+			JS (JavaScript)			window.location
+		FULL URL 		
+			http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewhereInTheDocument
+		http:// 					(PROTOCOL)(https:// IS SECURED usually on PORT:443)
+									-browsers can also handle others (mailto:, ftp:, etc)
+		www.example.com 			(DOMAIN NAME)(website address)(or could use LOCALHOST, 127.0.0.1, or IP ADDRESS)
+		:80 						(PORT)
+		/path/to/myfile.html		(path to *.HTML file) 
+		?key1=value1&key2=value2	(KEY-VALUE pairs of PARAMETERS)(???query string parameters)
+										*** NOTE, each BACK-END (WEB SERVER) has their own way of HANDLING PARAMETERS)
+										-CHROME DEVTOOLS (go to FIRST FILE (should be this site))
+											-NETWORK tab, HEADERS (scroll to bottom to find...)
+												QUERY STRING PARAMETERS (will only be here if there are PARAMETERS) 
+													eg. https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_fading
+														PARAMETERS 		filename=tryw3css_slideshow_fading
+		#SomewhereInTheDocument		(ANCHOR)(bookmarks somewhere in the HTML document)(like in HTML the href=# means TOP)
+									eg. 	localhost/# 			home (top of HTML page)
+											localhost/#about 		(goes to (id='about') in HTML file)
+											localhost/#contact 		(goest to (id='contact') in HTML file)
+	
+	JAVASCRIPT (PARAMETERS FUNCTION)
+										-GET (URL PARAMTERS)(with JavaScript)
+											-go to CONSOLE 
+											function getUrlVars() {
+												var vars = {};
+												var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+													vars[key] = value;
+												});
+												return vars;
+											}
+											--------------
+											getUrlVars()		//{filename: "tryw3css_slideshow_fading"}
+		
+									
+	JAVASCRIPT CODE (to access URL info)	
+							URL 									JAVASCRIPT
+		URL (FULL)			http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewhereInTheDocument
+																	window.location.href
+		PROTOCOL 			http:// 								window.location.protocol
+		DOMAIN				www.example.com 						window.location.host 
+																	window.location.hostname					
+		PORT 				:80										window.location.port 
+		PATH				/path/to/myfile.html					window.location.pathname
+		PARAMETERS 			?key1=value1&key2=value2				window.location.search
+		ANCHOR 				#SomewhereInTheDocument					window.location.hash 
+		
+	JAVASCRIPT (window.location)(FUNCTIONS)
+		https://www.w3schools.com/jsref/jsref_reference.asp
+		.assign()			eg. windows.location.assign(url)		(reassigns a URL)(can use BACK BUTTON)
+			https://www.w3schools.com/jsref/met_loc_assign.asp
+		.replace()			eg. windows.location.replace(url)		(reassigns a URL)(BACK BUTTON doesn't work here)
+		
+	QUERY SELECTOR 
+		document.querySelector("h1")				(finds FIRST element)
+		document.querySelectorAll('html')			(gets ARRAY of all elements)
+		document.querySelectorAll('p')
+		document.querySelectorAll("#pricing")		(by ID)
+		document.querySelectorAll(".w3-padding")	(by CLASS)
+		document.querySelectorAll("h1")				(by ELEMENT)
+		
+	HTML (VIEW (*.TXT) TEXT FILE (PLAIN TEXT) IN HTML)	
+		-this is SURPRISINGLY EASY 
+		-SAVE (*.TXT) file (to WEB SERVER) location
+		-RENAME (to *.HTML) 
+			-add a TINY BIT OF CODE 
+				<!-- "E:\000-BACKUP\000-SAIT\000-HELP\20161121-29 OOSD Notes (C-Sharp).txt" -->
+				<link rel="stylesheet" type="text/css" href="./css/format_text_file.css" />
+				<textarea style="width:95%;height:95%;border:solid 2px black;">
+					<!-- ...TXT FILE CONTENTS HERE -->
+				</textarea>
+				//DON'T USE (PRE)
+				<pre>
+					<!-- ...TXT FILE CONTENTS HERE -->
+					*************** NOTE, <pre> TAG (doesn't show any XML TAGS?) what would it do with HTML parser?) ***************
+				</pre>
+				
+			CSS FILE ()
+				/* TO FORMAT (PLAIN TEXT FILE) */
+				html, body {
+					font-family:Helvetica, Arial, sans-serif;
+				}
+			------------
+			TO REFERENCE 
+			-make a INDEX PAGE (with LINKS to FILES) 
+					<h2>CHEATSHEET NOTES (see if I can view them online)</h2>
+					<ul>
+						<li><a href="csharp.html">C#</a></li>
+						<li><a href="csharp.html">C#</a></li>
+						<li><a href="csharp.html">C#</a></li>
+					</ul>
+					
+</textarea>

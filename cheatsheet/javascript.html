@@ -1,0 +1,5626 @@
+<!-- "E:\000-BACKUP\000-SAIT\000-HELP\JavaScript.js" -->
+<link rel="stylesheet" type="text/css" href="./css/format_text_file.css" />
+<textarea style="width:95%;height:95%;border:solid 2px black;">
+
+// JAVASCRIPT CODECADEMY 
+// Trying to fill in some gaps (JavaScript is used in so many other languages)(like AngularJS)
+// OCT.17, 2018 
+
+
+
+SCRIPT FROM A FILE (executes automatically)
+	-a SCRIPT will NOT have a FUNCTION WRAPPER (so it will EXECUTE when LOADED)
+	-a FUNCTION (needs to be EXECUTED, to be run)
+	-------------------------
+	<script src="js/test.js"></script>
+	---
+	JS/TEST.JS
+		alert('this is a test');
+	-------------------------
+	<script src="js/test2.js"></script>
+	---
+	JS/TEST2.JS
+		const test2 = () => alert('test2.js');
+		test2();
+	-------------------------
+	
+WISH LIST?
+	-LIST COMPREHENSIONS?
+	-OVERRIDE THE COMPARISON OPERATORS 
+		-make OBJECTS handle ==, !, !=, < differently (to return other values besides TRUE/FALSE)
+		
+RUN SCRIPT (NODE SHELL)
+	// to run 
+	// in powershell (NOT NODE commandline)
+		npm mergePDF.js
+		
+FOLDER PATHS (need \\ for escape character)
+	// directory (folder)
+	let dir = 'E:\\000-BACKUP\\000-SAIT\\003-RESUME (LinkedIn)\\777-MERGE PDFS';
+	let file = `${dir}\\COVER.pdf`
+	//"E:\000-BACKUP\000-SAIT\003-RESUME (LinkedIn)\777-MERGE PDFS\COVER.pdf"
+  
+
+CODECADEMY...
+QUIZ#1 	11/11	100%		Introduction
+QUIZ#2 	10/10 	100%		Conditional Statements
+QUIZ#3 	10/10	100% 		FUNCTIONS
+QUIZ#4 	6/7		85% 		SCOPE (function is considered a global variable)
+QUIZ#4 	7/7		100% 		SCOPE 
+QUIZ#5 10/10 	100% 		ARRAYS
+QUIZ#6 9/9		100% 		LOOPS
+QUIZ#7 8/8		100% 		ITERATORS
+QUIZ#8 14/14	100%		OBJECTS 
+QUIZ#9 10/11 	90%			CLASSES 
+QUIZ#9 11/11 	100%		CLASSES 
+QUIZ#10 10/11	90%			BROWSER COMPATIBILITY AND TRANSPILATION
+QUIZ#10 11/11	100%		BROWSER COMPATIBILITY AND TRANSPILATION
+	MODULES
+
+	
+
+
+//JAVASCRIPT LIBRARIES 			https://cdnjs.com/libraries/
+		<!-- JQUERY -->
+		<script id="JQuery" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<!-- D3.JS -->
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<!-- SNAP.SVG -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+		
+		<!-- AngularJS (main) library -->
+		<script id="AngularJS 1.4.8" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script id="AngularJS 1.6.9" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<!-- AngularJS ROUTING library -->
+		<script id="AngularJS Route" src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+
+//MODULE DESIGN PATTERN (CLOSURE)					
+	https://toddmotto.com/mastering-the-module-pattern/
+	var Module = (function () {
+	  //private variables 
+	  //private functions
+	  
+	  //return (variables or methods)
+	  return {
+		publicMethod: function () {
+		  // code
+		}
+	  };
+
+	})();
+	---------------
+	IF-ELSE (SHORT) 		(condition) ? //if true : //if false 
+	---------------
+	FUNCTION (SHORT) 		const func1 = (a,b) => a + b;
+		
+	
+(*.JS) files 
+
+JSHINT 			https://jshint.com/docs/options/
+
+JSLINT 			https://www.jslint.com/
+	-use DOUBLE-QUOTES (instead of single)
+	-delete all WHITESPACE at (end of lines)
+	-use 4 SPACES (on tabs) 								//Expected 'case' at column 4, not column 8.
+	-SEMICOLON (;) at the end of CURLY BRACES (object)
+	-use (===) instead of (==) 								//Expected '===' and instead saw '=='.
+	-default settings /*jslint devel: true */				//Undeclared 'console'.
+	-DEPRECATED? default settings /*jslint maxlen: 130 */ 	 			//Line is longer than 80 characters.
+	-unexpected (for statement) 							//Unexpected 'for'.
+		-change setting at bottom (to accept it, otherwise expects to use forEach)
+	-Object.keys(DAYSOFWEEK).forEach((k) => { console.log(k) })		//
+	-IF-ELSE 
+		-put the BRACKETS on the same line (shortens the lines of code)
+		if (...) {
+			//...
+		} else if (actualSleepHours > idealSleepHours) {
+			//...
+		} else {
+			//...
+		}
+
+JSLINT (FULLY LINTED EXAMPLE) 
+	-----------------------------------------------------------------------
+	/*jslint devel:true */
+
+	const DAYSOFWEEK = {
+		SUNDAY: {id: 1, name: "Sunday", name_short: "Sun", hours_slept: 8},
+		MONDAY: {id: 2, name: "Monday", name_short: "Mon", hours_slept: 7},
+		TUESDAY: {id: 3, name: "Tuesday", name_short: "Tues", hours_slept: 7},
+		WEDNESDAY: {id: 4, name: "Wednesday", name_short: "Wed", hours_slept: 7},
+		THURSDAY: {id: 5, name: "Thursday", name_short: "Thur", hours_slept: 7},
+		FRIDAY: {id: 6, name: "Friday", name_short: "Fri", hours_slept: 8},
+		SATURDAY: {id: 7, name: "Saturday", name_short: "Sat", hours_slept: 9}
+	};
+
+	// function: sleep for the day
+	const getSleepHours = function (day) {
+		"use strict";
+		// validate format
+		day = day[0].toUpperCase() + day.substr(1).toLowerCase();
+
+		switch (day) {
+		case DAYSOFWEEK.SUNDAY.name:
+			return DAYSOFWEEK.SUNDAY.hours_slept;
+		case DAYSOFWEEK.MONDAY.name:
+			return DAYSOFWEEK.MONDAY.hours_slept;
+		case DAYSOFWEEK.TUESDAY.name:
+			return DAYSOFWEEK.TUESDAY.hours_slept;
+		case DAYSOFWEEK.WEDNESDAY.name:
+			return DAYSOFWEEK.WEDNESDAY.hours_slept;
+		case DAYSOFWEEK.THURSDAY.name:
+			return DAYSOFWEEK.THURSDAY.hours_slept;
+		case DAYSOFWEEK.FRIDAY.name:
+			return DAYSOFWEEK.FRIDAY.hours_slept;
+		case DAYSOFWEEK.SATURDAY.name:
+			return DAYSOFWEEK.SATURDAY.hours_slept;
+		default:
+			return "Something went wrong, check the input";
+		}
+	};
+
+	// function: get list of hours slept
+	const getSleepHoursList = function () {
+		"use strict";
+		let result = [];
+		Object.keys(DAYSOFWEEK).forEach(function (k) {
+			Object.keys(DAYSOFWEEK).forEach(function (k2) {
+				if ("hours_slept" === k2) {
+					// console.log(key, key2, DAYSOFWEEK[key][key2]);
+					result.push(DAYSOFWEEK[k][k2]);
+				}
+			});
+		});
+		return result;
+	};
+	// getSleepHoursList()      // [4, 8.5, 9, 9.5, 10, 8, 12]
+
+	// function: get total sleep for the week
+	const getActualSleepHours = function () {
+		"use strict";
+		return getSleepHoursList().reduce((total, value) => total + value);
+	};
+	// getActualSleepHours()  // 61 (total hours for the week)
+
+	// function: set ideal sleep for week
+	const getIdealSleepHours = function (hour_per_day = 8) {
+		return hour_per_day * 7;
+	};
+	// getIdealSleepHours()     //returns 56 (hours per week ideally)
+
+	// function: get sleep debt (ideal_sleep - actual_sleep)
+	const calculateSleepDebt = function (ideal_hours = 8) {
+		let actualSleepHours = getActualSleepHours();
+		console.log("Actual Sleep Hours: ", actualSleepHours, " hours");
+		let idealSleepHours = getIdealSleepHours(ideal_hours);
+		console.log("Ideal Sleep Hours: ", idealSleepHours, " hours");
+		let result = actualSleepHours - idealSleepHours;
+		// console.log("result: ", result);
+
+		if (actualSleepHours === idealSleepHours) {
+			return `You got the perfect amount of sleep!`;
+		} else if (actualSleepHours < idealSleepHours) {
+			return `SLEEP DEBT: ${result} hours. You need to get more rest.`;
+		} else if (actualSleepHours > idealSleepHours) {
+			return `SLEEP DEBT: ${result} hours. You got more sleep than needed.`;
+		} else {
+			return "ERROR: calculateSleepDebt function.";
+		}
+	};
+	-----------------------------------------------------------------------
+
+RESOURCES**
+	JAVASCRIPT LIBRARIES (BROWSE)			https://cdnjs.com/libraries/
+											https://cdnjs.com/libraries/snap.svg
+											https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js
+									<!-- SNAP.SVG -->
+									<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+											
+	
+	JSLINT (online syntax checker)			https://www.jslint.com/
+	
+	MOZILLA REFERENCE 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+	TUTORIALS 			https://javascript.info/
+	
+	DESIGN PATTERSN		https://www.dofactory.com/javascript/decorator-design-pattern
+
+
+COMMENTS 		//		single-line
+						//this is a single-line
+				/* */	multi-line
+						/* 	
+							this is a 
+							multi-line 
+							comment
+						*/
+						-use comments (to comment out code)(this can be used to MANUALLY DEBUG or SAVE code that you may need later)
+						-use it INSIDE CODE 
+							console.log(/*IGNORED!*/ 5);
+				
+SEMICOLOR 		; 		(use to end a statement)
+
+CONSOLE.LOG (HOW TO PRINT)(LARGE ARRAYS)(THAT ARE BROKEN UP)
+	-use JSON.stringify(<array>)
+	console.log(JSON.stringify(primes(0,25000)));
+	-click COPY
+
+CONSOLE 
+	.log() METHOD  		(prints to the console)
+	console.log("print this");
+	console.log(42)
+	console.log(1000)
+	
+	console.log('earlyYears: ', earlyYears);
+
+	
+??	console.dir(obj)
+	
+THIS (KEYWORD) 
+	https://stackoverflow.com/questions/3127429/how-does-the-this-keyword-work
+		//-seems to return PARENT OBJECT (THIS)
+		var obj = {
+			someData: "a string"
+		};
+		
+		function myFun() {
+			return this // What is `this` here?
+		}
+		
+		obj.staticFunction = myFun;
+		---
+		myFun() 						//returns WINDOW OBJECT 
+		obj.staticFunction 				//returns OBJECT (obj)
+		-----------------------------
+		var obj = {test: function(){ return this }}
+		obj 							//returns OBJECT 
+		obj.test() 						//returns OBJECT
+	
+ENUM 
+	// just use an OBJECT (the KEYS have to be UNIQUE)
+		https://www.sohamkamani.com/blog/2017/08/21/enums-in-javascript/ 
+	// this prevents (spelling errors)
+	const seasons = {
+		SUMMER: 'summer',
+		WINTER: 'winter',
+		SPRING: 'spring',
+		AUTUMN: 'autumn'
+	}
+	
+	let season = seasons.SPRING
+
+	if(!season){
+		throw new Error('Season is not defined')				//ERROR HANDLER
+	}
+
+	switch(season){
+		case seasons.SUMMER:
+			console.log("It's SUMMER!");
+			break;
+		case seasons.WINTER:
+			console.log("It's WINTER!");
+			break;
+		case seasons.SPRING:
+			console.log("It's SPRING!");
+			break;
+		case seasons.AUTUMN:
+			console.log("It's AUTUMN!");
+			break;
+	}
+	
+ENUM (COMMON) 
+	// enum (days of week)
+	const DAYSOFWEEK = {
+	  SUNDAY: [1, 'Sunday', 'Sun', 'planet: Sun'],
+	  MONDAY: [2, 'Monday', 'Mon', 'planet: Moon'],
+	  TUESDAY: [3, 'Tuesday', 'Tues', 'planet: Mars'],
+	  WEDNESDAY: [4, 'Wednesday', 'Wed', 'planet: Mercury'],
+	  THURSDAY: [5, 'Thursday', 'Thur', 'planet: Jupiter'],
+	  FRIDAY: [6, 'Friday', 'Fri', 'planet: Venus'],
+	  SATURDAY: [7, 'Saturday', 'Sat', 'planet: Saturn']
+	}
+	// enum (months) 
+	const MONTHS = {
+	  JANUARY: [1, 'January'],
+	  FEBRUARY: [2, 'February'],
+	  MARCH: [3, 'March'],
+	  APRIL: [4, 'April'],
+	  MAY: [5, 'May'],
+	  JUNE: [6, 'June'],
+	  JULY: [7, 'July'], 
+	  AUGUST: [8, 'August'],
+	  SEPTEMBER: [9, 'September'],
+	  OCTOBER: [10, 'October'],
+	  NOVEMBER: [11, 'November'],
+	  DECEMBER: [12, 'December']
+	}
+	// enum (seasons)
+	const SEASONS = {
+		SUMMER: 'Summer',
+		WINTER: 'Winter',
+		SPRING: 'Spring',
+		AUTUMN: 'Autumn'
+	}
+
+ARRAY (REDUCE) 
+	// SUM function (for LIST or ARRAY)
+	// applies a FUNCTION to a ARRAY LIST
+	[1,2,3].reduce((total, currentValue) => total + currentValue)
+		//6
+	
+	
+ARRAY (FILL) 
+	// fills an array with a STATIC ELEMENT 
+	var arr = [0, 1, 2, 3, 4, 5, 6, 7];
+	arr.fill(null, 0);						// [null, null, null, null, null, null, null, null]
+	arr.fill('xxx', 0);						// ["xxx", "xxx", "xxx", "xxx", "xxx", "xxx", "xxx", "xxx"]
+	arr.fill('abc', 2, 3);					// ["xxx", "xxx", "abc", "xxx", "xxx", "xxx", "xxx", "xxx"]		//change only specific INDEXES
+	
+	
+ARRAY (FIXED LENGTH) 
+	var arr = new Array(7);
+	arr.fill(null, 0);				//fill array with NULL value otherwise (cannot change EMPTY elements)
+	Object.seal(arr);				//this makes the LIST FIXED LENGTH
+	
+	
+BREAK, CONTINUE, LABELS 
+	label		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label
+	break 		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break
+	continue 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue
+	
+VARIABLE (SHORT CIRCUIT) 
+	//use this for DEFAULTS?
+	//this will evaluate the LEFT SIDE first (if true, or it will assign 'Stranger')
+	let defaultName = username || 'Stranger'; 
+	---
+	let tool = '';
+	let writingUtensil = tool || 'pen';
+	
+VARIABLES (var, const, let)
+	VAR (variable)
+		-is GLOBAL if outside a BLOCK SCOPE 
+		-is LOCAL if inside a FUNCTION SCOPE
+	LET 
+		-for BLOCK SCOPE
+		-for LOCAL scope (inside function)
+		
+	CONST (constant)			
+		-for BLOCK SCOPE
+		-BUT with an object, you can change it's properties 
+		-GOOD PRACTISE (to CAPITALIZE) constant names
+		//eg.														https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+			const MY_FAV = 7;
+		//-cannot be re-assigned 
+			MY_FAV = 20;											//Uncaught TypeError: Assignment to constant variable.
+		//-cannot be re-declared
+			const MY_FAV = 33;										//Uncaught SyntaxError: Identifier 'MY_FAV' has already been declared
+			let MY_FAV = 33;
+		//-cannot JUST DECLARE it (needs a value)
+			const MY_FAV2;											//Uncaught SyntaxError: Missing initializer in const declaration
+	CONST (objects) 
+		//eg.
+			const MY_OBJECT = {'key': 'value'};
+		//cannot OVERWRITE OBJECT 
+			MY_OBJECT = {'OTHER_KEY': 'value'};						//Uncaught TypeError: Assignment to constant variable.
+		//BUT I can change the KEY VALUE 
+			MY_OBJECT.key = 'otherValue'; 
+		//if you don't want the object to change (Use Object.freeze() to make object immutable)
+			Object.freeze(MY_OBJECT)
+			*** NOTE *** //this doesn't ERROR if I try to CHANGE THE VALUE (it just doesn't change it)
+			MY_OBJECT.key = 'abc'; 
+			MY_OBJECT 					//{key: "otherValue"}	
+
+
+	var num;			// declaration (see HOISTING)
+	num = 6;			// initialization
+			
+	//VARIABLE SCOPE 		
+		https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
+	// use (LET, CONST) instead of VAR 
+		-use VAR as global scope 
+		-use LET in FUNCTION scope (or block scope, eg. IF-STATEMENT) 
+		var a = 33;
+		let a = 33; 
+		this.a = 33;  				//use this in a FUNCTION 
+		
+		// [object].prototype.property loses to
+		// [object].property in the lookup chain. For example...
+		myobj.prototype.a = -1;		//attach to the OBJECT prototype (FUNCTION)
+		myobj.d = 44;				//attach directly to OBJECT
+		
+	
+	//var (variable)
+	//let ()
+	//const (constant)
+	
+	//var (is global) 
+	//let (is local variable)(like in a function)
+	//let (was introduced in ES6)
+	//let uses BLOCK SCOPING (it only exists in the BLOCK with the CURLY BRACES {})
+??	//ES6 (what is this?)
+
+	//const (need to assign a value, when you declare it)
+	//const (cannot reassign)
+	
+	
+	
+	//var
+	var a;			// DECLARE variable (undefined, no value yet)
+	a = 12; 		// INITIALIZATION (assign VALUE)
+	
+	var x = 33;		// declare and assign value (can CHANGE whenever)
+	x = 34;
+	x = 35;
+	
+	//const
+	const x = 77;	//have to assign a VALUE (cannot CHANGE it later)
+	x = 88;			//ERROR TypeError: Assignment to constant variable.
+					// FIX: you cannot change the value later (if you need to, use LET or VAR)
+	const y;		//ERROR SyntaxError: Missing initializer in const declaration
+					// FIX: you need to assign a value
+	
+	//let
+	var f1 = function(){
+		let x = 3.14
+		return x
+	} 
+	f1() 			//3.14 
+	x 				//35 (global)
+		
+TEMPLATE LITERALS (ES6) 
+	-also known as (STRING LITERAL, STRING INTERPOLATION)
+	// can EVALUATE VARIABLE in a string 
+	// improve readability 
+	let myName = 'Dean';
+	let myCity = 'Calgary';
+	console.log(`My name is ${myName}. My favorite city is ${myCity}.`);
+	
+	//JAVASCRIPT (EXPRESSIONS) 
+	//-use BACKQUOTES (`) 
+	//-for variables use (${my_var})
+	eg. 
+		var n = 42;
+		`${n}`								//returns "42"
+		---
+		var fname = 'Dean'
+		var lname = 'Jones'
+		`${fname} ${lname}`					//"Dean Jones"
+		`My name is ${fname} ${lname}.`		//"My name is Dean Jones."
+	
+	
+GLOSSARY 
+	ES5 vs ES6 (ECMAScript) 	https://codeburst.io/javascript-wtf-is-es6-es8-es-2017-ecmascript-dca859e4821c
+		ES5 (2009)
+		ES6 (2015 or ES2015)
+	ES6 (BROWSER COMPATIBILITY ISSUES)(like old ES5) 
+		caniuse.com 	(for HTML, CSS, and JavaScript)
+		Babel			A Javascript library that you can use to convert new, unsupported JavaScript (ES6), into an older version (ES5)
+	GLOBAL OBJECT 		https://developer.mozilla.org/en-US/docs/Glossary/Global_object
+	ARROW FUNCTIONS 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+	EXPRESSION vs STATEMENT 
+		EXPRESSION 	produces a VALUE or result (like a formula in MATH)
+			 4x   +    2y    = 25 			
+			(-expression-)
+			(----- equation -----)
+		STATEMENT 	like a (loop or IF statement) performs an action
+	LINTING 		a process by which text is evaluated and improved by an application.
+	POLYFILL 		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+		if a METHOD (doesn't exist) in a certain browser (Mozilla usually has some CODE you can use to replace it)
+	UNMUTABLE 		doesn't change 
+	MUTABLE 		changes (changes the array with RETURN value)
+	STATEMENT 		is a line of code (with a SEMICOLON at the end);
+	BLOCK 			the CODE BLOCK is (between the CURLY BRACES { ... } )
+
+	ES 		ECMAScript (shortened to ES)(Ecma International to create standards for a scripting language)
+	ES6   	(the standard has different VERSIONS that allow compatibility with other versions of JavaScript)
+	ES6 	(or ES2015) is the 6TH EDITION of ECMAscript STANDARD 
+	ES6 	features...
+				-new keywords like let and const to declare variables,
+				-new function syntax using Arrow functions,
+				-creation of Classes,
+				-parameters with default values,
+	HOISTING				https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
+			-basically it means you can CALL a function in your CODE, then have the FUNCTION DEFINED later
+			-you don't need to DEFINE the function (or have it above the code using it)
+			-this allows you to organize your code however you need to.
+			-----
+			catName("Chloe");
+
+			function catName(name) {
+			  console.log("My cat's name is " + name);
+			}
+			//"My cat's name is Chloe"
+			-----
+			//variables 
+			console.log('num: ', num); 	// returns undefined 
+			var num;					// declaration
+			num = 6;					// initialization
+				
+FUNCTIONS (ARROW SYNTAX)
+	OLD 
+		var greeting = function() {
+		  console.log('Hello World!');  
+		};
+	NEW (ARROW) 
+		const greeting = () => console.log('Hello World');
+		
+BOOLEAN (TOGGLE)
+	var my_visible = true;
+	my_visible = !my_visible;		// this TOGGLES (true then false)
+	// this is much shorter than...
+	my_visible = my_visible ? false : true;
+	// this shorter 
+	function toggle(my_visible){
+		return !my_visible;
+	}
+	// this is shorter than 
+	if (my_visible) {
+		return false;
+	else {
+		return true;
+	}
+	
+OBJECT TYPE (DETECT TYPE USING TOSTRING)
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+	Object.prototype.toString.call(12)
+	"[object Number]"
+	Object.prototype.toString.call('')
+	"[object String]"
+	Object.prototype.toString.call(true)
+	"[object Boolean]"
+	Object.prototype.toString.call([1,2,3])
+	"[object Array]"
+	Object.prototype.toString.call({a:2, b:3})
+	"[object Object]"
+	Object.prototype.toString.call(null)
+	"[object Null]"
+	Object.prototype.toString.call(undefined)
+	"[object Undefined]"
+	Object.prototype.toString.call(function(){ return 'a function'; })
+	"[object Function]"									//OBJECT constructor (is also a FUNCTION)
+	---------
+	Object.prototype.toString.call(undefined) == "[object Number]"
+	// false
+	Object.prototype.toString.call(33) == "[object Number]"
+	// true
+	
+DATA TYPES 
+	number 			4, 8, 3.14
+	string 			'single-quotes'
+					"or double-quotes"
+					"TIP: use double-quotes if you need an APOSTROPHE var's what's it's" //then you won't need a ESCAPE CHARACTER 
+	boolean 		true or false 
+	
+	undefined		//a VARIABLE has been DECLARED, but no VALUE has been assigned yet
+						var x;			//undefined
+						typeof(x)		//"undefined"
+	null 			//NULL (is an OBJECT not a DATA TYPE), this is to ASSIGN a value of (NO VALUE)
+						typeof(null) 	//"object"
+	NaN 			//(Not a Number) example, (parsInt('abc')) is NOT a number, so it can't convert it 
+						
+	function      	var func1 = function(){ return "my function" } 		
+	
+	symbol 			//??? new feature?
+	object 			//javascript object
+	
+NUMBER (EXPONENTS)
+	1e10		//10000000000
+	1^10 		//DON'T USE FOR EXPONENT, this is (bitwise XOR LOGICAL)
+	
+var isFloat = (n) => {
+	var s = '' + n;
+	var arr = s.split('.');
+	return arr[1] === 0;
+}
+	
+DATA TYPES (TO CHECK)
+	typeof() 
+	typeof(33)					//"number"
+	typeof('a')					//"string"
+	typeof(true)				//"boolean"
+	typeof([1,2,3])				//"object" (not array?) ????????
+		Array.isArray(arr)		//true
+	typeof({a:1, b:2})			//"object"
+	typeof(func1)				//"function"
+	typeof(NaN)					//"number" (not a number IS NaN) ????????? 
+	typeof(Infinity)			//"number" (can't do arithmetic on this) ????????????
+		(x) => !Number.isNaN(x) && (typeof(x) === 'number')
+	
+	// example 
+	let newVariable = 'Playing around with typeof.';
+	console.log(typeof(newVariable));					//string
+	newVariable = 1;
+	console.log(typeof(newVariable));					//number
+	
+CONVERT (DATE TYPES)
+	STRING (TO NUMBER) 
+		//times ONE ( * 1)
+		var s_to_n = (s) => s * 1;
+	NUMBER (TO STRING) 
+		//concatenate (with empty string)
+		var n_to_s = (n) => n + '';
+	
+ERRORS 
+	TYPE ERROR (NOT A FUNCTION)
+		s.numberOfStudents('123')	//VM2012:1 Uncaught TypeError: s.numberOfStudents is not a function
+		//fix 
+		s.numberOfStudents = 123;	//could be a SETTER (not a function)
+		----
+		TypeError: validate.number.isNan is not a function
+			//check the SPELLING of your FUNCTION NAME (should be isNaN)(last 'N' is CAPITALIZED)
+	UNCAUGHT REFERENCEERROR REQUIRE IS NOT DEFINED
+		https://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined
+		-NODE isn't on BROWSER (CLIENT) what a fucking pain in the ass 
+		-use BROWSIFY 
+			npm install -g browserify
+	
+DATA TYPES (CHECK)(RETURN VALUE)
+	//CHECK FOR (NUMBER) if true return a VALUE
+	var x = 33;
+	typeof(x) === 'number' && x				//33
+	typeof(x) === 'string' && x				//false
+	------------
+	//USING TERNARY OPERATOR (IF-ELSE)
+	typeof(x) === 'number' ? x : 'no'		//33
+	typeof(x) === 'string' ? x : 'no'		//"no"
+	------------
+	
+	***BOOKMARK***
+	OBJECT (RUN OBJECT METHOD)(BY INDEX)
+		//Object.values (bypasses the NAME and just GETS THE FUNCTION)
+		Object.values(obj)[0]('test')
+		Object.values(obj)[1](false)
+		var obj = {
+			method1: (x) => x === 'test',
+			method2: (x) => typeof(x) === 'boolean',
+		}
+	***this is a good idea***
+	OBJECT (HOW TO???)(COMBINE THE NAMES OF FUNCTIONS)(TO MAKE PERMUTATIONS OF ALL POSSIBILITIES)(TO ENVOKE ONE OR SEVERAL METHODS)
+		var bool_and_or = {
+			boo0: (x,y) => x || y,
+			boo1: (x,y) => x && y,
+		}
+		var bool_equal = {
+			bool0: (x, y) => x == y,
+			bool1: (x, y) => x < y,
+			bool2: (x, y) => x > y,
+			bool3: (x, y) => x === y,
+			bool4: (x, y) => x <= y,
+			bool5: (x, y) => x >= y,
+		}
+		var obj2 = {
+			func: (obj, whichMethods) =>
+		
+	*******************************************************************************
+	*******************************************************************************
+	*** GOOD VALIDATION CHECK ***
+	//TODO 
+		//arrays (just numbers)
+		//arrays (just strings)
+		//arrays (no UNDEFINED, NaN, null, Infinity, empty strings, etc)
+	var validate = {
+		self: function(){ return this; },
+		getType: function(x){
+			if (Array.isArray(x))
+				return "array";
+			else if (x === Infinity)
+				return 'Infinity';
+			else if (Number.isNaN(x))		
+				return 'NaN';
+			else if ((!Number.isNaN(x)) && (typeof(x) === 'number') && (x - parseInt(x) === 0))
+				return 'Integer';
+			else if ((!Number.isNaN(x)) && (typeof(x) === 'number') && (x - parseInt(x) !== 0))
+				return 'Float'
+			else if (x === undefined)
+				return "undefined";
+			else if (x === null)
+				return "null";
+			else
+				return typeof(x);			//this will return (object, string)(***note, NUMBER is either INTERGER or FLOAT above***)
+		},
+		general: {
+			isUndefined: (x) => validate.getType(x) === 'undefined',		//see ARRAY methods (isArrayAnyUndefined)(to test ARRAY ELEMENTS)
+			isNull: (x) => validate.getType(x) === 'null',
+		},
+		boolean: {
+			isBoolean: (x) => typeof(x) === 'boolean',
+		},
+		number: {				
+			isNumber: (x) => !Number.isNaN(x) && (typeof(x) === 'number'),			//need to handle (NaN)
+			//isNumber: (x) => typeof(x) === 'number',
+			//isNumber: (x) => Number.isNaN(x) ? false : typeof(x) === 'number',
+			isNumberValue: (x) => !Number.isNaN(x) && (typeof(x) === 'number' && x),
+			//isNumberValue: (x) => typeof(x) === 'number' && x,		//(x) => typeof(x) === 'number' ? x : !x;
+			//isNumberValue: (x) => Number.isNaN(x) ? false : typeof(x) === 'number' && x,
+			isNaN: (x) => Number.isNaN(x),
+			isInfinite: (x) => !Number.isFinite(x),
+			//n % 1 === 0 //isInteger 
+			//n % 1 !== 0 //isFloat?	GREAT IDEA (but the NOT EQUAL could be better?)
+			isInteger: (x) => Number.isInteger(x),					//*** WARNING, don't use... n % 1 === 0; THIS DOESN'T WORK WITH EMPTY STRING
+			isIntegerValue: (x) => Number.isInteger(x) && x,
+			isFloat: function(n){
+				var s = '' + n;
+				return s.split('.')[1] > 0;
+			},
+			isFloatValue: function(n){
+				var s = '' + n;
+				return s.split('.')[1] > 0 && n;
+			},
+			getFloatDecimal: function(n){
+				var s = '' + n;
+				var arr = s.split('.');
+				return !(arr[1] > 0) ? false : Number.parseInt(arr[1]);
+			},
+			getFloatWhole: function(n){			//note, will only return values with (FLOAT)
+				var s = '' + n;
+				var arr = s.split('.');
+				return !(arr[1] > 0) ? false : Number.parseInt(arr[0]);
+			},
+			//isFloat: (x) => x % 1 !== 0,
+			//isFloatValue: (x) => x % 1 !== 0 && x,
+			isLessThanMax: true,									//less than MAX value (a number can be?)
+			isPositive: (x) => x > 0,
+			isNegative: (x) => x < 0,
+			isZero: (x) => x === 0,
+			roundDecimal: (n, dec_places) => n.toFixed(dec_places),
+			isBetween: (n, min, max) => min <= n && n <= max,
+			//isMaxValue: (x) => x <= Number.MAX_VALUE,				//?? this doesn't ADD anyting to value (CAN'T DO LOGIC on it?)
+			//isMinValue: (x) => x >= Number.MIN_VALUE,
+			//SAFE INTEGER (when doing LOGIC comparisons)
+			isMaxSafeInteger: (x) => x <= Number.MAX_SAFE_INTEGER,	//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER
+			isMinSafeInteger: (x) => x >= Number.MIN_SAFE_INTEGER,
+			//TODO: precision (smallest decimal number, largest possible acceptable number MAX?)
+		},
+		string: {
+			isString: (x) => typeof(x) === 'string',
+			isStringValue: (x) => typeof(x) === 'string' && x,		//(x) => typeof(x) === 'string' ? x : !x;
+			isEmpty: (x) => x === '',
+			isEmptyValue: (x) => x === '' && x,
+		}, 
+		//***BOOKMARK***
+		array: {
+			isArray: (arr) => Array.isArray(arr),
+			isArrayValue: (arr) => Array.isArray(arr) && arr,
+			//DATA TYPES
+			isArrayNumbers: (arr) => arr.every((e, i, arr) => validate.number.isNumber(e)),
+			isArrayNumbersValue: (arr) => arr.every((e, i, arr) => validate.number.isNumber(e)) && arr,
+			isArrayIntegers: (arr) => arr.every((e, i, arr) => validate.number.isInteger(e)),
+			isArrayIntegersValue: (arr) => arr.every((e, i, arr) => validate.number.isInteger(e)) && arr,
+			isArrayFloats: (arr) => arr.every((e, i, arr) => validate.number.isFloat(e)),
+			isArrayFloatsValue: (arr) => arr.every((e, i, arr) => validate.number.isFloat(e)) && arr,
+			isArrayStrings: (arr) => arr.every((e, i, arr) => validate.number.isString(e)),
+			isArrayStringsValue: (arr) => arr.every((e, i, arr) => validate.number.isString(e)) && arr,
+			//ANY UNDEFINED (NaN, Infinity, Null, Undefined, EmptyString)
+			//TODO: (isMixedDataTypes)
+			//TODO: 
+			isArrayAnyUndefined: (arr) => arr.includes(undefined),											//this gets both UNDEFINED and EMPTY elements
+			//isArrayAnyUndefined: (arr) => arr.some((e, i, arr) => validate.general.isUndefined(e)),		//[1,2,,,4] empty doesn't work 
+			isArrayAnyNull: (arr) => arr.some((e, i, arr) => validate.general.isNull(e)),
+			isArrayAnyEmptyString: (arr) => arr.some((e, i, arr) => validate.string.isEmpty(e)),
+			isArrayAnyNaN: (arr) => arr.some((e, i, arr) => validate.number.isNaN(e)),
+			isArrayAnyInfinite: (arr) => arr.some((e, i, arr) => validate.number.isInfinite(e)),		
+			
+			//isArray: function(x){ return validate.getType(x) === 'array' },					//can't use ARROW FUNCTION (need THIS keyword)
+			//isArrayValue: function(x){ return validate.getType(x) === 'array' && x },			//can't use ARROW FUNCTION (need THIS keyword)
+		},
+		object: {
+			isObject: (x) => validate.getType(x) === 'object',						//need to use (validate.getType) to differentiate between ARRAY
+			isObjectValue: (x) => validate.getType(x) === 'object' && x,			//need to use (validate.getType) to differentiate between ARRAY
+		},
+	}
+	*******************************************************************************
+	*******************************************************************************
+	validate.number.isNumber(33)			//true	
+	validate.number.isNumberValue(33)		//33
+	validate.number.isNumberValue('asdf')	//false
+	validate.number.isNegative(33)			//false
+	validate.number.isPositive(33)			//true
+	validate.number.isZero(33)				//false
+	validate.number.isZero(0)				//true
+	---
+	validate.string.isStringValue('asdf')	//"asdf"
+	validate.string.isStringValue(33)		//false
+	validate.string.isEmpty('')			//true
+	validate.string.isEmpty('asdf')		//false
+	validate.string.isEmptyValue('')		//""
+	validate.string.isEmptyValue('asdf')	//false
+	
+STRING (SPLIT EVERY NTH)
+	var str = 'aabbccddee';
+	str.match(/.{1,3}/g)	//["aab", "bcc", "dde", "e"]
+	str.match(/.{1,2}/g)	//["aa", "bb", "cc", "dd", "ee"]
+STRING (SPLIT INTO PAIRS, REPLACE SPACES WITH UNDERSCORE)
+	'abc def ghi'.split('').map((x) => x === ' ' ? x = '_' : x = x).join('').match(/.{1,2}/g);
+		//["ab", "c_", "de", "f_", "gh", "i"]
+STRING (SPLIT INTO NTH, BUT ADD UNDERSCORE IF ODD # OF LETTERS)
+	//CODEWARS
+	function solution(str){
+	   return (str.length % 2 === 1 ? str + '_' : str).match(/.{1,2}/g);
+	}
+	
+	
+STRING METHODS 
+	'abc'.length							//3 (three chars)
+	'uppercase'.toUpperCase()				//"UPPERCASE"
+	'LOWERCASE'.toLowerCase()				//"lowercase"
+	'ABC'.toLocaleLowerCase()				//"abc"
+	'abc'.toLocaleUpperCase()				//"ABC"
+	???										//Capitalize
+	
+	'abc'.concat('def')						//"abcdef"
+	
+	'    Remove whitespace   '.trim()		//'Remove whitespace'
+	'abc'.split('')							// ["a", "b", "c"]
+	'abc'.startsWith('a')					// true
+	'abc'.endsWith('c')						//true
+	
+	var s = 'abcdef'
+	s.substr(0)								//"abcdef" (whole string)
+	'abc'[0]								//"a" (gets first CHAR)
+	s.substr(0,1)							//"a"
+	s.substr(0,2)							//"ab"
+	s.substr(0,3)							//"abc"
+	
+	s[s.length - 1]							//"f" (gets last CHAR)
+	s[--s.length]							//"f"
+	s.substr(-1)							//"f"
+	s.substr(-2)							//"ef"
+	s.substr(-3)							//"def"
+	
+	'abc'.slice()
+		"abc"
+		'abc'.slice(-1)
+			"c"
+		'abc'.slice(-2)
+			"bc"
+		'abc'.slice(-3)
+			"abc"
+		'abc'.slice(0)
+			"abc"
+		'abc'.slice(1)
+			"bc"
+		'abc'.slice(2)
+			"c"
+	'abc'.charAt()
+		"a"
+		'abc'.charAt(1)
+			"b"
+		'abc'.charAt(2)
+			"c"
+	//ASCII (value) for varter indexed
+	'a'.charCodeAt()
+		97
+	'abc'.charCodeAt(1)
+		98
+	'abc'.charCodeAt(2)
+		99
+??	'abc'.codePointAt(1)		//same?
+		98
+	//includes 
+	'abc'.includes('a')
+		true
+	'abc'.includes('b')
+		true
+	'abc'.includes('c')
+		true
+	'abc'.includes('z')
+		false	
+	//indexOf 
+	'abc'.indexOf('a')
+		0
+	'abc'.indexOf('b')
+		1
+	'abc'.indexOf('c')
+		2
+	'abc'.indexOf('z')
+		-1						//-1 (not found)
+??	'abc'.lastIndexOf('a')		// is this SAME AS (indexOf)?
+		0
+	//search
+	'abc'.search('a')
+		0
+	'abc'.search('b')
+		1
+	'abc'.search('c')
+		2
+	'abc'.search('z')
+		-1
+	//padding
+	'abc'.padEnd(10)			//"abc       " (fixed length)
+	'abc'.padStart(10)			//"       abc" (fixed length)
+	'abc'.repeat(3)				//"abcabcabc"	
+	'U'.repeat(2);				//"UU"
+	'E'.repeat(2);				//"EE"
+	'abc'.replace('a','Z')		//"Zbc"
+	
+??	'abc'.toString()			//"abc"
+??	'abc'.valueOf()				//"abc"
+
+	//trim (removes padding)
+	'  abc  '.trimLeft()		//"abc  "
+	'  abc  '.trimRight()		//"  abc"
+	'  abc  '.trim()			//"abc"
+	'  abc  '.trimEnd()			//"  abc"
+	'  abc  '.trimStart()		//"abc  "
+		
+??	'abc'.localeCompare()		//-1
+??	'abc'.normalize()			//"abc"
+
+	//regex (regular expression)?
+??	'abc'.match()				//["", index: 0, input: "abc", groups: undefined]	
+		
+STRING (HTML) 
+	'abc'.big()
+		"<big>abc</big>"
+	'abc'.anchor()
+		"<a name="undefined">abc</a>"
+	'abc'.blink()
+		"<blink>abc</blink>"
+	'abc'.bold()
+		"<b>abc</b>"
+	'abc'.fontcolor()
+		"<font color="undefined">abc</font>"
+	'abc'.fontsize()
+		"<font size="undefined">abc</font>"
+	'abc'.fixed()
+		"<tt>abc</tt>"
+	'abc'.italics()
+		"<i>abc</i>"
+	'abc'.link()
+		"<a href="undefined">abc</a>"
+	'abc'.small()
+		"<small>abc</small>"
+	'abc'.strike()
+		"<strike>abc</strike>"
+	'abc'.sub()
+		"<sub>abc</sub>"
+	'abc'.sup()
+		"<sup>abc</sup>"
+		
+MATH METHODS 				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+	//list of (methods and constants)
+	//Object.getOwnPropertyNames(Math);
+	//Math (type at console in Chrome)
+	Math.random();			//generates a number between (0 - 1)
+	Math.floor(3.14); 		//rounds down to nearest whole number (floor division)
+	Math.ceil(3.14);		//rounds up to nearest whole number
+	Math.abs(-23)			//returns POSITIVE value of number
+	
+ABSOLUTE VALUE FUNCTIONS
+	ABS 
+		//0 = negative number (eg. -1)
+		//1 = positive number (eg. +1)
+		//------------------
+		// 	input 	return
+		//	0		1
+		//	1		1
+	//my ABSOLUTE VALUE function 
+	function my_abs(n){
+		return (n < 0) ? -1 * n : n;
+	}
+	//FOUR MAPS (to compvare) 
+		//REVERSE ABS (returns NEGATIVE no matter)
+		//------------------
+		// 	input 	return
+		//	0		0
+		//	1		0
+		//my ABSOLUTE VALUE function 
+		function reverse_abs(n){
+			return (n > 0) ? -1 * n : n;
+		}
+		// or NEGATIVE ABS works same 
+		-my_abs(-2);			//always returns NEGATIVE
+		//------------------
+		// 	input 	return
+		//	0		0
+		//	1		1
+		function same_number(n){
+			return n;
+		}
+		//------------------
+		// 	input 	return
+		//	0		1
+		//	1		0
+		function polar_opposite(n){
+			return -n;
+		}
+		//---------------------------------------------------------
+		//---------------------------------------------------------
+		//MODULE (ABSOLUTE VALUE)(with all different combinations)
+		/**
+		*
+		* @param {Array|Object|string} source An array, object, or string to wrap.
+		* @returns {Sequence} The wrapped lazy object.
+		*
+		*/
+		var Absolute = (function () {
+			//FUNCTIONS:
+			//test if negative
+			var is_neg = function(n){
+				return n < 0
+			}
+			//test if positive
+			var is_pos = function(n){
+				return n > 0
+			}
+			//return negative number
+			var neg = function(n){
+				return n > 0 ? -n : n;
+			}
+			//return postive number
+			var pos = function(n){
+				return n < 0 ? -n : n;
+			}
+			//map (to test)
+			var test = {
+				0: function(n){ return is_neg(n); }, 
+				1: function(n){ return is_pos(n); }
+			}
+			//map (return result)
+			var result = {
+				0: function(n){ return neg(n); }, 
+				1: function(n){ return pos(n); }
+			}
+			
+		  return {
+			// 00 (returns negative)
+			0: function(n) { return result[0](n); },
+			// 01 (identity, nothing changes)
+			1: function(n) { return n; },												//simplify... function(n) { return test[0](n) ? result[0](n) : result[1](n); },	
+			// 10 (polar opposite, if negative return positive, vice-versa)
+			2: function(n) { return test[0](n) ? result[1](n) : result[0](n); },
+			// 11 (returns positive)(SAME AS ABS() in Math.abs())
+			3: function(n) { return result[1](n); }
+		  };
+		  
+		  //to run 
+		  // Absolute[func_to_run](arg_number) 
+		  // 00 (returns negative)
+		  // Absolute[0](-3) 		//-3 
+		  // Absolute[0](3) 		//-3 
+		  // 01 (identity, nothing changes)
+		  // ... 
+		  // 10 (polar opposite, if negative return positive, vice-versa)
+		  // Absolute[2](-3)		//3
+		  // Absolute[2](3)			//-3
+		  // 11 (returns positive)(SAME AS ABS() in Math.abs())
+		  // Absolute[3](-3)		//3
+		  // Absolute[3](3)			//3
+		  
+		})();
+		//---------------------------------------------------------
+		//---------------------------------------------------------
+		
+NUMBER METHODS 				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+	Number.isInteger(2017);		//test if INTEGER
+	Number.parseInt(3.14);		//converts (string, float or number) to INTEGER (or returns NaN)
+	parseInt('3.14')			//3
+		parseInt('3.14a')			//3
+		parseInt('a33')				//NaN
+		parseInt('abc')				//NaN
+		parseInt(33.4565)			//33
+	Number.parseFloat() 		//same as (parseInt) only converts to FLOAT (number with decimal)
+	parseFloat('3.14')			//3.14
+		parseFloat('3.14a')			//3.14
+		parseFloat('a3.14')			//NaN
+		parseFloat('33')			//33
+		parseFloat(33)				//33
+		parseFloat(33.14)			//33.14
+
+	//ONLINE function (test for number) 	https://stackoverflow.com/questions/9716468/pure-javascript-a-function-like-jquerys-isnumeric
+	function isNumber(n) {
+	  return !isNaN(parseFloat(n)) && isFinite(n);
+	}
+	
+DUMP OBJECT 
+	function Dump(obj) {
+		return {
+			get_methods: Object.getPrototypeOf(obj),
+			obj_property_parent_writeable: Object.getOwnPropertyDescriptors(arr.isPrototypeOf),
+			obj_property_writeable: Object.getOwnPropertyDescriptors(obj),
+			obj_property_keys: Object.getOwnPropertyNames(obj),
+			_toString: obj.toString(),
+			_type: typeof(obj),
+			_type2: Object.prototype.toString.call(obj),
+			_valueOf: obj.valueOf(),
+			help: {
+				get_methods: 'Object.getPrototypeOf(obj)',
+				obj_property_parent_writeable: 'Object.getOwnPropertyDescriptors(arr.isPrototypeOf)',
+				obj_property_writeable: 'Object.getOwnPropertyDescriptors(obj)',
+				obj_property_keys: 'Object.getOwnPropertyNames(obj)',
+				_toString: 'obj.toString()',
+				_type: 'typeof(obj)',
+				_type2: 'Object.prototype.toString.call(obj)',
+				_valueOf: 'obj.valueOf()',
+			},		
+		};
+	}
+	var my_obj = {a:1, b:2, c:3}
+	Dump(my_obj)
+DUMP (WRITABLE)
+	//ARRAY 
+		Object.getOwnPropertyDescriptors(arr).length
+		{value: 4, writable: true, enumerable: false, configurable: false}
+		Object.getOwnPropertyDescriptors(arr).length.value
+		4
+		Object.getOwnPropertyDescriptors(arr).length.writable
+		true
+		Object.getOwnPropertyDescriptors(arr).length.enumerable
+		false
+		Object.getOwnPropertyDescriptors(arr).length.configurable
+		false
+	---
+	//OBJECT
+		var obj = {a: 1, b: 2, c: 3}
+		undefined
+		Object.getOwnPropertyDescriptors(obj)
+		{a: {…}, b: {…}, c: {…}}a: {value: 1, writable: true, enumerable: true, configurable: true}b: {value: 2, writable: true, enumerable: true, configurable: true}c: {value: 3, writable: true, enumerable: true, configurable: true}__proto__: Object
+		Object.getOwnPropertyDescriptors(obj).a
+		{value: 1, writable: true, enumerable: true, configurable: true}
+		Object.getOwnPropertyDescriptors(obj).a.value
+		1
+		Object.getOwnPropertyDescriptors(obj).a.writable
+		true
+		Object.getOwnPropertyDescriptors(obj).a.enumerable
+		true
+		Object.getOwnPropertyDescriptors(obj).a.configurable
+		true
+	
+NUMBER (ROUNDING)
+30.4500005.toFixed(2)
+"30.45"
+	
+GET METHODS 
+	// string methods 
+	Object.getOwnPropertyNames(Object.getPrototypeOf('abc'));
+		//(47) ["length", "constructor", "anchor", "big", "blink", "bold", "charAt", "charCodeAt", "codePointAt", 
+		//"concat", "endsWith", "fontcolor", "fontsize", "fixed", "includes", "indexOf", "italics", "lastIndexOf", 
+		//"link", "localeCompare", "match", "normalize", "padEnd", "padStart", "repeat", "replace", "search", "slice", 
+		//"small", "split", "strike", "sub", "substr", "substring", "sup", "startsWith", "toString", "trim", "trimLeft", 
+		//"trimRight", "toLowerCase", "toUpperCase", "valueOf", "toLocaleLowerCase", "toLocaleUpperCase", "trimStart", "trimEnd"]
+	Object.getOwnPropertyNames(Object.getPrototypeOf(33));
+		//(7) ["constructor", "toExponential", "toFixed", "toPrecision", "toString", "valueOf", "toLocaleString"]
+	Object.getOwnPropertyNames(Object.getPrototypeOf(true));
+		//(3) ["constructor", "toString", "valueOf"]
+		
+		
+GET METHODS (FROM OBJECT)
+	// Number methods
+	Object.getOwnPropertyNames(Number).filter(function (p) {
+		return typeof Number[p] === 'function';
+	})
+	// ["isFinite", "isInteger", "isNaN", "isSafeInteger", "parseFloat", "parseInt"]
+	
+	// String methods
+	Object.getOwnPropertyNames(String).filter(function (p) {
+		return typeof String[p] === 'function';
+	})
+	// ["fromCharCode", "fromCodePoint", "raw"]
+
+	// Math methods
+	Object.getOwnPropertyNames(Math).filter(function (p) {
+		return typeof Math[p] === 'function';
+	})
+	// ["abs", "acos", "acosh", "asin", "asinh", "atan", "atanh", "atan2", "ceil", "cbrt", "expm1", "clz32", 
+	// "cos", "cosh", "exp", "floor", "fround", "hypot", "imul", "log", "log1p", "log2", "log10", "max", "min", 
+	// "pow", "random", "round", "sign", "sin", "sinh", "sqrt", "tan", "tanh", "trunc"]
+
+JSON (stringify, parse)
+	//create object 
+	var obj = {prop1: 'prop1Value', prop2: 'prop2Value', child: {childProp1: 'childProp1Value'}}
+	//turn into STRING (stringify) 
+	var str = JSON.stringify(obj);				//"{"prop1":"prop1Value","prop2":"prop2Value","child":{"childProp1":"childProp1Value"}}"
+	//turn STRING back into OBJECT (parse)
+	var o = JSON.parse(str)						//{prop1: "prop1Value", prop2: "prop2Value", child: {…}}
+	
+FUNCTION (TYPEOF)	
+	// custom TYPEOF to handle differentiating (ARRAYS from objects, and NULL and UNDEFINED)
+	var type = function(obj){
+		if (Array.isArray(obj))
+			return "array";
+		else if (typeof(obj) == "undefined")
+			return typeof(obj)
+		else if (obj == null)
+			return "null"
+		else
+			return typeof(obj);
+	}
+					
+ESCAPE CHARACTERS 
+	-where a SYMBOL gets confused with the SYNTAX (use an escape character) 
+		eg...?
+		
+EQUALITY (== vs ===) 
+		https://dorey.github.io/JavaScript-Equality-Table/ 
+		-everyone recommends using THREE EQUALS (to avoid weird conversions)
+		
+OPERATORS 
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Assignment
+	COMMA OPERATOR (,) 
+		-evaluates the LAST ELEMENT 
+		2, 3, 4, 5 		// returns 5
+	
+	LOGIC (COMPARISON)
+		< 		less than 
+		> 		greater than 
+		<= 		less than (or equal)
+		>=		greater than (or equal)
+		
+		== 		equal to 
+		!= 		not equal to 
+		=== 	equal to (and equal TYPE) 
+		!== 	not equal to (or not equal TYPE)
+		
+		! 		not (also BANG! operator)
+		
+		&&		and (returns VALUE) 
+		||		or (returns VALUE)
+		& 		bitwise and (returns 0 or 1) 
+		| 		bitwise or (returns 0 or 1)
+		
+		^ 		XOR 
+		//ARROW FUNCTION (=>) is not an operator, but the notation for Arrow functions.
+		
+	LOGIC (ASSIGNMENT) 
+		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Assignment
+		+= 		addition 
+		// common error 
+			2 += 3 		// ERROR because you can't ASSIGN to a FIXED NUMBER, same as (2 = 2 + 3, this makes no sense)
+			// fix: 
+			var x = 2;
+			x += 3;		// same as x = x + 3 
+			
+		Name					Shorthand operator		Meaning
+		Assignment				x = y					x = y
+		Addition				x += y					x = x + y
+		Subtraction				x -= y					x = x - y
+		Multiplication			x *= y					x = x * y
+		Division				x /= y					x = x / y
+		Remainder				x %= y					x = x % y
+		Exponentiation			x **= y					x = x ** y
+		Left shift				x <<= y					x = x << y
+		Right shift				x >>= y					x = x >> y
+		Unsigned right shift	x >>>= y				x = x >>> y
+		Bitwise AND				x &= y					x = x & y
+		Bitwise XOR				x ^= y					x = x ^ y
+		Bitwise OR				x |= y					x = x | y
+		
+		
+	//FUNCTION: TEST THE OUTPUT (OF DIFFERENT LOGIC OPERATORS)
+	function test(aa, bb) {
+		var op = ['|', '&', '||', '&&', '==', '!=', '===', '!==', '<', '<=', '>', '>='];		// '!' bang (one input only)
+		for (let i = 0; i < op.length; i++ ) {
+			var str = `aa ${op[i]} bb`;
+		console.log(`${aa} ${op[i]} ${bb}`, ' \t--> \t', eval(`aa ${op[i]} bb`)); 
+		}
+	}
+	//test('A', 'B')
+		// A | B  	--> 	 0
+		// A & B  	--> 	 0
+		// A || B  	--> 	 A
+		// A && B  	--> 	 B
+		// A == B  	--> 	 false
+		// A != B  	--> 	 true
+		// A === B  --> 	 false
+		// A !== B  --> 	 true
+		// A < B  	--> 	 true
+		// A <= B  	--> 	 true
+		// A > B  	--> 	 false
+		// A >= B  	--> 	 false
+		
+OPERATORS (STRINGS) 
+	'aa' < 'bb'			//true
+	'az' < 'aza'		//true
+OPERATORS (OBJECTS)
+	-make sure to OVERLOAD the (valueOf() or toString() METHOD)  //or ERROR: Uncaught TypeError: Cannot convert object to primitive value
+	-the OPERATORS use valueOf() method.
+		obj < obj2		//true (if it returns a NUMBER or STRING it can compare them)
+	-if it can't find the valueOf() (return a PRIMITIVE OBJECT) it will TRY the (toString() METHOD)
+
+PRIMITIVE TYPES 
+	boolean 
+	null 
+	undefined
+	Number 
+	String 
+	Symbol 
+	
+		
+	ARITHEMETIC 
+		+		//ADD
+		-		//SUBTRACT
+		*		//MULTIPLY
+		/		//DIVIDE
+		%		//MODULO (REMAINDER)
+		
+	INCREMENTS (+1, -1)
+		++
+		--
+		---
+		// examples
+		let gainedDollar = 3;
+		gainedDollar++;				//4
+		let lostDollar = 50;
+		lostDollar--;					//49
+		
+	INCREMENTS 
+		+= 		//y += 1 		//y = y + 1
+		-=		//y -= 1 		//y = y - 1
+		// *=
+		// /=
+		---
+		// examples
+		let levelUp = 10;
+		levelUp += 5;		//15
+		let powerLevel = 9001;
+		powerLevel -= 100;	//8901
+		let multiplyMe = 32;
+		multiplyMe *= 11;	//352
+		let quarterMe = 1152;
+		quarterMe /= 4;		//288
+		
+	DOT 
+		. 		//used to access FUNCTIONS or METHODS (for an OBJECT)
+		'abc'.length 		// returns 3 (3 characters in string)
+		
+STRING (CONCATENATION)
+	console.log('Hello' + 'World');
+	console.log('Hello' + " " + 'World');		// can MIX QUOTES (use one type for consistency though)
+		
+LOGIC 
+	IF-ELSE (TIP) 
+		-evaluate conditions (top to bottom)
+		-CONDITION 
+			-evaluates to (true or false) 
+			-numbers can be used (1 is true, 0 is false) 
+			-strings can be used ('non_empty_string' is true, '' is false)
+		TRUTHY or FALSY  
+			0 			number 
+			'' 			string 
+			null 
+			undefined 
+			NaN 
+			--------------
+			(0) ? 'is truthy' : 'is falsy'
+				"is falsy"
+			(1) ? 'is truthy' : 'is falsy'
+				"is truthy"
+			('') ? 'is truthy' : 'is falsy'
+				"is falsy"
+			('abc') ? 'is truthy' : 'is falsy'
+				"is truthy"
+			(null) ? 'is truthy' : 'is falsy'
+				"is falsy"
+			(undefined) ? 'is truthy' : 'is falsy'
+				"is falsy"
+			(NaN) ? 'is truthy' : 'is falsy'
+				"is falsy"
+		-SyntaxError (make sure to use BRACKETS around CONDITION)
+		-if the IF and ELSE (return the same value) it can be simplified (shortened)
+			eg. return test ? return a : return a; 		//this is redundant and long (it can be shortened)
+				return a 								//because either way (it returns 'a' so why not just return it to begin with?)
+	IF-ELSE (SHORTHAND) (TERNARY OPERATOR)
+		(condtition) ? (if true, do this) : (if false, do this);
+		return (n <= 0) ? -1 * n : n;
+		-------------
+		let isCorrect = true;
+		isCorrect ? console.log('Correct!') : console.log('Incorrect!');
+		----
+		let favoritePhrase = 'Love That!';
+		favoritePhrase === 'Love That!' ? console.log('I love that!') : console.log("I don't love that!");
+		
+	IF-ELSE IF-ELSE 
+		if (true) {
+			//do this if TRUE 
+		}
+		else {
+			//do this if FALSE
+		}
+		// need the BRACKETS around (CONDITION)
+		// will test CONDITIONS (in order)(only ONE will return a value)
+		if (condition) {
+			return "if return"
+		else if (condition2) 
+			return "else if"
+		else if (condition3) 
+			return "can have as many ELSE IF statements as needed"
+		else 
+			return "last call, doen't need a CONDITION"
+		}
+	MULTIPLE (IF's)
+		// use this (VALIDATION?)
+		// use this when you (HAVE TO CHECK EACH CONDITION)
+		if (condition) {
+			return "first IF"
+		}
+		if (condition) {
+			return "second IF"
+		}
+		if (condition) {
+			return "3rd IF"
+		}
+		-------------
+		let season = 'summer';
+
+		if (season === 'spring') {
+		  console.log("It's spring! The trees are budding!");
+		} 
+		else if (season === 'winter') {
+		  console.log("It's winter! Everything is covered in snow.");
+		}
+		else if (season === 'fall') {
+		  console.log("It's fall! Leaves are falling!");
+		}
+		else if (season === 'summer') {
+		  console.log("It's sunny and warm because it's summer!");
+		}
+		else {
+		  console.log('Invalid season.');
+		}
+	SWITCH STATEMENT
+		-alternative to (multiple ELSE-IF statements) 
+		-use it WHEN (you are TESTING the SAME VARIABLE multiple times)
+		-???this may only work with a CONDITION of EQUAL TO???
+		-BREAK (keyword) will BREAK the CODE BLOCK and step out without evaluating any more conditions
+		----
+		SYNTAX 
+			switch (my_variable) {
+				case 'test1':
+					//do this code 
+					break;
+				case 'test2': 
+					//do this code 
+					break;
+				case 'test3': 
+					//do this code 
+					break;
+				default:
+					//do this if none of the above evaulate (to true) 
+					break;
+			}
+		----
+		SWITCH (WITH RETURN)
+			//-RETURN (keyword) you can also use a RETURN to close out the code block.
+			*** WARNING *** // this will end the FUNCTION BLOCK of code as well as the SWITCH BLOCK
+			var test = () => {
+				const randomNumber = Math.floor(Math.random() * 3);
+				switch(randomNumber){
+					case 0:
+						return 'rock';
+					case 1: 
+						return 'paper';
+					case 2:
+						return 'scissors';
+				}
+			}
+		----
+			let groceryItem = 'papaya';
+			//IF-ELSE
+			if (groceryItem === 'tomato') {
+			  console.log('Tomatoes are $0.49');
+			} else if (groceryItem === 'papaya'){
+			  console.log('Papayas are $1.29');
+			} else {
+			  console.log('Invalid item');
+			}
+			//SWITCH SYNTAX 
+			switch (groceryItem) {
+			  case 'tomato':
+				console.log('Tomatoes are $0.49');
+				break;
+			  case 'lime':
+				console.log('Limes are $1.49');
+				break;
+			  case 'papaya':
+				console.log('Papayas are $1.29');
+				break;
+			  default:
+				console.log('Invalid item');
+				break;
+			}
+		----
+		let athleteFinalPosition = 'first place';
+
+		switch (athleteFinalPosition) {
+		  case 'first place':
+			console.log('You get the gold medal!');
+			break;
+		  case 'second place': 
+			console.log('You get the silver medal!');
+			break;
+		  case 'third place': 
+			console.log('You get the bronze medal!');
+			break;
+		  default:
+			console.log('No medal awarded.');
+			break;
+		}
+		
+	LOOPS (ALTERNATIVE TO FOR-IN)
+		-JSLINT likes this better...
+		Object.keys(DAYSOFWEEK).forEach((k) => { console.log(k) })
+		
+	LOOPS 
+		FOR-IN LOOP 
+			for (k in [0,1,2]){
+				console.log(k);
+			}
+			//0
+			//1
+			//2
+		FOR-IN LOOP (with OBJECT)(KEYS)
+		let obj = {0: 'a', 1: 'b', 2: 'c', 3: 'd'};
+		for (k in Object.keys(lst)){
+			console.log(k);
+		}
+		
+	OBJECT (TO LIST)
+		// can use 3 choices 
+		Object.keys(CHOICE);
+		Object.values(CHOICE); 
+		Object.entries(CHOICE); 		//like (.items() in Python, gives the whole DICTIONARY, or OBJECT)
+		
+		const CHOICE = {
+		  ROCK: ['rock', 'Rock destroys scissors.'],
+		  PAPER: ['paper', 'Paper covers rock.'],
+		  SCISSORS: ['scissors', 'Scissors cut paper.'],
+		}
+		
+		
+	FUNCTION (FIRST CLASS OBJECT)
+		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
+		-this means that a FUNCTION has PROPERTIES and METHODS (just like an OBJECT)
+		PROPERTIES 
+			arguments (all the ARGUMENTS that are passed to a function)	
+				function getArguments(arg1, arg2, arg3){
+					return arguments;		//-this can only be ACCESSED inside the function body 
+				}
+				*** WARNING, you cannot access the ARGUMENTS by (Function.arguments(getArguments)) ***
+				Function.arguments (DEPRECATED
+			Function.caller 
+			Function.displayName 
+			Function.length 
+			Function.prototype 
+			Function.prototype.name
+		METHODS
+		
+	FUNCTION TIMER (FUNCTION AS A PARAMETER)
+		// FUNCTION: TIME A FUNCTION
+		const timeFuncRuntime = funcParameter => {
+		  let t1 = Date.now();
+		  funcParameter();
+		  let t2 = Date.now();
+		  return t2 - t1;
+		};
+		---
+		const test = (func) => {
+			let t1 = new Date();		//start time
+			// run your function
+			func();	
+			let t2 = new Date();		//end time
+			let diffMs = (t2.getTime() - t1.getTime()) / 1000;
+			return `Time to complete function: ${diffMs} seconds.`;
+		}
+		
+	FUNCTION METHODS (DIFFERENT WAYS of defining a function) 
+		FUNCTION (AS A VARIABLE) 
+			-you can take a FUNCTION (and point to it with another variable REFERENCE) 
+			//original function definition
+			function thisIsALongFunctionName(){ ... }
+			//function reference
+			var shortFunc = thisIsALongFunctionName;
+			//to call 
+			shortFunc();
+			---------
+		FUNCTION (GET NAME)(AS A VARIABLE)
+			-NAME property (will RETURN the original FUNCTION NAME)
+			shortFunc.name 		//returns thisIsALongFunctionName
+	
+		DEFINE A FUNCTION 
+		CALL A FUNCTION (myFunc())
+		// function definition
+			function sayThanks(){
+			  console.log('Thank you for your purchase! We appreciate your business.');
+			}
+
+			// function call (calling a function)(running it)
+			// you can call it MULTIPLE TIMES
+			sayThanks();
+			sayThanks();
+			sayThanks();
+		PARAMETERS vs ARGUMENTS 
+			// parameters and arguments are just INPUTS
+			// PARAMETER is when you are DEFINING A FUNCTION 
+			// ARGUMENT is when you are CALLING A FUNCTION
+		DEFAULT PARAMETERS 
+			function greeting (name = 'stranger') {
+			  console.log(`Hello, ${name}!`)
+			}
+
+			greeting('Nick') // Output: Hello, Nick!
+			greeting() // Output: Hello, stranger!
+		RETURN (ERROR) 
+			Uncaught SyntaxError: Illegal return statement
+			//-make sure it's INSIDE A FUNCTION
+		RETURN 
+			// is the OUTPUT of a function
+			// DEFAULT is (undefined)
+			// closes out of the FUNCTION BLOCK of code (returning a value) 
+			//   NOTE, don't put any CODE BELOW the RETURN values (they may not run)
+			//	 NOTE, also, if putting a RETURN inside an IF-ELSE make sure that ALL OPTIONS (RETURN A VALUE)
+		RETURN (MULTIPLE VALUES)
+			// -return ARRAY or OBJECT
+		RETURN (TRUE/FALSE)
+			// -rather that using a IF-ELSE to RETURN true 
+			// -rather RETURN the CONDITIONAL statement
+			// DON'T ***
+				return day === 'Wednesday' ? true : false;			//the CONDITIONAL will already give TRUE/FALSE (unless it's different)
+			// CORRECT 
+				return day === 'Wednesday';
+			// DON'T ***
+			function(x){
+				if(x === 33){
+					return true;
+				else{
+					return false;
+				}
+			// CORRECT 
+			function(x){
+				return x === 33;
+			}
+			-----
+			const plantNeedsWater = function(day) {
+			  return day === 'Wednesday';
+			}
+
+			plantNeedsWater('Tuesday')		//false
+			plantNeedsWater('Wednesday')	//true
+			
+		//FUNCTION -if the NAME is omitted (it is anonymous)
+		//FUNCTION -it is made up of different OBJECTS (ARGUMENTS object)
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+			arguments.length
+			arguments.callee			-Reference to the currently executing function that the arguments belong to.
+			arguments.caller			DEPRECATED? Reference to the function that invoked the currently executing function.
+			arguments[@@iterator]		-returns NEW ARRAY ITERATOR object
+			----
+			function foo(a,b,c){
+				return arguments;
+			}
+			----
+			foo(1,2,3)
+			Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+			0: 1
+			1: 2
+			2: 3
+			callee: ƒ foo(a,b,c)
+			length: 3
+			Symbol(Symbol.iterator): ƒ values()
+			----
+		//The (function*) keyword can be used to define a GENERATOR FUNCTION inside an expression.		
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function*
+			
+		FUNCTION EXPRESSION 
+		//-a function saved in a VARIABLE (cannot be HOISTED) 
+		//-can use (var) but seems to be typical to use (const)
+		var myFunc = function(param) {
+			//statements
+			return output
+		}
+		
+		FUNCTION DECLARATION (can be HOISTED)
+		function myFunc(param) {
+			//statements
+			return output
+		}
+		
+		IMMEDIATE FUNCTION (used only once) 
+		// note, the parenthesis at the end
+		(function() {
+			statements
+		})();
+		// anonymous function 
+		IMMEDIATE FUNCTION (ARROW FUNCTION) 
+		(() => 'error 200')()			//wrap in BRACKETS
+		((a,b) => a + b)(2,3)
+		
+		FUNCTION (RETURN MULTIPLE VALUES) 
+		var obj33 = function(input1, input2) {
+			return {
+				a: ((a,b) => a + b)(input1, input2),
+				b: ((a,b) => a - b)(input1, input2),
+				c: ((a,b) => a * b)(input1, input2),
+				d: ((a,b) => a / b)(input1, input2)
+			}
+		}
+		obj33(2,3)		//{a: 5, b: -1, c: 6, d: 0.6666666666666666}
+		
+		TEST FUNCTION (against LOGIC OPERATORS)
+			var obj33 = function(a, b) {
+				return {
+					ret: a === b,
+					ret2: a !== b, 
+					ret3: !a,
+					ret4: !b,
+				}
+			}
+			obj33(2,3)		//{ret: false, ret2: true, ret3: false, ret4: false}
+			
+		TEST FUNCTION (agains TYPE) 
+			var obj33 = function(func) {
+				return {
+					num: func(33),
+					str: func(''),
+					undefine: func(undefined),
+					funcdump: arguments,
+					func: arguments[0]
+				}
+			}
+			---
+			obj33(add2)
+				//func: (a) => a + 100
+				//funcdump: Arguments [ƒ, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+				//num: 133
+				//str: "100"
+				//undefine: NaN
+		IMMEDIATE FUNCTION (in object) 
+			var CODE = {
+				'100': function(){ return 'error 100'; }(),
+				'200': (() => 'error 200')(),
+				'300': 'object error',
+				'500': 'function error',
+			}
+			CODE[100]	//"error 100"
+			CODE[200]	//"error 200"
+		
+		ARROW FUNCTIONS		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+		// DO NOT have a (this, arguments, super, or new.target) USE A REGULAR FUNCTION syntax if needed
+		// 		AVOID (arrow functions) when using (THIS) keyword
+		// () => {...};
+		// -can OMIT the RETURN keyword (without CURLY BRACES)(otherwise include them both)
+		// -can OMIT BRACKETS around ARGUMENTS
+		// *** CAN'T CALL (arguments keyword) (use a regular function syntax) ***
+		// *** CAN'T CALL (this keyword) (use a regular function syntax) ***
+		(param) => {
+		   statements
+		}
+		// one line 
+		() => //do code ;
+		var myFunc = (a, b) => a + b; 		//RETURN is omitted
+		var plantNeedsWater = day => day === 'Wednesday'; 
+		var plantNeedsWater = (day) => { return day === 'Wednesday' }; 
+		----
+		ARROW FUNCTION (WITH RETURN and CURLY BRACES)
+			const squareNum = (num) => {
+			  return num * num;
+			};
+		ARROW FUNCTION (WITHOUT RETURN or CURLY BRACES)
+			const squareNum = num => num * num;
+		
+	FUNCTION: CELSIUS TO FAHRENHEIT (TEMPERATURE) 
+		//celsius to fahrenheit
+		var c_f = (c) => c * 9 / 5 + 32;
+		//fahrenheit to celsius
+		var f_c = (f) => (f - 32) * 5 / 9;
+		
+	FUNCTION: GET RANDOM NUMBER (BETWEEN 1 and 3)
+		//USING (Math.random) get a random number (between 1-3)
+		var getRandom = () => Math.floor(Math.random() * 3); 
+		//USING (Date and MOD) get a random number (between 1-3)
+		var getRandom2 = () => new Date().getMilliseconds() % 3; 
+	FUNCTION: RANDOM (FROM ARRAY)
+		var pickFromArray = function(arr){ 
+			if (Array.isArray(arr)){
+				return arr[Math.floor(Math.random() * arr.length)];
+			}
+		}
+		
+	FUNCTION (***GOOD***)(USING OBJECT INDEX)
+		//for all code see...
+		"E:\000-BACKUP\0000-CODE ACADEMY\102-JavaScript\300-FUNCTIONS\proj1_rock_paper_scissors.js"
+		----------------------------------------------------------------------
+		----------------------------------------------------------------------
+		// function: determine winner 
+		//  -Rock destroys scissors.
+		//  -Scissors cut paper.
+		//  -Paper covers rock.
+		const determineWinner = function(userChoice, computerChoice) {
+		  // this is simple OBJECT that will determine ALL THE LOGIC to determine if the USER WINS.
+		  // user1   cpu     result 
+		  // 0       0       draw 
+		  // 0       1       cpu 
+		  // 0       2       user1
+		  // 1       0       user1 
+		  // 1       1       draw 
+		  // 1       2       cpu
+		  // 2       0       cpu 
+		  // 2       1       user1 
+		  // 2       2       draw
+		  // the NUMBERS for index (indices) are replaced with (0-rock, 1-paper, 2-scissors)
+		  // to get the RESULT it is a SIMPLE INDEX 
+		  var result = {
+			'rock': {
+			  'rock': [USER.DRAW[1], 'You both picked rock...'],
+			  'paper': [USER.LOSE[1], CHOICE.PAPER[1]], 
+			  'scissors': [USER.WIN[1], CHOICE.ROCK[1]] 
+			},
+			'paper': {
+			  'rock': [USER.WIN[1], CHOICE.PAPER[1]],
+			  'paper': [USER.DRAW[1], 'You both picked paper...'],
+			  'scissors': [USER.LOSE[1], CHOICE.SCISSORS[1]]
+			},
+			'scissors': {
+			  'rock': [USER.LOSE[1], CHOICE.ROCK[1]],
+			  'paper': [USER.WIN[1], CHOICE.SCISSORS[1]],
+			  'scissors': [USER.DRAW[1], 'You both picked scissors...']
+			}
+		  }
+		  
+		  // validation (on inputs before result)
+		  if (userChoice in result && computerChoice in result){
+			return `${userChoice}-${computerChoice}: ${result[userChoice][computerChoice][0]}, ${result[userChoice][computerChoice][1]}`;
+		  }
+		  else if (!(userChoice in result)){
+			return 'ERROR: user choice error.';
+		  }
+		  else if (!(computerChoice in result)){
+			return 'ERROR: computer choice error.';
+		  }
+		  else {
+			return 'ERROR: something else went wrong.';
+		  }
+		}
+		----------------------------------------------------------------------
+		----------------------------------------------------------------------
+		
+	LIST COMPREHENSION (USING GENERATOR FUNCTION) 
+		-list comprehensions (do not exist in JavaScript)
+		-generator function 
+		-map() 
+		-for-of 
+		[...(function*() { for (x in [1,2,3]) yield x })()]				// ["0", "1", "2"]
+		[...(function*() { for (x in [1,2,3]) yield `a${x}` })()]		// ["a0", "a1", "a2"]
+		----
+		var t = [];
+		for (x of [1,2,3]) t.push(x)
+		----
+		var t = [1,2,3].map(x => x * 10)								//[10,20,30]
+		[1,2,3,4].map(x => x * 2);										//[2, 4, 6, 8]
+		[1,2,3,4].map(x => x * 2).filter(x => x % 4 == 0);				//(2) [4, 8]
+		----
+		for (x in [1,2,3]) console.log(x)
+	
+	LIST COMPREHENSION
+		[...['a', 'b', 'c'], ...[1,2,3].map(x => x * 2)]
+			//(6) ["a", "b", "c", 2, 4, 6]
+
+	RANGE (GENERATE A LIST OF NUMBERS)
+		---
+		// quick version (with start)(my extended version :)
+		var range = function(limit, start=0){
+			return [...Array(limit - start).keys()].map(x => x + start);
+		}
+		//range(10,2)
+		//  (8) [2, 3, 4, 5, 6, 7, 8, 9]
+		//range(10)
+		//  (10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+		---
+		// quick version
+		var range = [...Array(5).keys()];								
+		//   [0, 1, 2, 3, 4]
+		// range.shift() 		//to remove elements at beginning
+		---
+		var range = function(limit, start=0){
+			var r = [];
+			for (var i = start; i <= limit; i++) {
+			  r.push(i);
+			}
+			return r;
+		}
+		// range(10)
+		//	(11) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+		// range(10,2)
+		//  (9) [2, 3, 4, 5, 6, 7, 8, 9, 10]
+		---
+		var range = [];
+		for (var i=2;i<=20;i++) {
+		  range.push(i);
+		}
+		---
+		var range = []; 
+		i = 1;  
+		while(range.push(i++)<20){}			//while loop (using CONDITION to create ARRAY)
+		---
+
+	
+	ARRAY [...] (DOT DOT DOT) 
+		//-like CONCAT for arrays
+		var x1 = [1,2]
+		var x2 = [3,4,5]
+		[...x1,...x2]					//[1, 2, 3, 4, 5]
+		
+	OBJECT (VALID KEY) 
+		https://stackoverflow.com/questions/1098040/checking-if-a-key-exists-in-a-javascript-object
+		"key" in obj 		// true, regardless of the actual value
+		var obj = {a:1, b:2, c:3}
+		'a' in obj 
+		// true
+		'b' in obj 
+		// true
+		'c' in obj 
+		// true
+		
+	OBJECT (TO LIST) 
+		Object.keys(obj)				//KEYS gives me something to INDEX
+		// enum (rock, paper, scissor)
+		const CHOICE = {
+		  ROCK: 'rock',
+		  PAPER: 'paper',
+		  SCISSORS: 'scissors'
+		}
+		Object.keys(CHOICE)[i]			//use this to reference (each element)
+		
+	DESIGN PATTERNS 
+		IMMEDIATE OBJECT INITIALIZING (OBJECT) 
+			-Book: JavaScript Patterns (p.73)
+			({
+				a:1, 
+				b:2, 
+				init: function(){
+					console.log('init...'); 
+					return this; 				//use THIS to access the OBJECT afterwards (otherwise ONCE ONLY)
+					}
+			}).init()
+			
+	DECORATORS (FUNCTION WRAPPERS) 
+		https://hackernoon.com/function-decorators-part-2-javascript-fadd24e57f83
+		// define decorator 
+		const helloWorld = f => (...args) => {
+		  console.log('Hello World');
+		  return f(...args);
+		}
+		// function 
+		const add = (a, b) => a + b;
+		// decorate the function
+		const helloWorldAdd = helloWorld(add);
+		// run it
+		helloWorldAdd(3, 4);
+			//Hello World
+			//7
+			
+	ERROR MESSAGE (USING CODES)
+		-use DETAILED codes for RETURN VALUES rather than confusing generic ERROR MESSAGES 
+		//define ERROR STATES
+		var STATE = {
+			'001': "object property doesn't exist",
+			'002': "undefined",
+			'003': "incorrect arguments passed",
+			'004': "blah blah",
+		}
+		//define function 
+		var func = function(a,b){
+			return arguments.length !== 2 ? STATE['003'] : a + b; 
+		}
+		//test 
+		func(3)		//"incorrect arguments passed"
+		func(2,3)	//returns 5
+		--- 
+		OLD WAY...
+			var func2 = function(a,b){
+				return a + b; 
+			}
+			undefined
+			func2(2,3)
+			5
+			func2(2,3,4)
+			5
+			func2(2)
+			NaN
+		---------------------
+		//??? HOW TO ORGANIZE AN ACCESS THIS 
+		//??? HOW TO IMPLEMENT ON (LARGER SCALE)
+		// ?? what about BUILT-IN functions or objects (that return UNDEFINED, like NOTHING so you don't know what happened)
+		var STRINGERROR = {
+			'100': 'general string error',
+			'101': 'string error 1', 
+			'102': 'string error 2',
+		}
+		undefined
+		var CODE = {
+			'100': STRINGERROR,
+			'200': 'number error',
+			'300': 'object error',
+			'500': 'function error',
+		}
+		undefined
+		CODE[100]
+		{100: "general string error", 101: "string error 1", 102: "string error 2"}
+		CODE[100][101]
+		"string error 1"
+		
+	DECORATORS (@log)				https://www.sitepoint.com/javascript-decorators-what-they-are/
+									https://hackernoon.com/function-decorators-part-2-javascript-fadd24e57f83
+		-decorators are WRAPPERS (same as wrapping a FUNCTION inside a FUNCTION)
+	DOCUMENTATION COMMENTS 
+		// need to look at this closer ...
+		-YUIdoc 			http://yui.github.io/yuidoc/
+		-JSdoc				http://usejsdoc.org/
+		/** This is a description of the foo function. */
+		function foo() {
+		}
+		/**
+		 * Represents a book.
+		 * @constructor
+		 * @param {string} title - The title of the book.
+		 * @param {string} author - The author of the book.
+		 */
+		function Book(title, author) {
+		}
+		/**
+		* @author
+		* @constructor
+		* @param 
+		* @return the return value of a function.
+		*
+		* @property (synonyms: @prop) Document a property of an object.
+		*
+		* @deprecated Document that this is no longer the preferred way.
+		*
+		* @private This symbol is meant to be private.
+		* @protected This symbol is meant to be protected.
+		* @public This symbol is meant to be public.
+		*
+		*/
+		
+	FUNCTIONS (6 WAYS TO DEFINE a function) 		https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/
+		//function declaration 
+		function func_declare(arg1, arg2) {  
+		  return arg1 + arg2;
+		}
+	
+	FUNCTION (PROPERTIES)
+		// function declaration
+		function isEven(num) {  
+		  return num % 2 === 0;
+		}
+		//get FUNCTION properties
+		var x = Object.getOwnPropertyDescriptors(isEven)
+		x.prototype.value.constructor
+			//ƒ isEven(num) {  
+			//  return num % 2 === 0;
+			//}
+	
+	INSPECT OBJECTS 
+	// just dump OBJECT NAME to console
+	obj 
+		//{a: 1, b: 2, c: 3}
+	typeof() 
+	instanceof()
+	Object.getOwnPropertyDescriptor(obj)
+		//undefined
+	Object.getOwnPropertyDescriptors(obj)
+		//{a: {…}, b: {…}, c: {…}}
+	//GET METHODS (of Array object)
+		Object.getPrototypeOf(arr);			
+			//[constructor: ƒ, concat: ƒ, find: ƒ, findIndex: ƒ, pop: ƒ, …]
+	Object.getPrototypeOf(obj)				
+		//{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+	Object.getOwnPropertyNames(obj)
+	Object.getOwnPropertySymbols(obj)
+	//JSON (good way to view object)
+	JSON.stringify(obj, null, 4)
+		"{
+			"a": 1,
+			"b": 2,
+			"c": 3
+		}"
+	
+	OBJECT (UPDATE MULTIPLE VALUES)
+	Object.assign(obj, {key1:value1, k2:v2, ...})
+		var obj = {label: 'foo', name: 'bar', id: 12}
+		Object.assign(obj, {label:'off', id: 21})
+	
+	// Capitalize (STRING)
+	String.prototype.capitalize = function() {
+		return this[0].toUpperCase() + this.substr(1).toLowerCase();
+	}
+	
+	TRUTHY or FALSY 
+		-LOGIC that evaluates to FALSE 
+		FALSY (false, 0, undefined, '', null, NaN)
+		var b = 2;
+		b || 'b'			//returns 2
+		----
+		b = undefined
+		b || 'b'			//returns "b"
+		----
+		b = 0 
+		b || 'b'			//returns "b"
+		----
+		b = false 
+		b || 'b'			//returns "b"
+		-----------------------------------
+		-LOGIC that evaluates to TRUE 
+		TRUTHY (true, 1, <anything defined>, 'Not empty string')
+		
+	LOGIC (EQUAL vs AND)(== vs &&) 
+		-use (==) when you want it to evaluate to TRUE 
+		-use (&&) when you want it to evaluate to (A VALUE) 
+		b = 'abc'
+		b && 'abc' 		//returns 'abc' 
+		b == 'abc'		//returns true
+		----------
+		b = 0
+		b && 'abc'		//returns 0
+		b == 'abc'		//returns false
+	
+	FUNCTION: DEFAULT PARAMETERS		https://stackoverflow.com/questions/12797118/how-can-i-declare-optional-function-parameters-in-javascript
+		// ? (means OPTIONAL, or has default value)
+		//ES6 way (f (a, ?b) 	
+		function myFunc2(a, b = 10) {
+		   return a * b;
+		}
+		//myFunc2(2,3)			//6
+		//myFunc2(2)			//20
+		--------
+		//old way 
+		function myFunc(a,b) {
+			b = b || 10;		// b will be set either to b or to 0.
+			return a * b;
+		}
+		//myFunc(2,3)			//6
+		//myFunc(2)				//20
+	
+	FUNCTION.ARGUMENTS (DEPRECATED) 
+		-MUST use ARGUMENTS OBJECT (inside a function only) wtf? 	//PROBABLY FOR SAFETY (tail call optimization) 
+		tail call optimization?
+			Function.arguments(test)
+			Object.arguments(test)
+			Object.getOwnPropertyNames(test)
+				// ["length", "name", "arguments", "caller", "prototype"]
+			Object.toString()
+				// "function Object() { [native code] }"
+			test.toString() 
+				//"function test(a,b){
+				//	return a + b;
+				//}"
+	
+	FUNCTION: MANY ARGUMENTS 
+		-can pass the ARGUMENTS (as Array)
+		-or an OBJECT 
+		function myFunc(obj) { ... } 			//pass them inside ONE OBJECT
+		function myFunc(...args) { ... } 		//can pass ARGUMENTS (individually) 
+		function myFunc(argArray) { ... } 		//pass ARGUMENTS (in an ARRAY or LIST)
+	
+	FUNCTION: REST PARAMETERS (...) (...args)				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters		
+		-the LAST PARAMETER can be PREFIXED with (...) which will make the LAST PARAMETER (an Array)
+		-just like (*args) in Python
+		function func(a, b, ...argArray) {
+			//...
+		}
+		//supply ARGUMENTS (not as array)(it is not intended for this)
+		function funcAddAsManyArgsAsYouWant(...argArray) {
+			for (let x of argArray) {				//make sure to use (INDEX 0) 
+				console.log(x);
+			}
+		}
+		//funcAddAsManyArgsAsYouWant('x', 'y', 'z', 44, 55, 66);
+		--------------------
+		//INCORRECT (don't supply ARG as array, it will TURN IT INTO array though upon usage)
+		function restParameters(...argArray) {
+			for (let x of argArray[0]) {				//make sure to use (INDEX 0) (actually this is INCORRECT, supply arguments INDIVIDUALLY see above)
+				console.log(x);
+			}
+		}
+		//restParameters(['aa', 'bb', 'cc', 11, 22, 33]);
+	
+	FUNCTION (RETURN that returns a FUNCTION)
+		-mindful of PARENTHESIS () at the end 
+		return a;
+		return a();
+		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+		function makeSizer(size) {
+		  return function() {
+			document.body.style.fontSize = size + 'px';
+		  };
+		}
+		https://stackoverflow.com/questions/7629891/functions-that-return-a-function
+			-if you RETURN a function (it will allow you to ASSIGN a RETURN value to a VARIABLE)
+			-if you RETURN without a function (it will just put a REFERENCE to the object)
+			----------
+			function counter() {
+				var count = 0;
+				return function() {
+					alert(count++);
+				}
+			}
+			var count = counter();
+			count();
+			count();
+			count();
+			----------
+	FUNCTION (CALL vs APPLY) METHODS 
+		-CALL (takes single arguments) (like *args in Python?)
+		-APPLY (takes a ARRAY or LIST) (like **kwargs in Python?)
+		-use CALL or APPLY when you want to BORROW (a method) from another OBJECT (without having to copy it)
+		-using CALL or APPLY allows you to SET which OBJECT it relates to (otherwise it might use GLOBAL OBJECT?)
+		-------
+		-?? these are all (pretty much the same (there must be a difference or use-case?)
+		fn(); // I'm calling it
+		fn.call(); // I'm calling it
+		fn.apply(); // I'm calling it
+		
+		--------------
+		const func1 = (a,b,c) => a + b + c;
+		
+		APPLY FUNCTION 
+			func1.apply(this, [2, 3, 4])		//returns 9
+			func1.apply(this, [2, 'a', 'b'])	//returns '2ab'
+		CALL FUNCTION 
+			func1.call(this, 2, 3, 4)			//returns 9
+			func1.call(this, 2, 'a', 'b')		//returns '2ab'
+		--------------
+		greet () {
+		  alert(`Hello, my name is ${this.name}`)	//THIS keyword (refers to OBJECT specified in CALL or APPLY methods)
+		}
+		var p1 = {name: 'Dean', age: 42}
+		var p2 = {name: 'Vivian', age: 13}
+		greet.call(p1)		//calls DEAN
+		greet.call(p2)		//calls VIVIAN
+		//does same thing (its the ARGUMENTS for FUNCTION (that differ)
+			CALL - INDIVIDUAL ARGUMENTS
+			APPLY - ARRAY OF ARGUMENTS
+		greet.apply(p1)
+		greet.apply(p2)
+		
+	FUNCTION (BIND)		https://tylermcginnis.com/this-keyword-call-apply-bind-javascript/
+		-BIND is virtually the same as CALL METHOD 
+			*** instead of immediately invoking the FUNCTION, it’ll return a NEW FUNCTION that you can invoke at a later time ***
+		var run_greet = greet.bind(p1);
+		run_greet()							//alerts 'DEAN'
+	
+	
+	FUNCTION (MAP) 
+		-maps a FUNCTION to an ARRAY 
+		var f1 = (a) => a * 6;
+		var x = [5,7]
+		x.map(f1, this)
+			//(2) [30, 42]
+	
+	GLOBAL VARIABLES
+		var satellite = 'The Moon';
+		var galaxy = 'The Milky Way';
+		var stars = 'North Star';
+
+		const callMyNightSky = () => {
+		  return `Night Sky: ${satellite}, ${stars}, and ${galaxy}`;
+		}
+
+		console.log(callMyNightSky());
+		//Night Sky: The Moon, North Star, and The Milky Way
+	
+	VARIABLES (BAD PROBLEMS) 
+		PROBLEM #1 (MISSING VAR) 
+			//make sure to REMEMBER THE (VAR) otherwise the VARIABLE becomes GLOBAL
+			// this is actually (A PROPERTY) not a (VARIABLE)
+			// you can DELETE (a property) but not (a variable, var) 
+			function sum(){
+				// INCORRECT
+				result = 5;				//this become a PROPERTY of the GLOBAL (Window OBJECT)
+				// CORRECT
+				// var result = 5;				
+				return result;
+			}
+			delete result;				//true
+		PROBLEM #2 (VARIABLE CHAINING) 
+			// problem here is (var aa) is local, but (var bb is actually just 'bb') is GLOBAL (it's as if there were NO VAR)
+			function foo() {
+				// INCORRECT
+				var aa = bb = 0; 	
+				// CORRECT 
+				// var aa = 0;
+				// var bb = 0;
+				// OR 
+				// var a, b;
+				// a = b = 0;
+				return a;
+			}
+			
+	GLOBAL VS LOCAL (VARIABLES) 
+		eg. #1 (RANDOM NUMBER) 
+			//-if you need DIFFERENT RANDOM NUMBERS (this needs to be in LOCAL SCOPE) 
+			function makeRandom() {
+				const random = Math.floor(Math.random() * 3);
+				return random;
+			}
+		eg. #2 (REDUNDANT VARIABLES) 
+			// if you are using THE SAME VARIABLE (in more than ONE FUNCTION)
+			// when you do EDIT's (then it will eventually be HARDER TO MAINTAIN (one may not get updated) 
+			// FIX: MAKE GLOBAL 
+			
+			//global variable 
+			const my_factor = 100;
+			function firstFunc(n){
+				return n + my_factor;
+			}
+			function secondFunc(n){
+				return n + (2 * my_factor);
+			}
+		 
+	
+	GLOBAL VARIABLE (ACCESS) 
+		var myglobal = 33; 
+		myglobal 			//33 
+		window.myglobal		//33
+		this.myglobal		//33
+		myglobal === window.myglobal		//true
+		myglobal === this.myglobal			//true
+		this.myglobal === window.myglobal	//true
+	
+	BLOCK SCOPE 
+		SCOPE 				// is when VARIABLES are ACCESSIBLE from different parts of program
+		GLOBAL VARIABLE 	// ?Window OBJECT (any variable defined outside a function
+							// MINIMIZE the use of global variables
+							// PROBLEMS, third-party applications (CONFLICTS)
+		LOCAL VARIABLE 		// VARIABLES in a BLOCK scope (like a function)
+		SCOPE POLLUTION 	// when too many VARIABLES EXIST in a namespace (or VARIABLE NAMES being re-used)
+		BLOCK SCOPE 		// when a variable is defined INSIDE A BLOCK, it is only accessible to the code within the curly braces {}.
+		// PRO: maintaining code is better 
+		//     	more memory efficient 
+		// CON: not available to other parts of code
+		const logVisibleLightWaves = () => {
+		  const lightWaves = 'Moonlight';
+		  console.log('local scope: ', lightWaves);
+		}
+		logVisibleLightWaves();
+		//local scope:  Moonlight
+
+		console.log('global scope: ', lightWaves);
+		//ReferenceError: lightWaves is not defined
+	
+	GLOBAL VARIABLE (VALUE CHANGED IN LOCAL SCOPE)
+		const satellite = 'The Moon';
+		const galaxy = 'The Milky Way';
+		let stars = 'North Star';
+
+		const callMyNightSky = () => {
+		  stars = 'Sirius';
+			return 'Night Sky: ' + satellite + ', ' + stars + ', ' + galaxy;
+		};
+
+		console.log(callMyNightSky());
+		console.log(stars);
+		//Night Sky: The Moon, Sirius, The Milky Way
+		//Sirius
+			
+	IMMUTABLE vs MUTABLE (functions) 
+		-see immutable.js (framework)?
+		-STRINGS are IMMUTABLE
+		-NUMBERS are IMMUTABLE
+			
+	ARRAY (IMMUTABLE METHODS) 
+		// these METHODS (don't change the original list) 
+		...?
+			
+	ARRAY (MUTABLE METHODS) 
+		// these METHODS change the ARRAY (list)
+		*** WARNING *** // this can even CHANGE A LIST (inside a function) 
+		copyWithin
+		fill
+		pop				// I had this inside PRIME NUMBERS function (and it CHANGED THE 'EXCEPTION LIST') *** THIS WAS HARD TO FIGURE OUT ***
+		push
+		shift
+		unshift
+		sort
+		reverse
+		splice
+		
+		
+	SPLICE vs SLICE 
+		slice 			// creates a COPY (subset of array)
+		splice			// removes ELEMENTS (subset, and can REPLACE with a string or something)
+		
+	ARRAY (ITERATION) METHODS 
+		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods
+		
+	ARRAY (NO REPEATS)(FILTER OUT DUPLICATES)	https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array
+		[1,1,1,2,2,3].filter((e, i, self) => self.indexOf(e) == i);
+			// [1, 2, 3]
+		---
+		USING (A SET)
+		[...new Set([1,1,1,2,2,3,3,3,3,'A','A'])];
+			// [1, 2, 3, "A"]
+			
+	ARRAY METHODS 
+		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+		DECLARATIONS 
+			var 		(ELEMENTS can be reassigned)
+			let 		(ELEMENTS can be reassigned) 
+			const 		(ELEMENTS can be reassigned, BUT THE ARRAY cannot be reassigned)
+							const arr = [1,2,3]
+							arr[0] = 'a'; 				//['a', 2 , 3]
+							arr = ['x', 'y', 'z']		//DOESN'T CHANGE
+														//Uncaught TypeError: Assignment to constant variable.
+		CREATE 			var arr = [];				//empty array
+						var arr2 = new Array(5);	//new array (with 5 elements)
+						var copy_arr = arr.slice();	//COPY array
+						arr.slice(start, end)		//CREATES A SHALLOW COPY (or subset)(NOT TO BE CONFUSED WITH splice())
+		READ (GET)		arr[i]					//get ELEMENT (at index)
+						arr[i][i2]				//NESTED arrays
+						//NOTE (indexOf, only returns the FIRST ELEMENT FOUND)(NOT ALL ELEMENTS)
+						arr.indexOf('c')		//searches for element (returns INDEX)
+						//NOTE (indexOf, will return -1 if it doesn't find an ELEMENT)
+						arr[arr.length - 1] 	// GET (last element)
+						arr.slice(-1) 			// GET (last element)
+						arr.slice(-2, -1)		// GET (2nd last element) 
+						arr.slice(-3, -2) 		// GET (3rd last element)
+						arr[0]					// GET (first element)
+						arr[1]					// GET (2nd element)
+						arr[2] 					// GET (3rd element)
+						arr.slice(1,2)			// GET (2nd element)		//DON'T USE THIS (use arr[1])
+						arr.slice(2,3) 			// GET (3rd element)		//DON'T USE THIS (use arr[1])
+		UPDATE 			arr[i] = 'xxx';			//update INDEX(i) 
+						--------------
+						//use INDEXOF (if for specific VALUE) (otherwise ERROR prone) 
+						//secretMessage[7] = 'right';						// change 'easily' to 'right'
+						secretMessage[secretMessage.indexOf('easily')] = 'right';
+						//NOTE if (indexOf returns -1) during assignment will return a (KEY-VALUE pair at the end...)(-1: 'right')
+						--------------
+						arr[i][i2] = 'xxx';		//NESTED arrays
+						arr.fill('x');			//updates ALL ELEMENTS (with static value)
+						----
+						arr.push('add');		//adds to last element 
+						arr.push('x', 'y', 'z')	//add MULTIPLE elements (to end of array)
+						arr.unshift('start')	//ADD ELEMENT (TO BEGINNING of array) adds to the start element
+						----
+						//SPLICE 
+						// arr.splice(start, #elements, optional_string);
+						// Codecademy version 
+						// 6 (start at 6th element)
+						// 5 (remove next 5 elements)
+						// 'know,' (replace with this OPTIONAL STRING)
+						secretMessage.splice(6, 5, 'know,');        // they did this all in ONE LINE (nice to know)
+						----
+						arr.join(' ')			//turns ARRAY to STRING (with ' ' DELIMITER)
+						
+		UPDATE (array) 	arr = [1,2,3,4];		//WHATEVER NEW ARRAY looks like
+		DELETE (elements)
+						----
+						arr.pop(); 				//removes last element 
+						arr.shift();			//removes start element
+						----
+						arr.splice(start, end) 	//removes range of elements
+						----
+						var arr = ['a', 'b', 'c', 'd', 'e', 'f']
+						arr.splice(2,1)			//["c"] deletes ONE ELEMENT
+						----
+						//REMOVE (by value) 
+						arr.splice(arr.indexOf('c'), 1)		//removes ('c')
+						// or two step...
+						var index = arr.indexOf('c')'
+						arr.splice(index, 1);				//removes ('c')
+						-----------------------------
+		ARRAY (FOREACH vs MAP) METHOD 
+			-use FOREACH when you DON'T NEED anything RETURNED (like another array)
+			-use MAP when you NEED AN ARRAY (RETURNED)
+		
+		ARRAY (FOREACH) METHOD 
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+			SYNTAX 	(e - element, i - index, arr - array)
+					(obj - a reference object)(THIS - can be used if it's within an OBJECT)
+				Array.forEach(func, obj)
+				Array.forEach(func(e, i, arr){ ... });
+			---
+			-always RETURNS (undefined) 
+			-loops through (iterates) all elements of array 
+				----------------
+				const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+
+				// Iterate over fruits below
+				fruits.forEach((fruit) => {
+				  console.log(`I want to eat a ${fruit}`);
+				})
+			//get arguments (RETURN doesn't work here) 
+			arr.forEach((a,b,c) => { console.log(a); })
+				// a
+				// b
+				// c
+				// RETURNS undefined
+			arr.forEach((a,b,c) => { console.log(b); })
+				// 0
+				// 1
+				// 2
+				// RETURNS undefined
+			arr.forEach((a,b,c) => { console.log(c); })
+				// (3) ["a", "b", "c"]
+				// (3) ["a", "b", "c"]
+				// (3) ["a", "b", "c"]
+				// RETURNS undefined
+			--------------------------
+			--------------------------
+			ARRAY (FOREACH)(UPDATING AN OBJECT)
+			function Counter() {
+			  this.sum = 0;
+			  this.count = 0;
+			}
+			var c = new Counter()
+			----
+			Counter.prototype.add = function(array) {
+			  array.forEach(function(entry) {
+				this.sum += entry;				//UPDATE (sum property)
+				++this.count;					//UPDATE (count property)
+			  }, this);
+			  //  ^ *************** THIS, is referring to the COUNTER (OBJECT)
+			};
+			----
+			c.add([1,2,3,4])
+				//Counter {sum: 10, count: 4}
+			--------------------------
+			--------------------------
+		OBJECT.GETOWNPROPERTYDESCRIPTORS(OBJ)	
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors
+			Object.getOwnPropertyDescriptors(obj) (GETS ALL OBJECTS PROPERTIES)
+				{sum: {…}, count: {…}}
+					count: {value: 4, writable: true, enumerable: true, configurable: true}
+					sum: {value: 10, writable: true, enumerable: true, configurable: true}
+		OBJECT.GETOWNPROPERTYDESCRIPTOR(OBJ, PROPERTYNAME)
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor
+			Object.getOwnPropertyDescriptor(c, 'sum')
+				{value: 10, writable: true, enumerable: true, configurable: true}
+			Object.getOwnPropertyDescriptor(c, 'count')
+				{value: 4, writable: true, enumerable: true, configurable: true}
+		ARRAY (FOREACH), OBJECT.GETPROPERTYDESCRIPTOR (COPY AN OBJECT)
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+			------------------------------------------------------
+			function copy(obj) {
+			  const copy = Object.create(Object.getPrototypeOf(obj));
+			  const propNames = Object.getOwnPropertyNames(obj);
+
+			  propNames.forEach(function(name) {
+				const desc = Object.getOwnPropertyDescriptor(obj, name);
+				Object.defineProperty(copy, name, desc);
+			  });
+
+			  return copy;
+			}
+
+			const obj1 = { a: 1, b: 2 };
+			const obj2 = copy(obj1); // obj2 looks like obj1 now
+			------------------------------------------------------
+		OBJECT (SELF)(RETURN THIS)
+			*** WARNING, need to wrap THIS in a FUNCTION (otherwise it'll return the WINDOW OBJECT) ***
+			var o = { 
+				a: 1, 
+				b: 2, 
+				self: function(){ return this; } 		//or... (return Object(this);
+			}
+			//o.self()
+			//{a: 1, b: 2, self: ƒ}
+
+		ARRAY (INFO) 
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+		ARRAY (EVERY) METHOD 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+			-RETURNS (TRUE) if (ALL) elements pass a test condition 
+			[1, 30, 39, 29, 10, 13].every(x => x < 100)
+				// true
+			[1, 30, 39, 29, 10, 13].every(x => x < 10)
+				// false
+		ARRAY (SOME) METHOD 
+			-RETURNS (TRUE) if (ONE) element at least passes test condition
+			[1, 30, 39, 29, 10, 13].some(x => x < 10)
+				// true
+			[1, 30, 39, 29, 10, 13].some(x => x < -10)
+				// false
+			[1, 30, 39, 29, 10, 13].some(x => x < 0)
+				// false
+			-----
+			-(MAP) METHOD (to see what's going on use) 
+			[1, 30, 39, 29, 10, 13].map(x => x < 0)
+				// [false, false, false, false, false, false]
+			[1, 30, 39, 29, 10, 13].map(x => x < 10)
+				// [true, false, false, false, false, false]
+			[1, 30, 39, 29, 10, 13].map(x => x < 100)
+				// [true, true, true, true, true, true]
+			
+		ARRAY (RANGE)(make a LIST or ARRAY of NUMBERS)
+			https://stackoverflow.com/questions/3746725/create-a-javascript-array-containing-1-n
+			Array.from(Array(10).keys())
+				// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+			[...Array(10).keys()]
+				// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+			
+		ARRAY (REDUCE) METHOD 
+			-reduce METHOD (can be used like RECURSION)
+			FACTORIAL 
+			[1,2,3,4].reduce((total,e) => total * e)
+				// returns 24 (1 * 2 * 3 * 4)
+			SUM
+			[1,2,3,4].reduce((total,e) => total + e)
+				// returns 10 (1 + 2 + 3 + 4)
+			---------
+			CREATE A STRING 
+			//FUNCTION: CREATE FILTER 
+			var test = (myarray) => myarray.reduce(((string,x,i,arr) => i !== arr.length-1 ? string + `mod(x, ${x}) || ` : string + `mod(x, ${x})`), '');
+			// "mod(x, 1) || mod(x, 2) || mod(x, 3)"
+				// arr.map(x => mod(x,2) || mod(x,3) || mod(x,5) || mod(x,7) ? 0 : x).filter(x => x)
+				// (25) [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+			
+		ARRAY (FILTER DIFFERENCES BETWEEN ARRAY ELEMENTS)
+			[10,2,1].map((e, i, arr) => (arr[i] - arr[i+1]) ).filter(x => x).reduce((total, e) => total + e );
+			// -------------------
+			// EXPLAINED...
+			[10,2,1].map((e, i, arr) => (arr[i] - arr[i+1]) )					// [8, 1, NaN] 
+			//NaN will produce ERROR (if we try to SUM) 
+			// FILTER (takes out NaN from ARRAY)
+			[10,2,1].map((e, i, arr) => (arr[i] - arr[i+1]) ).filter(x => x) 	// [8, 1] 
+			// LASTLY (need to SUM the ARRAY)
+			[10,2,1].map((e, i, arr) => (arr[i] - arr[i+1]) ).filter(x => x).reduce((total, e) => total + e );
+				// 9 [8 + 1]
+			
+		ARRAY (PRIME NUMBER) test using (MAP) METHOD 
+			//FACTORS (for 2)
+			[1,2,3,4,5,6,7,8,9].map(x => x % 2 === 0)
+				// [false, true, false, true, false, true, false, true, false]
+			//FACTORS (for 3)
+			[1,2,3,4,5,6,7,8,9].map(x => x % 3 === 0)
+				// [false, false, true, false, false, true, false, false, true]
+			//FACTORS (for 5)
+			[1,2,3,4,5,6,7,8,9].map(x => x % 5 === 0)
+				// [false, false, false, false, true, false, false, false, false]
+			-------
+			[1,2,3,4,5,6,7,8,9].map(x => x % 2 !== 0 && x % 3 !== 0)
+				// [true, false, false, false, true, false, true, false, false]
+			[1,2,3,4,5,6,7,8,9].map(x => x % 2 !== 0 && x % 3 !== 0 ? 1 : 0)
+				// [1, 0, 0, 0, 1, 0, 1, 0, 0]
+			-------
+			var arr = [...Array(100).keys()]
+			arr.map(x => x % 2 !== 0 && x % 3 !== 0 && x % 5 !== 0 && x % 7 !== 0 ? 1 : 0)
+				// (100) [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, ...
+			arr.map(x => x % 2 !== 0 && x % 3 !== 0 && x % 5 !== 0 && x % 7 !== 0 ? x : 0)
+				// (100) [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 13, 0, 0, 0, 17, 0, 19, 0, 0, 0, 23, 0, 0, 0, 0, 0, 29,
+			-------
+			arr.filter(x => x % 6 == 1 || x % 6 == 5)
+				//(33) [1, 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71, 73, 77, 79, 83, 85, 89, 91, 95, 97]
+			
+			
+		ARRAY (REDUCE) METHOD 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+			-reduces to AGGREGATE (like a SUM TOTAL from many values)
+			SYNTAX arr.reduce(func, initialValue)
+				func (callback function)
+				initialValue (this initial value to start the ACCUMULATOR with likely)
+			SYNTAX (CALLBACK FUNCTION)(total, e, i, arr)
+				total (accumulator) accumulates the total value (to return at the end)
+				e (element) the current element (while iterating)
+				i (index) the current index (while iterating)
+				arr (array) the entire array (being used)
+			EXAMPLE 
+				[0, 1, 2, 3, 4].reduce((total, e, i, arr) => total + e)
+					// returns 10 (sum of... 1 + 2 + 3 + 4)
+			EXAMPLE (with initial value)
+				[0, 1, 2, 3, 4].reduce(((total, e, i, arr) => total + e), 100)
+					//returns 110
+			EXAMPLE (FLATTEN ARRAY)(2D TO 1D)
+				[[0, 1], [2, 3], [4, 5]].reduce((total, e) => total.concat(e))
+					//(6) [0, 1, 2, 3, 4, 5]
+				//???? this should work (with [] as initialValue
+				[[0, 1], [2, 3], [4, 5]].reduce(((total, e) => total.push(e)),[])
+			---------------------
+			const newNumbers = [1, 3, 5, 7];
+
+			const newSum = newNumbers.reduce((accumulator , currentValue) => {
+			  console.log('accumulator: ', accumulator);
+			  console.log('currentValue: ', currentValue);
+			  return accumulator + currentValue;
+			}, 10);		// <--- THE (initial value)
+			console.log('newSum: ', newSum);
+
+			//accumulator:  10
+			//currentValue:  1
+			//accumulator:  11
+			//currentValue:  3
+			//accumulator:  14
+			//currentValue:  5
+			//accumulator:  19
+			//currentValue:  7
+			//newSum:  26
+			---------------------
+		
+		ARRAY (FIND) METHOD 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+			-same as (FIND INDEX) except it RETURNS (VALUE)
+			[5, 12, 8, 130, 44].findIndex(e => e > 13)
+				//returns 3 (index)
+			[5, 12, 8, 130, 44].find(e => e > 13)
+				//returns 130 (value)
+			EXAMPLE (MULTIPLE VALUES)
+				[1, 1, 2, 2, 2, 3, 4, 5].map((e,i) => e === 2 ? e : undefined).filter(x => x)
+					// returns [2, 2, 2]
+				[5, 12, 8, 130, 44].map((e,i) => e > 13 ? e : undefined).filter(x => x)
+					// returns [130, 44]
+
+		ARRAY (FIND INDEX) METHOD
+			-returns the FIRST ELEMENT INDEX (that meets the test)
+			-else it RETURNS (-1) if NOT FOUND 
+			-Why can't this return ALL THE INDEXES?
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+			CALLBACK FUNCTION (ARGUMENTS)(e, i, arr)
+				arr.findIndex(function(){ console.log(arguments); });
+			EXAMPLE (ONLY FINDS FIRST INDEX)
+				var arr = [5, 12, 8, 130, 44];
+				arr.findIndex(e => e > 13)
+					//returns 3 INDEX (130)
+			EXAMPLE (MULTIPLE INDEXES)
+				[1, 1, 2, 2, 2, 3, 4, 5].map((e,i) => e === 2 ? i : undefined).filter(x => x)	
+			------
+			const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+
+			const foundAnimal = animals.findIndex(x => x === 'elephant');
+			console.log(foundAnimal);		//returns 7 (index)
+			const startsWithS = animals.findIndex(x => x[0] === 's');
+			console.log(startsWithS);		//returns 3 (index)
+			
+		ARRAY (FILTER) METHOD 
+			-returns a SUBSET of the original array (as a NEW array)
+			-the CALLBACK FUNCTION (needs to EVALUATE(predicate) to TRUE, to add to the new array)
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+			arr.filter(function(){ console.log(arguments); });
+			arr.filter(function(e, i, arr){ console.log(`element: ${e}, index: ${i}, array: ${arr}`); });
+			SYNTAX (e - element, i - index, arr - array
+					(obj - a reference object)(THIS - can be used if it's within an OBJECT) 
+				Array.filter(func, obj)
+				Array.filter(func(e, i, arr){ ... });
+			-RETURNS (a new array)
+			----------
+			EXAMPLE (FILTER)
+				const randomNumbers = [375, 200, 3.14, 7, 13, 852];
+				const smallNumbers = randomNumbers.filter(e => e < 250);
+				console.log(smallNumbers);			//[ 200, 3.14, 7, 13 ]
+
+				const favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+				const longFavoriteWords = favoriteWords.filter(e => e.length > 7);
+				console.log(longFavoriteWords);		//[ 'nostalgia', 'hyperbole', 'esoteric' ]
+			-------------
+			[10, 7, 13, 15, 230].map(e => e).filter(x => x > 13);		//[15, 230]
+			//*** THIS WORKS ***
+			//FILTER (is simply just REMOVING the UNDEFINED elements (you need to FILTER it in the MAP function to work?)
+			[10, 7, 13, 15, 230].map((e,i) => e > 13 ? i : undefined).filter(x => x)	
+				//[3, 4]
+			[10, 7, 13, 15, 230].map(function(e,i){ return e > 13 ? i : undefined }).filter(x => x)	
+				//[3, 4]
+
+			
+			
+		ARRAY (MAP) METHOD	
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+			SYNTAX (e - element, i - index, arr - array
+					(obj - a reference object)(THIS - can be used if it's within an OBJECT) 
+				Array.map(func, obj)
+				Array.map(func(e, i, arr){ ... });
+			-RETURNS (a new array)
+			-applies a FUNCTION to the first array
+			Array.map(func, ?arg)
+				-func 		an anonymous or named function 
+				-RETURN 	a NEW ARRAY 
+				arg 		optional (???)
+			//get arguments 
+			var arr = ['a', 'b', 'c']
+			arr.map(function(){
+				return arguments;
+			});
+			//0: "a"					//element
+			//1: 0						//index
+			//2: (3) ["a", "b", "c"]	//array
+			//length: 3
+			----
+			DIFFERENT ELEMENT (IN ARRAY) 
+				-'e' is the same as 'arr[i]' (they will both return the ELEMENT)
+				-however, you can use this to CHANGE THE INDEX 
+				-'arr[i+1]' (index the NEXT ELEMENT ahead)
+				-'arr[i-1]' (index the ELEMENT BEFORE)
+				arr.map(function(e, i, arr){
+					return e + arr[i-1];
+				});
+				(3) ["aundefined", "ba", "cb"]
+			----------
+			EXAMPLE (MAP) 
+			const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
+			const secretMessage = animals.map(e => e[0]);
+			console.log(secretMessage.join('')); 				//HelloWorld
+
+			const bigNumbers = [100, 200, 300, 400, 500];
+			const smallNumbers = bigNumbers.map(e => e / 100	//[1,2,3,4,5]
+		
+		ARRAY FUNCTIONS 				
+			// FUNCTION: remove elements (only removes FIRST ELEMENT)
+			function remove(arr, value) {
+			  return arr.splice(arr.indexOf(value), 1);
+			}
+			remove(secretMessage, 'get');
+			----
+			// FUNCTION: get ALL INDEXES 			
+			function getAllIndexOf(arr, value) {
+				let result = [];
+				Object.entries(arr).forEach((element) => { 
+					if (element[1] === value) {
+						result.push(parseInt(element[0]));		//push INDEX
+					}
+				});
+				return result;
+			}
+			// test 
+			var arr = ["a", "b", 1, 2, 1, 1, "c"];
+			getAllIndexOf(arr, 1)
+			(3) [2, 4, 5]
+			getAllIndexOf(arr, 2)
+			[3]
+			getAllIndexOf(arr, 3)
+			[]
+			getAllIndexOf(arr, 'a')
+			[0]
+			getAllIndexOf(arr, 'b')
+			[1]
+			getAllIndexOf(arr, 'c')
+			[6]
+			
+			
+			
+		FUNCTION (HOW FIND OUT ARGUMENTS OF FUNCTION) 
+			//reduce (method) 
+			function getAllIndexOf(arr, value) {
+				arr.reduce(function() {
+					dir(arguments);
+				});
+			}
+			// console output
+				Arguments(4)	
+				0: "a"									//accumulator
+				1: "b"									//current element
+				2: 1									//index
+				3: (5) ["a", "b", "d", "e", "f"]		//array
+						
+		DELETE (array)	delete arr;				//deletes ENTIRE ARRAY
+		
+		JOIN 			arr.join('-')			//CONCATS elements together (with delimiter)
+						var elements = ['Fire', 'Wind', 'Rain'];
+						elements.join()
+							//"Fire,Wind,Rain"
+						elements.join('')
+							//"FireWindRain"
+						elements.join('-')
+							//"Fire-Wind-Rain"
+		FOREACH 		var arr = ['Fire', 'Wind', 'Rain'];
+						arr.forEach(function(element, index, array){
+							console.log('ELEMENT: ', element, 'INDEX: ', index, 'ARRAY: ', array);
+						});	
+						----
+						//USED THIS TO FIGURE OUT (THE ARGUMENTS)
+						arr.forEach(function(element){
+							console.log(arguments);
+						});	
+						//Arguments(3) ["Fire", 0, Array(3), ...]
+						//Arguments(3) ["Wind", 1, Array(3), ...]
+						//Arguments(3) ["Rain", 2, Array(3), ...]
+		NESTED ARRAY 
+						const numberClusters = [[1, 2], [3, 4], [5, 6]];
+						const target = numberClusters[2][1];		//6
+		
+	
+		// arrays can store (ANY DATA TYPE)
+		var arr = []; 							//empty array 
+		
+		var arr2 = ['string', 33, true];
+		// get ELEMENT (elements are zero-based, index starts at zero)
+			arr[0] 		//'string' 
+			arr[1]		//33 
+			arr[2] 		//true
+		// get LENGTH
+			arr.length				//8
+		// get TYPE
+			*** CAREFUL *** // it returns an OBJECT?
+			typeof(arr)				//"object"
+		// to test IF ARRAY 
+			Array.isArray(arr)		//true
+		-------
+		// DUMP ALL METHODS (for Array)
+		Object.getPrototypeOf(arr);			
+			//[constructor: ƒ, concat: ƒ, find: ƒ, findIndex: ƒ, pop: ƒ, …]
+		-------
+		// STRING (is an ARRAY of CHARS) 
+			var str = 'abcdefghi'; 
+			str[0]		//'a' 
+			str[1] 		//'b'
+			str[[6] 	//'h'
+		// STRING (convert to array)(so you can use ARRAY METHODS) 
+			str.split(''); 			//["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+		Array.reverse() 
+			var s = str.split('');
+			s.reverse();			//["i", "h", "g", "f", "e", "d", "c", "b", "a"]
+		Array.concat() 				// adds to the END OF ARRAY (list)
+			arr.concat('xyz')		//[0, 1, 2, 3, 4, 5, 6, 7, "xyz"]
+		Array.fill() 				// fills the ELEMENTS (with STATIC value) 
+			var arr2 = [1,2,3,4,5,6]
+			arr2.fill('x')			//["x", "x", "x", "x", "x", "x
+		Array.copyWithin(target, start, end)
+			// target (TO reference wherre the COPY starts) 
+			// start (FROM start copy from) 
+			// end (FROM end copy from) 
+			var arr = [1,2,3,4,5,6,7,8,9,10,11,12]
+			arr.copyWithin(8,0)		//[1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4]
+			var arr = [1,2,3,4,5,6,7,8,9,10,11,12]
+			arr.copyWithin(1,9,13)	//[1, 10, 11, 12, 5, 6, 7, 8, 9, 10, 11, 12]
+		ARRAY ITERATORS 			https://scotch.io/@Elsis/demystifying-array-iterators-in-javascript
+			forEach 
+			map 
+			filter 
+			some 
+			every 
+			reduce 
+		Array.entries() 			//creates an (ARRAY ITERATOR object)
+			var arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+			var arr_iterator = arr.entries();
+			arr_iterator.next();	
+				//{value: Array(2), done: false}
+				//done: false
+				//value: (2) [0, "a"]
+		Array.map() 				//applies a FUNCTION to each ELEMENT of array (and RETURNS a new ARRAY) 
+			var arr = [1,2,3,4,5,6,7,8,9,10,11,12]
+			arr.map(x => x + 10)	//[11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+			
+	ARRAY (TEST ELEMENT EXISTS IN ARRAY) 
+		['A', 'B', 'C'].some(x => x == 'A')
+		//true
+		['A', 'B', 'C'].some(x => x == 'D')
+		//false
+	FUNCTION (CODE BODY)
+		-in console (TYPE the function NAME without BRACES) 
+			function test(a,b){
+				return a + b;
+			}
+		-CHROME CONSOLE 			https://developer.mozilla.org/en-US/docs/Web/API/console
+			test 
+			//ƒ test(a,b){
+			//	return arguments;
+			//}
+		console.dir(test)
+			//ƒ test(a,b)
+			//arguments: null
+			//caller: null
+			//length: 2
+			//name: "test"
+			//prototype: {constructor: ƒ}
+			//__proto__: ƒ ()
+			//[[FunctionLocation]]: VM4500:1
+			//[[Scopes]]: Scopes[2]
+		console.info(test)
+			//VM5355:1 ƒ test(a,b){
+			//	return arguments;
+			//}
+		console.trace()
+			function test2(a,b) {
+				console.trace();
+				return { args: arguments, _length: length, _name: name, arg_a: a, arg_b: b };
+			}
+	JQUERY (ADD TO WEBPAGE) 			https://developers.google.com/web/tools/chrome-devtools/sources?utm_source=devtools&utm_campaign=2018Q1
+		-type in CHROME?
+		---------------------
+		let script = document.createElement('script');
+		script.src = 'https://code.jquery.com/jquery-3.2.1.min.js';
+		script.crossOrigin = 'anonymous';
+		script.integrity = 'sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=';
+		document.head.appendChild(script);
+		---------------------
+	
+	OBJECT METHODS { key: value, k2: v2, ... }
+		-----------------------------------------------------------------------
+			-Objects store collections of KEY-VALUE pairs.
+			-EACH KEY-VALUE PAIR IS A PROPERTY — when a PROPERTY is a FUNCTION it is known as a METHOD.
+			-An object literal is composed of COMMA-SEPARATED KEY-VALUE PAIRS surrounded by curly braces.
+			-You can ACCESS, ADD OR EDIT a property within an object by using DOT NOTATION or BRACKET NOTATION.
+			-We can ADD METHODS to our object literals using key-value syntax with anonymous function expressions as values or by using the new ES6 method syntax.
+			-We can navigate complex, nested objects by chaining operators.
+			-OBJECTS ARE MUTABLE — we can change their properties even when they're declared with const.
+			-Objects are passed BY REFERENCE — when we make changes to an object passed into a function, those changes are permanent.
+			-We can LOOP or iterate through objects using the FOR...IN syntax.
+		-----------------------------------------------------------------------
+		let obj = {}; 		empty object 
+		---
+		let fasterShip = {
+		  'Fuel Type': 'Turbo Fuel',				//quotes if KEY (has a space)
+		  color: 'silver'
+		};
+		---
+		GET (ENTIRE OBJECT)
+			fasterShip
+				//{Fuel Type: "Turbo Fuel", color: "blue"}
+		GET (PROPERTY)
+			obj.property 
+			obj['property']							//bracket notation (property as STRING)
+				*** YOU MUST use (bracket notation) when the KEY has a (number, space, or special characters) in it's name. ***
+				eg. 
+					fasterShip['Fuel Type']			//returns 'Turbo Fuel'
+			obj[variable_value]						//use a variable (to pass the STRING)
+				eg. 
+					const getProp = (obj, prop) => obj[prop];
+					getProp(fasterShip, color); 	//returns 'silver'
+		GET (METHOD)
+			obj.method(arg1, arg2, ...)
+		SET (PROPERTY)(= ASSIGNMENT OPERATOR)
+			-two things will/can happen 
+				1. IF the PROPERTY EXISTS (the property will be UPDATED with the NEW VALUE)
+				2. IF the PROPERTY DOESN'T EXIST (the property will BE CREATED for the OBJECT)
+			eg.
+				fasterShip.color = 'blue';			//this updates the EXISTING value
+				fasterShip.Color = 'blue'			//this is likely a TYPO (that creates a SECOND PROPERTY)
+				fasterShip
+					//{Fuel Type: "Turbo Fuel", color: "blue", Color: "blue"}
+		OBJECTS (MUTABLE) 
+			LET vs CONST 
+				const obj = {a: 1, b: 2}
+				*** CANNOT REDEFINE the entire object this way (but you CAN change a PROPERTY) ***
+				obj = {c: 3}					//ERROR: Uncaught TypeError: Assignment to constant variable.
+				---
+				let obj3 = {a: 1, b: 2}
+				obj3 = {c: 3}
+					//{c: 3}
+		DELETE (PROPERTY) 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+			delete obj.property 
+			delete object['property']
+				*** if the PROPERTY DOESN'T EXIST, it will still RETURN (true) (this can be misleading) ***
+				eg. 
+					delete fasterShip.Color
+						//true
+					fasterShip
+						//{Fuel Type: "Turbo Fuel", color: "blue"}			//second 'Color' PROPERTY has been removed
+		OBJECT (METHOD) 
+			-a METHOD is a function inside an OBJECT 
+			
+			
+		OBJECT EXAMPLES 
+			let spaceship = {
+			  'Fuel Type' : 'Turbo Fuel',
+			  homePlanet : 'Earth',
+			  color: 'silver',
+			  'Secret Mission' : 'Discover life outside of Earth.'
+			};
+
+			// Write your code below
+			spaceship.color = 'glorious gold';
+			console.log(spaceship.color);
+
+			spaceship.numEngines = 9;
+			console.log('numEngines: ', spaceship.numEngines);
+
+			// delete 
+			delete spaceship['Secret Mission'];
+			console.log(spaceship);
+		
+		***BOOKMARK***
+		CLASS 
+			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+			-NAME is Capital CASE (eg. Test, Dog)
+			-DO NOT use COMMAS (between constructor, getters, setters and methods)
+			-NO HOISTING (meaning, you HAVE TO define your CLASS first, before creating an INSTANCE or OBJECT)
+		CLASS (EMPTY CLASS) 
+			class MyClass {
+			  //code here...
+			  //constructor 
+			  //getters 
+			  //setters 
+			  //toString (overrides?)
+			  //methods 
+			  //static methods 
+			}
+		CLASS (CLASS NAME)(HOW TO TEST?)
+			x.__proto__.constructor.name		//"Test"
+			x instanceof Test 					//true
+			x instanceof Object 					//true
+		CLASS (CONSTRUCTOR)
+			//create class
+			class Test {
+				constructor(fname, lname){
+					this.fname = fname;
+					this.lname = lname;
+				}
+			}
+			//instance of class (create object)
+			var x = new Test('Dean', 'Jones')		//Test {fname: "Dean", lname: "Jones"}
+			---------
+			class Dog {
+			  constructor(name) {
+				this._name = name;
+				this._behavior = 0;
+			  }
+			}
+			var d = new Dog('Barky')				//Dog {_name: "Barky", _behavior: 0}
+			----------
+			class Surgeon {
+				//constructor
+				constructor(name, department){
+					this.name = name;
+					this.department = department;
+				}
+			}
+			
+		CLASS (INSTANCE)(NEW keyword)
+			var obj = new MyClass(arg1, arg2);		//this CREATES (AN INSTANCE) of the class (creates an OBJECT)
+			//create class
+			class Surgeon {
+			  constructor(name, department) {
+				this.name = name;
+				this.department = department;
+			  }
+			}
+
+			//create instance
+			const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+			console.log(surgeonCurry);						
+				//Surgeon { name: 'Curry', department: 'Cardiovascular' }
+			const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+			console.log(surgeonDurant);						
+				//Surgeon { name: 'Durant', department: 'Orthopedics' }
+		
+		CLASS (GETTERS)
+			class Surgeon {
+			  //constructor
+			  constructor(name, department) {
+				this._name = name;
+				this._department = department;
+				this._remainingVacationDays = 20;
+			  }
+			  
+			  //getters
+			  get name(){
+				return this._name;
+			  }
+			  get department(){
+				return this._department;
+			  }
+			  get remainingVacationDays(){
+				return this._remainingVacationDays;
+			  }
+			  
+			  //methods
+			  takeVacationDays(daysOff){
+				return this._remainingVacationDays -= daysOff;
+			  }
+			}
+
+			const surgeonCurry = new Surgeon('Curry', 'Cardiovascular');
+			const surgeonDurant = new Surgeon('Durant', 'Orthopedics');
+			console.log(surgeonCurry);
+			surgeonCurry.takeVacationDays(5);
+			console.log(surgeonCurry);
+			console.log(surgeonCurry.name);
+			console.log(surgeonCurry.department);
+			console.log(surgeonCurry.remainingVacationDays);
+
+			//Surgeon {
+			//  _name: 'Curry',
+			//  _department: 'Cardiovascular',
+			//  _remainingVacationDays: 20 }
+			//Surgeon {
+			//  _name: 'Curry',
+			//  _department: 'Cardiovascular',
+			//  _remainingVacationDays: 15 }
+			//Curry
+			//Cardiovascular
+			//15
+
+		CLASS (INHERITANCE)(EXTENDS keyword)(PARENT-CHILD RELATIONSHIP)
+			-EXTENDS (keyword) 
+				-CHILD class EXTENDS PARENT class
+				-EXTENDS keyword makes the METHODS (from parent class) available in the (child class) 
+			-SUPER (keyword)
+				-super refers to the PARENT CLASS 
+				*** you MUST ALWAYS call the (super method) BEFORE you can use the (this keyword) ***
+					-you may get a REFERENCE ERROR 
+					-to avoid this ERROR (call SUPER on the first line of the CONSTRUCTOR)
+			-PROPERTIES and METHODS can be INHERITED from a parent CLASS 
+				eg. 
+				------------------
+				class Cat extends Animal {
+				  constructor(name, usesLitter) {
+					super(name);							//same as going to ANIMAL CLASS (this._name = name;)
+															//call SUPER on first line (good practise)
+					this._usesLitter = usesLitter;			//new method (extended)
+				  }
+				}
+				------------------
+				class Animal {
+				  constructor(name) {
+					this._name = name;
+					this._behavior = 0;
+				  }
+
+				  get name() {
+					return this._name;
+				  }
+
+				  get behavior() {
+					return this._behavior;
+				  }
+
+				  incrementBehavior() {
+					this._behavior++;
+				  }
+				}
+				------------------
+		
+		***BOOKMARK***
+		CLASS (STATIC METHOD) 
+			-this method can only be ACCESSED (from the CLASS) (NOT the object)
+			eg. 
+				School.pickSubstituteTeacher()
+				------------
+				class School {    
+					//constructor
+					constructor(name, level, numberOfStudents) {
+						this._name = name;
+						this._level = level;
+						this._numberOfStudents  = numberOfStudents ;
+					}
+					//getters
+					get name(){ return this._name; }
+					get level(){ return this._level; }
+					get numberOfStudents(){ return this._numberOfStudents; }
+					//setters 
+					set name(value){ this._name = value; }
+					set level(value){ this._level = value; }
+					set numberOfStudents(value){ this._numberOfStudents = value; }
+					//methods
+					quickFacts(){ }
+					//static methods
+					static pickSubstituteTeacher(){ }
+				}
+		
+		CLASS (STATIC METHODS)(static keyword)
+			-STATIC is for anything that require only ONE of (one method, one object, etc)(so there aren't many INSTANCES of it)
+			-STATIC METHODS need to be CALLED directly from the CLASS (not the instance created)
+				-or you'll get a (TypeError)
+		
+		-------------------------------------------------------------
+			//CLASS: HOSPITAL EMPLOYEE (PARENT) 
+			class HospitalEmployee {
+			  //constructor
+			  constructor(name){
+				this._name = name;
+				this._remainingVacationDays = 20;
+			  }
+			  //getters
+			  get name(){
+				return this._name;
+			  }
+			  get remainingVacationDays(){
+				return this._remainingVacationDays;
+			  }
+			  //method
+			  takeVacationDays(daysOff){
+				return this._remainingVacationDays -= daysOff;
+			  }
+			  //static method 
+			  static generatePassword(){
+				return (() => Math.floor(Math.random() * 10000))();
+			  }
+			}
+
+			//CLASS: NURSE
+			class Nurse extends HospitalEmployee {
+			  //constructor
+			  constructor(name, certifications){
+				super(name);
+				//this._name = _name;
+				//this._remainingVacationDays = 20;
+				this._certifications = certifications;
+			  }
+			  //getters
+			  get certifications(){
+				return this._certifications;
+			  }
+			  //method
+			  //takeVacationDays(daysOff){
+			  //  return this._remainingVacationDays -= daysOff;
+			  //}
+			  addCertification(newCertification){
+				return this._certifications.push(newCertification);
+			  }
+			}
+			//test
+			//call STATIC METHOD (directly from PARENT CLASS)
+			console.log('password: ', HospitalEmployee.generatePassword());
+			
+			const nurseOlynyk = new Nurse('Olynyk', ['Trauma', 'Pediatrics']);
+			nurseOlynyk.takeVacationDays(5);
+			
+			console.log(nurseOlynyk.remainingVacationDays);
+			nurseOlynyk.addCertification('Genetics');
+			
+			console.log(nurseOlynyk.certifications);
+			console.log(nurseOlynyk);
+			//Nurse {
+			//15
+			//[ 'Trauma', 'Pediatrics', 'Genetics' ]
+			//Nurse {
+			//  _name: 'Olynyk',
+			//  _remainingVacationDays: 15,
+			//  _certifications: [ 'Trauma', 'Pediatrics', 'Genetics' ] }
+
+
+			//CLASS: DOCTOR
+			class Doctor extends HospitalEmployee {
+			  //constructor
+			  constructor(name, insurance){
+				super(name);
+				this._insurance = insurance;
+			  }
+			  //getters
+			  get insurance(){
+				return this._insurance;
+			  }
+			}
+			//test 
+			const whatsupDoc = new Doctor('Jones', ['medical', 'liability']);
+			console.log(whatsupDoc);
+		-------------------------------------------------------------
+		
+		OBJECT (GETTERS AND SETTERS)
+			var obj = {
+				_myProperty: 33,
+				get myProperty(){ return this._myProperty; },
+				set myProperty(v) { this._myProperty = v; },		//*** DOESN'T NEED (RETURN) but still returns value ***
+			}
+		
+			GETTER		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
+				var obj = {
+					_myProperty: 33,
+					get myProperty(){ return this._myProperty; },
+				}
+				SYNTAX 
+					{get prop() { ... } }
+					{get [expression]() { ... } }
+				-is like FUNCTION (without arguments)
+					get fullName() { ... }
+				-when you CALL a GETTER (you don't need the BRACKETS)
+					obj.fullName 		...NOT obj.fullName()
+				-it MUST HAVE (ZERO PARAMETERS)
+				-the PROPERTY and GET METHOD (cannot share the SAME NAME)(otherwise this would create an STACK ERROR)
+					-this is where you add an _UNDERSCORE (to the PROPERTY)
+				-----------
+			GETTER (EXAMPLE)
+				const robot = {
+				  _model: '1E78V2',
+				  _energyLevel: 100,
+				  get energyLevel() { return typeof(this._energyLevel) === 'number' ? `My current energy level is ${this._energyLevel}` : 'System malfunction: cannot retrieve energy level' },
+				};
+
+				console.log(robot.energyLevel);		//My current energy level is 100
+			GETTER (EXPRESSION)
+				{get [expression]() { ... } }
+				*** WARNING, the 'name' VARIABLE is BINDED to the OBJECT (when the object is created) ***
+				var name = 'foo'		//name for GETTER
+				var obj3 = {
+					get [name](){ return 'bar'; }
+				}
+				obj3.foo				//"bar"
+			SETTER 
+				var obj = {
+					_myProperty: 33,
+					get myProperty(){ return this._myProperty; },
+					set myProperty(v) { this._myProperty = v; },
+				}
+				-------
+				const robot = {
+				  _model: '1E78V2',
+				  _energyLevel: 100,
+				  _numOfSensors: 15,
+				  get numOfSensors(){
+					if(typeof this._numOfSensors === 'number'){
+					  return this._numOfSensors;
+					} else {
+					  return 'Sensors are currently down.'
+					}
+				  },
+				  set numOfSensors(num){
+					if(typeof(num) === 'number' && num >= 0){
+					  this._numOfSensors = num;
+					} else {
+					  console.log('Pass in a number that is greater than or equal to 0');
+					  return false;
+					}
+				  }
+				};
+
+				robot.numOfSensors = 100;
+				console.log(robot.numOfSensors);		//100
+			
+		OBJECT (_UNDERSCORE)
+			-is used for PRIVACY (to indicate that a PROPERTY shouldn't be altered)
+			-add to PROPERTY of GET METHOD (to differentiate between METHOD and PROPERTY)
+			eg. 
+				const robot = {
+					_energyLevel: 100,
+				}
+				//however, this can still be changed (even with the UNDERSCORE)(it's the honor system)
+				robot._energyLevel = 'high';		//{ _energyLevel: 'high', recharge: [Function: recharge] }
+		
+		OBJECT (KEYS, ENTRIES, ASSIGN) METHODS
+			const robot = {
+				model: 'SAL-1000',
+			  mobile: true,
+			  sentient: false,
+			  armor: 'Steel-plated',
+			  energyLevel: 75
+			};
+
+			// OBJECT.KEYS() (creates ARRAY of keys)
+				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+			const robotKeys = Object.keys(robot);
+			console.log(robotKeys);
+
+			// OBJECT.ENTRIES() (creates 2D array of KEY:VALUE pairs)
+				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+			const robotEntries = Object.entries(robot);
+			console.log(robotEntries);
+
+			// OBJECT.ASSIGN() (COPIES object, and ADDS two new properties)
+				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+				SYNTAX 
+					Object.assign(new_obj_properties, object_to_copy)
+			const newRobot = Object.assign({laserBlaster: true, voiceRecognition: true}, robot);
+			console.log(newRobot);
+				
+		OBJECT (ASSIGNING VARIABLES)(DESTRUCTURING ASSIGNMENT)
+			-this is a DESTRUCTURING ASSIGNMENT (where REDUNDENCIES are removed and the PROPERTY is used to ASSIGN to the VARIABLE NAME)
+			var person = {first: 'Dean', last: 'Jones'}
+			//DESTRUCTURING ASSIGNMENT (of variable)
+			var {first} = person;
+				first		//returns 'Dean'
+			----------
+			const robot = {
+			  model: '1E78V2',
+			  energyLevel: 100,
+			  functionality: {
+				beep() {
+				  console.log('Beep Boop');
+				},
+				fireLaser() {
+				  console.log('Pew Pew');
+				},
+			  }
+			};
+			//DESTRUCTURING ASSIGNMENT (of variable)
+			const {functionality} = robot;
+			functionality.beep();					//Beep Boop
+				
+		OBJECT (FACTORY)(DESIGN PATTERN)
+			-when you need to CREATE (MANY OBJECTS) quickly 
+			------------------------------------------
+			const team = {
+				_players: [],
+				_games: [],
+				get players(){ return this._players; },
+				get games(){ return this._games; },
+				addPlayer(firstName, lastName, age){
+					return this._players.push({
+						firstName,							//*** NOTE, this is a shorter syntax version (of below) ***
+						lastName,
+						age
+					});
+				},
+				createGame(opponent, teamPoints, opponentPoints){
+					return this._games.push({
+						opponent: opponent,					//*** NOTE, I can use the SAME KEY/VALUE names because the KEY is just a LABEL ***
+						teamPoints: teamPoints,
+						opponentPoints: opponentPoints
+					});
+				},
+			}
+			------------------------------------------
+			const objFactory2 = (_a,_b,_c) => {
+				return {
+					a: _a,									//*** this is sloppier (I don't prefer this style)
+					b: _b, 
+					c: _c,
+				}
+			};
+			objFactory2(1,2,3)	//{a: 1, b: 2, c: 3}
+			objFactory2(4,5,6)	//{a: 4, b: 5, c: 6}
+			--------------
+			const robotFactory = (_model, _mobile) => {
+			  return {
+				model: _model,
+				mobile: _mobile,
+				beep(){
+				  console.log('Beep Boop');
+				}
+			  }
+			};
+
+			const tinCan = robotFactory('P-500', true);
+			tinCan.beep();					//Beep Boop
+			console.log(tinCan);		//{ model: 'P-500', mobile: true, beep: [Function: beep] }
+			----------------
+			FACTORY (SHORTHAND)
+				const monsterFactory = (name, age) => {
+				  return { 
+					name: name,
+					age: age
+				  }
+				};
+				-----
+				const monsterFactory = (name, age) => {
+				  return { 
+					name,
+					age 
+				  }
+				};
+		
+		THIS (KEYWORD)(REFERENCING OBJECT without a function call)
+			var obj3 = {
+				a: function(){ return this; }, 
+				b: 123,
+				self: obj3.a(),		
+			}
+			
+			obj3.self
+			{a: ƒ, b: 123}
+		
+		THIS (KEYWORD)  https://tylermcginnis.com/this-keyword-call-apply-bind-javascript/
+			-left of the DOT (operator)(what object? refers to THIS)
+			-FUNCTION using (CALL, APPLY, BIND)(refers to THIS is the OBJECT being referenced)
+			-FUNCTION (new object)(THIS refers to the NEW OBJECT created)
+			-FUNCTION (regular)(THIS refers to WINDOW OBJECT, GLOBAL object)
+			-ARROW FUNCTION (THIS refers to WINDOW OBJECT, GLOBAL object)
+			-ARROW FUNCTION (embedded inside an object)(go UP A LEVEL, may refer to the FUNCTION WRAPPER? or OBJECT?)
+			-STRICT MODE? (THIS is UNDEFINED here)
+			-ALL else fails (it's probably referencing the global WINDOW OBJECT)
+			-*** use the OBJECT NAME if all else fails ***
+			---
+			IMPLICIT BINDING
+			*** look to the LEFT OF THE DOT when the function is invoked (that is what THIS KEYWORD is referencing) ***
+				eg. 
+				user.greet()			//Tyler
+				user.mother.greet()		//Stacey
+				const user = {
+				  name: 'Tyler',
+				  age: 27,
+				  greet() {
+					alert(`Hello, my name is ${this.name}`)
+				  },
+				  mother: {
+					name: 'Stacey',
+					greet() {
+					  alert(`Hello, my name is ${this.name}`)
+					}
+				  }
+				}
+			EXPLICIT BINDING (CALL METHOD) 
+				greet.call(user)			//Tyler
+				greet.call(user.mother)		//Stacey
+			
+			-it will return (windows object) sometimes depending on the use 
+			-if having difficulty in object (using THIS keyword)(try using the OBJECT NAME to reference itself)
+			-can cause CONFUSION (with NESTED objects) 
+			-returns PARENT object (is it like BACK BUTTON or FOLDER BACK???)
+			OBJECT
+				var obj = {
+					keys: function(){ return Object.keys(this)},
+					name: 'Dean',
+					window: this,							//window obj
+					this1: function(){ return this; },		//THIS object
+					imm_func: function(){ return this; }(),	//window obj
+					nested: {
+						a: 1,
+						b: 2,
+						func: function(){ return this; },	//THIS nested object (this function, ONLY IF it is the only key)
+						func2: function(){ return this.this; },	//undefined
+					},
+					arrow: () => this,						//window obj
+					imm_arrow: (() => this)(),				//window obj
+				}
+			FUNCTION 
+				var func = function(){ return this; }		//window obj
+				
+			NEW (KEYWORD)(CREATING or INSTANTIATING an object)
+				-when a NEW OBJECT is created (THIS is BINDED to it)
+				function User (name, age) {
+				  this.name = name
+				  this.age = age
+				}
+				const me = new User('Tyler', 27)		//User {name: "Tyler", age: 27}
+			LEXICAL SCOPE? 
+			
+			
+		OBJECT (THIS keyword)
+			-THIS refers to the OBJECT
+			-*** WARNING, sometimes the (this) OBJECT refers to the GLOBAL OBJECT (window) ***
+			-ARROW FUNCTIONS (this) doesn't work the same? (this) is BINDED and used already
+			-THIS may cause problems with (IMMEDIATE FUNCTION, nested methods)
+				-use a VARIABLE (to hold the reference of the object)
+			---
+			//https://medium.freecodecamp.org/learn-es6-the-dope-way-part-ii-arrow-functions-and-the-this-keyword-381ac7a32881
+			obj = {
+				food: 'apples',
+				animal: 'rabbit',
+				print(){ console.log(this.food); },
+				bad_print: () => console.log(this.animal),		//ARROW FUNCTION (will return UNDEFINED)(because it's refering to WINDOW object, not THIS object)
+				window: () => { return this; },					//RETURNS (window object) Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, parent: Window, …}
+				
+				imm_func: function(){ return this; }(),			//RETURNS (WINDOW object)
+				self: function(){ return this; },				//RETURNS (this OBJECT)
+				self2(){ return this; },						//RETURNS (this OBJECT)
+				self3: function() { return this; },				//RETURNS OBJECT {food: "apples", animal: "rabbit", print: ƒ, print2: ƒ}
+			}
+			---
+			const robot = {
+			  model: '1E78V2',
+			  energyLevel: 100,
+			  provideInfo(){
+				return `I am ${this.model} and my current energy level is ${this.energyLevel}.`;
+			  },
+			};
+			console.log(robot.provideInfo());
+			//I am 1E78V2 and my current energy level is 100.
+			---
+			
+		OBJECT (FOR-IN LOOP)
+			let spaceship = {
+				crew: {
+				captain: { 
+					name: 'Lily', 
+					degree: 'Computer Engineering', 
+					cheerTeam() { console.log('You got this!') } 
+					},
+				'chief officer': { 
+					name: 'Dan', 
+					degree: 'Aerospace Engineering', 
+					agree() { console.log('I agree, captain!') } 
+					},
+				medic: { 
+					name: 'Clementine', 
+					degree: 'Physics', 
+					announce() { console.log(`Jets on!`) } },
+				translator: {
+					name: 'Shauna', 
+					degree: 'Conservation Science', 
+					powerFuel() { console.log('The tank is full!') } 
+					}
+				}
+			}; 
+
+			// FOR-IN LOOP 
+			for (let x in spaceship.crew){
+			  console.log(`${x}: ${spaceship.crew[x].name}`);
+			}
+			//captain: Lily
+			//chief officer: Dan
+			//medic: Clementine
+			//translator: Shauna
+
+			// FOR-IN LOOP 
+			for (let x in spaceship.crew){
+			  console.log(`${spaceship.crew[x].name}: ${spaceship.crew[x].degree}`);
+			}
+			//Lily: Computer Engineering
+			//Dan: Aerospace Engineering
+			//Clementine: Physics
+			//Shauna: Conservation Science
+	
+		OBJECT (FUNCTION ASSIGNMENT)
+			let spaceship = {
+			  'Fuel Type' : 'Turbo Fuel',
+			  homePlanet : 'Earth'
+			};
+
+			// Write your code below
+			const greenEnergy = (obj) => obj['Fuel Type'] = 'avocado oil';
+			greenEnergy(spaceship);			//this UPDATES the value
+
+			//...
+			const remotelyDisable = (obj) => obj.disabled = true;
+			remotelyDisable(spaceship);		//this ADDS (because property doesn't exist)
+			console.log(spaceship);
+
+			//{ 'Fuel Type': 'avocado oil', homePlanet: 'Earth', disabled: true }
+			
+	OBJECT (NESTED OBJECTS)(NESTED PROPERTIES)
+		const spaceship = {
+			 telescope: {
+				yearBuilt: 2018,
+				model: '91031-XLT',
+				focalLength: 2032 
+			 },
+			crew: {
+				captain: { 
+					name: 'Sandra', 
+					degree: 'Computer Engineering', 
+					encourageTeam() { console.log('We got this!') } 
+				 }
+			},
+			engine: {
+				model: 'Nimbus2000'
+			 },
+			 nanoelectronics: {
+				 computer: {
+					terabytes: 100,
+					monitors: 'HD'
+				 },
+				'back-up': {
+				   battery: 'Lithium',
+				   terabytes: 50
+				 }
+			}
+		};
+		//to access (GET) properties (that are NESTED)
+		spaceship['nanoelectronics']["back-up"]["battery"]
+			//"Lithium"
+		spaceship.nanoelectronics['back-up'].battery
+			//"Lithium"
+			
+		OBJECT (ACCESS PROPERTIES)(GETTTER SETTER)
+			let spaceship = {
+			  passengers: null,
+			  telescope: {
+				yearBuilt: 2018,
+				model: "91031-XLT",
+				focalLength: 2032 
+			  },
+			  crew: {
+				captain: { 
+				  name: 'Sandra', 
+				  degree: 'Computer Engineering', 
+				  encourageTeam() { console.log('We got this!') },
+				 'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
+			  },
+			  engine: {
+				model: "Nimbus2000"
+			  },
+			  nanoelectronics: {
+				computer: {
+				  terabytes: 100,
+				  monitors: "HD"
+				},
+				backup: {
+				  battery: "Lithium",
+				  terabytes: 50
+				}
+			  }
+			}; 
+			// get food
+			let capFave = spaceship.crew.captain['favorite foods'][0];
+			console.log(capFave);
+			// set passengers (objects)
+			spaceship.passengers = [
+			  {fname: 'Dean', lname: 'Jones'},
+			  {fname: 'Nadine', lname: 'Jones'},
+			  ];
+			console.log(spaceship.passengers);
+			// add element 
+			let firstPassenger = spaceship.passengers[0];
+			console.log(firstPassenger);
+			
+	OBJECT (METHOD)(OMIT COLON)
+		-you can OMIT the colon for METHODS 
+		eg. 
+			var obj = {
+				hello(){
+					console.log('helloooo!');
+				}
+			}
+			---------
+			let retreatMessage = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
+			// Write your code below
+			let alienShip = {
+			  retreat(){
+				console.log(retreatMessage);
+			  }, 
+			  takeOff(){
+				console.log('Spim... Borp... Glix... Blastoff!');
+			  }
+			}
+			alienShip.retreat();
+			alienShip.takeOff();
+	
+	OBJECTS (BUILT-IN) 
+		URL 	https://developer.mozilla.org/en-US/docs/Web/API/URL
+		var u2 = new URL('http://www.google.com
+			URL {href: "http://www.google.com/", origin: "http://www.google.com", protocol: "http:", username: "", password: "", …}
+			hash: ""
+			host: "www.google.com"
+			hostname: "www.google.com"
+			href: "http://www.google.com/"
+			origin: "http://www.google.com"
+			password: ""
+			pathname: "/"
+			port: ""
+			protocol: "http:"
+			search: ""
+			searchParams: URLSearchParams {}
+			username: ""
+		WINDOW.LOCATION (see what WEBSITE URL you are on?)
+			window.location
+			Location {replace: ƒ, assign: ƒ, href: "https://www.google.com/", ancestorOrigins: DOMStringList, origin: "https://www.google.com", …}
+		WINDOW.SCREEN 
+			window.screen
+			Screen {availWidth: 1920, availHeight: 1040, width: 1920, height: 1080, colorDepth: 24, …}
+		WINDOW (FORWARD, BACK BUTTONS) 
+			window.history.back();			//same as BACK BUTTON
+			window.history.forward();		//same as FORWARD BUTTON
+		WINDOW.NAVIGATOR 
+			window.navigator
+			Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 0, hardwareConcurrency: 4, …}
+		WINDOW.ALERT (POPUP ALERTS) 
+			window.alert('test')
+		WINDOW.MATH 
+			window.Math.PI 
+				//3.141592653589793
+			window.Math.SQRT2
+				//1.4142135623730951
+		WINDOW.NUMBER 
+		WINDOW.NODE
+		WINDOW.NODELIST 
+		WINDOW.OBJECT 
+		WINDOW.DATE
+			window.Date()
+			"Fri Nov 02 2018 15:29:21 GMT-0600 (Mountain Daylight Time)"
+		WINDOW.CONSOLE
+		
+	SQRT (SQUARE ROOT)(MANUALLY)
+		-sqrt.test() 	// runs test (ONCE ONLY)
+		-sqrt.run() 	// runs test (10 TIMES)
+		-sqrt.x 		// is the VALUE to get the SQUARE ROOT of...
+		var sqrt = {
+			x: 2,
+			deviance: 1,
+			accumulator: 1,
+			test: function(){
+				this.accumulator = (this.accumulator + this.x) / (this.accumulator + 1);
+				return this.accumulator;
+            },
+			calc_deviance: function(){
+				this.deviance = Math.abs(this.accumulator - this.test());
+				return this.deviance;
+			},
+			run: function(){ 
+				//while abs(old_fx - new_fx) > 0.0001
+				while (this.deviance > 0.0001){
+					
+					this.test();
+					this.calc_deviance();
+				}
+				return sqrt;
+				//for (let i=10; i >= 0; i-- ) {
+                //	this.test();
+				//}
+				//return this;
+			},
+		}
+		// x = sqrt of 2 
+		sqrt.test()
+		1.5
+		sqrt.test()
+		1.4
+		sqrt.test()
+		1.4166666666666667
+		sqrt.test()
+		1.4137931034482758
+		sqrt.test()
+		1.4142857142857144
+		sqrt.test()
+		1.4142011834319526
+		sqrt.test()
+		1.4142156862745099
+		
+		
+	LOGIC (USING OBJECTS) 
+		//-rather than using LOGIC OPERATORS and constantly missing some scenerios (if we use this format) then (ALL PERMUTATIONS ARE ACCOUNTED FOR) 
+		//-we can start by understanding the FORMAT (with BINARY ones(1) and zeros(0)) before implementing it with OTHER KEYS 
+		-----
+		// BINARY KEYS (LOGIC)
+		var obj = {
+			0: {
+				0: 'zero',
+				1: 'one'
+			},
+			1: {
+				0: 'two',
+				1: 'three'
+			}
+		}
+		
+		obj[0][0]	//"zero"
+		--------------------
+		// OTHER KEYS (LOGIC) 
+		// ROCK PAPER SCISSORS (LOGIC)
+		// this is the SIMPLEST GAME POSSIBLE (without any additional logic for bad inputs)
+		function play(user, cpu) {
+			//logic
+			var rps = {
+				'rock': {
+				  'rock': 'DRAW, you both picked ROCK...',
+				  'paper': 'You LOST, paper covers rock.',
+				  'scissors': '*** You ROCK, rock smashes scissors!!! ***',
+				},
+				'paper': {
+				  'rock': '*** You WON, paper covers rock!!! ***',
+				  'paper': 'DRAW, you both picked PAPER...',
+				  'scissors': 'You LOST, smashes cuts paper.',
+				},
+				'scissors': {
+				  'rock': 'You LOST, rock breaks scissors',
+				  'paper': '*** You WON, scissors SHREDS paper!!! ***',
+				  'scissors': 'DRAW, you both picked SCISSORS...'
+				}
+			}
+			return rps[user][cpu];
+		}
+		// test 
+		play('rock', 'scissors')
+			// "*** You ROCK, rock smashes scissors!!! ***"
+		play('rock', 'rock')
+			// "DRAW, you both picked ROCK..."
+		rps.paper.rock
+			// "*** You WON, paper covers rock!!! ***"
+		// sloppy (with a bit of manually fudge)
+		Object.entries(rps).forEach((user) => { 
+			console.log('USER: ', user[0], 'CPU: ', 'rock', 'RESULT: ', user[1].rock);
+			console.log('USER: ', user[0], 'CPU: ', 'paper', 'RESULT: ', user[1].paper);
+			console.log('USER: ', user[0], 'CPU: ', 'scissors', 'RESULT: ', user[1].scissors);
+		})	
+			
+	NON-ENUMERABLE (OBJECT) 
+		-means you CANNOT run a LOOP on it? 
+		-how to test? 
+		Object.getPrototypeOf([1,2,3])			//this will show (ALL METHODS) but cannot LOOP THROUGH?
+			
+	LOOPS (NAMES)
+		-means (to repeat) a certain task over an over 
+		-usually to TRAVERSE (an array or object)
+		-loop 
+		-iteration 
+		-iterator 
+		---
+	LOOPS (DIFFERENT TYPES) 
+		//BREAK and CONTINUE (in loop) 		https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code
+		//FOR-IN LOOP
+		for (let x in arr) {
+			//do stuff with each ELEMENT (x)
+		}
+		//FOR-LOOP (ERROR)
+			//ERROR (BACKWARDS OPERATOR need lessthan (NOT GREATER THAN))
+				//for (let i = 10; i > 0; i++) {
+			//ERROR (infinite loop (change zero(0) to 'i')
+				// DON'T USE... for (let i = 0; 0 < vacationSpots.length; i++ ){ //infinite loop... }
+			//CORRECT
+			for (let i = 0; i < vacationSpots.length; i++ ){ //... }	
+		//WHILE (most basic INFINITE LOOP)
+		while (true) {
+			// do stuff 
+		}
+		//WHILE (make a condition that will EXPIRE) 
+			// use when you DON'T KNOW (how many repeats?)
+		var count = 0;
+		while (count != 10) {
+			console.log(count); 
+			count++;				//need COUNT (to increment)(or it will be INFINITE LOOP)
+		}
+		//DO-WHILE (same idea as WHILE but INSURES it will LOOP (at least ONE TIME))
+		var count = 5;
+		do {
+			console.log('hello' + count);
+			--count;				//COUNT to zero (or count-- DEPENDING if need the RETURN 0 or 1)
+		} while (count);			//ZERO (same as FALSE)
+		//FOREACH (KEYS)(OBJECT)
+		Object.keys(obj).forEach((k) => { 
+			console.log(k);
+		})
+		//FOR LOOP (with INDEX)
+		for (let i = 0; i < 10; i++) {
+			console.log(i);
+		}
+		//FOR LOOP (on ARRAY) 				https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code
+		var arr = ['aa', 'bb', 'cc'];
+		for (let i = 0; i < arr.length; i++) {
+			console.log(arr[i]);
+		}
+		//--------
+		//FOREACH (VALUES)(OBJECT)
+		Object.values(obj).forEach((v) => { 
+			console.log(v);
+		})
+		//--------------------------------------
+		//FOREACH (ENTRIES)(OBJECT)
+		Object.entries(obj).forEach((o) => { 
+			console.log(o);
+		})	
+		//FOREACH (ENTRIES KEY-VALUE)(OBJECT)
+		Object.entries(obj).forEach((x) => { 
+			console.log('key: ', x[0], 'value: ', x[1]);
+		})	
+		//FOREACH (ENTRIES KEY-VALUE)(OBJECT)		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+		Object.entries(obj).forEach(([k,v]) => { 
+			console.log(k, v);
+		})	
+		//--------------------------------------
+		//FOR-IN (key-value)(OBJECT.ENTRIES) 
+		for (let [k, v] of Object.entries(obj)){
+			console.log(k, v);
+		}
+		//OBJECT (TYPE) 
+		function obj_type(obj) {
+			for (var key in obj) {
+				if (obj.hasOwnProperty(key)) {
+					console.log('type: ', typeof(obj[key]), ', key: ', key, ', value: ', obj[key]);
+				}
+			}
+		}
+		//ARRAY (COVERT TO OBJECT)
+		['a','b','c']
+		{
+		  0: 'a',
+		  1: 'b',
+		  2: 'c'
+		}
+		{...arr}
+			//{0: "a", 1: "b", 2: "c"}
+		---
+		Object.assign({}, ['a','b','c'])
+			//{0: "a", 1: "b", 2: "c"}
+		COPY (CLONE) AN OBJECT 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+			var copy = Object.assign({}, obj);
+		OBJECT (CREATE DYNAMIC KEYS) 
+			var obj = {};
+			['a', 'b', 'c'].forEach((x,i) => obj[x] = i)
+				// {a: 0, b: 1, c: 2}
+		---
+		Array.reduce()	https://stackoverflow.com/questions/4215737/convert-array-to-object
+			['a','b','c'].reduce(function(result, e, i, arr) {
+			  result[i] = e; //a, b, c
+			  return result;
+			}, {}) //watch out the empty {}, which is passed as "result"
+		// {0: "a", 1: "b", 2: "c"}
+		---
+		-short version 
+		['a','b','c'].reduce((result, e, i, arr) => { result[i] = e; return result; }, {})
+			//{0: "a", 1: "b", 2: "c"}
+		['a','b','c'].reduce((result, e, i, arr) => { result['prop' + i] = e; return result; }, {})
+			//{prop0: "a", prop1: "b", prop2: "c"}
+		// TRYING TO ENUMERATE (ARRAY.PROTOTYPE) (*** which in NOT ENUMERABLE ***)
+		//??????
+			for (let method in Object.getOwnPropertyNames(Array.prototype)) {
+				Object.defineProperty(Array.prototype, Array.prototype[method], {
+				  enumerable: true
+				});
+			}
+			//test 
+			Object.getOwnPropertyDescriptors(Array.prototype)
+			
+	FOR-LOOP (with BREAK) 
+		// use BREAK to quit the loop (based on finding something)
+		//----------------------------------
+		// BREAK (KEYWORD)(STOP A LOOP)
+		// stop the loop (once a CONDITION is met)
+		// great for (large data)
+		const rapperArray = ["Lil' Kim", "Jay-Z", "Notorious B.I.G.", "Tupac"];
+
+		// FOR-LOOP (with BREAK)
+		for (let i = 0; i < rapperArray.length; i++ ) {
+		  // BREAK (if Notorious BIG)
+		  if(rapperArray[i] === 'Notorious B.I.G.'){
+			break;
+		  }
+		  console.log(rapperArray[i]);
+		}
+		console.log(`And if you don't know, now you know.`);
+		
+	
+		
+	FOR-IN vs FOR-OF LOOPS 
+		//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for...in_statement
+		var arr = [3, 5, 7];
+		arr.foo = 'hello';
+
+		//FOR-IN (KEYS)
+		for (var i in arr) {
+		   console.log(i); // returns ALL KEYS (indexes are KEYS)
+		}
+		//FOR-IN (VALUES)
+		for (var i in arr) {
+		   console.log(arr[i]); // returns ALL KEYS (indexes are KEYS)
+		}
+		//FOR-OF (VALUES only of iterable???)
+		for (var i of arr) {
+		   console.log(i); // logs 3, 5, 7
+		}
+		
+	// NESTED LOOPS
+		const bobsFollowers = ['Jane', 'Joe', 'Jesus', 'John'];
+		const tinasFollowers = ['Dean', 'Jesus', 'John'];
+		const mutualFollowers  = [];
+
+		//nested loop (UNION)(two arrays - elements the same)
+		for (let bob in bobsFollowers) {
+		  for (let tina in tinasFollowers) {
+			//console.log(bobsFollowers[bob]);
+			if (bobsFollowers[bob] === tinasFollowers[tina]) {
+			  mutualFollowers.push(bobsFollowers[bob]);
+			}
+		  }
+		}
+		console.log(mutualFollowers);		//[ 'Marta', 'Sam' ]
+		
+	
+
+	// WHILE LOOP (loops until if finds what it's looking for)
+		const cards = ['diamond', 'spade', 'heart', 'club'];
+		
+		let currentCard;
+		while (currentCard != 'spade') {
+			  currentCard = cards[Math.floor(Math.random() * 4)];
+				console.log(currentCard);
+		}
+		//club
+		//club
+		//spade
+		
+	// DO-WHILE LOOP
+		let cupsOfSugarNeeded = 20;
+		let cupsAdded = 0;
+		do {
+		  cupsAdded++;
+		  console.log('cup of sugar');
+		} while (cupsAdded < cupsOfSugarNeeded);
+		
+	OBJECT.ENTRIES 
+		var obj = {a: 1, b: 2, c: 3};
+		var test = Object.entries(obj);
+			0: (2) ["a", 1]
+			1: (2) ["b", 2]
+			2: (2) ["c", 3]
+			--- 
+			//key-value (of first property)
+			test[0]			//["a", 1]
+			//key only
+			test[0][0]		//"a"
+			//value only
+			test[0][1]		//1
+			
+	OBJECT.ENTRIES (IF DOESN'T EXIST in browser) 		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+		if (!Object.entries) {
+		  Object.entries = function( obj ){
+			var ownProps = Object.keys( obj ),
+				i = ownProps.length,
+				resArray = new Array(i); // preallocate the Array
+			while (i--)
+			  resArray[i] = [ownProps[i], obj[ownProps[i]]];
+			
+			return resArray;
+		  };
+		}
+		
+	OBJECT (GET METHOD)(to step through code)
+		//thinking (use case) for MAIN METHOD (to step through function calls)
+		var obj = {
+			count: 0,
+			a: 10, 
+			get b (){
+				this.count++;
+				return this.a + 5;
+			}, 
+			get c () {
+				this.count++;
+				return this.b + 5;
+			},
+			d: 'end'
+		}
+		
+	HTML SELECTORS 
+		// getElementById (ONE ELEMENT)
+		document.getElementById('prt')
+			<span id=​"prt">​</span>​
+		// getElementsByTagName (ALL ELEMENTS)
+		document.getElementsByTagName('body')	
+			<head>...</head>
+			HTMLCollection [head]
+		// getElementsByClassName (ALL ELEMENTS)
+		document.getElementsByClassName('default-theme')
+			<body class="default-theme des-mat">...</body>
+			HTMLCollection [body.default-theme.des-mat]
+		// get (class, id, or tag)(*** check for browser compatibility ***)
+			// querySelector (GETS FIRST TAG ONLY)
+			// TAG
+			document.querySelector('head')
+				<head>...</head>
+			// CLASS (add DOT like in CSS)
+			document.querySelector('.default-theme')
+				<body class="default-theme des-mat">...</body>
+			// ID (add HASHTAG # like in CSS)
+			document.querySelector('#prt')
+				<span id=​"prt">​</span>​
+			---------------------------------		
+			// querySelectorAll (ALL ELEMENTS)
+			// TAG (returns NODELIST of all elements)
+			document.querySelectorAll('div')
+				NodeList (215) [...]
+			// CLASS (add DOT like in CSS)
+			document.querySelectorAll('.default-theme')
+				NodeList [body.default-theme.des-mat]
+			// ID (add HASHTAG # like in CSS)(returns NODELIST but for ID should still be only one)
+			document.querySelectorAll('#prt')
+				NodeList [span#prt]
+		// ADD CLASSES (CRUD)
+		var x = document.querySelector('.default-theme')
+		// CREATE (ADD)
+		x.classList.add('test')			// ["default-theme", "des-mat", "test", value: "default-theme des-mat test"]
+		// GET 
+		x.classList 					// ["default-theme", "des-mat", value: "default-theme des-mat"]
+		// UPDATE (returns true if successful)
+		x.classList.replace('test2', 'my_test')		// ["default-theme", "des-mat", "my_test", value: "default-theme des-mat my_test"]	
+		// DELETE 
+		x.classList.remove('test')
+		
+		
+	BROWSER SUPPORT 		https://caniuse.com/#search=queryselector
+		-look up JAVASCRIPT FUNCTION 
+	
+	OBJECT (LITERAL) 
+		// no PROTOTYPE (for OBJECT LITERAL)
+		var obj = {};		// empty object 
+		var obj2 = {
+			a: 1, 
+			b: 2, 
+			c: 3,
+			method: function() { return a + b + c; },
+			d: 4, 			// COMMA on last PROPERTY (won't break it I think?)
+		};
+	
+	OBJECT METHODS 
+		CONSTRUCTOR (is a function) 
+		// constructor (this KEYWORD assigns to object)
+		function Obj2(name) {
+			this.name = name,
+			this.age = 33,
+		}
+		-------
+		// create INSTANCE (new KEYWORD)
+		var obj = new Obj2('Dean')
+		-------
+		// EXTEND (add a NEW METHOD, to PROTOTYPE (NOT the instance))
+		Obj2.prototype.method = function(last) { 
+			this.last = last;
+		}
+		-------
+		// update info (for last name)
+		obj.method('Jones')					// Obj2 {name: "Dean", age: 33, last: "Jones"}
+		-------
+		// EXTEND PROPERTY (ADVANCED OPTIONS) 		https://stackoverflow.com/questions/6877005/extending-object-prototype-javascript
+		Object.defineProperty(Obj2.prototype, 'methodOnSteriods',{
+		  value: function(){ return 'I am, love, the holy spirit, God, The Universe, All That Is'; },
+		  writable: true,
+		  configurable: true,
+		  enumerable: false
+		});
+		obj.methodOnSteriods()
+			// "I am, love, the holy spirit, God, The Universe, All That Is"
+		
+	OBJECT (test if toString() or valueOf() METHODS CALLED)
+		function Test(a){
+			this.a = a;
+		}
+		var t = new Test(33);
+		//---
+		Test.prototype.toString = function () {
+			console.log("toString() called");		//write to console (*** THIS WILL SHOW if another method calls it (like SORT())
+			return this.a + '';
+		}
+		Test.prototype.valueOf=function(){
+			console.log("valueOf() called");
+			return this.a;
+		}
+		
+	BASE SYSTEMS (CONVERT TO BASE-2)
+		var d = 25;
+		d.toString(2);	//"11001" 	(binary)
+		d.toString(16);	//"19" 		(hexadecimal)
+	BASE 10 (TO BASE-2)(BACK TO BASE-10)
+		var d = 25;
+		d.toString(2)
+			.split('')              // '11001'
+			.map(x => parseInt(x))  // [1, 1, 0, 0, 1]
+			.reverse()              // [1, 0, 0, 1, 1] (reverse list)(this will make ADDING POWERS OF 2 BETTER)
+			.reduce((total, e, i) => total + Math.pow(2, i) * e)
+
+		d.toString(2).split('').map(x => parseInt(x)).reverse().reduce((total, e, i) => total + Math.pow(2, i) * e)
+		// 25
+		
+	ARRAY (SORT ASCENDING)
+		[1,0,-1,2,-2,3,4,-5,-4,-3].sort((a,b) => a - b)
+			//(10) [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4]
+	ARRAY (SORT DESCENDING)
+		[1,0,-1,2,-2,3,4,-5,-4,-3].sort((a,b) => b - a)
+			//(10) [4, 3, 2, 1, 0, -1, -2, -3, -4, -5]
+
+		
+	OBJECT (USING + OPERATOR) 
+		-toString() METHOD 
+		-NOTE, the (valueOf and toString) METHODS are both called using (Array.sort() METHOD) 
+			https://stackoverflow.com/questions/5627751/override-default-behavior-of-comparison-operators-in-javascript
+			see function Test(value) ... example.
+				Array.sort() 		// calls toString() for SORT
+				CONCAT (+) 			// calls VALUEOF (Number or String)
+				String.prototype.concat(t1, t2)		//calls (tostring valueof valueof) for each object
+				
+		-DEFINE this METHOD FOR THE OBJECT 
+		Obj2.prototype.toString = function() {
+			//return this.age; 						// return 42;
+			//return this.name;						// return 'Dean'
+			return 'abcdefghi';						//if this RETURNS (STRING) it will CONCAT two strings
+		}
+		var obj = new Obj2('Dean');
+		obj.toString();					//"abcdefghi"
+		-----
+		PLUS (+) OPERATOR 
+		obj + obj 						//"DeanVivian"	return this.name;
+		obj + obj 						//55 (13+ 42)	return this.age;
+		
+		
+
+		
+	PLUS OPERATOR (before variable)
+		-it tries to CONVERT TO A NUMBER
+		-this is probably how (TRUTHY FALSY statements work)
+		http://xkr.us/articles/javascript/unary-add/
+		NUMBER 
+			converts STRING variable to NUMBER (or NaN)
+			var x = '23'
+			+x				//23 (Number)
+			x = '23a'
+			+x				//NaN
+		BOOLEAN 
+			var x = true
+			+x				//1
+			x = false
+			+x 				//0 
+		STRING 
+			var s = "string"
+			+s				//NaN
+			var s = ""			
+			+s				//0
+		UNDEFINED 
+			x = undefined
+			+x				//NaN
+		OBJECT 
+			+obj			//NaN
+			
+	ASSERTION (TESTING)
+		-I don't think it's built in?
+		https://stackoverflow.com/questions/15313418/what-is-assert-in-javascript
+	//ASSERTION 
+	//test('A') === 'A' ? 'SUCCESS' : 'FAILED';
+	function assert(condition){
+		return condition ? 'SUCCESS' : 'FAILED';
+	}
+	//TESTS 
+	assert(test('A') === 'A')   //"SUCCESS"
+	assert(test('B') === false) //"SUCCESS"
+	assert(test('E') === 'E')   //"FAILED"
+	assert(test('E') === 'EE')  //"SUCCESS" (should be 'EE')
+	assert(test('I') === 'I')   //"SUCCESS"
+	assert(test('O') === 'O')   //"SUCCESS"
+	assert(test('U') === 'UU')  //"SUCCESS"
+	assert(test('Y') === false) //"SUCCESS"
+	
+
+	//FUNCTION: TEST FOR VOWEL (returns VOWEL)
+	// NOTE, only tests ELEMENT for ONE CHARACTER
+	function test(element, return_value=true){
+	  element = element.toUpperCase();
+	  if(return_value){
+		//['A', 'E', 'I', 'O', 'U'].some(x => x == 'A')
+		//return ['A', 'E', 'I', 'O', 'U'].some(x => x == element) ? element : false;
+		let result = ['A', 'E', 'I', 'O', 'U'].some(x => x === element) ? element : false;
+		if (result === 'E'){
+		  return 'EE';
+		}
+		else if (result === 'U'){
+		  return 'UU';
+		}
+		else {
+		  return result;
+		}
+	  }
+	  else {
+		return ['A', 'E', 'I', 'O', 'U'].some(x => x === element);
+	  }
+	}
+
+	//**************************************************************
+	//**************************************************************
+	//OBJECT CONSTRUCTOR: CREATE A LIST OF PRIME NUMBERS
+	function PrimeNumbers(n){
+		//create array of integers [1,2,3,...]
+		var arr = [...Array(n).keys()]
+		//remove first two elements (these will cause problems with loop)
+		arr.shift();    //remove [0]
+		arr.shift();    //remove [1] 
+		
+		//FUNCTION: TEST FUNCTION (for prime)
+		var mod = (x,n) => x !== n ? x % n === 0 : false;
+		//FUNCTION: GENERATE PRIME LIST
+		var primes_list = function(arr){
+			for (let i in arr){
+				arr = arr.map(x => mod(x, arr[i]) ? 0 : x).filter(x => x);
+			}
+			return arr;
+		}
+
+		//PROPERTY: PRIMES LIST 
+		this.list = primes_list(arr);
+	}
+	//TO RUN: 
+	// var p = new PrimeNumbers(100);
+	// p
+	// PrimeNumbers {list: Array(25)}
+	//   list: (25) [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]__proto__: Object
+	//**************************************************************
+	//**************************************************************
+	
+	// PRIMES (part of solution)(CODWARS)
+	// "E:\000-BACKUP\0000-CODE ACADEMY\500-CODEWARS\502-JavaScript\502_006_gap_in_primes.js"
+	// PRIME TEST
+		const isPrime = num => {
+			for(let i = 2, s = Math.sqrt(num); i <= s; i++)
+				if(num % i === 0) return false; 
+			return num !== 1 && num !== 0;
+		}
+
+		// RANGE (OF NUMBERS)(WITHIN LIMITS)
+		const range = function(limit, start=0){
+			return [...Array(limit - start).keys()].map(x => x + start);
+		}	
+
+		// PRIMES (WITHIN RANGE ONLY)
+		const range_primes = function(min, max){
+			return range(max, min).filter(x => isPrime(x));
+			// var x = range(10000150, 10000000).filter(x => isPrime(x));
+		}
+	
+	//**************************************************************
+	//**************************************************************
+	//SUPER FAST (PRIMES LIST)
+	var primes = function(limit){
+		//create list of integers
+		var arr = [...Array(limit - 2).keys()].map(x => x + 2);
+		//prime factor test
+		var mod = (x,n) => x !== n ? x % n === 0 : false;
+		//loop (remove exceptions)
+		for (let i = 0; i <= Math.floor(Math.sqrt(limit)); i++){            //sqrt (stops iteration early)(this is a big optimization)
+			arr = arr.map(x => mod(x, arr[i]) ? 0 : x).filter(x => x);     
+		}
+		return arr;
+	}
+	//MERSENNE PRIME (2^77232917 - 1 is record in 2018)(having... 23,249,425 digits.)
+	//TESTING 
+	//var x = primes(100);
+	//---
+	//var x = primes(500000)
+	//x.reverse()
+	//(41538) [499979, 499973, 499969, 499957 ...
+	//The 41,538th prime is 499,979.      https://primes.utm.edu/nthprime/index.php#nth
+	//---
+	//var p = primes(1000000)
+	//p.reverse()
+	//(78498) [999983, 999979, 999961,...
+	//The 78,498th prime is 999,983.
+	//---
+	//var p = primes(2000000)				//20 seconds 
+	//p.reverse()
+	//(148933) [1999993, 1999979, 1999969, ...
+	//The 148,933rd prime is 1,999,993.
+	//---
+	//7 minutes 
+	//var p = primes(10000000)
+	//p.reverse()
+	//(664579) [9999991, 9999973, 9999971,
+	//The 664,579th prime is 9,999,991.
+	//**************************************************************
+	//**************************************************************
+		
+	// PRIMES ARRAY (WITHIN A RANGE) 
+	var primes_range = function(min, max){
+		//create list of integers
+		var arr = [...Array(max - 2).keys()].map(x => x + 2);
+		//prime factor test
+		var mod = (x,n) => x !== n ? x % n === 0 : false;
+		//loop (remove exceptions)
+		for (let i = 0; i <= Math.floor(Math.sqrt(max)); i++){            //sqrt (stops iteration early)(this is a big optimization)
+			arr = arr.map(x => mod(x, arr[i]) ? 0 : x).filter(x => x);     
+		}
+		return arr.filter(x => min <= x && x <= max);           			//need to filter (afterwards)
+	}
+		
+	// PRIMES (MANUALLY FILTER)
+		const p0_500 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499]
+		p0_500.filter(x => 100 <= x && x <= 200)
+        // (21) [101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199]
+
+		
+	STATIC CLASS (OR OBJECT) 
+		-notice the MATH object shows up as an OBJECT (meaning you don't need to INVOKE (NEW) to create an object, just ONE OBJECT is needed)
+		Math		//access this by simply TYPING the (NAME) of the object.
+			//Math {abs: ƒ, acos: ƒ, acosh: ƒ, asin: ƒ, asinh: ƒ, …}
+		var m = new Math()
+			// Uncaught TypeError: Math is not a constructor
+	CONSTRUCTOR CLASS (for INSTANTIATING OBJECTS) 
+		-notice the PROTOTYPE (this means that it is a CONSTRUCTOR, and you can INSTANTIATE OBJECTS with it)
+		Array.prototype
+			// [constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+			-notice, this returns an ARRAY of FUNCTIONS (used for ARRAY objects)
+		---
+		var arr = new Array(3);		//this will create a NEW ARRAY (with UNDEFINED elements)(3 places in total)
+			//[empty × 3]
+		---
+		var arr = new Array(3).fill(1);
+			//(3) [1, 1, 1]
+		---
+		var arr = [...Array(3)]
+			//(3) [undefined, undefined, undefined]
+		---
+		var arr = [1,2,3]
+			//(3) [1, 2, 3]
+	
+		// *********************************************************************************
+		// *********************************************************************************
+		// Codecademy Project: ITERATORS: MINI LINTER
+		// Nov.27, 2018 
+		// Dean Jones
+
+		// ------------------------------------------------------------------------
+		// INTRODUCTION TO JAVASCRIPT
+		// Mini Linter
+		// In this project, you will use what you know about iterating over arrays to improve the quality of a paragraph 
+		// and gather some information about that paragraph.
+		// 
+		// This is the same type of work that word processing software does. Additionally, you may have heard of linting, 
+		// a process by which text is evaluated and improved by an application. In this project, you will create a miniature version 
+		// of a linter using array methods that you have learned.
+		// 
+		// If you get stuck during this project, check out the project walkthrough video which can be found at the bottom 
+		// of the page after the final step of the project.
+		// ------------------------------------------------------------------------
+
+		// main body (long string)
+		let story = 'Last weekend, I took literally the most beautiful bike ride of my life. The route is called "The 9W to Nyack" and it actually stretches all the way from Riverside Park in Manhattan to South Nyack, New Jersey. It\'s really an adventure from beginning to end! It is a 48 mile loop and it basically took me an entire day. I stopped at Riverbank State Park to take some extremely artsy photos. It was a short stop, though, because I had a really long way left to go. After a quick photo op at the very popular Little Red Lighthouse, I began my trek across the George Washington Bridge into New Jersey.  The GW is actually very long - 4,760 feet! I was already very tired by the time I got to the other side.  An hour later, I reached Greenbrook Nature Sanctuary, an extremely beautiful park along the coast of the Hudson.  Something that was very surprising to me was that near the end of the route you actually cross back into New York! At this point, you are very close to the end.';
+
+		// variables (word lists)
+		let unnecessaryWords = ['extremely', 'literally', 'actually' ];
+		let overusedWords = ['really', 'very', 'basically'];
+		let sentences = ['.', '?', '!'];        //only THREE possilbe punctuation marks (for ending a sentence)
+
+		// ----
+		// create an array (of words)
+		let storyWords = story.split(' ');     //(188) ["Last", "weekend,", ...]
+
+		// -----------------------------------------------
+		// UNNECESSARY WORDS
+		// filter out (unnecessary words)
+		// storyWords.filter(x => x !== 'extremely' && x !== 'literally' && x !== 'actually');
+		// storyWords.filter(x => x === 'extremely' || x === 'literally' || x === 'actually')
+		// (6) ["literally", "actually", "extremely", "actually", "extremely", "actually"]
+
+		// hard-coded... 
+		// (use code below) let betterWords = storyWords.filter(x => x !== 'extremely' && x !== 'literally' && x !== 'actually');
+
+		// test function
+		const testUnnecessaryWord = (word) => unnecessaryWords.some(x => x === word);
+		// dynamically filtered 
+		let betterWords = storyWords.filter(x => !testUnnecessaryWord(x));
+		// Codecademy version (shorter) (uses INCLUDES METHOD)
+		//let betterWords = storyWords.filter(x => ! unnecessaryWords.includes(x));
+
+		// -----------------------------------------------
+		// OVER-USED WORDS
+
+		// test function
+		const testOverusedWord = (word) => overusedWords.some(x => x === word);
+		// count (over-used words)
+		let countOverusedWords = storyWords.filter(x => testOverusedWord(x)).length;
+		// -----------------------------------------------
+		// COUNT SENTENCES
+
+		// test function
+		var testSentence = (punctuation) => sentences.some(x => x === punctuation);
+		// split (array of single characters)
+		// filter for ('!', '.', '?')(only possible sentence markers)
+		var countSentences = story.split('').map(x => testSentence(x) ? x : 0).filter(x => x).length;
+		// -----------------------------------------------
+		// PRINT TO CONSOLE 
+		//console.log('Total words: ', storyWords.length);
+		//console.log('Overused words count: ', countOverusedWords);
+		//console.log('Sentence count: ', countSentences);
+		var printToConsole = () => {
+			console.log('Total words: ', storyWords.length);
+			console.log('Overused words count: ', countOverusedWords);
+			console.log('Sentence count: ', countSentences);
+		}
+		printToConsole();
+
+		console.log(betterWords.join(' '));
+
+		// -----------------------------------------------
+		// EXTENDED (MORE PRACTISE)
+		// COUNT ALL WORDS (put in an object)
+		// FUNCTION: get unique (words) array 
+		const unique = (arr) => arr.filter((e, i, self) => self.indexOf(e) == i);
+		//var unique = storyWords.filter((e, i, self) => self.indexOf(e) == i);
+		//unique(mystring_arr)      // ["I", "am", "a", "great", "programmer.", ...]
+
+		// FUNCTION: to push (word: count) to OBJECT
+		const pushWordCount = function(word, obj, arr){
+			let count = arr.filter(x => x === word).length;
+			return obj[word] = count;
+		}
+
+		// FUNCTION: ITERATE THROUGH (ALL WORDS)(and count them...)
+		const countWords = (arr) => {
+			let result = {};
+			// push (count) to (result OBJECT)
+			unique(arr).forEach((x, i, self) => pushWordCount(x, result, arr));
+			return result;
+			// unique(storyWords).forEach((x, i, self) => pushWordCount(x, result));
+			// unique.forEach((x, i, self) => pushWordCount(x, result));
+			// ['a', 'b', 'c'].forEach((x,i) => obj[x] = i)
+		}
+		// countWords(storyWords)
+		// {48: 2, Last: 2, weekend,: 2, I: 8, took: 3, literally: 2, …}
+		console.log('--------------------------------------');
+		console.log('countWords: ', countWords(storyWords));
+		// -----------------------------------------------
+		// TESTING...
+		// var mystring = 'I am a great programmer. I am aspiring to become a great person as well! I love myself. I feel love for myself. I am happy and creating a better reality for myself.';
+		// var mystring_arr = mystring.split(' ');
+		// var unique2 = mystring_arr.filter((e, i, self) => self.indexOf(e) == i);
+		// countWords(mystring_arr);
+		// {I: 8, am: 1, a: 5, great: 1, programmer.: 1, …}
+		// ---
+		// countWords(story.split(' '))
+		// {48: 1, Last: 1, weekend,: 1, I: 7, took: 2, literally: 1, …}
+		// ----------------------------------------------------------
+		// *********************************************************************************
+		// *********************************************************************************
+		
+	OBJECTS (PROJECT) MEAL MAKER 
+	***********************************************************************************************
+		// Codecademy Project: OBJECTS: MEAL MAKER
+		// Dec.05, 2018 
+		// Dean Jones
+
+		// ------------------------------------------------------------------------
+		// Meal Maker
+		// As a frequent diner, you love trying out new restaurants and experimenting with different foods. 
+		// However, having to figure out what you want to order can be a time-consuming ordeal if the menu is big, 
+		// and you want an easier way to be able to figure out what you are going to eat.
+		// 
+		// In this project, you'll use JavaScript to randomly create a three-course meal based on what is available on a menu. 
+		// We'll keep running it until we're satisfied with the generated meal!
+		// ------------------------------------------------------------------------
+
+		const menu = {
+			_courses: {
+				_appetizers: [],
+				get appetizers(){ return this._appetizers; },
+				set appetizers(v) { this._appetizers = v; },
+				_mains: [],
+				get mains(){ return this._mains; },
+				set mains(v) { this._mains = v; },
+				_desserts: [],
+				get desserts(){ return this._desserts; },
+				set desserts(v) { this._desserts = v; },
+			},
+			get courses(){ 
+				return {
+					appetizers: this._courses.appetizers,
+					mains: this._courses.mains,
+					desserts: this._courses.desserts,
+				};
+			 },
+			 addDishToCourse(courseName, dishName, dishPrice){
+				let obj = {
+				 name: dishName,
+				 price: dishPrice, 
+				};
+				if(courseName === 'appetizers' || courseName === 'mains' || courseName === 'desserts'){
+					this._courses[courseName].push(obj);
+				} else {
+					return 'ERROR: addDishToCourse';
+				}
+						
+				// if(courseName == 'appetizers') {
+				//     this._courses.appetizers.push(obj);
+				// } else if (courseName == 'mains') {
+				//     this._courses.mains.push(obj);
+				// } else if (courseName == 'desserts') {
+				//     this._courses.desserts.push(obj);
+				// } else {
+				//     return 'ERROR: addDishToCourse';
+				// }
+			 },
+			 getRandomDishFromCourse(courseName){
+				 if(courseName === 'appetizers' || courseName === 'mains' || courseName === 'desserts'){
+					 //function to generate (random number)
+					 const getRandom = (num) => Math.floor(Math.random() * num); 
+					 let arr = this._courses[courseName];   //get array (of dishes)
+					 return arr[getRandom(arr.length)];
+				 } else {
+					 return 'ERROR: getRandomDishFromCourse';
+				 }
+			 },
+			 generateRandomMeal(){
+				 let app = this.getRandomDishFromCourse('appetizers');
+				 let main = this.getRandomDishFromCourse('mains');
+				 let dessert = this.getRandomDishFromCourse('desserts');
+				 const cost = (a,b,c) => a + b + c;
+				 const addtax = (cost) => cost * 1.05;
+				 let total = addtax(cost(app.price, main.price, dessert.price)).toFixed(2);
+				 return {
+					 appetizer: app,
+					 main: main,
+					 dessert: dessert,
+					 total: `Your meal includes an appetizer (${app.name}), a main dish (${main.name}) and dessert (${dessert.name}). The total cost is $${total} including tax.`,
+				 }
+			 },
+		};
+		//testing
+		menu.addDishToCourse('mains', 'steak', 21.00)
+		menu.addDishToCourse('mains', 'spaghetti', 12.50)
+		menu.addDishToCourse('mains', 'fish', 18.50)
+		menu.addDishToCourse('appetizers', 'wings', 9.99)
+		menu.addDishToCourse('appetizers', 'calamari', 11.99)
+		menu.addDishToCourse('appetizers', 'fries', 7.50)
+		menu.addDishToCourse('desserts', 'pie', 5.00)
+		menu.addDishToCourse('desserts', 'ice cream', 5.00)
+		menu.addDishToCourse('desserts', 'cheesecake', 5.00)
+		// menu.courses
+		// menu.getRandomDishFromCourse('mains');
+		let meal = menu.generateRandomMeal();
+		console.log(meal);
+	***********************************************************************************************
+		// Codecademy Project: OBJECTS: TEAM STATS
+		// Dec.06, 2018 
+		// Dean Jones
+
+		// -----------------------------------------------------------------------------------------
+		// Team Stats
+		// We want to create and extract information about your favorite sports team. 
+		// Basketball, soccer, tennis, or water polo, you pick it. It''s your job to create data using the 
+		// JavaScript data structures at your disposal: arrays, objects, etc.
+		// 
+		// Once created, you can manipulate these data structures as well as gain insights from them. 
+		// For example, you might want to get the total number of games your team has played, or the average score 
+		// of all of their games.
+		// -----------------------------------------------------------------------------------------
+
+		const team = {
+			_players: [],
+			_games: [],
+			get players(){ return this._players; },
+			get games(){ return this._games; },
+			addPlayer(firstName, lastName, age){
+				return this._players.push({
+					firstName,							//*** NOTE, this is a shorter syntax version (of below) ***
+					lastName,
+					age
+				});
+			},
+			createGame(opponent, teamPoints, opponentPoints){
+				return this._games.push({
+					opponent: opponent,					//*** NOTE, I can use the SAME KEY/VALUE names because the KEY is just a LABEL ***
+					teamPoints: teamPoints,
+					opponentPoints: opponentPoints
+				});
+			},
+		}
+
+		//create players
+		team.addPlayer('Steph', 'Curry', 28);
+		team.addPlayer('Lisa', 'Leslie', 44);
+		team.addPlayer('Bugs', 'Bunny', 76);
+		//create games 
+		team.createGame('Red Sox', 6, 5);
+		team.createGame('Yankees', 2, 1);
+		team.createGame('Astros', 5, 0);
+		//print 
+		console.log(team);
+		dir(team.games);
+		dir(team.players);
+	***********************************************************************************************
+	
+	JAN.2, 2019
+	BROWSER COMPATIBILITY ISSUES	ES6 ()(like old ES5) 
+		-example, like using LET, CONST keywords with cause ERROR
+			 SyntaxError: Block-scoped declaration const not supported in this web browser
+				const meat = "Pancetta"; 		// ES6 syntax
+				let sauce = "Eggs and cheese"; 	// ES6 syntax
+			 SyntaxError: Template literals not supported in this web browser
+				`You can make carbonara with ${pasta}, ${meat}, and a sauce made with ${sauce}.`
+		WWW.CANIUSE.COM 
+			-search ES5 	95.25% browsers used
+			-search ES6		88.61% browsers used
+	ES6 to ES5 (MANUALLY)
+		CHANGE (LET, CONST)(to VAR) 
+			var meat = "Pancetta"; 				// ES5
+			//const meat = "Pancetta"; 			// ES6 syntax
+			var sauce = "Eggs and cheese";		// ES5
+			//let sauce = "Eggs and cheese"; 	// ES6 syntax
+		TEMPLATE LITERALS (NOT SUPPORTED)(change to CONCAT with '+' SYMBOL)
+			//var carbonara = `You can make carbonara with ${pasta}, ${meat}, and a sauce made with ${sauce}.`;
+			var carbonara = 'You can make carbonara with ' + pasta + ', ' + meat + ', and a sauce made with ' + sauce + '.';
+	ES6 to ES5 (BABEL JS LIBRARY)
+		-at terminal
+			npm install babel-cli				(This installs one of the two required Babel packages.)
+			npm install babel-preset-env		(This installs the second of two required Babel packages.)
+			npm run build						(You can view the ES5 code in ./lib/main.js.)
+				-I'm guessing this just converts and dumps the file to this folder (must be in current directory?)
+				-It also added the (USE STRICT) at the top
+	*****************************************
+	*****************************************
+	NPM (UPDATE FIRST)
+		New major version of npm available! 5.3.0 -> 6.5.0     
+			npm install -g npm
+	BABEL (PROJECT SETUP)	
+		project
+			|_ src
+			|___ main.js
+		-Before we INSTALL Babel, we need to setup our project to use the NODE PACKAGE MANAGER (npm).
+		-at terminal 
+			npm init 		(creates a PACKAGE.JSON file in the root directory)
+	PACKAGE.JSON (FILE) 
+		-A package.json file contains information about the current JavaScript project. 
+		-Some of this information includes:
+			METADATA		
+				This includes a project title, description, authors, and more.
+			A LIST OF NODE PACKAGES required for the project
+				If another developer wants to run your project, npm looks inside PACKAGE.JSON and downloads the packages in this list.
+			KEY-VALUE PAIRS for command line SCRIPTS
+				You can use npm to run these shorthand scripts to perform some process. 
+				In a later exercise, we will add a script that runs Babel and transpiles ES6 to ES5.
+	PACKAGE.JSON (CREATE A FILE)(NPM INIT)
+		HELP 
+			npm help json
+		INSTALL PACKAGES 
+			npm install <pkg>
+		-at terminal (go to current project folder)
+			npm init
+				C:\Users\Pythagoras\Documents\_test_npm_packageJSON>npm init
+		-follow the prompts 
+			-ENTER (for defaults)
+			-or fill in your data 
+		-it will ask you to CONFIRM (creating this file)
+		-check the DIRECTORY for the PACAKAGE.JSON file
+		-------
+		"C:\Users\Pythagoras\Documents\_test_npm_packageJSON\package.json"
+		PACKAGE.JSON
+		{
+		  "name": "test_a",
+		  "version": "1.1.1",
+		  "description": "this is a test",
+		  "main": "myJSfile.js",
+		  "scripts": {
+			"test": "test"
+		  },
+		  "repository": {
+			"type": "git",
+			"url": "none"
+		  },
+		  "author": "Dean Jones",
+		  "license": "ISC"
+		}
+		-------
+	INSTALL (NODE PACKAGES)
+		-INSTALL command creates a folder called NODE_MODULES
+		-install TWO (BABEL PACKAGES)
+			npm install babel-cli -D
+			npm install babel-preset-env -D
+		-the FLAG (-D)
+			-ADDS THE DEPENDENCIES to the PACKAGE.JSON file 
+	INSTALL (ALL PACKAGES)(inside PACKAGE.JSON)
+		-to install all packages (listed in package.json file)
+		-it instructs npm to look inside package.json 
+		-and download all of the packages listed in (devDependencies)
+			npm install 
+	BABEL (.babelrc file)(SPECIFY THE VERSION OF JAVASCRIPT SOURCE CODE)
+		???
+	BABEL (CONVERT ES6 --> ES5)
+		npm run build 		
+		-this essentially CONVERTS (ES6) code and DUMPS IT (to this folder)
+			ES5 code in (./lib/main.js)
+			
+	BABEL (HOW TO SETUP PROJECT)(TO USE BABEL)
+		-put (*.JS) FILES into (src) FOLDER 
+			project
+				|_ src
+				|___ main.js
+		-using the NODE PACKAGE MANAGER (npm) (INSTALL if not already)
+		-create a JSON FILE 
+			-run 
+				npm init 		(follow the prompts)(can MANUALLY edit this afterwards)
+		-use INSTALL (to ADD NODE PACKAGES)
+			-install COMMAND (installs the package and all dependencies for a package)
+			-install BABEL (-D flag, adds dependencies)
+				npm install babel-cli -D
+				npm install babel-preset-env -D
+		-FOLDER STRUCTURE 
+			project
+				|_ node_modules
+				|___ .bin
+				|___ ...
+				|_ src
+				|___ main.js
+				|_ package.json
+		
+		-BABEL (.babelrc)(SPECIFY the version of the source JavaScript code)
+			*** NOTE (.babelrc)(the DOT means its a HIDDEN FILE) ***
+			*** to VIEW HIDDEN FILES use (ls -a) ***
+			*** to VIEW (file contents)(cat package.json) ***
+			-go to ROOT (PROJECT) FOLDER 
+			-create BLANK FILE (.babelrc)
+				touch .babelrc 
+			-EDIT FILE (.babelrc) (for ES6) 
+				-in LINUX (use NANO)(nano .babelrc) 
+				-or MANUALLY EDIT in another editor
+				{
+				  "presets": ["env"]
+				}
+			-FOLDER STRUCTURE 
+				project
+					...
+					|_ .babelrc
+			-in PACKAGE.JSON file (specify SCRIPT)
+				-EDIT... 
+				-the BUILD (babel src -d lib)...
+					babel 		(babel command, to transpile code)
+					src 		(source folder, transpiles ALL code in this folder)
+					-d			(instructs Babel, TO WRITE code to ANOTHER FOLDER 
+					lib			(new code ES5 goes in THIS FOLDER) 
+					"scripts": {
+					  "test": "echo \"Error: no test specified\" && exit 1",
+					  "build": "babel src -d lib"
+					}
+			-RUN (TRANSPILE CODE)(ES6 --> ES5)
+				-note the CODE from the SRC folder will create (ES5) code in the LIB folder 
+				-RUN IT 
+					npm run build 
+					---------------
+					$ npm run build
+
+					> learning-babel@1.0.0 build /home/ccuser/workspace/learn-javascript-t
+					ranspilation-bct-npm-init
+					> babel src -d lib
+					---------------
+		BABEL (OVERVIEW)
+			ES5			
+				The old JavaScript version that is supported by all modern web browsers.
+			ES6			
+				The new(er) JavaScript version that is not supported by all modern web browsers. The syntax is more readable, similar to other programming languages, and addresses the source of common bugs in ES5.
+			caniuse.com	
+				a website you can use to look up HTML, CSS, and JavaScript browser compatibility information.
+			Babel
+				A JavaScript package that transpiles JavaScript ES6+ code to ES5.
+			npm init
+				A terminal command that creates a package.json file.
+			package.json
+				A file that contains information about a JavaScript project.
+			npm install
+				A command that installs Node packages.
+			babel-cli
+				A Node package that contains command line tools for Babel.
+			babel-preset-env
+				A Node package that contains ES6+ to ES5 syntax mapping information.
+			.babelrc
+				A file that specifies the version of the JavaScript source code.
+			"build" script
+				A package.json script that you use to tranpsile ES6+ code to ES5.
+			npm run build
+				A command that runs the build script and transpiles ES6+ code to ES5.
+					
+			
+	*****************************************
+	*****************************************
+	
+	DOMTOKENLIST (TOGGLE HTML ELEMENT)(FIND/REPLACE CLASS NAME)
+		https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/replace
+		ACCORDIAN EXAMPLE 
+			https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_accordion_active
+		/* SUB-MENU TOGGLE (DISPLAY) */
+		var menu_toggle = function(id){
+			let x = document.getElementById(id);
+			return x.classList.contains('w3-hide') ? x.classList.replace('w3-hide', 'w3-show') : x.classList.replace('w3-show', 'w3-hide');
+		}
+		
+	MODULES (JAN.14, 2019)
+		-modules are a RE-USABLE piece of code (like MODULAR DESIGN) 
+		-reasons it's useful:
+			-find, fix, and debug code more easily;
+			-reuse and recycle defined logic in different parts of our application;
+			-keep information private and protected from other modules;
+			-and, importantly, prevent pollution of the global namespace and potential naming collisions, 
+				by cautiously selecting variables and behavior we load into a program.
+			
+	
+	MODULES (EXPORTING)(CREATE A MODULE)
+		//create an OBJECT 
+		let Menu = {
+			appetizer: "wings",
+			dinner: "burger",
+			dessert: "saskatoon pie",
+		}
+		//EXPORT (this will be our MENU MODULE)
+		module.exports = Menu;
+		----
+		//create object
+		const Airplane = {
+		  myAirplane: "StarJet",
+		};
+		//EXPORT 
+		module.exports = Airplane;
+		
+	MODULES (REQUIRE)(IMPORT)(USING A MODULE)
+		//IMPORT (MODULE)
+		require('...path_to_module')
+		const Menu = require('./menu.js');
+		---
+		//import module 
+		const Airplane = require('./1-airplane.js');
+
+		//create function (that used module)
+		const displayAirplane = function(){
+		  console.log(Airplane.myAirplane);
+		} 
+		//run function
+		displayAirplane();		//StarJet
+		---
+		
+	MODULE (EXPORTING)(COLLECTION OF DATA)(AS AN OBJECT)
+		--------------- 
+		2-airplane.js
+		---------------
+		const Airplane = {};
+
+		module.exports = {
+		  myAirplane: "CloudJet",
+		  displayAirplane: function(){
+			return this.myAirplane;
+		  }
+		};
+		---------------	
+		2-missionControl.js
+		---------------
+		//import module
+		const Airplane = require('./2-airplane.js');
+
+		console.log(Airplane.displayAirplane());		//CloudJet
+		---------------
+		
+	MODULE (EXPORTS)
+		-TWO TYPES 
+			-default export
+			-named export
+		---
+		DEFAULT EXPORT 
+			let Menu = {};
+
+			export default Menu;		//this is same as (module.exports)
+		--------------
+		//create object
+		let Airplane = {
+		  availableAirplanes: [
+			{name: 'AeroJet', fuelCapacity: 800},
+			{name: 'SkyJet', fuelCapacity: 500},
+		  ],
+		};
+		//export module
+		export default Airplane;
+		--------------
+		
+	MODULES (IMPORT keyword)
+		import Menu from './menu';		//*** NOTE, this './menu' refers to the MODULE NAME (without the EXTENSION) ***
+		------------
+		import Airplane from './airplane';		//use FILENAME (it will determine the *.JS extension)
+
+		const displayFuelCapacity = function(){
+		  Airplane.availableAirplanes.forEach((e) => {
+			console.log(`Fuel Capacity of ${e.name} : ${e.fuelCapacity}`);
+		  });
+		}
+		displayFuelCapacity();
+		//Fuel Capacity of AeroJet : 800
+		//Fuel Capacity of SkyJet : 500
+		------------
+		
+	MODULES (NAMED EXPORTS)
+		-export (VARIABLES by name) 
+			----
+			let specialty = '';
+			function isVegetarian() {
+			}; 
+			function isLowSodium() {
+			}; 
+
+			export { specialty, isVegetarian };
+			----
+			
+	MODULES (EXPORT)(VARIABLES AND FUNCTIONS)
+		-------------------
+		//variable 1
+		let availableAirplanes = [
+		{
+		  name: 'AeroJet',
+		  fuelCapacity: 800, 
+		  availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+		 }, 
+		 {name: 'SkyJet',
+		  fuelCapacity: 500,
+		  availableStaff: ['pilots', 'flightAttendants'],
+		 }
+		];
+		//variable 2
+		let flightRequirements = {
+		  requiredStaff: 4,
+		};
+		//function 1 
+		const meetsStaffRequirements = function(availableStaff, requiredStaff){
+		  return availableStaff.length >= requiredStaff;
+		}
+
+		//export (variables and function)
+		export { availableAirplanes, flightRequirements, meetsStaffRequirements };
+		-------------------
+	
+	MODULE (IMPORT)(VARIABLES)
+		import { specialty, isVegetarian } from './menu';		//NOTE, make sure to add the (from PATH)
+		console.log(specialty);
+		--------------------
+		import { availableAirplanes, flightRequirements, meetsStaffRequirements } from './airplane';
+
+		function displayFuelCapacity() {
+		  availableAirplanes.forEach(function(element) {
+			console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
+		  });
+		}
+		displayFuelCapacity();
+		//Fuel Capacity of AeroJet: 800
+		//Fuel Capacity of SkyJet: 500
+
+		//function 
+		function displayStaffStatus(){
+		  availableAirplanes.forEach(function(element) {
+			console.log(`${element.name} meets staff requirements: ${meetsStaffRequirements(element.availableStaff, flightRequirements.requiredStaff)}`);
+		  });
+		}
+
+		displayStaffStatus();
+		//AeroJet meets staff requirements: true
+		//SkyJet meets staff requirements: false
+		--------------------
+		
+	MODULE (EXPORT)(WHILE DECLARING)
+		-this makes the CODE (even more efficient)
+		export let specialty = '';
+		export function isVegetarian() {
+		}; 
+		function isLowSodium() {
+		};
+		-------------------
+		//variable 1
+		export let availableAirplanes = [
+		{
+		  name: 'AeroJet',
+		  maxSpeed: 1200,
+		  minSpeed: 300,
+		  fuelCapacity: 800, 
+		  availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+		 }, 
+		 {name: 'SkyJet',
+		  maxSpeed: 800,
+		  minSpeed: 200,
+		  fuelCapacity: 500,
+		  availableStaff: ['pilots', 'flightAttendants'],
+		 }
+		];
+		//variable 2
+		export let flightRequirements = {
+		  requiredStaff: 4,
+		  requiredSpeedRange: 700,
+		};
+		//function 1 
+		export function meetsStaffRequirements(availableStaff, requiredStaff){
+		  return availableStaff.length >= requiredStaff;
+		}
+		//function 2
+		export function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange){
+		  return (maxSpeed - minSpeed) > flightRequirements.requiredSpeedRange;
+		}
+		-------------------
+	
+	MODULE (EXPORT AS) 
+		-changes the NAME that you use (when exporting)
+			export { specialty as chefsSpecial, isVegetarian as isVeg, isLowSodium };
+		----------------
+		//variable 1
+		let availableAirplanes = [
+			//...
+		];
+		//variable 2
+		let flightRequirements = {
+		  //...
+		};
+		//function 1 
+		function meetsStaffRequirements(availableStaff, requiredStaff){
+		  //...
+		}
+		//function 2
+		function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange){
+		  //...
+		}
+
+		export { availableAirplanes as aircrafts, flightRequirements as flightReqs, meetsStaffRequirements as meetsStaffReqs, meetsSpeedRangeRequirements as meetsSpeedRangeReqs };
+		----------------
+		
+	MODULE (IMPORT AS)
+		-must IMPORT using the ALIAS NAME
+			import { chefsSpecial, isVeg } from './menu';
+		-using (AS keyword)
+			import {isLowSodium as saltFree} from 'Menu'
+		-import ALL (entire module)
+			import * as Carte from './menu';
+		--------------
+		//import Airplane from './airplane';
+		import { aircrafts, flightReqs, meetsStaffReqs, meetsSpeedRangeReqs } from './airplane';
+
+		function displayFuelCapacity() {
+		  aircrafts.forEach(function(element) {
+			console.log('Fuel Capacity of ' + element.name + ': ' + element.fuelCapacity);
+		  });
+		}
+		displayFuelCapacity();
+
+		//function 
+		function displayStaffStatus(){
+		  aircrafts.forEach(function(element) {
+			console.log(`${element.name} meets staff requirements: ${meetsStaffReqs(element.availableStaff, flightReqs.requiredStaff)}`);
+		  });
+		}
+		displayStaffStatus();
+		//AeroJet meets staff requirements: true
+		//SkyJet meets staff requirements: false
+
+		//function
+		function displaySpeedRangeStatus(){
+		  aircrafts.forEach(function(element) {
+			console.log(`${element.name} meets speed range requirements: ${meetsSpeedRangeReqs(element.maxSpeed, element.minSpeed, flightReqs.requiredSpeedRange)}`);
+		  });
+		}
+		displaySpeedRangeStatus();
+		//AeroJet meets speed range requirements: true
+		//SkyJet meets speed range requirements: false
+		--------------
+		
+	MODULE (EXPORT)(COMBINING DIFFERENT SYNTAX)
+		-can use several methods to bring out EXPORT
+		export function meetsStaffRequirements(availableStaff, requiredStaff){
+		  //...
+		}
+		function meetsSpeedRangeRequirements(maxSpeed, minSpeed, requiredSpeedRange){
+		  //...
+		}
+		export default meetsSpeedRangeRequirements;
+
+	MODULE (IMPORT)(COMBINING DIFFERENT SYNTAX)
+		-can use several methods to bring in IMPORTS
+		import { availableAirplanes, flightRequirements, meetsStaffRequirements } from './airplane';
+		import meetsSpeedRangeRequirements from './airplane';
+			
+	*** BOOKMARK ***
+	MODULE (EXPORT and IMPORTS)(ALL SYNTAX)
+		-NOTE, you can COMBINE different exports and imports syntaxes (depending on use)
+		EXPORTS
+			//**************************************************************************
+			//NOTE, the (module.exports & require()) (these NEED TO GO TOGETHER to work)
+			//NOTE, the (export & import KEYWORDS) (these NEED TO GO TOGETHER to work)
+			//**************************************************************************
+			//group export
+			module.exports = <object>;
+			module.exports = {
+				a: 1, 
+				b: 2, 
+				c: 3,
+			};
+			export default <object, variable, or function>;
+			export { var1, var2, func1 };
+			export { var1 as var1_alias, var2 as var2_alias, func1 as func1_alias };
+			
+			//individual export
+			export let variable1 = ...;
+			export function myfunction1() { ... }
+			export let myarray = [ ... ];
+			export let myobject = { ... };
+			
+		IMPORTS 
+			//require()
+			const ModuleName = require('./<filename>.js');
+			//import 
+			import ModuleName from './<filename>';
+			//import (variables, functions, arrays or objects)
+			import { var1, var2, func1 } from './menu';
+			//import (export aliases)
+			import { var1_alias, var2_alias, func1_alias } from './menu';
+			//import (creating your alias here only)
+			import { obj as import_alias } from 'Menu'
+			//import (all modules)
+			import * as Carte from './menu';
+			
+		MODULES (EXPORT/IMPORT)(BACK-END VS FRONT-END)
+			NODE.JS 
+				myModuleToLoad = require("./js/myModuleToLoad.js")
+			CLIENT (BROWSER)
+				<script type="text/javascript" src="./js/myModuleToLoad.js"></script>
+
+			
+	NODE.JS 
+		-BOOK: Learning Node.JS (some tips from there here)
+		-just curious how it's organized here...
+		INSTALL FOLDER 
+			C:\Program Files\nodejs\node_modules\npm\
+		ALL MODULES (/lib)
+			C:\Program Files\nodejs\node_modules\npm\lib
+		PACKAGE.JSON
+			"C:\Program Files\nodejs\node_modules\npm\package.json"
+		RESOURCES 
+			https://docs.npmjs.com/
+			https://github.com/npm/npm
+		FILE EXTENSIONS 
+			*.js 
+			*.json 
+			*.node 	(compiled file)
+		HELP (SEARCH PACKAGES) 
+			npm search <name>			(this searches for packages)
+			https://www.npmjs.com/
+		PACKAGE.JSON (template)
+			{
+				"name": "album-manager",
+				"version": "1.0.0",
+				"main": "./lib/albums.js"
+			}
+	NODE (TERMINAL)
+		-in POWERSHELL or CMD 
+			node --version 			#v8.6.0
+		-OPEN NODE TERMINAL 
+			node 
+			-the TERMINAL will appear to have a (>) SINGLE GREATER THAN symbol 
+			
+	CLOSURE (PRIVATE VARIABLE)(OUTSIDE THE FUNCTION)
+		-https://www.w3schools.com/js/js_function_closures.asp
+		-it's like a NESTED FUNCTION
+		var add = (function () {
+		  var counter = 0;
+		  return function () {
+			counter += 1; 
+			return counter;
+			}
+		})();
+		add()	//1
+		add()	//2
+		add()	//3
+		var sqrt = (function (n) {
+		  var ans = 1;
+		  return function (n) {
+			ans = (ans + n) / (ans + 1);
+			return ans;
+			}
+		})();
+		sqrt(2)
+		1.5
+		sqrt(2)
+		1.4
+		sqrt(2)
+		1.4166666666666667
+		sqrt(2)
+		1.4137931034482758
+		sqrt(2)
+		1.4142857142857144
+		sqrt(2)
+		1.4142011834319526
+		sqrt(2)
+		1.4142156862745099
+		sqrt(2)
+		1.4142131979695431
+		sqrt(2)
+		1.4142136248948696
+		
+	OBJECT (ADDING FUNCTIONS TO OBJECT)
+		************ WARNING ************
+		-by doing it THIS way you will IN FACT (have TWO FUNCTIONS, one in the (MessageMixer OBJECT) and one in the GLOBAL NAMESPACE
+		-this could really cause problems (probably NOT the best way)
+		-----------------------------------------
+		// empty object
+		var MessageMixer = {};
+		// add (all) functions (to object)
+		MessageMixer.countCharacter = countCharacter;
+		MessageMixer.capitalizeFirstCharacterOfWords = capitalizeFirstCharacterOfWords;
+		MessageMixer.reverseWord = reverseWord;
+		MessageMixer.reverseAllWords = reverseAllWords;
+		MessageMixer.replaceFirstOccurence = replaceFirstOccurence;
+		MessageMixer.replaceAllOccurrences = replaceAllOccurrences;
+		MessageMixer.encode = encode;
+
+		function countCharacter(inputString, inputCharacter) {
+		  let count = 0;
+		  let string = inputString.toLowerCase();
+		  let character = inputCharacter.toLowerCase();
+			for (let i = 0; i < string.length; i++) {
+			  if (string[i] === character) {
+				 count++;
+			  }
+			}
+		  return count; 
+		};
+		
+		function func2(){}
+		function func3(){}
+		function func4(){}
+		...
+		-----------------------------------------
+		BETTER WAY TO (ADD METHODS)(MAKE A PART OF OBJECT)(this was actually pretty quick)(easier than a TYPICAL OBJECT FORMAT would require more EDITING)
+		***** NOW THIS IS ONLY APART OF (MessageMixer OBJECT) *******
+		// empty object
+		var MessageMixer = {};
+
+		// add (all) functions (to object)
+		MessageMixer.countCharacter = function countCharacter(inputString, inputCharacter) {
+		  let count = 0;
+		  let string = inputString.toLowerCase();
+		  let character = inputCharacter.toLowerCase();
+			for (let i = 0; i < string.length; i++) {
+			  if (string[i] === character) {
+				 count++;
+			  }
+			}
+		  return count; 
+		};
+
+		MessageMixer.capitalizeFirstCharacterOfWords = function capitalizeFirstCharacterOfWords(string) {
+		  let arr = string.split(" ");  
+			for (let i = 0; i < arr.length; i++) {  
+			  let word = arr[i];
+				arr[i] = word[0].toUpperCase() + word.substring(1); 
+			}
+		  return arr.join(" "); 
+		};
+
+		MessageMixer.reverseWord = function reverseWord(word) {
+		  return word.split("").reverse().join("");
+		};
+
+		MessageMixer.reverseAllWords = function reverseAllWords(sentence) {
+		  let words = sentence.split(" ");
+			for (let i = 0; i < words.length; i++) {
+			  words[i] = reverseWord(words[i]);
+			}
+		   return words.join(" ");
+		};
+
+		MessageMixer.replaceFirstOccurence = function replaceFirstOccurence(string, toBeReplaced, replaceWith) {
+		  return string.replace(toBeReplaced, replaceWith);
+		};
+
+		MessageMixer.replaceAllOccurrences = function replaceAllOccurrences(string, toBeReplaced, replaceWith) {
+		  return string.split(toBeReplaced).join(replaceWith);
+		};
+
+		MessageMixer.encode = function encode(string) {
+		  let replacementObject = { "a": "@", "s": "$", "i": "!", "o":"0" };
+			for (let key in replacementObject) {
+			  string = replaceAllOccurrences(string, key, replacementObject[key]); 
+			}	
+			return string;
+		};
+		
+	OBJECT (HOW TO ACCESS A FUNCTION INSIDE AN OBJECT)
+		var MessageMixer = {};
+		MessageMixer.reverseWord = function reverseWord(word) {
+		  return word.split("").reverse().join("");
+		};
+		MessageMixer.reverseAllWords = function reverseAllWords(sentence) {
+		  let words = sentence.split(" ");
+			for (let i = 0; i < words.length; i++) {
+			  // update (to work with object)
+			  // words[i] = reverseWord(words[i]);                //DOESN'T WORK!
+			  // words[i] = MessageMixer.reverseWord(words[i]);   //WORKS!!! (CAN ALSO REFERENCE A DIFFERENT OBJECT)
+			  words[i] = this.reverseWord(words[i]);              //WORKS!!! 
+			}
+		   return words.join(" ");
+		};
+		
+	MODULE IN HTML (<script type="module">)
+		https://medium.com/samsung-internet-dev/isomorphic-es-modules-151f0d9a919b
+		----------------
+		HTML
+			<!-- LOAD NODEJS MODULE TO HTML -->
+			<script type="module">
+				import MyModule from './module1.js';
+
+				console.log(MyModule.aaa);
+				alert(MyModule.aaa); 
+			</script>
+		----------------
+		MODULE (NODEJS)
+			var MyModule = {
+				aaa: 111, 
+				bbb: 222,
+				ccc: 333,
+				ddd: 444, 
+				eee: 555,
+				fff: 666, 
+				ggg: 777,
+				hhh: 888,
+				iii: 999,
+			};
+
+			//module.exports = MyModule;
+			export default MyModule;
+		----------------
+		
+	MODULE IN HTML 
+		SCRIPT TAG			https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script
+		TYPE ATTRIBUTE 		https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#JavaScript_types
+			*** NORMALLY THIS CAN BE OMITTED FOR JAVASCRIPT FILE ***
+			module 			(for loading NODEJS module into HTML)
+			text/plain
+			text/html
+			text/css
+			text/javascript
+			image/jpeg
+			image/png
+			
+		<!-- LOAD MODULE -->
+		<script type="module" src="./test3.js"></script>
+		--------------
+		TEST3.JS 
+		--------------
+		//const MyModule = require('./module1.js');
+		import MyModule from './module1.js';
+
+		console.log(MyModule.bbb);
+		alert(MyModule.bbb);
+		--------------
+		
+	MULTI-LINE TEXT (IN JAVASCRIPT)
+		https://stackoverflow.com/questions/1589234/whats-the-cleanest-way-to-write-a-multiline-string-in-javascript
+		-I used this for TWO PARAGRAPH (elements in HTML)(works good)
+		var obj = {
+			cad_support: {
+				info:   'Computer Aided Design and Drafting Technology is constantly changing. '
+					+   'Does your company have a dedicated CADD Support Team in place? A good CADD team can minimize delays '
+					+   'in the project by rapidly solving issues faced by your CADD Operators.',
+				info2:  'Our services range from providing supplemental support to your team for complicated problems '
+					+   'and personnel limitations, to a complete support system which can mimimize the CADD Support cost to your company. '
+					+   'Depending on the service plan, we guarantee first contact from your CADD Support Representative within two to four hours. '
+					+   'Most issues can be resolved within 4 hours, and if not, temporary workaround measures can be implemented.',
+			},
+		}
+		
+	-GET (URL PARAMTERS)(with JavaScript)
+		window.location				//THIS IS THE MAIN OBJECT 
+		window.location.search 		//actual PARAMETER STRING (if BLANK there are NO PARAMETERS)
+		eg. 	https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_slideshow_fading
+		
+		-go to CONSOLE 
+		function getUrlVars() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value;
+			});
+			return vars;
+		}
+		--------------
+		getUrlVars()		//{filename: "tryw3css_slideshow_fading"}
+		
+</textarea>
